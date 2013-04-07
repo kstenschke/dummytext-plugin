@@ -132,8 +132,9 @@ class ActionPerformer {
 
 
 	/**
-	 * @param   approxMaxChars    Minimum string length
-	 * @param   amountLines       Amount of lines
+	 * @param   approxMaxChars       Minimum string length
+	 * @param   amountLines          Amount of lines
+	 * @param   trailingPunctuation  Trailing punctuation to be cast to the generated string's ending
 	 * @return  Random dummy text of the given amount of lines and at least the given string-length
 	 */
 	private CharSequence generateText(Integer approxMaxChars, Integer amountLines, String trailingPunctuation) {
@@ -148,22 +149,7 @@ class ActionPerformer {
 			linesCount++;
 		}
 
-		dummyText   = dummyText.trim();
-		Boolean endsAlphabetic  = TextualHelper.isAlphabetic(TextualHelper.getLastChar(dummyText));
-
-		if( trailingPunctuation != null ) {
-				// Replace or add given trailing punctuation
-			if( endsAlphabetic ) {
-				dummyText   = dummyText.concat(trailingPunctuation);
-			} else {
-				dummyText   = dummyText.substring(0, dummyText.length() - 1) + trailingPunctuation;
-			}
-		} else if( !endsAlphabetic) {
-				// Remove trailing non-alphabetic character if selection didn't have any either
-			dummyText   =	dummyText.substring(0, dummyText.length() - 1);
-		}
-
-		return dummyText;
+		return TextualHelper.castTrailingPunctuation(dummyText, trailingPunctuation);
 	}
 
 }

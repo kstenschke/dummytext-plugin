@@ -79,7 +79,7 @@ public class DictionaryLatin extends Dictionary {
 		String[] words = {
 			"accola", "advena", "agripeta", "abnoba", "apolloniates", "aonides", "axona", "brabeuta", "barcas",
 			"boreas", "cacula", "clinias", "cotta", "danista", "eleates", "fraticinida", "galatae",
-			"heuretes", "hibrida", "hilotae", "ignigena", "luba", "lura", "lanista", "pirata", "poeta",
+			"heuretes", "hibrida", "hilotae", "ignigena", "luba", "lura", "lanista", "poeta",
 			"tata", "xiphias", "lixa", "lamia", "hippotoxota"
 		};
 
@@ -125,10 +125,10 @@ public class DictionaryLatin extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"mori", "potus", "tolerare", "cadunt", "crescere", "ridetis", "ortum", "velum", "cantare",
-			"peregrinationes", "unda", "accelerare", "assimilant", "trabem", "mori", "manducare",
-			"experimentum", "feed", "volare", "congregabo", "ire", "messis", "observare", "resistere",
-			"peregrinatione"
+			"accelerare", "assimilant", "cadunt", "cantare", "congregabo", "credere", "crescere", "experimentum",
+			"favere", "ire", "manducare", "messis", "mori", "mori", "nocere", "observare", "ortum",
+			"peregrinatione", "peregrinationes", "persuadere", "potus", "prarere", "resistere", "ridetis",
+			"studere", "tolerare", "trabem", "unda", "velum", "volare"
 		};
 
 		return pickRandomWord(words);
@@ -154,8 +154,10 @@ public class DictionaryLatin extends Dictionary {
 	 */
 	private static String getAdverb() {
 		String[] words = {
-			"acceleratrix", "callide", "cito", "grauiter", "inciviliter", "mechanice", "patienter",
-			"sapienter", "sed mire", "superbe", "tandem", "virtualiter"
+			"absolute", "acceleratrix", "aegre", "aliquando", "callide", "cito", "diligenter", "etiam", "foris",
+			"grauiter", "hic", "inciviliter", "interdum", "mechanice", "nunquam", "patienter", "rare", "recte",
+			"saepe", "sapienter", "satis", "sed mire", "semper", "sensim", "solite", "superbe", "tandem", "una",
+			"unus", "velox", "virtualiter", "vix"
 		};
 
 		return pickRandomWord(words);
@@ -166,7 +168,7 @@ public class DictionaryLatin extends Dictionary {
 	 */
 	private static String getInterjection() {
 		String[] words ={
-			"ecce", "eheu", "hercle", "heu", "pol", "vae", "pol, a bene 1"
+			"ecce", "eheu", "hercle, 2 5!", "heu", "pol", "vae", "pol, a bene 1"
 		};
 
 		return pickRandomWord(words);

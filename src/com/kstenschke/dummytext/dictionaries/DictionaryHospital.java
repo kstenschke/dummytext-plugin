@@ -43,6 +43,7 @@ public class DictionaryHospital extends Dictionary {
 		}
 
 		sentence = fixIndefiniteArticles(sentence);
+
 		sentence = sentence.replaceAll("familys ",      "families ");
 		sentence = sentence.replaceAll("diagnosiss",    "diagnose ");
 		sentence = sentence.replaceAll(" gos ",         " goes ");
@@ -129,8 +130,8 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"bathe", "breathe", "die", "assimilate", "infect", "itch", "die", "take", "experiment", "go",
-			"observe", "spread", "trip", "fall", "steal",
+			"assimilate", "bathe", "breathe", "collapse", "cost", "depend", "die", "die", "experiment", "fall",
+			"go", "infect", "inquire", "itch", "observe", "spread", "stand", "steal", "take", "trip", "wait"
 		};
 
 		return pickRandomWord(words);

@@ -43,8 +43,10 @@ public class DictionaryPirates extends Dictionary {
 		}
 
 		sentence = fixIndefiniteArticles(sentence);
+
 		sentence = sentence.replaceAll("beautys ",   "beauties ");
 		sentence = sentence.replaceAll("lasss ",     "lass ");
+		sentence = sentence.replaceAll("pantss ",    "pants ");
 		sentence = sentence.replaceAll("to the love","to love");
 
 		return ucfirst(sentence);
@@ -98,8 +100,9 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getNounAbstract() {
 		String[] words = {
-			"adventure", "beauty", "booty", "courage", "death", "deck", "desolation", "endurance", "faith",
-			"life", "love", "plank", "treasure", "yellow fever"
+			"adventure", "amnesty", "beauty", "booty", "courage", "death", "deck", "desolation", "endurance",
+			"faith", "fortune", "grace", "horror", "hunger", "life", "love", "malaria", "passion", "plank",
+			"power", "punishment", "strength", "treasure", "yellow fever"
 		};
 
 		return pickRandomWord(words);
@@ -133,9 +136,9 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"addled", "big", "black", "clear", "cloudy", "cold", "dark", "dead", "jolly", "lively", "misty",
-			"old", "proud", "rainy", "real", "rough", "scurvy", "shiny", "small", "smartly", "stormy", "sunny",
-			"warm", "wet"
+			"addled", "big", "black", "clear", "cloudy", "coal-black", "cold", "dark", "dead", "golden", "jolly",
+			"lively", "misty", "old", "proud", "rainy", "real", "rough", "scurvy", "shiny", "small", "smartly",
+			"stormy", "sunny", "warm", "wet"
 		};
 
 		return pickRandomWord(words);
@@ -146,8 +149,8 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getAdverb() {
 		String[] words = {
-			"awkwardly", "begrudgingly", "calmly", "cruelly", "darkly", "fast", "fiery", "greedily", "impatiently",
-			"loudly", "quietly", "quirky", "roughly", "swiftly", "unlawfully"
+			"awkwardly", "begrudgingly", "calmly", "cruelly", "darkly", "fast", "fiery", "greedily", "heavily",
+			"impatiently", "loudly", "oppressively", "quietly", "quirky", "roughly", "swiftly", "unlawfully"
 		};
 
 		return pickRandomWord(words);
@@ -170,9 +173,9 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getPlace() {
 		String[] words ={
-				  "captain\'s quarters", "east india", "fort charles", "isla de muerta", "jamaica",
-				  "port royal", "pantano river", "prison", "singapore",
-				  "the island", "tortuga"
+			"cabo rojo", "captain\'s quarters", "east india", "fort charles", "isla de muerta", "jamaica",
+			"la marsa beach", "pantano river", "port royal", "prison", "puerto rico", "singapore", "the cave",
+			"the island", "tortuga"
 		};
 
 		return pickRandomWord(words);

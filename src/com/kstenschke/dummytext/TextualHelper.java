@@ -78,4 +78,29 @@ public class TextualHelper {
 		return isAlphabetic(str) ? null : str;
 	}
 
+	/**
+	 * @param   str                  String to be parsed
+	 * @param   trailingPunctuation  Trailing punctuation to be cast to the string's end
+	 * @return  String with original trailing punctuation replace by- or extended with- given punctuation.
+	 *          If 'trailingPunctuation' is null: the string's trailing punctuation is removed as well
+	 */
+	public static String castTrailingPunctuation(String str, String trailingPunctuation) {
+		str   = str.trim();
+		Boolean endsAlphabetic  = TextualHelper.isAlphabetic(TextualHelper.getLastChar(str));
+
+		if( trailingPunctuation != null ) {
+			// Replace or add given trailing punctuation
+			if( endsAlphabetic ) {
+				str   = str.concat(trailingPunctuation);
+			} else {
+				str   = str.substring(0, str.length() - 1) + trailingPunctuation;
+			}
+		} else if( !endsAlphabetic) {
+			// Remove trailing non-alphabetic character if selection didn't have any either
+			str   =	str.substring(0, str.length() - 1);
+		}
+
+		return str;
+	}
+
 }

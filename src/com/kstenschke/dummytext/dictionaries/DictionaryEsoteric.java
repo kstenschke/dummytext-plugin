@@ -40,10 +40,12 @@ public class DictionaryEsoteric extends Dictionary {
 		}
 
 		sentence = fixIndefiniteArticles(sentence);
-		sentence = sentence.replaceAll("the peace",  "peace");
-		sentence = sentence.replaceAll("peaces",     "peace");
+
+		sentence = sentence.replaceAll("loves",      "love");
 		sentence = sentence.replaceAll("manys",      "many");
+		sentence = sentence.replaceAll("peaces",     "peace");
 		sentence = sentence.replaceAll("sexs",       "sex");
+		sentence = sentence.replaceAll("the peace",  "peace");
 
 		sentence = sentence.replaceAll("becomeing",  "becoming");
 		sentence = sentence.replaceAll("desireing",  "desiring");
@@ -64,7 +66,7 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getSentenceStructure() {
 		String[] words = {
 			"the 1 3s.",
-			"2 is a 5 1.",
+			"the 2 is a 5 1.",
 			"all 5 1s 3 each other, only 5 1s have a 2.",
 			"one must 3 the 1 in order to 3 the 1 of 5 2.",
 			"Who can 3 the 2 and 2 of a 1 if he has the 5 2 of the 1.",
@@ -81,9 +83,9 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getNounConcrete() {
 		String[] words = {
-			"believer", "cow", "ego", "explosion of the 2", "follower", "guru", "individual", "karma", "lama",
-			"lover", "man", "master", "monkey", "moon", "one", "scholar", "seeker", "sinner", "source", "sun",
-			"teacher", "therapist", "thing", "visitor", "yogi"
+			"believer", "cow", "death", "ego", "explosion of the 2", "follower", "guru", "individual", "karma",
+			"lama", "love", "lover", "man", "master", "monkey", "moon", "one", "scholar", "seeker", "sinner",
+			"source", "sun", "teacher", "therapist", "thing", "visitor", "yogi"
 		};
 
 		return pickRandomWord(words);
@@ -97,11 +99,11 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getNounAbstract() {
 		String[] words = {
 			"advice", "afterlife", "anger", "attitude", "attraction", "awareness", "beauty", "blessing", "bliss",
-			"career", "core", "courage", "death", "definition", "enlightenment", "everything", "extend", "faith",
-			"fear", "grace", "happiness", "heaven", "history", "hypnosis", "issue", "life", "life", "life",
-			"living", "love", "love", "meditation", "milk", "mind", "mind", "mineral", "money", "moon", "pain",
-			"peace", "religion", "samadhi", "satori", "sex", "silence", "solitude", "suffering",
-			"surrender", "tantra", "totality", "trust", "uniqueness", "vision", "volume", "zen"
+			"career", "core", "courage", "definition", "emptiness", "enlightenment", "enlightenment", "everything",
+			"extend", "faith", "fear", "freedom", "grace", "happiness", "heaven", "heaven", "history", "hypnosis",
+			"issue", "life", "living", "meditation", "milk", "mind", "mineral", "money", "moon", "pain", "peace",
+			"purpose", "samadhi", "satori", "sex", "silence", "solitude", "suffering", "surrender",
+			"tantra", "totality", "trust", "uniqueness", "vision", "volume", "zen"
 		};
 
 		return pickRandomWord(words);
@@ -113,8 +115,8 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getVerbTransitive() {
 		String[] words = {
 			"absorb", "acquire", "avoid", "balance", "capture", "contact", "convert", "desire", "discover",
-			"disturb", "empower", "experience", "feel", "handle", "illuminate", "know", "love", "meet", "raise",
-			"receive", "synthesise", "understand", "view", "yearn"
+			"disturb", "empower", "experience", "feel", "gain", "handle", "illuminate", "know", "love", "meet",
+			"praise", "raise", "receive", "synthesise", "understand", "view", "yearn"
 		};
 
 		return pickRandomWord(words);
@@ -125,8 +127,8 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"become", "desire", "die", "do", "emerge", "exist", "experiment", "fly", "forget", "hear",
-			"hear", "remain", "remember", "rise", "see", "sit", "travel", "understand", "will"
+			"appear", "become", "desire", "die", "do", "emerge", "exist", "experiment", "fly", "forget", "hear",
+			"occur", "remain", "remember", "rise", "sit", "travel"
 		};
 
 		return pickRandomWord(words);
@@ -137,10 +139,10 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"alchemistic", "ancient", "atomic", "calm", "celestine", "crystal", "enlightened", "further",
-			"great", "hermetic", "holographic", "magical", "mysterious", "new", "parallel", "pictorial",
-			"psychic", "remarkable", "secret", "separate", "small", "strange", "superior",
-			"true", "united", "unveiled", "wonderful"
+			"alchemistic", "ancient", "atomic", "calm", "celestine", "crystal", "enlightened", "further", "great",
+			"hermetic", "holographic", "important", "magical", "mysterious", "new", "parallel", "pictorial",
+			"powerful", "psychic", "remarkable", "secret", "separate", "small", "strange", "superior", "true",
+			"ultimate", "united", "unveiled", "wonderful"
 		};
 
 		return pickRandomWord(words);
@@ -152,7 +154,7 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getAdverb() {
 		String[] words = {
 			"agreeable", "authorative", "balanced", "cosmically", "earthly", "oddly",
-			"qabalistic", "silently", "solitary", "theosophical", "wisely", "wonderfully"
+			"qabalistic", "silently", "solitary", "theosophical", "truly", "wisely", "wonderfully"
 		};
 
 		return pickRandomWord(words);
@@ -169,7 +171,9 @@ public class DictionaryEsoteric extends Dictionary {
 			"never 3 for others what you would not 3 for the 2 of it",
 			"6 2 is to 3 the 2 of the 1\'s ignorance",
 			"i 4 and i 4. i 4 and i 4. i 4 and i 4",
-			"the 5 1 is 4ing, the 5 1 is 4ing"
+			"the 5 1 is 4ing, the 5 1 is 4ing",
+			"in the 8 all 1s 3 2",
+			"in the 8 4s 6 2"
 		};
 
 		return pickRandomWord(words);
@@ -180,7 +184,9 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getPlace() {
 		String[] words ={
-			"ashram"
+			"ashram", "body", "heavens", "mind", "monastery", "material world",
+			"body of 2", "heavens of 2", "realm of 2", "state of 2",
+			"5 world", "5 mind"
 		};
 
 		return pickRandomWord(words);
