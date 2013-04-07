@@ -65,7 +65,7 @@ public class TextualHelper {
 	 * @return  Last character out of given string
 	 */
 	public static String getLastChar(String str) {
-		return str.substring(str.length() - 1);
+		return str == null || str.isEmpty() ? "" : str.substring(str.length() - 1);
 	}
 
 	/**

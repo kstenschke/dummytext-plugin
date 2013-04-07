@@ -74,7 +74,7 @@ class ActionPerformer {
 
 			Integer dummyLength  = 100; // minimum overall string length
 			Integer amountLines  = 1;
-			Integer amountWords  = 1;  // applies only when replacing a single-lined selection, can be rounded up
+			Integer amountWords  = null;  // applies only when replacing a single-lined selection, can be rounded up
 
 				// Generated dummy text will replace the current selected text
 			if (hasSelection && selectedText != null ) {
@@ -143,8 +143,12 @@ class ActionPerformer {
 	 * @param   trailingPunctuation  Trailing punctuation to be cast to the generated string's ending
 	 * @return  Random dummy text of the given amount of lines and at least the given string-length
 	 */
-	private CharSequence generateText(Integer approxMaxChars, Integer amountWords, Integer amountLines, String trailingPunctuation) {
+	private CharSequence generateText(Integer approxMaxChars, Integer amountLines, Integer amountWords, String trailingPunctuation) {
 		String dummyText = "";
+
+		if( amountLines > 1 ) {
+			amountWords = null;
+		}
 
 			// Add random sentences until the given text length is reached
 		Integer linesCount = 0;

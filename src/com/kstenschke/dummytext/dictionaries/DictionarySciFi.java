@@ -60,8 +60,8 @@ public class DictionarySciFi extends Dictionary {
 	 * @return  Random sentence structure with numbers as word type placeholders
 	 */
 	private static String getSentenceStructure(Integer amountWords) {
-		if( amountWords == 1 ) {
-			String[] structures  = {"1.", "2.", "8."};
+		if( amountWords != null && amountWords == 1 ) {
+			String[] structures  = {"1", "2", "8"};
 			return pickRandomString(structures);
 		}
 

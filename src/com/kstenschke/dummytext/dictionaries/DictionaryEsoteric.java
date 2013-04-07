@@ -65,8 +65,8 @@ public class DictionaryEsoteric extends Dictionary {
 	 * @return  Random sentence structure with numbers as word type placeholders
 	 */
 	private static String getSentenceStructure(Integer amountWords) {
-		if( amountWords == 1 ) {
-			String[] structures  = {"1.", "2.", "8."};
+		if( amountWords != null && amountWords == 1 ) {
+			String[] structures  = {"1", "2", "8"};
 			return pickRandomString(structures);
 		}
 
@@ -121,7 +121,7 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getVerbTransitive() {
 		String[] words = {
 			"absorb", "acquire", "avoid", "balance", "capture", "contact", "convert", "desire", "discover",
-			"disturb", "empower", "experience", "feel", "gain", "handle", "illuminate", "know", "love", "meet",
+			"disturb", "empower", "experience", "feel", "gain", "handle", "illuminate", "know",
 			"praise", "raise", "receive", "synthesise", "understand", "view", "yearn"
 		};
 
@@ -134,7 +134,7 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getVerbIntransitive() {
 		String[] words = {
 			"appear", "become", "desire", "die", "do", "emerge", "exist", "experiment", "fly", "forget", "hear",
-			"occur", "remain", "remember", "rise", "sit", "travel"
+			"love", "meet", "occur", "remain", "remember", "rise", "sit", "travel"
 		};
 
 		return pickRandomString(words);
