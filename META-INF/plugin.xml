@@ -18,9 +18,8 @@
 
   <name>Dummy Text Generator</name>
     <description><![CDATA[
-    The plugin adds a button to generate dummy text to the main toolbar.<br/>
-    Randomly generated dummy text can than be inserted with a click, text selections are being replaced
-    by dummy text of approximately the same length.<br/>
+    The plugin adds a dummy text generator button to the main toolbar<br/>
+    Randomly generated dummy text can than be inserted with a click, or replace a selection of text.<br/>
     The plugin configuration allows to choose from several genres:<br />
     <ul>
         <li>Fake Latin</li>
@@ -28,20 +27,28 @@
         <li>Pirate Lingo</li>
         <li>Science Fiction</li>
         <li>Esoteric Wisdom</li>
-    </ul>
+    </ul><br/>
+    When replacing a selection of text, the generated dummy text is of approximately the same length.<br/>
+    When the replaced text selection consists fully of lower-cased or capital letters or begins with a
+    captial letter, that previous casing is maintained. Furthermore, the presence or absence of a trailing
+    punctuation mark of a replaced text selection is being maintained.<br/>
     <br/>Please note: This plugin is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     <br/>
     <br/>The icons used in this plugin are based on the Fugue iconset (http://p.yusukekamiyamane.com/)
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
 
+  <version>1.0.1</version>
+
   <change-notes><![CDATA[
+    1.0.1<ul>
+        <li>Added maintaining of casing</li>
+        <li>Added maintaining of present/absent trailing punctuation mark</li>
+    </ul>
     1.0.0<ul>
         <li>Initial release</li>
     </ul>
   ]]></change-notes>
-
-  <version>1.0.0</version>
 
   <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
   <idea-version since-build="107.105"/>

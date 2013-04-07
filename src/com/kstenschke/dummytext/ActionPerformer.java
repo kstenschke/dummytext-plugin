@@ -66,12 +66,30 @@ class ActionPerformer {
 			boolean hasSelection = selectionModel.hasSelection();
 			String selectedText  = selectionModel.getSelectedText();
 
+			Boolean isUpperCase  = false;
+			Boolean isLowerCase  = false;
+			Boolean isUcFirst    = false;
+
+			String trailingPunctuation = TextualHelper.getTrailingPunctuationMark(selectedText);
+
 			Integer dummyLength = 100;
 			Integer amountLines = 1;
 
 				// Generated dummy text will replace the current selected text
 			if (hasSelection && selectedText != null ) {
+				if( TextualHelper.isAllUppercase(selectedText) ) {
+					isUpperCase = true;
+					isLowerCase = false;
+					isUcFirst   = false;
+				} else {
+					isLowerCase = TextualHelper.isAllLowercase(selectedText);
+				}
+				if( ! isLowerCase ) {
+					isUcFirst   = TextualHelper.isUcFirst(selectedText);
+				}
+
 				Integer selectionLength = selectedText.length();
+
 				if( selectionLength > 0 ) {
 					dummyLength = selectedText.length();
 					amountLines = selectedText.split("\\n").length;
@@ -80,26 +98,32 @@ class ActionPerformer {
 
 			if( dummyLength != null ) {
 				// Generate and insert / replace selection with dummy text
-				CharSequence dummyText  = generateText(dummyLength, amountLines);
+				String dummyText  = generateText(dummyLength, amountLines, trailingPunctuation).toString();
 
-				if( dummyText != null ) {
-					CaretModel caretModel   = editor.getCaretModel();
-					Integer dummyTextLength = dummyText.length();
-					Integer offsetStart;
+				if( isLowerCase ) {
+					dummyText   = dummyText.toLowerCase();
+				} else if( isUpperCase ) {
+					dummyText   = dummyText.toUpperCase();
+				} else if( isUcFirst ) {
+					dummyText   = TextualHelper.ucFirst(dummyText);
+				}
 
-					if( hasSelection ) {
-						offsetStart = selectionModel.getSelectionStart();
-						Integer offsetEnd = selectionModel.getSelectionEnd();
+				CaretModel caretModel   = editor.getCaretModel();
+				Integer dummyTextLength = dummyText.length();
+				Integer offsetStart;
 
-						document.replaceString(offsetStart, offsetEnd, dummyText);
-						selectionModel.setSelection(offsetStart, offsetStart + dummyTextLength );
-						caretModel.moveToOffset( offsetStart + dummyTextLength );
-					} else {
-						offsetStart  = caretModel.getOffset();
+				if( hasSelection ) {
+					offsetStart = selectionModel.getSelectionStart();
+					Integer offsetEnd = selectionModel.getSelectionEnd();
 
-						document.insertString(offsetStart, dummyText + " ");
-						caretModel.moveToOffset( offsetStart + dummyTextLength + 1 );
-					}
+					document.replaceString(offsetStart, offsetEnd, dummyText);
+					selectionModel.setSelection(offsetStart, offsetStart + dummyTextLength );
+					caretModel.moveToOffset( offsetStart + dummyTextLength );
+				} else {
+					offsetStart  = caretModel.getOffset();
+
+					document.insertString(offsetStart, dummyText + " ");
+					caretModel.moveToOffset( offsetStart + dummyTextLength + 1 );
 				}
 			}
 		}
@@ -107,7 +131,12 @@ class ActionPerformer {
 
 
 
-	public CharSequence generateText(Integer approxMaxChars, Integer amountLines) {
+	/**
+	 * @param   approxMaxChars    Minimum string length
+	 * @param   amountLines       Amount of lines
+	 * @return  Random dummy text of the given amount of lines and at least the given string-length
+	 */
+	private CharSequence generateText(Integer approxMaxChars, Integer amountLines, String trailingPunctuation) {
 		String dummyText = "";
 
 			// Add random sentences until the given text length is reached
@@ -119,7 +148,22 @@ class ActionPerformer {
 			linesCount++;
 		}
 
-		return dummyText.trim();
+		dummyText   = dummyText.trim();
+		Boolean endsAlphabetic  = TextualHelper.isAlphabetic(TextualHelper.getLastChar(dummyText));
+
+		if( trailingPunctuation != null ) {
+				// Replace or add given trailing punctuation
+			if( endsAlphabetic ) {
+				dummyText   = dummyText.concat(trailingPunctuation);
+			} else {
+				dummyText   = dummyText.substring(0, dummyText.length() - 1) + trailingPunctuation;
+			}
+		} else if( !endsAlphabetic) {
+				// Remove trailing non-alphabetic character if selection didn't have any either
+			dummyText   =	dummyText.substring(0, dummyText.length() - 1);
+		}
+
+		return dummyText;
 	}
 
 }

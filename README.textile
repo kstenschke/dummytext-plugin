@@ -7,9 +7,8 @@ This is a plugin for the various intellij IDEs, working in IDEA, PhpStorm, AppCo
 
 h2. Description
 
-The plugin adds a button to generate dummy text to the main toolbar.
-Randomly generated dummy text can than be inserted with a click, text selections are being replaced
-by dummy text of approximately the same length.
+The plugin adds a dummy text generator button to the main toolbar.
+Randomly generated dummy text can than be inserted with a click, or replace a selection of text.
 
 The plugin configuration allows to choose from several genres:
 
@@ -18,6 +17,11 @@ The plugin configuration allows to choose from several genres:
 * Pirate Lingo
 * Science Fiction
 * Esoteric Wisdom
+
+When replacing a selection of text, the generated dummy text is of approximately the same length.
+When the replaced text selection consists fully of lower-cased or capital letters or begins with a captial letter,
+that previous casing is maintained. Furthermore, the presence or absence of a trailing punctuation mark of a
+replaced text selection is being maintained.
 
 
 
