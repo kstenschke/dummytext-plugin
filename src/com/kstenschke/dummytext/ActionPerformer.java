@@ -72,8 +72,9 @@ class ActionPerformer {
 
 			String trailingPunctuation = TextualHelper.getTrailingPunctuationMark(selectedText);
 
-			Integer dummyLength = 100;
-			Integer amountLines = 1;
+			Integer dummyLength  = 100; // minimum overall string length
+			Integer amountLines  = 1;
+			Integer amountWords  = 1;  // applies only when replacing a single-lined selection, can be rounded up
 
 				// Generated dummy text will replace the current selected text
 			if (hasSelection && selectedText != null ) {
@@ -93,12 +94,16 @@ class ActionPerformer {
 				if( selectionLength > 0 ) {
 					dummyLength = selectedText.length();
 					amountLines = selectedText.split("\\n").length;
+
+					if( amountLines == 1) {
+						amountWords = TextualHelper.countWords(selectedText);
+					}
 				}
 			}
 
 			if( dummyLength != null ) {
 				// Generate and insert / replace selection with dummy text
-				String dummyText  = generateText(dummyLength, amountLines, trailingPunctuation).toString();
+				String dummyText  = generateText(dummyLength, amountLines, amountWords, trailingPunctuation).toString();
 
 				if( isLowerCase ) {
 					dummyText   = dummyText.toLowerCase();
@@ -134,16 +139,17 @@ class ActionPerformer {
 	/**
 	 * @param   approxMaxChars       Minimum string length
 	 * @param   amountLines          Amount of lines
+	 * @param   amountWords          Amount of words (per line, only given for single lined selection)
 	 * @param   trailingPunctuation  Trailing punctuation to be cast to the generated string's ending
 	 * @return  Random dummy text of the given amount of lines and at least the given string-length
 	 */
-	private CharSequence generateText(Integer approxMaxChars, Integer amountLines, String trailingPunctuation) {
+	private CharSequence generateText(Integer approxMaxChars, Integer amountWords, Integer amountLines, String trailingPunctuation) {
 		String dummyText = "";
 
 			// Add random sentences until the given text length is reached
 		Integer linesCount = 0;
 		while( dummyText.length() < approxMaxChars && linesCount < amountLines ) {
-			dummyText   = dummyText.concat( genreDictionary.getRandomLine() );
+			dummyText   = dummyText.concat( genreDictionary.getRandomLine(amountWords) );
 			dummyText   = dummyText.concat( amountLines > 1 ? "\n" : " ");
 
 			linesCount++;

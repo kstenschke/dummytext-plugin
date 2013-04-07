@@ -22,6 +22,7 @@ When replacing a selection of text, the generated dummy text is of approximately
 When the replaced text selection consists fully of lower-cased or capital letters or begins with a captial letter,
 that previous casing is maintained. Furthermore, the presence or absence of a trailing punctuation mark of a
 replaced text selection is being maintained.
+When replacing a selection of text within a single line, the amount of words is roughly being maintained.
 
 
 

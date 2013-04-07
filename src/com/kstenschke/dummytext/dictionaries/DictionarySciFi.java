@@ -24,11 +24,11 @@ public class DictionarySciFi extends Dictionary {
 
 
 
-	public String getRandomLine(Integer amountSentences) {
+	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 		String sentence   = "";
 
 		for(Integer i =0; i< amountSentences; i++) {
-			sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure() );
+			sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure(amountWords) );
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
@@ -56,10 +56,16 @@ public class DictionarySciFi extends Dictionary {
 
 
 	/**
+	 * @param   amountWords
 	 * @return  Random sentence structure with numbers as word type placeholders
 	 */
-	private static String getSentenceStructure() {
-		String[] words = {
+	private static String getSentenceStructure(Integer amountWords) {
+		if( amountWords == 1 ) {
+			String[] structures  = {"1.", "2.", "8."};
+			return pickRandomString(structures);
+		}
+
+		String[] structures = {
 			"1 of a 5 2, 3 the 2!", "1s are the 1s of the 5 2.",
 			"the 5 1 6 3s the 1.",
 			"5, 5 1s 6 3 a 5, 5 1.",
@@ -76,7 +82,7 @@ public class DictionarySciFi extends Dictionary {
 			"when the 1 4s for 8, all 1s 3 5, 5 1s."
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(structures, amountWords);
 	}
 
 	/**
@@ -92,7 +98,7 @@ public class DictionarySciFi extends Dictionary {
 			"vogon"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 
@@ -110,7 +116,7 @@ public class DictionarySciFi extends Dictionary {
 			"voyage", "wind", "x-ray vision"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -124,7 +130,7 @@ public class DictionarySciFi extends Dictionary {
 			"open", "place", "promise", "pull", "question", "raise", "teleport", "translate", "view", "yearn"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -137,7 +143,7 @@ public class DictionarySciFi extends Dictionary {
 			"wobble", "yell"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -152,7 +158,7 @@ public class DictionarySciFi extends Dictionary {
 			"virtual", "vital"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -165,7 +171,7 @@ public class DictionarySciFi extends Dictionary {
 			"unearthly", "virtually", "wildly", "wisely"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -176,7 +182,7 @@ public class DictionarySciFi extends Dictionary {
 			"4, scotty", "engage", "6, indeed", "make it so", "red alert", "shields up", "all hands 4"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -190,7 +196,7 @@ public class DictionarySciFi extends Dictionary {
 			"universe", "wormhole"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 }

@@ -79,6 +79,16 @@ public class TextualHelper {
 	}
 
 	/**
+	 * @param   str   String to be analyzed
+	 * @return  Amount of (space-separated) words in given string
+	 */
+	public static Integer countWords(String str) {
+		str = str.trim();
+
+		return str.isEmpty() ? null : str.split("\\s+").length;
+	}
+
+	/**
 	 * @param   str                  String to be parsed
 	 * @param   trailingPunctuation  Trailing punctuation to be cast to the string's end
 	 * @return  String with original trailing punctuation replace by- or extended with- given punctuation.

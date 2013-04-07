@@ -24,11 +24,11 @@ public class DictionaryHospital extends Dictionary {
 
 
 
-	public String getRandomLine(Integer amountSentences) {
+	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 		String sentence   = "";
 
 		for(Integer i =0; i< amountSentences; i++) {
-			sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure() );
+			sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure(amountWords) );
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
@@ -57,10 +57,16 @@ public class DictionaryHospital extends Dictionary {
 
 
 	/**
+	 * @param   amountWords
 	 * @return  Random sentence structure with numbers as word type placeholders
 	 */
-	private static String getSentenceStructure() {
-		String[] words = {
+	private static String getSentenceStructure(Integer amountWords) {
+		if( amountWords == 1 ) {
+			String[] structures  = {"1.", "2.", "8."};
+			return pickRandomString(structures);
+		}
+
+		String[] structures = {
 			"1s of a 5 2, 3 the 2!", "1s are the 1s of the 5 2.",
 			"the 5 1 6 3s the 1.",
 			"5, 5 1s 6 3 a 5, 5 1.",
@@ -77,7 +83,7 @@ public class DictionaryHospital extends Dictionary {
 			"when the 1 4s for 8, all 1s 3 5, 5 1s."
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(structures, amountWords);
 	}
 
 	/**
@@ -90,7 +96,7 @@ public class DictionaryHospital extends Dictionary {
 			"physician", "professor", "son", "surgeon", "therapist"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 
@@ -108,7 +114,7 @@ public class DictionaryHospital extends Dictionary {
 			"prodrome", "q fever", "sensor", "treatment", "wound", "x-ray"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -122,7 +128,7 @@ public class DictionaryHospital extends Dictionary {
 			"treat", "view"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -134,7 +140,7 @@ public class DictionaryHospital extends Dictionary {
 			"go", "infect", "inquire", "itch", "observe", "spread", "stand", "steal", "take", "trip", "wait"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -147,7 +153,7 @@ public class DictionaryHospital extends Dictionary {
 			"skilled", "disastrous", "paranoid", "romantic", "traumatic"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -160,7 +166,7 @@ public class DictionaryHospital extends Dictionary {
 			"routinely", "rudely", "shyly", "surprisingly", "wisely"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -172,7 +178,7 @@ public class DictionaryHospital extends Dictionary {
 			"1, inform the 1 that 2 is 5", "when 1s 4 from the 8, 4, 4 and 4"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -184,7 +190,7 @@ public class DictionaryHospital extends Dictionary {
 			"hospital", "intensive care", "nursery", "pharmacy", "ward"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 }

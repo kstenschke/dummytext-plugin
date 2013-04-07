@@ -24,11 +24,11 @@ public class DictionaryPirates extends Dictionary {
 
 
 
-	public String getRandomLine(Integer amountSentences) {
+	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 		String sentence   = "";
 
 		for(Integer i =0; i< amountSentences; i++) {
-			sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure() );
+			sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure(amountWords) );
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
@@ -55,10 +55,16 @@ public class DictionaryPirates extends Dictionary {
 
 
 	/**
+	 * @param   amountWords
 	 * @return  Random sentence structure with numbers as word type placeholders
 	 */
-	private static String getSentenceStructure() {
-		String[] words = {
+	private static String getSentenceStructure(Integer amountWords) {
+		if( amountWords == 1 ) {
+			String[] structures  = {"1.", "2.", "8."};
+			return pickRandomString(structures);
+		}
+
+		String[] structures  = {
 			"damn yer 1, feed the 1.",
 			"1 of a 5 2, 3 the 2!",  "1s are the 1s of the 5 2.",
 			"the 5 1 6 3s the 1.",
@@ -76,7 +82,7 @@ public class DictionaryPirates extends Dictionary {
 			"when the 1 4s for 8, all 1s 3 5, 5 1s."
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(structures, amountWords);
 	}
 
 	/**
@@ -92,7 +98,7 @@ public class DictionaryPirates extends Dictionary {
 			"skull", "son", "sun", "tuna", "urchin", "wave", "wench", "whale", "wind", "yardarm"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -105,7 +111,7 @@ public class DictionaryPirates extends Dictionary {
 			"power", "punishment", "strength", "treasure", "yellow fever"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -117,7 +123,7 @@ public class DictionaryPirates extends Dictionary {
 			"pull", "raid", "ransack", "rob", "scrape", "trade", "vandalize", "view"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -128,7 +134,7 @@ public class DictionaryPirates extends Dictionary {
 			"die", "drink", "endure", "fall", "grow", "laugh", "rise", "sail", "sing", "travel", "wave"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -141,7 +147,7 @@ public class DictionaryPirates extends Dictionary {
 			"stormy", "sunny", "warm", "wet"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -153,7 +159,7 @@ public class DictionaryPirates extends Dictionary {
 			"impatiently", "loudly", "oppressively", "quietly", "quirky", "roughly", "swiftly", "unlawfully"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -165,7 +171,7 @@ public class DictionaryPirates extends Dictionary {
 			"o", "oh", "ooh", "yo-ho-ho", "wow", "yarr"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -178,7 +184,7 @@ public class DictionaryPirates extends Dictionary {
 			"the island", "tortuga"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 }

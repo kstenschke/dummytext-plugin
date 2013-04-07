@@ -18,14 +18,14 @@ package com.kstenschke.dummytext.dictionaries;
 
 public class Dictionary {
 
-	public String getRandomLine(Integer amountSentences) {
+	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 		return "";
 	}
 
-	public String getRandomLine() {
+	public String getRandomLine(Integer amountWords) {
 		Integer amountSentences  = getRandomNumber(4) > 3 ? 2 : 1;
 
-		return getRandomLine(amountSentences);
+		return getRandomLine(amountWords, amountSentences);
 	}
 
 
@@ -61,8 +61,12 @@ public class Dictionary {
 	 * @param   words    Array of strings
 	 * @return  One random item out of the given array
 	 */
-	protected static String pickRandomWord(String[] words)  {
+	protected static String pickRandomString(String[] words, Integer amountWords)  {
 		return words[ getRandomNumber( words.length -1 ) ];
+	}
+
+	protected static String pickRandomString(String[] words) {
+		return pickRandomString(words, null);
 	}
 
 

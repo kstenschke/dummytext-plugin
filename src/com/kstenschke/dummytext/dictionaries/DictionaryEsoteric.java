@@ -24,9 +24,9 @@ public class DictionaryEsoteric extends Dictionary {
 
 
 
-	public String getRandomLine(Integer amountSentences) {
+	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 			// Esoteric wisdom creates mostly long sentences, so only one per line.
-		String sentence   = getSentenceStructure();
+		String sentence   = getSentenceStructure(amountWords);
 
 		while( sentence.matches(".*[0-9].*") ) {
 			while(sentence.contains("1")) sentence = sentence.replaceFirst("1", getNounConcrete() );
@@ -61,10 +61,16 @@ public class DictionaryEsoteric extends Dictionary {
 
 
 	/**
+	 * @param   amountWords
 	 * @return  Random sentence structure with numbers as word type placeholders
 	 */
-	private static String getSentenceStructure() {
-		String[] words = {
+	private static String getSentenceStructure(Integer amountWords) {
+		if( amountWords == 1 ) {
+			String[] structures  = {"1.", "2.", "8."};
+			return pickRandomString(structures);
+		}
+
+		String[] structures = {
 			"the 1 3s.",
 			"the 2 is a 5 1.",
 			"all 5 1s 3 each other, only 5 1s have a 2.",
@@ -75,7 +81,7 @@ public class DictionaryEsoteric extends Dictionary {
 			"7.", "confucius says: 7.",
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(structures, amountWords);
 	}
 
 	/**
@@ -88,7 +94,7 @@ public class DictionaryEsoteric extends Dictionary {
 			"source", "sun", "teacher", "therapist", "thing", "visitor", "yogi"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 
@@ -106,7 +112,7 @@ public class DictionaryEsoteric extends Dictionary {
 			"tantra", "totality", "trust", "uniqueness", "vision", "volume", "zen"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -119,7 +125,7 @@ public class DictionaryEsoteric extends Dictionary {
 			"praise", "raise", "receive", "synthesise", "understand", "view", "yearn"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -131,7 +137,7 @@ public class DictionaryEsoteric extends Dictionary {
 			"occur", "remain", "remember", "rise", "sit", "travel"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -145,7 +151,7 @@ public class DictionaryEsoteric extends Dictionary {
 			"ultimate", "united", "unveiled", "wonderful"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -157,7 +163,7 @@ public class DictionaryEsoteric extends Dictionary {
 			"qabalistic", "silently", "solitary", "theosophical", "truly", "wisely", "wonderfully"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -176,7 +182,7 @@ public class DictionaryEsoteric extends Dictionary {
 			"in the 8 4s 6 2"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -189,7 +195,7 @@ public class DictionaryEsoteric extends Dictionary {
 			"5 world", "5 mind"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 }

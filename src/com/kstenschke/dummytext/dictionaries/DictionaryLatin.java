@@ -24,11 +24,11 @@ public class DictionaryLatin extends Dictionary {
 
 
 
-	public String getRandomLine(Integer amountSentences) {
+	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 		String sentence   = "";
 
 		for(Integer i =0; i< amountSentences; i++) {
-			sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure() );
+			sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure(amountWords) );
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
@@ -48,10 +48,16 @@ public class DictionaryLatin extends Dictionary {
 
 
 	/**
+	 * @param   amountWords
 	 * @return  Random sentence structure with numbers as word type placeholders
 	 */
-	private static String getSentenceStructure() {
-		String[] words = {
+	private static String getSentenceStructure(Integer amountWords) {
+		if( amountWords == 1 ) {
+			String[] structures  = {"1.", "2.", "8."};
+			return pickRandomString(structures);
+		}
+
+		String[] structures = {
 			"1 de 5 2, 3 2!", "1s sunt 1s de 5 2.",
 			"5 1 6 3s 1 est.",
 			"5, 5 1s 6 3 de 5, 5 1.",
@@ -69,7 +75,7 @@ public class DictionaryLatin extends Dictionary {
 			"cum 1 4, omnes 1es 3 5, 5 1es."
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(structures, amountWords);
 	}
 
 	/**
@@ -83,7 +89,7 @@ public class DictionaryLatin extends Dictionary {
 			"tata", "xiphias", "lixa", "lamia", "hippotoxota"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 
@@ -102,7 +108,7 @@ public class DictionaryLatin extends Dictionary {
 			"triticum", "turpis", "valebat", "ventus", "visus", "vita"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -117,7 +123,7 @@ public class DictionaryLatin extends Dictionary {
 			"tractare", "transferre", "visum", "vitare"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -131,7 +137,7 @@ public class DictionaryLatin extends Dictionary {
 			"studere", "tolerare", "trabem", "unda", "velum", "volare"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -146,7 +152,7 @@ public class DictionaryLatin extends Dictionary {
 			"raptus", "regius", "rusticus", "salvus", "secundus", "superbus", "talis", "teres", "varius", "velox"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -160,7 +166,7 @@ public class DictionaryLatin extends Dictionary {
 			"unus", "velox", "virtualiter", "vix"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -171,7 +177,7 @@ public class DictionaryLatin extends Dictionary {
 			"ecce", "eheu", "hercle, 2 5!", "heu", "pol", "vae", "pol, a bene 1"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 	/**
@@ -187,7 +193,7 @@ public class DictionaryLatin extends Dictionary {
 			"sala", "tectum", "tolosa", "tornacum", "tubinga", "tubinga", "vasa", "vierium", "virundum"
 		};
 
-		return pickRandomWord(words);
+		return pickRandomString(words);
 	}
 
 }
