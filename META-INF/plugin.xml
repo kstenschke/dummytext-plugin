@@ -20,6 +20,7 @@
     <description><![CDATA[
     The plugin adds a dummy text generator button to the main toolbar.<br/>
     Randomly generated dummy text can than be inserted with a click, or replace a selection of text.<br/>
+    <br/>
     The plugin configuration allows to choose from several genres:<br />
     <ul>
         <li>Fake Latin  (similar to "Lorem Ipsum" blindtext)</li>
