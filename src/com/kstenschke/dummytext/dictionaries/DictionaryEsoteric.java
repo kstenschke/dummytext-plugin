@@ -105,11 +105,12 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getNounAbstract() {
 		String[] words = {
 			"advice", "afterlife", "anger", "attitude", "attraction", "awareness", "beauty", "blessing", "bliss",
-			"career", "core", "courage", "definition", "emptiness", "enlightenment", "enlightenment", "everything",
-			"extend", "faith", "fear", "freedom", "grace", "happiness", "heaven", "heaven", "history", "hypnosis",
-			"issue", "life", "living", "meditation", "milk", "mind", "mineral", "money", "moon", "pain", "peace",
-			"purpose", "samadhi", "satori", "sex", "silence", "solitude", "suffering", "surrender",
-			"tantra", "totality", "trust", "uniqueness", "vision", "volume", "zen"
+			"career", "chaos", "control", "core", "courage", "definition", "density", "dimension", "emptiness",
+			"energy", "enlightenment", "enlightenment", "everything", "extend", "faith", "fear", "freedom",
+			"grace", "happiness", "heaven", "heaven", "history", "hypnosis", "issue", "life", "living",
+			"meditation", "milk", "mind", "mineral", "money", "moon", "pain", "peace", "purpose", "relativity",
+			"samadhi", "satori", "sex", "silence", "solitude", "suffering", "surrender", "tantra", "totality",
+			"trust", "uniqueness", "vision", "volume", "zen"
 		};
 
 		return pickRandomString(words);

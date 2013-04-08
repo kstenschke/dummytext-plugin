@@ -16,6 +16,8 @@
 
 package com.kstenschke.dummytext.dictionaries;
 
+import com.kstenschke.dummytext.TextualHelper;
+
 public class Dictionary {
 
 	public String getRandomLine(Integer amountWords, Integer amountSentences) {
@@ -59,9 +61,14 @@ public class Dictionary {
 
 	/**
 	 * @param   words    Array of strings
-	 * @return  One random item out of the given array
+	 * @return  One random item out of the given array, optionally one that contains the given amount of words
 	 */
 	protected static String pickRandomString(String[] words, Integer amountWords)  {
+		if( amountWords != null && amountWords > 0 ) {
+				// Reduce sentences to items with the closest to the given amount of words
+			words = TextualHelper.filterByWordCount(words, amountWords, 5);
+		}
+
 		return words[ getRandomNumber( words.length -1 ) ];
 	}
 

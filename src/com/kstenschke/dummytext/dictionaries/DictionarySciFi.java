@@ -138,9 +138,9 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"accelerate", "assimilate", "beam", "die", "eat", "experiment", "feed", "fly", "gather", "go",
-			"harvest", "infiltrate", "observe", "reproduce", "resist", "travel", "tremble", "unite", "warp",
-			"wobble", "yell"
+			"accelerate", "assimilate", "beam", "die", "dissolve", "eat", "experiment", "feed", "fly", "gather",
+			"go", "harvest", "infiltrate", "observe", "reproduce", "resist", "transform", "travel", "tremble",
+			"unite", "warp", "wobble", "yell"
 		};
 
 		return pickRandomString(words);

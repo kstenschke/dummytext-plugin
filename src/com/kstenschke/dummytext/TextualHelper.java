@@ -16,6 +16,9 @@
 
 package com.kstenschke.dummytext;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class TextualHelper {
 
 	/**
@@ -82,7 +85,7 @@ public class TextualHelper {
 	 * @param   str   String to be analyzed
 	 * @return  Amount of (space-separated) words in given string
 	 */
-	public static Integer countWords(String str) {
+	public static Integer getWordCount(String str) {
 		str = str.trim();
 
 		return str.isEmpty() ? null : str.split("\\s+").length;
@@ -111,6 +114,47 @@ public class TextualHelper {
 		}
 
 		return str;
+	}
+
+	/**
+	 * Reduce given array of sentences (words separated by space) to items with the closest to the given amount of words.
+	 * No filtering is done if the closest amount difference is greater than the given tolerance.
+	 *
+	 * @param   sentences
+	 * @param   amountWords
+	 * @return  Filtered items
+	 */
+	public static String[] filterByWordCount(String[] sentences, Integer amountWords, Integer tolerance) {
+		Integer curDiff;
+		Integer leastDiff    = tolerance + 1;
+		String ignorePattern = ".*[7|8].*";   // ignore interjection and place sentences
+
+			// Find items with closest amount of words
+		for( String sentence : sentences ) {
+			if( !sentence.matches(ignorePattern) ) {
+				curDiff     = Math.abs(amountWords - getWordCount(sentence));
+				if( curDiff < leastDiff ) {
+					leastDiff   = curDiff;
+				}
+			}
+		}
+
+			// Filter to items with closest word count, if within tolerance
+		if( leastDiff <= tolerance ) {
+			List<String> filtered  = new LinkedList<String>();
+			for( String sentence : sentences ) {
+				if( !sentence.matches(ignorePattern) ) {
+					curDiff  = Math.abs(amountWords - getWordCount(sentence));
+					if( curDiff.equals(leastDiff) ) {
+						filtered.add(sentence);
+					}
+				}
+			}
+
+			return filtered.toArray( new String[filtered.size()] );
+		}
+
+		return sentences;
 	}
 
 }

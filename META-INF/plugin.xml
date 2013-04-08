@@ -18,21 +18,21 @@
 
   <name>Dummy Text Generator</name>
     <description><![CDATA[
-    The plugin adds a dummy text generator button to the main toolbar<br/>
+    The plugin adds a dummy text generator button to the main toolbar.<br/>
     Randomly generated dummy text can than be inserted with a click, or replace a selection of text.<br/>
     The plugin configuration allows to choose from several genres:<br />
     <ul>
-        <li>Fake Latin</li>
+        <li>Fake Latin  (similar to "Lorem Ipsum" blindtext)</li>
         <li>Medical Drama</li>
         <li>Pirate Lingo</li>
         <li>Science Fiction</li>
         <li>Esoteric Wisdom</li>
     </ul><br/>
-    When replacing a selection of text, the generated dummy text is of approximately the same length.<br/>
+    When replacing a multi-lined selection of text, the generated dummy text has roughly the same amount of lines.
+    When replacing a selection of text within a single line, the amount of words is roughly being maintained.<br/>
     When the replaced text selection consists fully of lower-cased or capital letters or begins with a
     captial letter, that previous casing is maintained. Furthermore, the presence or absence of a trailing
     punctuation mark of a replaced text selection is being maintained.<br/>
-    When replacing a selection of text within a single line, the amount of words is roughly being maintained.<br/>
     <br/>Please note: This plugin is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     <br/>
     <br/>The icons used in this plugin are based on the Fugue iconset (http://p.yusukekamiyamane.com/)
@@ -43,7 +43,7 @@
 
   <change-notes><![CDATA[
     1.0.1<ul>
-        <li>Added maintaining of word amount in single lined selections</li>
+        <li>Added maintaining of approximate word amount in single lined selections</li>
         <li>Added maintaining of casing</li>
         <li>Added maintaining of present/absent trailing punctuation mark</li>
     </ul>

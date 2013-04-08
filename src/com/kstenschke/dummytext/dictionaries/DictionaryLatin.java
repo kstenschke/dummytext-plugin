@@ -83,10 +83,11 @@ public class DictionaryLatin extends Dictionary {
 	 */
 	private static String getNounConcrete() {
 		String[] words = {
-			"accola", "advena", "agripeta", "abnoba", "apolloniates", "aonides", "axona", "brabeuta", "barcas",
-			"boreas", "cacula", "clinias", "cotta", "danista", "eleates", "fraticinida", "galatae",
-			"heuretes", "hibrida", "hilotae", "ignigena", "luba", "lura", "lanista", "poeta",
-			"tata", "xiphias", "lixa", "lamia", "hippotoxota"
+			"abnoba", "accola", "advena", "agripeta", "animalis", "aonides", "apolloniates", "armarium", "ausus",
+			"axona", "barcas", "boreas", "brabeuta", "cacula", "calceus", "clinias", "cotta", "danista", "deus",
+			"domus", "eleates", "fraticinida", "galatae", "gallus", "heuretes", "hibrida", "hilotae", "hippotoxota",
+			"homo", "ignigena", "lamia", "lanista", "lixa", "luba", "lura", "mensa", "mons", "olla", "pes", "poeta",
+			"tata", "xiphias"
 		};
 
 		return pickRandomString(words);
@@ -99,13 +100,12 @@ public class DictionaryLatin extends Dictionary {
 	 */
 	private static String getNounAbstract() {
 		String[] words = {
-			"amicitia", "amor", "assimilatio", "consilium",
-			"coordinatae", "cursus", "exemplar", "fides", "fluctui", "fortis", "fuga", "historia",
-			"humani generis", "imber", "ionicis tormento", "itineris tramitem", "lactea",
-			"luna", "mens", "mineralis", "mortem", "navis", "nuclear vexatum iacere",
-			"particula", "planeta", "pulchritudine", "ratione", "resistentia", "rumor",
-			"scutum", "sectam", "sensorem", "solem", "spatii", "species", "stella", "terror",
-			"triticum", "turpis", "valebat", "ventus", "visus", "vita"
+			"amicitia", "amor", "assimilatio", "competition", "consilium", "contencio", "coordinatae", "cursus",
+			"demolitione", "exemplar", "fides", "fluctui", "fortis", "fuga", "historia", "humani generis", "imber",
+			"ionicis tormento", "itineris tramitem", "lactea", "luna", "mens", "mineralis", "mortem", "navis",
+			"nuclear vexatum iacere", "particula", "planeta", "pulchritudine", "ratione", "resistentia", "rumor",
+			"scutum", "sectam", "sensorem", "solem", "spatii", "species", "stella", "terror", "triticum",
+			"tumultumque", "turpis", "valebat", "ventus", "visus", "vita"
 		};
 
 		return pickRandomString(words);

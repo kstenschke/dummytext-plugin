@@ -91,9 +91,10 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getNounConcrete() {
 		String[] words = {
-			"daughter", "dietican", "doctor", "doctor\'s assistant", "dr", "dr", "family", "father",
+			"abdomen", "anus", "band-aid", "body", "daughter", "defibrillator", "dietican", "doctor",
+			"doctor\'s assistant", "dr", "dr", "family", "father", "heart", "implant", "kidney", "lungs",
 			"medical lab technologist", "medical student", "neighbour", "nurse", "patient", "pharmacist",
-			"physician", "professor", "son", "surgeon", "therapist"
+			"physician", "professor", "scalpel", "silicone", "son", "surgeon", "therapist"
 		};
 
 		return pickRandomString(words);
@@ -106,12 +107,12 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getNounAbstract() {
 		String[] words = {
-			"advice", "aggressive euthanasia", "akathisia", "anaphylactic shock", "anemia", "attitude", "beauty",
-			"blood plasma", "blood", "botanophobia", "bronchitis", "cancer", "cat scratch disease", "code zero",
-			"collywobble", "coryza", "courage", "death", "desease", "desinfection", "diabetes", "diagnosis",
-			"disorder", "ebola", "faith", "fatigue", "fever", "heart attack", "illness", "infection",
-			"life", "love", "malaise", "operation", "parrot fever", "pharmaceutical", "plague", "pneumonia",
-			"prodrome", "q fever", "sensor", "treatment", "wound", "x-ray"
+			"advice", "aggressive euthanasia", "akathisia", "anaphylactic shock", "anemia", "attitude",
+			"attraction", "beauty", "blood plasma", "blood", "botanophobia", "bronchitis", "cancer",
+			"cat scratch disease", "code zero", "collywobble", "coryza", "courage", "death", "desease",
+			"desinfection", "diabetes", "diagnosis", "disorder", "ebola", "faith", "fatigue", "fever",
+			"heart attack", "illness", "infection", "life", "love", "malaise", "operation", "parrot fever",
+			"plague", "pneumonia", "prodrome", "q fever", "sensor", "treatment", "wound", "x-ray"
 		};
 
 		return pickRandomString(words);
@@ -136,8 +137,9 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"assimilate", "bathe", "breathe", "collapse", "cost", "depend", "die", "die", "experiment", "fall",
-			"go", "infect", "inquire", "itch", "observe", "spread", "stand", "steal", "take", "trip", "wait"
+			"assimilate", "bathe", "breathe", "collapse", "cost", "depend", "die", "die", "experiment", "fail",
+			"fall", "go", "infect", "inquire", "itch", "kill", "observe", "spread", "stand", "steal", "take",
+			"talk", "trip", "wait"
 		};
 
 		return pickRandomString(words);
@@ -148,9 +150,11 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"seductive", "medical", "brave", "frightened", "chemical", "clear", "dead", "loving", "caring",
-			"distant", "final", "human", "neutral", "infected", "strange", "ugly", "vital", "beautiful",
-			"skilled", "disastrous", "paranoid", "romantic", "traumatic"
+			"abdominal", "amorous", "anemic", "bacterial", "beautiful", "brave", "caring", "chemical", "clear",
+			"dead", "disastrous", "distant", "ectopic", "erotic", "fat", "fatal", "final", "frightened", "gastric",
+			"genetic", "genital", "happy", "human", "iatrogenic", "ill", "infected", "loving", "medical", "neutral",
+			"paranoid", "romantic", "seductive", "sick", "skilled", "smitten", "strange", "traumatic", "ugly",
+			"vital"
 		};
 
 		return pickRandomString(words);
@@ -161,7 +165,7 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getAdverb() {
 		String[] words = {
-			"anemic", "badly", "bloody", "dizzy", "ethically", "finally", "gingerly", "girlyshly", "hysterically",
+			"badly", "bloody", "dizzy", "ethically", "finally", "gingerly", "girlyshly", "hysterically",
 			"impressively", "mechanically", "methodically", "nervously", "patiently", "physically", "quickly",
 			"routinely", "rudely", "shyly", "surprisingly", "wisely"
 		};

@@ -96,7 +96,7 @@ class ActionPerformer {
 					amountLines = selectedText.split("\\n").length;
 
 					if( amountLines == 1) {
-						amountWords = TextualHelper.countWords(selectedText);
+						amountWords = TextualHelper.getWordCount(selectedText);
 					}
 				}
 			}

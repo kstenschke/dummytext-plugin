@@ -107,8 +107,8 @@ public class DictionaryPirates extends Dictionary {
 	private static String getNounAbstract() {
 		String[] words = {
 			"adventure", "amnesty", "beauty", "booty", "courage", "death", "deck", "desolation", "endurance",
-			"faith", "fortune", "grace", "horror", "hunger", "life", "love", "malaria", "passion", "plank",
-			"power", "punishment", "strength", "treasure", "yellow fever"
+			"faith", "fortune", "grace", "greed", "horror", "hunger", "life", "love", "madness", "malaria",
+			"passion", "pestilence", "plank", "power", "punishment", "strength", "treasure", "yellow fever"
 		};
 
 		return pickRandomString(words);
@@ -131,7 +131,8 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"die", "drink", "endure", "fall", "grow", "laugh", "rise", "sail", "sing", "travel", "wave"
+			"die", "drink", "endure", "fall", "grow", "hobble", "laugh", "rise", "sail", "scream", "sing",
+			"stutter", "travel", "wave", "whine"
 		};
 
 		return pickRandomString(words);
