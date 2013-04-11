@@ -18,12 +18,18 @@ package com.kstenschke.dummytext.dictionaries;
 
 public class DictionaryLatin extends Dictionary {
 
+	/**
+	 * Constructor
+	 */
 	public DictionaryLatin() {
 
 	}
 
-
-
+	/**
+	 * @param   amountWords
+	 * @param   amountSentences
+	 * @return  One line of random text, consisting from the given amount of words and sentences
+	 */
 	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 		String sentence   = "";
 
@@ -44,8 +50,6 @@ public class DictionaryLatin extends Dictionary {
 
 		return ucfirst(sentence);
 	}
-
-
 
 	/**
 	 * @param   amountWords
@@ -92,8 +96,6 @@ public class DictionaryLatin extends Dictionary {
 
 		return pickRandomString(words);
 	}
-
-
 
 	/**
 	 * @return  Word of group 2:  abstract noun

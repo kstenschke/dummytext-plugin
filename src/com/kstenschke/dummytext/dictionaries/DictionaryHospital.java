@@ -18,12 +18,18 @@ package com.kstenschke.dummytext.dictionaries;
 
 public class DictionaryHospital extends Dictionary {
 
+	/**
+	 * Constructor
+	 */
 	public DictionaryHospital() {
 
 	}
 
-
-
+	/**
+	 * @param   amountWords
+	 * @param   amountSentences
+	 * @return  One line of random text, consisting from the given amount of words and sentences
+	 */
 	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 		String sentence   = "";
 
@@ -50,11 +56,10 @@ public class DictionaryHospital extends Dictionary {
 		sentence = sentence.replaceAll(" go at the ",   " go to the ");
 		sentence = sentence.replaceAll("bronchitiss",   "bronchitis");
 		sentence = sentence.replaceAll("illnesss",      "illnesses");
+		sentence = sentence.replaceAll("undergos",      "undergoes");
 
 		return ucfirst(sentence);
 	}
-
-
 
 	/**
 	 * @param   amountWords
@@ -94,13 +99,11 @@ public class DictionaryHospital extends Dictionary {
 			"abdomen", "anus", "band-aid", "body", "daughter", "defibrillator", "dietican", "doctor",
 			"doctor\'s assistant", "dr", "dr", "family", "father", "heart", "implant", "kidney", "lungs",
 			"medical lab technologist", "medical student", "neighbour", "nurse", "patient", "pharmacist",
-			"physician", "professor", "scalpel", "silicone", "son", "surgeon", "therapist"
+			"physician", "professor", "scalpel", "scientist", "sensor", "silicone", "son", "surgeon", "therapist"
 		};
 
 		return pickRandomString(words);
 	}
-
-
 
 	/**
 	 * @return  Word of group 2:  abstract noun
@@ -112,7 +115,7 @@ public class DictionaryHospital extends Dictionary {
 			"cat scratch disease", "code zero", "collywobble", "coryza", "courage", "death", "desease",
 			"desinfection", "diabetes", "diagnosis", "disorder", "ebola", "faith", "fatigue", "fever",
 			"heart attack", "illness", "infection", "life", "love", "malaise", "operation", "parrot fever",
-			"plague", "pneumonia", "prodrome", "q fever", "sensor", "treatment", "wound", "x-ray"
+			"plague", "pneumonia", "prodrome", "q fever", "reaction", "treatment", "wound", "x-ray"
 		};
 
 		return pickRandomString(words);
@@ -123,10 +126,12 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"admire", "attest", "avoid", "capture", "consume", "contact", "control", "convert", "cut",
-			"deserve", "desire", "discover", "educate", "examine", "experience", "foster", "handle", "hammer",
-			"influence", "inject", "love", "manifest", "open", "promise", "question", "receive", "transplant",
-			"treat", "view"
+			"admire", "assimilate", "attest", "avoid", "bathe", "breathe", "capture", "consume", "contact", "control",
+			"convert", "cost", "cut", "damage", "depend", "deserve", "desire", "discover", "educate", "examine",
+			"experience", "experiment", "fail", "foster", "grant", "hammer", "handle", "infect", "influence", "inject",
+			"inquire", "kill", "leave", "love", "manifest", "observe", "open", "promise", "question", "receive",
+			"spread", "spread", "steal", "swell", "take", "talk", "transplant", "treat", "trip", "undergo", "undress",
+			"view"
 		};
 
 		return pickRandomString(words);
@@ -137,9 +142,7 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"assimilate", "bathe", "breathe", "collapse", "cost", "depend", "die", "die", "experiment", "fail",
-			"fall", "go", "infect", "inquire", "itch", "kill", "observe", "spread", "stand", "steal", "take",
-			"talk", "trip", "wait"
+			"collapse", "die", "fall", "go", "itch", "shiver", "stand", "wait"
 		};
 
 		return pickRandomString(words);

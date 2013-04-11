@@ -18,12 +18,18 @@ package com.kstenschke.dummytext.dictionaries;
 
 public class DictionaryPirates extends Dictionary {
 
+	/**
+	 * Constructor
+	 */
 	public DictionaryPirates() {
 
 	}
 
-
-
+	/**
+	 * @param   amountWords
+	 * @param   amountSentences
+	 * @return  One line of random text, consisting from the given amount of words and sentences
+	 */
 	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 		String sentence   = "";
 
@@ -91,9 +97,9 @@ public class DictionaryPirates extends Dictionary {
 	private static String getNounConcrete() {
 		String[] words = {
 			"anchor", "bilge rat", "biscuit eater", "breeze", "bucaneer", "bung hole", "cannibal", "cannon",
-			"captain", "cloud", "corsair", "dagger", "dubloon", "fish", "freebooter", "furner", "girl", "grog",
-			"gull", "hornpipe", "jack", "jolly roger", "kraken", "lad", "lagoon", "lass", "lubber", "mainland",
-			"malaria", "mast", "moon", "pants", "parrot", "pegleg", "pin", "pirate", "plunder", "reef", "sail",
+			"captain", "cloud", "cockroach", "corsair", "dagger", "dubloon", "fish", "freebooter", "furner", "girl",
+			"grog", "gull", "hornpipe", "jack", "jolly roger", "kraken", "lad", "lagoon", "lass", "lubber", "mainland",
+			"malaria", "mast", "moon", "pants", "parrot", "pegleg", "pin", "pirate", "plank", "plunder", "reef", "sail",
 			"sailor", "scabbard", "scallywag", "sea", "seashell", "shark", "ship", "shipmate", "shore", "skiff",
 			"skull", "son", "sun", "tuna", "urchin", "wave", "wench", "whale", "wind", "yardarm"
 		};
@@ -106,9 +112,9 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getNounAbstract() {
 		String[] words = {
-			"adventure", "amnesty", "beauty", "booty", "courage", "death", "deck", "desolation", "endurance",
+			"adventure", "amnesty", "beauty", "booty", "courage", "death", "desolation", "endurance",
 			"faith", "fortune", "grace", "greed", "horror", "hunger", "life", "love", "madness", "malaria",
-			"passion", "pestilence", "plank", "power", "punishment", "strength", "treasure", "yellow fever"
+			"passion", "pestilence", "power", "punishment", "strength", "treasure", "yellow fever"
 		};
 
 		return pickRandomString(words);
@@ -119,8 +125,9 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"blow", "command", "crush", "desire", "fight", "fire", "haul", "lead", "loot", "love", "mark",
-			"pull", "raid", "ransack", "rob", "scrape", "trade", "vandalize", "view"
+			"blow", "break", "burn", "command", "crush", "desire", "drink", "endure", "fall", "fight", "fire", "haul",
+			"lead", "loot", "love", "mark", "pull", "raid", "ransack", "rob", "sail", "scrape", "trade", "vandalize",
+			"view"
 		};
 
 		return pickRandomString(words);
@@ -131,8 +138,7 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"die", "drink", "endure", "fall", "grow", "hobble", "laugh", "rise", "sail", "scream", "sing",
-			"stutter", "travel", "wave", "whine"
+			"die", "fall", "grow", "hobble", "laugh", "rise", "scream", "sing", "stutter", "travel", "wave", "whine"
 		};
 
 		return pickRandomString(words);

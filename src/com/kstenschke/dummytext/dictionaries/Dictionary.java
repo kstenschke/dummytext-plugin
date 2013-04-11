@@ -20,29 +20,41 @@ import com.kstenschke.dummytext.TextualHelper;
 
 public class Dictionary {
 
+	/**
+	 * @param   amountWords
+	 * @param   amountSentences
+	 * @return  Random line/s of text, consisting from the given amount of words if 1 sentence / sentences
+	 */
 	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 		return "";
 	}
 
+	/**
+	 * @param   amountWords
+	 * @return  One random line of text, consisting from roughly the given amount of words
+	 */
 	public String getRandomLine(Integer amountWords) {
 		Integer amountSentences  = getRandomNumber(4) > 3 ? 2 : 1;
 
 		return getRandomLine(amountWords, amountSentences);
 	}
 
-
-
-
+	/**
+	 * @param   sentence
+	 * @return  The sentence with the indefinite article "a" changed into "an", when preceding words starting with a vowel
+	 */
 	protected String fixIndefiniteArticles(String sentence) {
-		sentence = sentence.replaceAll("a a", "an a");
-		sentence = sentence.replaceAll("a e", "an e");
-		sentence = sentence.replaceAll("a i", "an i");
-		sentence = sentence.replaceAll("a o", "an o");
+		sentence = sentence.replaceAll(" a a", " an a");
+		sentence = sentence.replaceAll(" a e", " an e");
+		sentence = sentence.replaceAll(" a i", " an i");
+		sentence = sentence.replaceAll(" a o", " an o");
+
+		if( sentence.startsWith("a a") || sentence.startsWith("a e") || sentence.startsWith("a o") ) {
+			sentence = "An " + sentence.substring(3);
+		}
 
 		return sentence;
 	}
-
-
 
 	/**
 	 * @param   min   Minimum
@@ -53,11 +65,13 @@ public class Dictionary {
 		return min + (int)(Math.random() * ((max - min) + 1));
 	}
 
+	/**
+	 * @param   max
+	 * @return  Random number between 0 and max
+	 */
 	protected static Integer getRandomNumber(Integer max) {
 		return getRandomNumber(0, max);
 	}
-
-
 
 	/**
 	 * @param   words    Array of strings
@@ -72,10 +86,13 @@ public class Dictionary {
 		return words[ getRandomNumber( words.length -1 ) ];
 	}
 
+	/**
+	 * @param   words
+	 * @return  One random item of the given array of words
+	 */
 	protected static String pickRandomString(String[] words) {
 		return pickRandomString(words, null);
 	}
-
 
 	/**
 	 * @param   str

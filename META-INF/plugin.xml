@@ -40,9 +40,12 @@
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
 
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 
   <change-notes><![CDATA[
+    1.0.2<ul>
+        <li>Improved transformation of indefinite article ("a" to "an")</li>
+    </ul>
     1.0.1<ul>
         <li>Added maintaining of approximate word amount in single lined selections</li>
         <li>Added maintaining of casing</li>

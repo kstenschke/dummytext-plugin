@@ -18,12 +18,18 @@ package com.kstenschke.dummytext.dictionaries;
 
 public class DictionarySciFi extends Dictionary {
 
+	/**
+	 * Constructor
+	 */
 	public DictionarySciFi() {
 
 	}
 
-
-
+	/**
+	 * @param   amountWords
+	 * @param   amountSentences
+	 * @return  One line of random text, consisting from the given amount of words and sentences
+	 */
 	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 		String sentence   = "";
 
@@ -53,8 +59,6 @@ public class DictionarySciFi extends Dictionary {
 		return ucfirst(sentence);
 	}
 
-
-
 	/**
 	 * @param   amountWords
 	 * @return  Random sentence structure with numbers as word type placeholders
@@ -78,6 +82,7 @@ public class DictionarySciFi extends Dictionary {
 			"why does the 1 4?",
 			"4 6 like a 5 1.",
 			"2, 2, and 2.",
+			"the 1 is 6 5.",
 			"where is the 5 1?", "all 1s 3 5, 5 1s.", "never 3 a 1.",
 			"when the 1 4s for 8, all 1s 3 5, 5 1s."
 		};
@@ -90,18 +95,15 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getNounConcrete() {
 		String[] words = {
-			"admiral", "alien", "astronaut", "captain", "collective", "cosmonaut", "crew", "crewmate", "dosi",
-			"emitter", "ferengi", "girl", "green people", "hur\'q", "kahless", "klingon", "lieutenant commander",
-			"machine", "moon", "nanomachine", "parasite", "particle", "particle", "pathway", "planet", "processor",
-			"queen", "sensor", "ship", "ship", "sonic shower", "space suit", "space", "spacecraft", "species",
-			"species", "star", "star", "starship", "sun", "teleporter", "transformator", "transporter", "tribble",
-			"vogon"
+			"admiral", "alien", "astronaut", "captain", "collective", "cosmonaut", "creature", "crew", "crewmate", "dosi",
+			"emitter", "ferengi", "girl", "green people", "hur\'q", "kahless", "klingon", "lieutenant commander", "machine",
+			"mermaid", "moon", "nanomachine", "parasite", "particle", "particle", "pathway", "planet", "processor", "queen",
+			"sensor", "ship", "ship", "sonic shower", "space suit", "space", "spacecraft", "species", "species", "star",
+			"star", "starship", "sun", "teleporter", "transformator", "transporter", "tribble", "vogon"
 		};
 
 		return pickRandomString(words);
 	}
-
-
 
 	/**
 	 * @return  Word of group 2:  abstract noun
@@ -109,11 +111,11 @@ public class DictionarySciFi extends Dictionary {
 	private static String getNounAbstract() {
 		String[] words = {
 			"adventure", "advice", "alarm", "alignment", "assimilation", "attitude", "beauty", "collision course",
-			"coordinates", "core", "courage", "death", "definition", "faith", "flight", "friendship", "future",
-			"galaxy", "history", "honor", "hypnosis", "ionic cannon", "life", "love", "mankind", "metamorphosis",
-			"mind", "mineral", "moon", "nuclear flux", "paralysis", "pattern", "planet", "plasma", "pressure",
-			"resistance", "rumour", "sensor", "shields", "sonic shower", "space suit", "starlight travel",
-			"voyage", "wind", "x-ray vision"
+			"coordinates", "core", "courage", "death", "definition", "devastation", "faith", "flight", "friendship",
+			"future", "galaxy", "history", "honor", "hypnosis", "ionic cannon", "life", "love", "mankind", "metamorphosis",
+			"mind", "mineral", "moon", "mystery", "nuclear flux", "paralysis", "pattern", "phenomenon", "planet",
+			"plasma", "pressure", "procedure", "resistance", "rumour", "sensor", "shield", "sonic shower",
+			"space suit", "starlight travel", "stigma", "tragedy", "vision", "voyage", "wind", "x-ray vision"
 		};
 
 		return pickRandomString(words);
@@ -124,10 +126,12 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"acquire", "arrest", "attack", "avoid", "capture", "command", "consume", "contact", "control",
-			"convert", "deceive", "deserve", "desire", "destroy", "discover", "empower", "examine", "experience",
-			"fight", "grab", "handle", "imitate", "influence", "invade", "love", "lower", "manifest", "offer",
-			"open", "place", "promise", "pull", "question", "raise", "teleport", "translate", "view", "yearn"
+			"accelerate", "acquire", "arrest", "assimilate", "attack", "avoid", "beam", "capture", "command", "consume",
+			"contact", "control", "convert", "deceive", "deserve", "desire", "destroy", "discover", "dissolve", "eat",
+			"empower", "evacuate", "examine", "experience", "feed", "fight", "gather", "grab", "handle", "imitate",
+			"infiltrate", "influence", "invade", "love", "lower", "manifest", "observe", "offer", "open", "place",
+			"promise", "pull", "question", "raise", "teleport", "transfer", "transform", "translate", "travel", "unite",
+			"yearn"
 		};
 
 		return pickRandomString(words);
@@ -138,9 +142,8 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"accelerate", "assimilate", "beam", "die", "dissolve", "eat", "experiment", "feed", "fly", "gather",
-			"go", "harvest", "infiltrate", "observe", "reproduce", "resist", "transform", "travel", "tremble",
-			"unite", "warp", "wobble", "yell"
+			"die", "experiment", "fly", "go", "harvest", "reproduce", "resist", "tremble", "view", "warp", "wobble",
+			"yell"
 		};
 
 		return pickRandomString(words);
@@ -151,11 +154,12 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"ancient", "apocalyptic", "bare", "biological", "boldly", "brave", "calm", "carnivorous", "chemical",
-			"clear", "cloudy", "cold", "collective", "crazy", "dead", "delighted", "distant", "extraterrestrial",
-			"final", "futile", "galactic", "greatly exaggerated", "huge", "human", "most unusual", "neutral",
-			"photonic", "proud", "real", "seismic", "small", "solid", "spheroid", "strange", "ugly", "united",
-			"virtual", "vital"
+			"ancient", "apocalyptic", "bare", "biological", "boldly", "brave", "calm", "carnivorous", "chemical", "clear",
+			"cloudy", "cold", "collective", "colorful", "crazy", "dead", "delighted", "devastated", "distant",
+			"extraterrestrial", "fantastic", "final", "futile", "galactic", "greatly exaggerated", "harmless", "huge",
+			"human", "intelligent", "interstellar", "modern", "most unusual", "mysterious", "neutral", "ordinary", "photonic",
+			"post-apocalyptic", "proud", "quirky", "real", "seismic", "small", "solid", "spheroid", "strange", "sub-light",
+			"terrifying", "ugly", "united", "virtual", "vital"
 		};
 
 		return pickRandomString(words);
@@ -166,8 +170,8 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getAdverb() {
 		String[] words = {
-			"accelerative", "bravely", "cunningly", "finally", "impressively", "mechanically", "nosily", "oddly",
-			"patiently", "proudly", "quickly", "revolutionary", "rudely", "surprisingly", "technically",
+			"accelerative", "bravely", "cunningly", "finally", "impressively", "mechanically", "nosily", "oddly", "patiently",
+			"pedantically", "proudly", "quickly", "revolutionary", "rudely", "surprisingly", "technically", "tightly",
 			"unearthly", "virtually", "wildly", "wisely"
 		};
 
@@ -190,10 +194,10 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getPlace() {
 		String[] words ={
-			"alpha quadrant", "astral city", "atlantis tower", "bridge", "cabin", "captain\'s quarters", "colony",
-			"cosmos", "deep space", "earth", "galaxy", "holodeck", "homeworld", "hyperspace", "parallel universe",
-			"planet", "ready room", "saucer section", "solar sphere", "space station", "starfleet headquarters",
-			"universe", "wormhole"
+			"alpha quadrant", "astral city", "atlantis tower", "bridge", "cabin", "captain\'s quarters", "center", "colony",
+			"cosmos", "deep space", "earth", "galaxy", "holodeck", "homeworld", "hyperspace", "nowhere", "parallel universe",
+			"planet", "ready room", "saucer section", "solar sphere", "space station", "starfleet headquarters", "universe",
+			"wormhole"
 		};
 
 		return pickRandomString(words);
