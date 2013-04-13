@@ -45,7 +45,8 @@ public class DictionarySciFi extends Dictionary {
 			while(sentence.contains("5")) sentence = sentence.replaceFirst("5", getAdjective() );
 			while(sentence.contains("6")) sentence = sentence.replaceFirst("6", getAdverb() );
 			while(sentence.contains("7")) sentence = sentence.replaceFirst("7", getInterjection() );
-			while(sentence.contains("8")) sentence = sentence.replaceFirst("8", getPlace() );
+			while(sentence.contains("8")) sentence = sentence.replaceFirst("8", getPlaceAbstract() );
+			while(sentence.contains("9")) sentence = sentence.replaceFirst("9", getPlaceConcrete() );
 		}
 
 		sentence = fixIndefiniteArticles(sentence);
@@ -76,7 +77,7 @@ public class DictionarySciFi extends Dictionary {
 			"5 2s lead to the 2.",
 			"the 2 is a 5 1.",
 			"7.", "7, 2!", "7, 5 2!",
-			"1s 4 with 2!", "1s 4 on 2 at the 8!", "1s 4 with 2 at the 5 8!",
+			"1s 4 with 2!", "1s 4 on 2 at 8!", "1s 4 with 2 at the 5 9!",
 			"it is a 5 2, sir.",
 			"the 1 4s 2 like a 5 1.", "1s 4 from 2s like 5 1s.",
 			"why does the 1 4?",
@@ -84,7 +85,8 @@ public class DictionarySciFi extends Dictionary {
 			"2, 2, and 2.",
 			"the 1 is 6 5.",
 			"where is the 5 1?", "all 1s 3 5, 5 1s.", "never 3 a 1.",
-			"when the 1 4s for 8, all 1s 3 5, 5 1s."
+			"when the 1 4s for 8, all 1s 3 5, 5 1s.",
+			"2 at the 9 that is when 5 1s 4."
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -142,8 +144,8 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"die", "experiment", "fly", "go", "harvest", "reproduce", "resist", "tremble", "view", "warp", "wobble",
-			"yell"
+			"die", "experiment", "fly", "go", "harvest", "meet", "reproduce", "resist", "tremble", "view", "warp",
+			"wobble", "yell"
 		};
 
 		return pickRandomString(words);
@@ -157,9 +159,9 @@ public class DictionarySciFi extends Dictionary {
 			"ancient", "apocalyptic", "bare", "biological", "boldly", "brave", "calm", "carnivorous", "chemical", "clear",
 			"cloudy", "cold", "collective", "colorful", "crazy", "dead", "delighted", "devastated", "distant",
 			"extraterrestrial", "fantastic", "final", "futile", "galactic", "greatly exaggerated", "harmless", "huge",
-			"human", "intelligent", "interstellar", "modern", "most unusual", "mysterious", "neutral", "ordinary", "photonic",
-			"post-apocalyptic", "proud", "quirky", "real", "seismic", "small", "solid", "spheroid", "strange", "sub-light",
-			"terrifying", "ugly", "united", "virtual", "vital"
+			"human", "intelligent", "interstellar", "modern", "most unusual", "mysterious", "neutral", "ordinary",
+			"photonic", "post-apocalyptic", "proud", "quirky", "real", "seismic", "small", "solid", "spheroid",
+			"strange", "sub-light", "terrifying", "ugly", "united", "virtual", "vital"
 		};
 
 		return pickRandomString(words);
@@ -190,13 +192,24 @@ public class DictionarySciFi extends Dictionary {
 	}
 
 	/**
-	 * @return  Word of group 8:  place
+	 * @return  Word of group 8: abstract place (usable w/o article: "going to 8")
 	 */
-	private static String getPlace() {
+	private static String getPlaceAbstract() {
 		String[] words ={
-			"alpha quadrant", "astral city", "atlantis tower", "bridge", "cabin", "captain\'s quarters", "center", "colony",
-			"cosmos", "deep space", "earth", "galaxy", "holodeck", "homeworld", "hyperspace", "nowhere", "parallel universe",
-			"planet", "ready room", "saucer section", "solar sphere", "space station", "starfleet headquarters", "universe",
+			"astral city", "atlantis tower", "captain\'s quarters", "deep space", "earth", "hyperspace", "nowhere",
+			"starfleet headquarters"
+		};
+
+		return pickRandomString(words);
+	}
+
+	/**
+	 * @return  Word of group 9: concrete place (usable with article: "entering the 9")
+	 */
+	private static String getPlaceConcrete() {
+		String[] words ={
+			"alpha quadrant", "bridge", "cabin", "center", "colony", "cosmos", "galaxy", "holodeck", "homeworld",
+			"parallel universe", "planet", "ready room", "saucer section", "solar sphere", "space station", "universe",
 			"wormhole"
 		};
 

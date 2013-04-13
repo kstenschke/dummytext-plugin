@@ -44,10 +44,11 @@ public class Dictionary {
 	 * @return  The sentence with the indefinite article "a" changed into "an", when preceding words starting with a vowel
 	 */
 	protected String fixIndefiniteArticles(String sentence) {
-		sentence = sentence.replaceAll(" a a", " an a");
-		sentence = sentence.replaceAll(" a e", " an e");
-		sentence = sentence.replaceAll(" a i", " an i");
-		sentence = sentence.replaceAll(" a o", " an o");
+		sentence = sentence.replaceAll(" a a",    " an a");
+		sentence = sentence.replaceAll(" a e",    " an e");
+		sentence = sentence.replaceAll(" a i",    " an i");
+		sentence = sentence.replaceAll(" a o",    " an o");
+		sentence = sentence.replaceAll(" a ul",   " an ul");
 
 		if( sentence.startsWith("a a") || sentence.startsWith("a e") || sentence.startsWith("a o") ) {
 			sentence = "An " + sentence.substring(3);

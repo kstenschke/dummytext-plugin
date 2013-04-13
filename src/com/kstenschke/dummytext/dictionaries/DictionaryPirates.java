@@ -45,7 +45,8 @@ public class DictionaryPirates extends Dictionary {
 			while(sentence.contains("5")) sentence = sentence.replaceFirst("5", getAdjective() );
 			while(sentence.contains("6")) sentence = sentence.replaceFirst("6", getAdverb() );
 			while(sentence.contains("7")) sentence = sentence.replaceFirst("7", getInterjection() );
-			while(sentence.contains("8")) sentence = sentence.replaceFirst("8", getPlace() );
+			while(sentence.contains("8")) sentence = sentence.replaceFirst("8", getPlaceAbstract() );
+			while(sentence.contains("9")) sentence = sentence.replaceFirst("9", getPlaceConcrete() );
 		}
 
 		sentence = fixIndefiniteArticles(sentence);
@@ -54,11 +55,14 @@ public class DictionaryPirates extends Dictionary {
 		sentence = sentence.replaceAll("lasss ",     "lass ");
 		sentence = sentence.replaceAll("pantss ",    "pants ");
 		sentence = sentence.replaceAll("to the love","to love");
+		sentence = sentence.replaceAll("breaked",    "broken");
+		sentence = sentence.replaceAll("loveed",     "loved");
+		sentence = sentence.replaceAll("scrapeed",   "scraped");
+		sentence = sentence.replaceAll("vandalizeed","vandalized");
+		sentence = sentence.replaceAll("cockroachs", "cockroaches");
 
 		return ucfirst(sentence);
 	}
-
-
 
 	/**
 	 * @param   amountWords
@@ -77,15 +81,19 @@ public class DictionaryPirates extends Dictionary {
 			"5, 5 1s 6 3 a 5, 5 1.",
 			"5 2s lead to the 2.",
 			"2 is a 5 1.",
-			"7, 7.", "7, 2!", "7, 5 2!",
+			"7, 7.", "7, 2!", "7, 5 2!", "7, ye 5 1- set sails for 2!",
 			"pieces o\' 2 are forever 5.",
-			"1s 4 with 2!", "1s 4 on 2 at the 8!", "1s 4 with 2 at the 5 8!",
+			"1s 4 with 2!", "1s 4 on 2 at 8!", "1s 4 with 2 at the 5 8!",
 			"the 1 4s 2 like a 5 1.", "1s 4 from 2s like 5 1s.",
 			"why does the 1 4?",
 			"4 6 like a 5 1.",
 			"2, 2, and 2.",
 			"where is the 5 1?", "all 1s 3 5, 5 1s.", "never 3 a 1.",
-			"when the 1 4s for 8, all 1s 3 5, 5 1s."
+			"the 1 3s with 2, 3 the 9 until it 4s.",
+			"when the 1 4s for 8, all 1s 3 5, 5 1s.",
+			"ho-ho-ho! 2 of 2.",
+			"2 ho! 3 to be 3ed.",
+			"7, 5 1. go to 8", "7, 5 1. you won't 3 the 9."
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -98,10 +106,10 @@ public class DictionaryPirates extends Dictionary {
 		String[] words = {
 			"anchor", "bilge rat", "biscuit eater", "breeze", "bucaneer", "bung hole", "cannibal", "cannon",
 			"captain", "cloud", "cockroach", "corsair", "dagger", "dubloon", "fish", "freebooter", "furner", "girl",
-			"grog", "gull", "hornpipe", "jack", "jolly roger", "kraken", "lad", "lagoon", "lass", "lubber", "mainland",
-			"malaria", "mast", "moon", "pants", "parrot", "pegleg", "pin", "pirate", "plank", "plunder", "reef", "sail",
-			"sailor", "scabbard", "scallywag", "sea", "seashell", "shark", "ship", "shipmate", "shore", "skiff",
-			"skull", "son", "sun", "tuna", "urchin", "wave", "wench", "whale", "wind", "yardarm"
+			"gold", "grog", "gull", "hornpipe", "jack", "jolly roger", "kraken", "lad", "lagoon", "lass", "lubber",
+			"mainland", "mast", "mate", "moon", "pants", "parrot", "pegleg", "pin", "pirate", "plank", "plunder", "reef",
+			"sail", "sailor", "scabbard", "scallywag", "sea", "seashell", "shark", "ship", "shipmate", "shore", "skiff",
+			"parrot", "rum", "skull", "son", "sun", "tuna", "wave", "wench", "whale", "wind", "yardarm"
 		};
 
 		return pickRandomString(words);
@@ -114,7 +122,7 @@ public class DictionaryPirates extends Dictionary {
 		String[] words = {
 			"adventure", "amnesty", "beauty", "booty", "courage", "death", "desolation", "endurance",
 			"faith", "fortune", "grace", "greed", "horror", "hunger", "life", "love", "madness", "malaria",
-			"passion", "pestilence", "power", "punishment", "strength", "treasure", "yellow fever"
+			"passion", "pestilence", "power", "punishment", "strength", "treasure", "urchin", "yellow fever",
 		};
 
 		return pickRandomString(words);
@@ -125,9 +133,9 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"blow", "break", "burn", "command", "crush", "desire", "drink", "endure", "fall", "fight", "fire", "haul",
-			"lead", "loot", "love", "mark", "pull", "raid", "ransack", "rob", "sail", "scrape", "trade", "vandalize",
-			"view"
+			"blow", "break", "burn", "command", "crush", "desire", "drink", "endure", "fight", "fire", "hail",
+			"haul", "hoist", "lead", "loot", "love", "mark", "pull", "raid", "ransack", "rob", "sail", "scrape", "trade",
+			"vandalize", "view"
 		};
 
 		return pickRandomString(words);
@@ -149,9 +157,9 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"addled", "big", "black", "clear", "cloudy", "coal-black", "cold", "dark", "dead", "golden", "jolly",
-			"lively", "misty", "old", "proud", "rainy", "real", "rough", "scurvy", "shiny", "small", "smartly",
-			"stormy", "sunny", "warm", "wet"
+			"addled", "big", "black", "clear", "cloudy", "coal-black", "cold", "dark", "dead", "finest", "golden",
+			"gutless", "jolly", "lively", "misty", "old", "proud", "rainy", "real", "rough", "scurvy", "shiny", "small",
+			"stormy", "sunny", "swashbuckling", "warm", "wet"
 		};
 
 		return pickRandomString(words);
@@ -162,8 +170,9 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getAdverb() {
 		String[] words = {
-			"awkwardly", "begrudgingly", "calmly", "cruelly", "darkly", "fast", "fiery", "greedily", "heavily",
-			"impatiently", "loudly", "oppressively", "quietly", "quirky", "roughly", "swiftly", "unlawfully"
+			"awkwardly", "begrudgingly", "calmly", "cowardly", "cruelly", "darkly", "fast", "fiery", "greedily",
+			"heavily", "impatiently", "loudly", "oppressively", "quietly", "quirky", "roughly", "smartly", "swiftly",
+			"unlawfully"
 		};
 
 		return pickRandomString(words);
@@ -182,13 +191,25 @@ public class DictionaryPirates extends Dictionary {
 	}
 
 	/**
-	 * @return  Word of group 8:  place
+	 * @return  Word of group 8: abstract place (usable w/o article: "going to 8")
 	 */
-	private static String getPlace() {
+	private static String getPlaceAbstract() {
 		String[] words ={
-			"cabo rojo", "captain\'s quarters", "east india", "fort charles", "isla de muerta", "jamaica",
-			"la marsa beach", "pantano river", "port royal", "prison", "puerto rico", "singapore", "the cave",
-			"the island", "tortuga"
+			"cabo rojo", "east india", "fort charles", "french polynesia", "haiti", "isla de muerta", "isla de sangria",
+			"jamaica", "la marsa beach", "madagascar", "pantano river", "port degas", "port royal", "prison",
+			"puerto rico", "rummage island", "singapore", "tortuga", "tubbataha reef"
+		};
+
+		return pickRandomString(words);
+	}
+
+	/**
+	 * @return  Word of group 9: concrete place (usable with article: "entering the 9")
+	 */
+	private static String getPlaceConcrete() {
+		String[] words ={
+			"captain\'s quarters", "bikini atoll", "reef", "freighter", "lighthouse", "pacific ocean", "fortress",
+			"cook islands", "seychelles"
 		};
 
 		return pickRandomString(words);

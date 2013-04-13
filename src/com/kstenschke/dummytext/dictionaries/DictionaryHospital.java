@@ -142,7 +142,7 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"collapse", "die", "fall", "go", "itch", "shiver", "stand", "wait"
+			"collapse", "die", "fall", "go", "itch", "meet", "shiver", "stand", "wait"
 		};
 
 		return pickRandomString(words);

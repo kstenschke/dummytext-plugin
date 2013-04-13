@@ -42,7 +42,8 @@ public class DictionaryEsoteric extends Dictionary {
 			while(sentence.contains("5")) sentence = sentence.replaceFirst("5", getAdjective() );
 			while(sentence.contains("6")) sentence = sentence.replaceFirst("6", getAdverb() );
 			while(sentence.contains("7")) sentence = sentence.replaceFirst("7", getInterjection() );
-			while(sentence.contains("8")) sentence = sentence.replaceFirst("8", getPlace() );
+			while(sentence.contains("8")) sentence = sentence.replaceFirst("8", getPlaceAbstract() );
+			while(sentence.contains("9")) sentence = sentence.replaceFirst("9", getPlaceConcrete() );
 		}
 
 		sentence = fixIndefiniteArticles(sentence);
@@ -85,6 +86,11 @@ public class DictionaryEsoteric extends Dictionary {
 			"Always 6 3 the 5 1.",
 			"the 1 has 2, but not everyone 3s it.",
 			"7.", "confucius says: 7.",
+			"the 9 is full of 2.",
+			"2, 2 and a 6 9.",
+			"8 is not the 6 2 of the 1.",
+			"not 8 or 8, 3 2.",
+			"yes, there is 8, it 4s with 2."
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -95,9 +101,9 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getNounConcrete() {
 		String[] words = {
-			"believer", "cow", "death", "ego", "explosion of the 2", "follower", "guru", "individual", "karma",
+			"believer", "cow", "ego", "explosion of the 2", "follower", "guru", "individual", "karma",
 			"lama", "love", "lover", "man", "master", "monkey", "moon", "one", "scholar", "seeker", "sinner",
-			"source", "sun", "teacher", "therapist", "thing", "visitor", "yogi", "energy", "aspect"
+			"source", "sun", "teacher", "therapist", "thing", "visitor", "yogi", "aspect"
 		};
 
 		return pickRandomString(words);
@@ -109,12 +115,12 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getNounAbstract() {
 		String[] words = {
 			"advice", "afterlife", "anger", "attitude", "attraction", "awareness", "beauty", "blessing", "bliss",
-			"career", "chaos", "control", "core", "courage", "definition", "density", "dimension", "emptiness",
+			"career", "chaos", "control", "core", "courage", "death", "definition", "density", "dimension", "emptiness",
 			"energy", "enlightenment", "enlightenment", "everything", "extend", "faith", "fear", "freedom",
 			"grace", "happiness", "heaven", "heaven", "history", "hypnosis", "issue", "life", "living",
-			"meditation", "milk", "mind", "mineral", "money", "moon", "pain", "peace", "purpose", "relativity",
+			"meditation", "milk", "mind", "mineral", "money", "pain", "peace", "purpose", "relativity",
 			"samadhi", "satori", "sex", "silence", "solitude", "suffering", "surrender", "tantra", "totality",
-			"trust", "uniqueness", "vision", "volume", "zen", "few", "manifestation"
+			"trust", "uniqueness", "vision", "volume", "zen", "manifestation"
 		};
 
 		return pickRandomString(words);
@@ -139,8 +145,8 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"appear", "become", "convert", "die", "disappear", "emerge", "exist", "experiment", "occur", "remain",
-			"rise", "sit"
+			"appear", "become", "convert", "die", "disappear", "emerge", "exist", "experiment", "meet", "occur",
+			"remain", "rise", "sit"
 		};
 
 		return pickRandomString(words);
@@ -186,24 +192,38 @@ public class DictionaryEsoteric extends Dictionary {
 			"6 2 is to 3 the 2 of the 1\'s ignorance",
 			"i 4 and i 4. i 4 and i 4. i 4 and i 4",
 			"the 5 1 is 4ing, the 5 1 is 4ing",
-			"in the 8 all 1s 3 2",
-			"in the 8 4s 6 2"
+			"in 8 all 1s 3 2", "in the 9 all 1s 3 2",
+			"in 8 4s 6 2"
 		};
 
 		return pickRandomString(words);
 	}
 
 	/**
-	 * @return  Word of group 8:  place
+	 * @return  Word of group 8: abstract place (usable w/o article: "going to 8")
 	 */
-	private static String getPlace() {
+	private static String getPlaceAbstract() {
 		String[] words ={
-			"ashram", "body", "heavens", "mind", "monastery", "material world",
-			"body of 2", "heavens of 2", "realm of 2", "state of 2",
-			"5 world", "5 mind"
+			"5 places", "chaos", "heavens", "hell", "nirvana", "order", "paradise", "shangri-la", "upstairs",
+			"wonderland", "zion"
 		};
 
 		return pickRandomString(words);
 	}
+
+	/**
+	 * @return  Word of group 9: abstract place (usable with article: "entering the 9")
+	 */
+	private static String getPlaceConcrete() {
+		String[] words ={
+			"5 mind", "5 world", "afterworld", "body of 2", "great unknown", "heavens of 2", "home", "kingdom",
+			"material world", "mind", "monastery", "next world", "pit", "pyramid", "realm of 2", "state of 2",
+			"underworld"
+		};
+
+		return pickRandomString(words);
+	}
+
+
 
 }
