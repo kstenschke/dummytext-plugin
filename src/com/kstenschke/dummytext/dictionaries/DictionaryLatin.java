@@ -38,8 +38,8 @@ public class DictionaryLatin extends Dictionary {
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
-			while(sentence.contains("1")) sentence = sentence.replaceFirst("1", getNounConcrete() );
-			while(sentence.contains("2")) sentence = sentence.replaceFirst("2", getNounAbstract() );
+			while(sentence.contains("1")) sentence = sentence.replaceFirst("1", getNoun() );
+			while(sentence.contains("2")) sentence = sentence.replaceFirst("2", getNoun() );
 			while(sentence.contains("3")) sentence = sentence.replaceFirst("3", getVerbTransitive() );
 			while(sentence.contains("4")) sentence = sentence.replaceFirst("4", getVerbIntransitive() );
 			while(sentence.contains("5")) sentence = sentence.replaceFirst("5", getAdjective() );
@@ -85,29 +85,27 @@ public class DictionaryLatin extends Dictionary {
 	/**
 	 * @return  Word of group 1:  concrete noun
 	 */
-	private static String getNounConcrete() {
+	private static String getNoun() {
 		String[] words = {
-			"abnoba", "accola", "advena", "agripeta", "animalis", "aonides", "apolloniates", "armarium", "ausus",
-			"axona", "barcas", "boreas", "brabeuta", "cacula", "calceus", "clinias", "cotta", "danista", "deus",
-			"domus", "eleates", "fraticinida", "galatae", "gallus", "heuretes", "hibrida", "hilotae", "hippotoxota",
-			"homo", "ignigena", "lamia", "lanista", "lixa", "luba", "lura", "mensa", "mons", "olla", "pes", "poeta",
-			"tata", "xiphias"
-		};
-
-		return pickRandomString(words);
-	}
-
-	/**
-	 * @return  Word of group 2:  abstract noun
-	 */
-	private static String getNounAbstract() {
-		String[] words = {
-			"amicitia", "amor", "assimilatio", "competition", "consilium", "contencio", "coordinatae", "cursus",
-			"demolitione", "exemplar", "fides", "fluctui", "fortis", "fuga", "historia", "humani generis", "imber",
-			"ionicis tormento", "itineris tramitem", "lactea", "luna", "mens", "mineralis", "mortem", "navis",
-			"nuclear vexatum iacere", "particula", "planeta", "pulchritudine", "ratione", "resistentia", "rumor",
-			"scutum", "sectam", "sensorem", "solem", "spatii", "species", "stella", "terror", "triticum",
-			"tumultumque", "turpis", "valebat", "ventus", "visus", "vita"
+			"abactor", "abactus", "abaculus", "abnoba", "absolutio", "accentor", "accola", "acipenser", "adelphis", "adgium",
+			"adiurator", "advena", "agripeta", "amicitia", "amor", "animalis", "aonides", "apolloniates", "armarium",
+			"assimilatio", "ausus", "axona", "barcas", "boreas", "brabeuta", "brodium", "bromium", "bubo", "bulla", "burgus",
+			"bursa", "buxum", "byssus", "cacula", "caesium", "calcaria", "calceus", "candidatus", "canis", "cannabis", "capio",
+			"castor", "cedrium", "clabulare", "classis", "clinias", "cobaltum", "compater", "competition", "consilium",
+			"contencio", "coordinatae", "cotta", "cursus", "danista", "decor", "demissio", "demolitione", "detrius", "deus",
+			"devatio", "devirginato", "diatria", "domina", "domus", "eleates", "elevatus", "elogium", "epos", "equiso", "era",
+			"exemplar", "exsul", "extum", "fermium", "fides", "finis", "fiscina", "fluctui", "fluctus", "fortis", "fraticinida",
+			"frondator", "fuga", "gabalium", "galatae", "gallus", "gemna", "genetrix", "glos", "gluten", "guttus", "habena",
+			"habitio", "heuretes", "hibrida", "hilotae", "hippotoxota", "historia", "historia", "homo", "humani generis",
+			"hydra", "idoleum", "ignigena", "imber", "impositio", "index", "indictio", "ionicis tormento", "itineris tramitem",
+			"lacta", "lactea", "lamia", "lanista", "lapsus", "liberi", "lixa", "luba", "lumen", "luna", "luna", "lura",
+			"magister", "medicina", "mens", "mensa", "messor", "mineralis", "mons", "mortem", "musa", "navis", "nix", "nixus",
+			"nomen", "nuclear vexatum iacere", "nuptia", "nutrix", "olla", "omnia", "onus", "orexis", "orgia", "palus", "parma",
+			"pars", "particula", "pes", "planeta", "plasmator", "poeta", "pulchritudine", "quadra", "racana", "ratione",
+			"rector", "repressor", "resistentia", "rumor", "rumor", "saga", "scutum", "sectam", "secula", "sensorem", "silva",
+			"solem", "solitudo", "spatii", "species", "stella", "tabes", "tata", "terror", "torquis", "torus", "triticum",
+			"tumultumque", "turpis", "tus", "urbs", "uria", "usus", "valebat", "ventus", "verpa", "victrix", "vigil", "visus",
+			"vita", "vortex", "vox", "xiphias", "zelus", "zeta", "zirbus"
 		};
 
 		return pickRandomString(words);

@@ -153,11 +153,11 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"abdominal", "amorous", "anemic", "bacterial", "beautiful", "brave", "caring", "chemical", "clear",
-			"dead", "disastrous", "distant", "ectopic", "erotic", "fat", "fatal", "final", "frightened", "gastric",
-			"genetic", "genital", "happy", "human", "iatrogenic", "ill", "infected", "loving", "medical", "neutral",
-			"paranoid", "romantic", "seductive", "sick", "skilled", "smitten", "strange", "traumatic", "ugly",
-			"vital"
+			"abdominal", "amorous", "anemic", "attracted", "bacterial", "beautiful", "brave", "caring", "chemical",
+			"clear", "dead", "disastrous", "distant", "ectopic", "erotic", "fat", "fatal", "final", "frightened",
+			"gastric", "genetic", "genital", "happy", "human", "iatrogenic", "ill", "infected", "loving", "medical",
+			"neutral", "paranoid", "remarkable", "romantic", "seductive", "sick", "skilled", "smitten", "strange",
+			"traumatic", "ugly", "vital"
 		};
 
 		return pickRandomString(words);
