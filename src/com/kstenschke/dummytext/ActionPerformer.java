@@ -93,7 +93,7 @@ class ActionPerformer {
 
 				if( selectionLength > 0 ) {
 					dummyLength = selectedText.length();
-					amountLines = selectedText.split("\\n").length;
+					amountLines = TextualHelper.countLines(selectedText);
 
 					if( amountLines == 1) {
 						amountWords = TextualHelper.getWordCount(selectedText);
@@ -102,7 +102,7 @@ class ActionPerformer {
 			}
 
 			if( dummyLength != null ) {
-				// Generate and insert / replace selection with dummy text
+					// Generate and insert / replace selection with dummy text
 				String dummyText  = generateText(dummyLength, amountLines, amountWords, trailingPunctuation).toString();
 
 				if( isLowerCase ) {

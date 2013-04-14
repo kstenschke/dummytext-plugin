@@ -22,6 +22,15 @@ import java.util.List;
 public class TextualHelper {
 
 	/**
+	 * @param   str  String to be analyzed
+	 * @return  Integer  Amount of lines in given string
+	 */
+	public static int countLines(String str){
+		String[] lines = str.split("\r\n|\r|\n");
+		return  lines.length;
+	}
+
+	/**
 	 * @param   str      String to be checked
 	 * @return  Boolean  Are all characters in the given string lower case?
 	 */
