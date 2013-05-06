@@ -105,7 +105,7 @@ public class DictionarySciFi extends Dictionary {
 		String[] words = {
 			"admiral", "alien", "astronaut", "captain", "collective", "cosmonaut", "creature", "crew", "crewmate", "dosi",
 			"emitter", "ferengi", "girl", "green people", "hur\'q", "kahless", "klingon", "lieutenant commander", "machine",
-			"mermaid", "moon", "nanomachine", "parasite", "particle", "particle", "pathway", "planet", "processor",
+			"mermaid", "moon", "nanomachine", "parasite", "particle", "particle", "pathway", "planet", "processor", "proton",
 			"queen", "sensor", "ship", "ship", "sonic shower", "space suit", "space", "spacecraft", "species", "star",
 			"star", "starship", "sun", "teleporter", "transformator", "transporter", "planet",
 			"tribble", "vogon", "phenomenan"

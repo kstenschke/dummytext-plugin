@@ -63,6 +63,9 @@ public class DictionaryEsoteric extends Dictionary {
 		sentence = sentence.replaceAll("siting ",     "sitting ");
 		sentence = sentence.replaceAll("dos ",        "does ");
 
+		sentence = sentence.replaceAll("a one ",        "one ");
+		sentence = sentence.replaceAll("es each other", "e each other");
+
 		return ucfirst(sentence);
 	}
 
@@ -87,10 +90,13 @@ public class DictionaryEsoteric extends Dictionary {
 			"the 1 has 2, but not everyone 3s it.",
 			"7.", "confucius says: 7.",
 			"the 9 is full of 2.",
-			"2, 2 and a 6 9.",
+			"2, 2 and a 5 9.",
 			"8 is not the 6 2 of the 1.",
-			"not 8 or 8, 3 2.",
-			"yes, there is 8, it 4s with 2."
+			"not 8 or 8, 3 the 2.",
+			"yes, there is 8, it 4s with 2.",
+			"the 1 3s 2 which is not 5.",
+			"the 2 of your 2s will 4 6 when you 3 that 2 is the 1.",
+			"A 5 form of 2 is the 2."
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -101,9 +107,9 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getNounConcrete() {
 		String[] words = {
-			"believer", "cow", "ego", "explosion of the 2", "follower", "guru", "individual", "karma",
-			"lama", "love", "lover", "man", "master", "monkey", "moon", "one", "scholar", "seeker", "sinner",
-			"source", "sun", "teacher", "therapist", "thing", "visitor", "yogi", "aspect"
+			"believer", "body", "cow", "creator", "death", "doer", "ego", "explosion of the 2", "follower", "guru", "individual", "karma",
+			"lama", "lord", "love", "lover", "man", "master", "monkey", "moon", "scholar", "self", "seeker", "sinner",
+			"source", "sun", "teacher", "therapist", "thing", "visitor", "wind", "yogi", "aspect"
 		};
 
 		return pickRandomString(words);
@@ -114,13 +120,13 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getNounAbstract() {
 		String[] words = {
-			"advice", "afterlife", "anger", "attitude", "attraction", "awareness", "beauty", "blessing", "bliss",
-			"career", "chaos", "control", "core", "courage", "death", "definition", "density", "dimension", "emptiness",
-			"energy", "enlightenment", "enlightenment", "everything", "extend", "faith", "fear", "freedom",
-			"grace", "happiness", "heaven", "heaven", "history", "hypnosis", "issue", "life", "living",
-			"meditation", "milk", "mind", "mineral", "money", "pain", "peace", "purpose", "relativity",
-			"samadhi", "satori", "sex", "silence", "solitude", "suffering", "surrender", "tantra", "totality",
-			"trust", "uniqueness", "vision", "volume", "zen", "manifestation"
+			"acceptance", "advice", "afterlife", "anger", "affirmation", "ascension", "attitude", "attraction", "awareness",
+			"beauty", "blessing", "bliss", "booda-hood", "career", "chaos", "control", "core", "courage", "definition",
+			"density", "dimension", "emptiness", "energy", "enlightenment", "enlightenment", "everything", "extend", "faith",
+			"fear", "freedom", "grace", "happiness", "heaven", "heaven", "history", "hypnosis", "issue", "life", "light",
+			"living", "manifestation", "meditation", "milk", "mind", "mineral", "money", "moonlight", "pain", "peace",
+			"purpose", "relativity", "samadhi", "satori", "sex", "silence", "solitude", "suffering", "surrender", "tantra",
+			"totality", "trust", "truth", "uniqueness", "vision", "volume", "zen"
 		};
 
 		return pickRandomString(words);
@@ -131,10 +137,10 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"absorb", "acquire", "avoid", "balance", "capture", "contact", "desire", "discover", "disturb",
-			"do", "empower", "experience", "feel", "fly", "forget", "gain", "handle", "hear", "illuminate",
-			"know", "love", "meet", "praise", "receive", "remember", "synthesise", "travel", "understand", "view",
-			"yearn"
+			"absorb", "acquire", "avoid", "believe", "capture", "desire", "discover",
+			"experience", "emerge", "feel", "forget", "gain", "handle", "hear", "illuminate",
+			"know", "love", "meet", "praise", "realize", "receive", "remember", "synthesise", "understand", "view",
+			"visualize", "yearn"
 		};
 
 		return pickRandomString(words);
@@ -145,8 +151,8 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"appear", "become", "convert", "die", "disappear", "emerge", "exist", "experiment", "meet", "occur",
-			"remain", "rise", "sit"
+			"appear", "balance", "become", "contact", "convert", "die", "disappear", "disturb", "do", "empower", "exist",
+			"experiment", "fly", "grow", "listen", "occur", "remain", "rise", "shine", "sit", "travel"
 		};
 
 		return pickRandomString(words);
@@ -157,11 +163,11 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"alchemistic", "ancient", "atomic", "calm", "celestine", "crystal", "enlightened", "further", "great",
-			"hermetic", "holographic", "important", "magical", "mysterious", "new", "parallel", "pictorial",
-			"powerful", "psychic", "remarkable", "secret", "separate", "small", "strange", "superior", "true",
-			"ultimate", "united", "unveiled", "wonderful", "beloved", "sincere", "private", "secret", "abstruse",
-			"inner", "outer", "synthetic", "occult", "imminent"
+			"alchemistic", "ancient", "atomic", "brilliant", "bright", "calm", "celestine", "closest", "crystal", "enlightened", "further", "great",
+			"hermetic", "holographic", "important", "inward", "magical", "mysterious", "new", "parallel", "pictorial",
+			"powerful", "psychic", "remarkable", "secret", "separate", "small", "strange", "special", "superior", "true",
+			"ultimate", "united", "unveiled", "wonderful", "beloved", "sincere", "private", "secret", "simple", "abstruse",
+			"inner", "outer", "spiritual", "synthetic", "occult", "imminent", "new", "popular", "one"
 		};
 
 		return pickRandomString(words);
@@ -172,7 +178,7 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getAdverb() {
 		String[] words = {
-			"agreeable", "authorative", "balanced", "cosmically", "earthly", "oddly", "sincerely",
+			"agreeable", "authoratively", "balanced", "cosmically", "daily", "earthly", "oddly", "sincerely", "gently",
 			"qabalistic", "silently", "solitary", "theosophical", "truly", "wisely", "wonderfully",
 			"spiritually", "confidently", "esoterically", "essentially"
 		};
@@ -205,7 +211,7 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getPlaceAbstract() {
 		String[] words ={
 			"5 places", "chaos", "heavens", "hell", "nirvana", "order", "paradise", "shangri-la", "upstairs",
-			"wonderland", "zion"
+			"wonderland", "zion", "over there"
 		};
 
 		return pickRandomString(words);

@@ -93,7 +93,7 @@ public class DictionaryPirates extends Dictionary {
 			"when the 1 4s for 8, all 1s 3 5, 5 1s.",
 			"ho-ho-ho! 2 of 2.",
 			"2 ho! 3 to be 3ed.",
-			"7, 5 1. go to 8", "7, 5 1. you won't 3 the 9."
+			"7, 5 1. go to 8.", "7, 5 1. you won't 3 the 9."
 		};
 
 		return pickRandomString(structures, amountWords);

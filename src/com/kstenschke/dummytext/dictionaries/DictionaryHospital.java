@@ -57,6 +57,7 @@ public class DictionaryHospital extends Dictionary {
 		sentence = sentence.replaceAll("bronchitiss",   "bronchitis");
 		sentence = sentence.replaceAll("illnesss",      "illnesses");
 		sentence = sentence.replaceAll("undergos",      "undergoes");
+		sentence = sentence.replaceAll("itchs",         "itches");
 
 		return ucfirst(sentence);
 	}
@@ -99,7 +100,8 @@ public class DictionaryHospital extends Dictionary {
 			"abdomen", "anus", "band-aid", "body", "daughter", "defibrillator", "dietican", "doctor",
 			"doctor\'s assistant", "dr", "dr", "family", "father", "heart", "implant", "kidney", "lungs",
 			"medical lab technologist", "medical student", "neighbour", "nurse", "patient", "pharmacist",
-			"physician", "professor", "scalpel", "scientist", "sensor", "silicone", "son", "surgeon", "therapist"
+			"physician", "professor", "scalpel", "scientist", "sensor", "silicone", "son", "surgeon", "therapist",
+			"ulcer"
 		};
 
 		return pickRandomString(words);
@@ -114,7 +116,7 @@ public class DictionaryHospital extends Dictionary {
 			"attraction", "beauty", "blood plasma", "blood", "botanophobia", "bronchitis", "cancer",
 			"cat scratch disease", "code zero", "collywobble", "coryza", "courage", "death", "desease",
 			"desinfection", "diabetes", "diagnosis", "disorder", "ebola", "faith", "fatigue", "fever",
-			"heart attack", "illness", "infection", "life", "love", "malaise", "operation", "parrot fever",
+			"heart attack", "hope", "illness", "infection", "life", "love", "malaise", "operation", "parrot fever",
 			"plague", "pneumonia", "prodrome", "q fever", "reaction", "treatment", "wound", "x-ray"
 		};
 
@@ -131,7 +133,7 @@ public class DictionaryHospital extends Dictionary {
 			"experience", "experiment", "fail", "foster", "grant", "hammer", "handle", "infect", "influence", "inject",
 			"inquire", "kill", "leave", "love", "manifest", "observe", "open", "promise", "question", "receive",
 			"spread", "spread", "steal", "swell", "take", "talk", "transplant", "treat", "trip", "undergo", "undress",
-			"view"
+			"view", "press"
 		};
 
 		return pickRandomString(words);
@@ -142,7 +144,7 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"collapse", "die", "fall", "go", "itch", "meet", "shiver", "stand", "wait"
+			"collapse", "die", "fall", "go", "itch", "meet", "suffer", "shiver", "stand", "wait"
 		};
 
 		return pickRandomString(words);
@@ -153,11 +155,11 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"abdominal", "amorous", "anemic", "attracted", "bacterial", "beautiful", "brave", "caring", "chemical",
+			"abdominal", "amorous", "anemic", "attracted", "bacterial", "bad", "beautiful", "brave", "caring", "chemical",
 			"clear", "dead", "disastrous", "distant", "ectopic", "erotic", "fat", "fatal", "final", "frightened",
 			"gastric", "genetic", "genital", "happy", "human", "iatrogenic", "ill", "infected", "loving", "medical",
 			"neutral", "paranoid", "remarkable", "romantic", "seductive", "sick", "skilled", "smitten", "strange",
-			"traumatic", "ugly", "vital"
+			"traumatic", "ugly", "vital", "morbid", "unsound", "cool-headed", "tender", "affectionate", "fond"
 		};
 
 		return pickRandomString(words);
@@ -168,9 +170,9 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getAdverb() {
 		String[] words = {
-			"badly", "bloody", "dizzy", "ethically", "finally", "gingerly", "girlyshly", "hysterically",
+			"badly", "bloody", "dizzy", "ethically", "finally", "fondly", "gingerly", "girlyshly", "hysterically",
 			"impressively", "mechanically", "methodically", "nervously", "patiently", "physically", "quickly",
-			"routinely", "rudely", "shyly", "surprisingly", "wisely"
+			"routinely", "rudely", "shyly", "surprisingly", "wisely", "sickly", "tenderly", "mentally", "critically", "seriosly"
 		};
 
 		return pickRandomString(words);
