@@ -46,18 +46,26 @@ public class DictionaryHospital extends Dictionary {
 			while(sentence.contains("6")) sentence = sentence.replaceFirst("6", getAdverb() );
 			while(sentence.contains("7")) sentence = sentence.replaceFirst("7", getInterjection() );
 			while(sentence.contains("8")) sentence = sentence.replaceFirst("8", getPlace() );
+			while(sentence.contains("9")) sentence = sentence.replaceFirst("9", getBodypart() );
 		}
 
 		sentence = fixIndefiniteArticles(sentence);
 
-		sentence = sentence.replaceAll("familys ",      "families ");
-		sentence = sentence.replaceAll("diagnosiss",    "diagnose ");
-		sentence = sentence.replaceAll(" gos ",         " goes ");
+		sentence = sentence.replaceAll("anuss",         "anuses");
 		sentence = sentence.replaceAll(" go at the ",   " go to the ");
+		sentence = sentence.replaceAll(" gos ",         " goes ");
+		sentence = sentence.replaceAll("bodys",         "bodies");
 		sentence = sentence.replaceAll("bronchitiss",   "bronchitis");
+		sentence = sentence.replaceAll("diagnosiss",    "diagnose ");
+		sentence = sentence.replaceAll("familys ",      "families ");
 		sentence = sentence.replaceAll("illnesss",      "illnesses");
-		sentence = sentence.replaceAll("undergos",      "undergoes");
 		sentence = sentence.replaceAll("itchs",         "itches");
+		sentence = sentence.replaceAll("kidneyss",      "kidneys");
+		sentence = sentence.replaceAll("lungss",        "lungs");
+		sentence = sentence.replaceAll("peniss",        "penises");
+		sentence = sentence.replaceAll("talk the",      "talk to the");
+		sentence = sentence.replaceAll("undergos",      "undergoes");
+		sentence = sentence.replaceAll("wait from",     "wait for");
 
 		return ucfirst(sentence);
 	}
@@ -73,6 +81,8 @@ public class DictionaryHospital extends Dictionary {
 		}
 
 		String[] structures = {
+		   "to 3 the 1 of 5 9, 3 the 1.",
+		   "to 3 the 5 1 of 9, 6 3 the 1.",
 			"1s of a 5 2, 3 the 2!", "1s are the 1s of the 5 2.",
 			"the 5 1 6 3s the 1.",
 			"5, 5 1s 6 3 a 5, 5 1.",
@@ -116,8 +126,8 @@ public class DictionaryHospital extends Dictionary {
 			"attraction", "beauty", "blood plasma", "blood", "botanophobia", "bronchitis", "cancer",
 			"cat scratch disease", "code zero", "collywobble", "coryza", "courage", "death", "desease",
 			"desinfection", "diabetes", "diagnosis", "disorder", "ebola", "faith", "fatigue", "fever",
-			"heart attack", "hope", "illness", "infection", "life", "love", "malaise", "operation", "parrot fever",
-			"plague", "pneumonia", "prodrome", "q fever", "reaction", "treatment", "wound", "x-ray"
+			"heart attack", "hope", "illness", "infection", "life", "love", "malaise", "operation", "oxygen", "parrot fever",
+			"plague", "pneumonia", "prodrome", "q fever", "reaction", "treatment", "ultrasound", "wound", "x-ray"
 		};
 
 		return pickRandomString(words);
@@ -128,12 +138,11 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"admire", "assimilate", "attest", "avoid", "bathe", "breathe", "capture", "consume", "contact", "control",
-			"convert", "cost", "cut", "damage", "depend", "deserve", "desire", "discover", "educate", "examine",
-			"experience", "experiment", "fail", "foster", "grant", "hammer", "handle", "infect", "influence", "inject",
-			"inquire", "kill", "leave", "love", "manifest", "observe", "open", "promise", "question", "receive",
-			"spread", "spread", "steal", "swell", "take", "talk", "transplant", "treat", "trip", "undergo", "undress",
-			"view", "press"
+			"admire", "assimilate", "attest", "avoid", "bathe", "breathe", "capture", "consume", "contact", "control", "convert",
+			"cost", "cut", "damage", "depend", "deserve", "desire", "discover", "educate", "examine", "experience", "experiment",
+			"fail", "foster", "grant", "hammer", "handle", "infect", "influence", "inject", "inquire", "kill", "leave", "love",
+			"manifest", "observe", "open", "press", "promise", "question", "receive", "spread", "spread", "steal", "swell",
+			"take", "talk", "transplant", "treat", "trip", "undergo", "undress", "view"
 		};
 
 		return pickRandomString(words);
@@ -183,7 +192,7 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getInterjection() {
 		String[] words ={
-			"we had to open his chest for a 5 2", "we must 6 3 the 6 patient",
+			"we had to open his 9 for a 5 2", "we must 6 3 the 5 patient",
 			"1, inform the 1 that 2 is 5", "when 1s 4 from the 8, 4, 4 and 4"
 		};
 
@@ -201,5 +210,19 @@ public class DictionaryHospital extends Dictionary {
 
 		return pickRandomString(words);
 	}
+
+	/**
+	 * @return  Word of group 9:  bodypart
+	 */
+	private static String getBodypart() {
+		String[] words ={
+			"bladder", "bone", "blood", "breast", "cancer", "chest", "heart", "kidneys", "liver", "lungs", "penis",
+			"stomach", "skin", "tooth", "brain"
+		};
+
+		return pickRandomString(words);
+	}
+
+
 
 }
