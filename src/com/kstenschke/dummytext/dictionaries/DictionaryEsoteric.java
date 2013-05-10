@@ -48,23 +48,22 @@ public class DictionaryEsoteric extends Dictionary {
 
 		sentence = fixIndefiniteArticles(sentence);
 
-		sentence = sentence.replaceAll("loves",      "love");
-		sentence = sentence.replaceAll("manys",      "many");
-		sentence = sentence.replaceAll("peaces",     "peace");
-		sentence = sentence.replaceAll("sexs",       "sex");
-		sentence = sentence.replaceAll("the peace",  "peace");
-
-		sentence = sentence.replaceAll("becomeing ",  "becoming ");
-		sentence = sentence.replaceAll("desireing ",  "desiring ");
-		sentence = sentence.replaceAll("emergeing ",  "emerging ");
-		sentence = sentence.replaceAll("forgeting ",  "forgetting ");
-		sentence = sentence.replaceAll("illuminate ", "illuminating ");
-		sentence = sentence.replaceAll("riseing ",    "rising ");
-		sentence = sentence.replaceAll("siting ",     "sitting ");
-		sentence = sentence.replaceAll("dos ",        "does ");
-
 		sentence = sentence.replaceAll("a one ",        "one ");
+		sentence = sentence.replaceAll("becomeing ",    "becoming ");
+		sentence = sentence.replaceAll("desireing ",    "desiring ");
+		sentence = sentence.replaceAll("dos ",          "does ");
+		sentence = sentence.replaceAll("emergeing ",    "emerging ");
 		sentence = sentence.replaceAll("es each other", "e each other");
+		sentence = sentence.replaceAll("forgeting ",    "forgetting ");
+		sentence = sentence.replaceAll("illuminate ",   "illuminating ");
+		sentence = sentence.replaceAll("loves",         "love");
+		sentence = sentence.replaceAll("manys",         "many");
+		sentence = sentence.replaceAll("peaces",        "peace");
+		sentence = sentence.replaceAll("riseing ",      "rising ");
+		sentence = sentence.replaceAll("s meets",       "s meet");
+		sentence = sentence.replaceAll("sexs",          "sex");
+		sentence = sentence.replaceAll("siting ",       "sitting ");
+		sentence = sentence.replaceAll("the peace",     "peace");
 
 		return ucfirst(sentence);
 	}

@@ -51,15 +51,16 @@ public class DictionaryPirates extends Dictionary {
 
 		sentence = fixIndefiniteArticles(sentence);
 
-		sentence = sentence.replaceAll("beautys ",   "beauties ");
-		sentence = sentence.replaceAll("lasss ",     "lass ");
-		sentence = sentence.replaceAll("pantss ",    "pants ");
-		sentence = sentence.replaceAll("to the love","to love");
-		sentence = sentence.replaceAll("breaked",    "broken");
-		sentence = sentence.replaceAll("loveed",     "loved");
-		sentence = sentence.replaceAll("scrapeed",   "scraped");
-		sentence = sentence.replaceAll("vandalizeed","vandalized");
-		sentence = sentence.replaceAll("cockroachs", "cockroaches");
+		sentence = sentence.replaceAll("at the old east india",   "in east india");
+		sentence = sentence.replaceAll("beautys ",                "beauties ");
+		sentence = sentence.replaceAll("breaked",                 "broken");
+		sentence = sentence.replaceAll("cockroachs",              "cockroaches");
+		sentence = sentence.replaceAll("lasss ",                  "lass ");
+		sentence = sentence.replaceAll("loveed",                  "loved");
+		sentence = sentence.replaceAll("pantss ",                 "pants ");
+		sentence = sentence.replaceAll("scrapeed",                "scraped");
+		sentence = sentence.replaceAll("to the love",             "to love");
+		sentence = sentence.replaceAll("vandalizeed",             "vandalized");
 
 		return ucfirst(sentence);
 	}

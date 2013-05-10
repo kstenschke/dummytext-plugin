@@ -18,13 +18,15 @@
 
   <name>Dummy Text Generator</name>
     <description><![CDATA[
-    The plugin adds a dummy text generator button to the main toolbar.<br/>
-    Randomly generated dummy text can than be inserted with a click, or replace a selection of text.<br/>
-    <br/>
+    The plugin adds a random text generator, capable of creating witty texts in different genres.
+    Created text can be inserted at the caret or replace a selection.<br/>
+    The dummy text generator is added to the tools menu and into the generate... popup (Alt+Insert)
+    <br/><br/>
     The plugin configuration allows to choose from several genres:<br />
     <ul>
         <li>Fake Latin  (similar to "Lorem Ipsum" blindtext)</li>
         <li>Medical Drama</li>
+        <li>Culinaric Inspirations</li>
         <li>Pirate Lingo</li>
         <li>Science Fiction</li>
         <li>Esoteric Wisdom</li>
@@ -40,9 +42,15 @@
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
 
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 
   <change-notes><![CDATA[
+    1.0.3<ul>
+        <li>Added action icons</li>
+        <li>Moved actions into tools and generate... menu (Alt+Insert)</li>
+        <li>Removed Preferences</li>
+        <li>Improved vocabulary and grammar</li>
+    </ul>
     1.0.2<ul>
         <li>Improved transformation of indefinite article ("a" to "an")</li>
         <li>Improved vocabulary and grammar</li>
@@ -63,25 +71,48 @@
   <application-components>
       <!-- ... -->
   </application-components>
-
+      <!-- ... -->
   <project-components>
-      <component>
-          <implementation-class>com.kstenschke.dummytext.PluginSettingsComponent</implementation-class>
-          <loadForDefaultProject/>
-      </component>
+
   </project-components>
 
   <depends>com.intellij.modules.lang</depends>
 
   <actions>
-      <group id="Dummytext">
-          <separator/>
-          <action id="DummyText" class="com.kstenschke.dummytext.Action" text="Insert Dummy Text" description="Insert Dummy Text" icon="resources/images/action.png">
-          </action>
-          <separator/>
+      <group id="Dummytext.MyGenerateGroup" description="Generate Dummy Text" text="Generate Dummy Text" popup="true"/>
 
-          <add-to-group group-id="MainToolBar" anchor="before" relative-to-action="ToolbarRunGroup"/>
+      <action id="generateLatinAction" icon="resources/images/latin.png" class="com.kstenschke.dummytext.generateLatinAction" text="Generate Fake Latin"
+              description="Generates random fake latin">
+          <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
+      </action>
+      <action id="generateEsotericAction" icon="resources/images/esoteric.png" class="com.kstenschke.dummytext.generateEsotericAction" text="Generate Esoteric Wisdom"
+              description="Generates random esoteric wisdom">
+          <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
+      </action>
+      <action id="generateCookeryAction" icon="resources/images/cookery.png" class="com.kstenschke.dummytext.generateCookeryAction" text="Generate culinaric inspirations"
+              description="Generates random culinaric inspirations">
+          <add-to-group anchor="last" group-id="Dummytext.MyGenerateGroup"/>
+      </action>
+      <action id="generateMedicalAction" class="com.kstenschke.dummytext.generateMedicalAction" text="Generate Medical Drama"
+              description="Generates random medical drama">
+          <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
+      </action>
+      <action id="generatePiratesAction" icon="resources/images/pirates.png" class="com.kstenschke.dummytext.generatePiratesAction" text="Generate Pirate Lingo"
+              description="Generates random pirate lingo">
+          <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
+      </action>
+      <action id="generateSciFiAction" icon="resources/images/scifi.png" class="com.kstenschke.dummytext.generateSciFiAction" text="Generate Science Fiction"
+              description="Generates random science fiction">
+          <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
+      </action>
+
+      <group id="Dummytext.Actions" description="Generate Dummy Text" text="Generate Dummy Text" popup="false">
+          <separator/>
+          <reference id="Dummytext.MyGenerateGroup"/>
+          <add-to-group anchor="last" group-id="ToolsMenu"/>
+          <add-to-group anchor="last" group-id="GenerateGroup"/>
       </group>
+
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">

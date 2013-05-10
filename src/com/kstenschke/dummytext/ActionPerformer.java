@@ -36,9 +36,7 @@ class ActionPerformer {
 	/**
 	 * Constructor
 	 */
-	public ActionPerformer() {
-		String genreCode   = PluginPreferences.getGenre();
-
+	public ActionPerformer(String genreCode) {
 		if( genreCode.equals("pirates") ) {
 			genreDictionary   = new DictionaryPirates();
 		} else if( genreCode.equals("scifi") ) {
@@ -47,6 +45,8 @@ class ActionPerformer {
 			genreDictionary   = new DictionaryHospital();
 		} else if( genreCode.equals("esoteric") ) {
 			genreDictionary   = new DictionaryEsoteric();
+		} else if( genreCode.equals("cookery") ) {
+			genreDictionary   = new DictionaryCookery();
 		} else {
 			genreDictionary   = new DictionaryLatin();
 		}
