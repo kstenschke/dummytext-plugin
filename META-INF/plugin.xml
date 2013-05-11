@@ -22,7 +22,7 @@
     Created text can be inserted newly at the caret, or replace a selection.<br/>
     The dummy text generator is added to the main menu, tools menu and into the generate... popup (Alt+Insert).
     <br/><br/>
-    The plugin configuration allows to choose from several genres:<br />
+    The plugin allows to choose from several genres:<br />
     <ul>
         <li>Fake Latin  (similar to "Lorem Ipsum" blindtext)</li>
         <li>Medical Drama</li>
