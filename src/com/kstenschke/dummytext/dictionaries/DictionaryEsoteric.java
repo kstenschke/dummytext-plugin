@@ -35,15 +35,15 @@ public class DictionaryEsoteric extends Dictionary {
 		String sentence   = getSentenceStructure(amountWords);
 
 		while( sentence.matches(".*[0-9].*") ) {
-			while(sentence.contains("1")) sentence = sentence.replaceFirst("1", getNounConcrete() );
-			while(sentence.contains("2")) sentence = sentence.replaceFirst("2", getNounAbstract() );
-			while(sentence.contains("3")) sentence = sentence.replaceFirst("3", getVerbTransitive() );
-			while(sentence.contains("4")) sentence = sentence.replaceFirst("4", getVerbIntransitive() );
-			while(sentence.contains("5")) sentence = sentence.replaceFirst("5", getAdjective() );
-			while(sentence.contains("6")) sentence = sentence.replaceFirst("6", getAdverb() );
-			while(sentence.contains("7")) sentence = sentence.replaceFirst("7", getInterjection() );
-			while(sentence.contains("8")) sentence = sentence.replaceFirst("8", getPlaceAbstract() );
-			while(sentence.contains("9")) sentence = sentence.replaceFirst("9", getPlaceConcrete() );
+			while(sentence.contains("1")) sentence = replaceIfNew(sentence, "1", getNounConcrete() );
+			while(sentence.contains("2")) sentence = replaceIfNew(sentence, "2", getNounAbstract() );
+			while(sentence.contains("3")) sentence = replaceIfNew(sentence, "3", getVerbTransitive() );
+			while(sentence.contains("4")) sentence = replaceIfNew(sentence, "4", getVerbIntransitive() );
+			while(sentence.contains("5")) sentence = replaceIfNew(sentence, "5", getAdjective() );
+			while(sentence.contains("6")) sentence = replaceIfNew(sentence, "6", getAdverb() );
+			while(sentence.contains("7")) sentence = replaceIfNew(sentence, "7", getInterjection() );
+			while(sentence.contains("8")) sentence = replaceIfNew(sentence, "8", getPlaceAbstract() );
+			while(sentence.contains("9")) sentence = replaceIfNew(sentence, "9", getPlaceConcrete() );
 		}
 
 		sentence = fixIndefiniteArticles(sentence);

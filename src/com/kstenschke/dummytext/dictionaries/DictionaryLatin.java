@@ -38,14 +38,14 @@ public class DictionaryLatin extends Dictionary {
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
-			while(sentence.contains("1")) sentence = sentence.replaceFirst("1", getNoun() );
-			while(sentence.contains("2")) sentence = sentence.replaceFirst("2", getNoun() );
-			while(sentence.contains("3")) sentence = sentence.replaceFirst("3", getVerbTransitive() );
-			while(sentence.contains("4")) sentence = sentence.replaceFirst("4", getVerbIntransitive() );
-			while(sentence.contains("5")) sentence = sentence.replaceFirst("5", getAdjective() );
-			while(sentence.contains("6")) sentence = sentence.replaceFirst("6", getAdverb() );
-			while(sentence.contains("7")) sentence = sentence.replaceFirst("7", getInterjection() );
-			while(sentence.contains("8")) sentence = sentence.replaceFirst("8", getPlace() );
+			while(sentence.contains("1")) sentence = replaceIfNew(sentence, "1", getNoun() );
+			while(sentence.contains("2")) sentence = replaceIfNew(sentence, "2", getNoun() );
+			while(sentence.contains("3")) sentence = replaceIfNew(sentence, "3", getVerbTransitive() );
+			while(sentence.contains("4")) sentence = replaceIfNew(sentence, "4", getVerbIntransitive() );
+			while(sentence.contains("5")) sentence = replaceIfNew(sentence, "5", getAdjective() );
+			while(sentence.contains("6")) sentence = replaceIfNew(sentence, "6", getAdverb() );
+			while(sentence.contains("7")) sentence = replaceIfNew(sentence, "7", getInterjection() );
+			while(sentence.contains("8")) sentence = replaceIfNew(sentence, "8", getPlace() );
 		}
 
 		return ucfirst(sentence);

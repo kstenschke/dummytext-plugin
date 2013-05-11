@@ -19,14 +19,14 @@
   <name>Dummy Text Generator</name>
     <description><![CDATA[
     The plugin adds a random text generator, capable of creating witty texts in different genres.
-    Created text can be inserted at the caret or replace a selection.<br/>
-    The dummy text generator is added to the tools menu and into the generate... popup (Alt+Insert)
+    Created text can be inserted newly at the caret, or replace a selection.<br/>
+    The dummy text generator is added to the main menu, tools menu and into the generate... popup (Alt+Insert).
     <br/><br/>
     The plugin configuration allows to choose from several genres:<br />
     <ul>
         <li>Fake Latin  (similar to "Lorem Ipsum" blindtext)</li>
         <li>Medical Drama</li>
-        <li>Culinaric Inspirations</li>
+        <li>Culinary Inspirations</li>
         <li>Pirate Lingo</li>
         <li>Science Fiction</li>
         <li>Esoteric Wisdom</li>
@@ -47,8 +47,8 @@
   <change-notes><![CDATA[
     1.0.3<ul>
         <li>Added action icons</li>
-        <li>Moved actions into tools and generate... menu (Alt+Insert)</li>
-        <li>Removed Preferences</li>
+        <li>New genre: culinary inspirations</li>
+        <li>Removed Plugin Configuration and added actions group into tools and generate... menu (Alt+Insert)</li>
         <li>Improved vocabulary and grammar</li>
     </ul>
     1.0.2<ul>
@@ -79,6 +79,15 @@
   <depends>com.intellij.modules.lang</depends>
 
   <actions>
+      <group id="Dummytext">
+          <separator/>
+          <action id="DummyText" class="com.kstenschke.dummytext.Action" text="Insert Dummy Text" description="Insert Dummy Text" icon="resources/images/action.png">
+          </action>
+          <separator/>
+
+          <add-to-group group-id="MainToolBar" anchor="before" relative-to-action="ToolbarRunGroup"/>
+      </group>
+
       <group id="Dummytext.MyGenerateGroup" description="Generate Dummy Text" text="Generate Dummy Text" popup="true"/>
 
       <action id="generateLatinAction" icon="resources/images/latin.png" class="com.kstenschke.dummytext.generateLatinAction" text="Generate Fake Latin"
@@ -89,11 +98,11 @@
               description="Generates random esoteric wisdom">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
-      <action id="generateCookeryAction" icon="resources/images/cookery.png" class="com.kstenschke.dummytext.generateCookeryAction" text="Generate culinaric inspirations"
-              description="Generates random culinaric inspirations">
+      <action id="generateCookeryAction" icon="resources/images/cookery.png" class="com.kstenschke.dummytext.generateCookeryAction" text="Generate culinary inspirations"
+              description="Generates random culinary inspirations">
           <add-to-group anchor="last" group-id="Dummytext.MyGenerateGroup"/>
       </action>
-      <action id="generateMedicalAction" class="com.kstenschke.dummytext.generateMedicalAction" text="Generate Medical Drama"
+      <action id="generateMedicalAction" icon="resources/images/medical.png" class="com.kstenschke.dummytext.generateMedicalAction" text="Generate Medical Drama"
               description="Generates random medical drama">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>

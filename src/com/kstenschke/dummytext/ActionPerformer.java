@@ -22,6 +22,8 @@ import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
+import com.kstenschke.dummytext.PluginPreferences;
+import com.kstenschke.dummytext.TextualHelper;
 import com.kstenschke.dummytext.dictionaries.*;
 
 class ActionPerformer {
@@ -37,6 +39,8 @@ class ActionPerformer {
 	 * Constructor
 	 */
 	public ActionPerformer(String genreCode) {
+		PluginPreferences.saveGenre(genreCode);
+
 		if( genreCode.equals("pirates") ) {
 			genreDictionary   = new DictionaryPirates();
 		} else if( genreCode.equals("scifi") ) {
@@ -48,6 +52,7 @@ class ActionPerformer {
 		} else if( genreCode.equals("cookery") ) {
 			genreDictionary   = new DictionaryCookery();
 		} else {
+			PluginPreferences.saveGenre("latin");
 			genreDictionary   = new DictionaryLatin();
 		}
 	}
@@ -133,8 +138,6 @@ class ActionPerformer {
 			}
 		}
 	}
-
-
 
 	/**
 	 * @param   approxMaxChars       Minimum string length

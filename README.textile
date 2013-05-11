@@ -7,13 +7,15 @@ This is a plugin for the various intellij IDEs, working in IDEA, PhpStorm, AppCo
 
 h2. Description
 
-The plugin adds a dummy text generator button to the main toolbar.
-Randomly generated dummy text can than be inserted with a click, or replace a selection of text.
+The plugin adds a random text generator, capable of creating witty texts in different genres.
+Created text can be inserted newly at the caret, or replace a selection.<br/>
+The dummy text generator is added to the main menu, tools menu and into the generate... popup (Alt+Insert)
 
-The plugin configuration allows to choose from several genres:
+The plugin allows to choose from several genres:
 
 * Fake Latin (similar to "Lorem Ipsum" blindtext)
 * Medical Drama
+* Culinary Inspirations
 * Pirate Lingo
 * Science Fiction
 * Esoteric Wisdom

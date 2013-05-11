@@ -38,32 +38,41 @@ public class DictionaryCookery extends Dictionary {
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
-			while(sentence.contains("1")) sentence = sentence.replaceFirst("1", getIngredient() );
-			while(sentence.contains("2")) sentence = sentence.replaceFirst("2", getFluid() );
-			while(sentence.contains("3")) sentence = sentence.replaceFirst("3", getVerbTransitive() );
-			while(sentence.contains("4")) sentence = sentence.replaceFirst("4", getVerbIntransitive() );
-			while(sentence.contains("5")) sentence = sentence.replaceFirst("5", getAdjective() );
-			while(sentence.contains("6")) sentence = sentence.replaceFirst("6", getAdverb() );
-			while(sentence.contains("7")) sentence = sentence.replaceFirst("7", getSeasonings() );
-			while(sentence.contains("8")) sentence = sentence.replaceFirst("8", getContainer() );
-			while(sentence.contains("9")) sentence = sentence.replaceFirst("9", getAmount() );
+			while(sentence.contains("1")) sentence = replaceIfNew(sentence, "1", getIngredient() );
+			while(sentence.contains("2")) sentence = replaceIfNew(sentence, "2", getFluid() );
+			while(sentence.contains("3")) sentence = replaceIfNew(sentence, "3", getVerbTransitive() );
+			while(sentence.contains("4")) sentence = replaceIfNew(sentence, "4", getVerbIntransitive() );
+			while(sentence.contains("5")) sentence = replaceIfNew(sentence, "5", getAdjective() );
+			while(sentence.contains("6")) sentence = replaceIfNew(sentence, "6", getAdverb() );
+			while(sentence.contains("7")) sentence = replaceIfNew(sentence, "7", getSeasonings() );
+			while(sentence.contains("8")) sentence = replaceIfNew(sentence, "8", getContainer() );
+			while(sentence.contains("9")) sentence = replaceIfNew(sentence, "9", getAmount() );
+			while(sentence.contains("RNDNUM")) sentence = sentence.replaceFirst("RNDNUM", getNumber() );
+			while(sentence.contains("HEATUP")) sentence = sentence.replaceFirst("HEATUP", getVerbHeatUp() );
 		}
 
 		sentence = fixIndefiniteArticles(sentence);
 
+		sentence = sentence.replaceAll("beefs",         "beef");
 		sentence = sentence.replaceAll("berriess",      "berries");
+		sentence = sentence.replaceAll("breatss",       "breasts");
+		sentence = sentence.replaceAll("choped",        "chopped");
 		sentence = sentence.replaceAll("choping",       "chopping");
 		sentence = sentence.replaceAll("eggss",         "eggs");
 		sentence = sentence.replaceAll("meatballss",    "meatballs");
 		sentence = sentence.replaceAll("nachoss",       "nachos");
+		sentence = sentence.replaceAll("oysterss",       "oysters");
 		sentence = sentence.replaceAll("peanutss",      "peanuts");
+		sentence = sentence.replaceAll("peass ",        "peas");
+		sentence = sentence.replaceAll("rices ",        "rice");
 		sentence = sentence.replaceAll("s tastes ",      "s taste ");
+		sentence = sentence.replaceAll("sautéed",       "seared");
 		sentence = sentence.replaceAll("seedss",        "seeds");
 		sentence = sentence.replaceAll("shreding",      "shredding");
 		sentence = sentence.replaceAll("shrimpss",      "shrimps");
 		sentence = sentence.replaceAll("sliceing",      "slicing");
 		sentence = sentence.replaceAll("spinachs",      "spinach");
-		sentence = sentence.replaceAll("breatss",       "breasts");
+		sentence = sentence.replaceAll("pickless",      "pickles");
 
 
 		return ucfirst(sentence);
@@ -80,14 +89,18 @@ public class DictionaryCookery extends Dictionary {
 		}
 
 		String[] structures  = {
-			"1 tastes best with 2 and lots of 7.",
-			"3 each side of the 1 with 9 of 1.",
+			"4 RNDNUM 1s, 1, and 7 in a large 8 over medium heat, HEATUP for RNDNUM minutes and 3 some 1.",
+			"High-tech 1s.  Mysterious 2.  Super1.  Are we supposed to eat this stuff?  Or is it going to eat us?",
+			"per guest prepare 9 of 2 with 4ed 1 for dessert.",
 			"4 1 6, then mix with 2 and serve 6 in 8.",
+			"when 4ing 1s, 3 1, 1 and 2 with it in a 8.",
+			"all children like 4ed 1s in 2 and 7.",
+			"1 tastes best with 2 and lots of 7.",
+			"5, 5 pudding is best 3ed with 5 2.",
+			"3 each side of the 1 with 9 of 1.",
 			"To the 5 1 add 1, 1, 2 and 5 1.",
-			"before 4ing 1s, 3 1, 1 and 2 in a 8.",
-		   "3 9 of 1 in 9 of 2.",
-		   "5, 5 pudding is best 3ed with 5 2.",
-		   "per guest prepare 9 of 2 with 4ed 1 for dessert."
+			"3 9 of 1 in 9 of 2.",
+			"with 1s drink 2."
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -101,7 +114,8 @@ public class DictionaryCookery extends Dictionary {
 			"blueberries", "butter", "carrots", "celery", "chicken", "chicken breasts", "chili", "chocolate", "cracker crumps",
 			"eggs", "garlic", "ginger", "ground beef", "herring", "leek", "lettuce", "meatballs", "meatloaf", "nachos", "noodles", "onion", "peanut butter", "peanuts",
 			"pork butt", "pork shoulder", "pumpkin seeds", "ramen", "raspberries", "rhubarb", "rice", "shrimps", "spinach",
-			"steak", "strawberries", "tofu", "turkey", "white bread"
+			"steak", "strawberries", "tofu", "turkey", "white bread", "chickpeas", "bagel", "doughnut", "marshmellow",
+			"chicken lard", "pickles", "squid", "sauerkraut", "tuna", "oysters", "popcorn"
 		};
 
 		return pickRandomString(words);
@@ -112,11 +126,10 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getFluid() {
 		String[] words ={
-			"BBQ sauce", "bourbon", "adobo sauce", "beer", "emeril\'s essence", "fish sauce", "gold tequila", "honey",
-			"joghurt", "ketchup",
-			"lemon juice", "milk", "olive oil", "orange juice", "oyster sauce", "peanut sauce", "plain vinegar", "red wine",
-			"rice vinegar", "rum",
-			"salsa verde", "soy sauce", "tabasco", "triple sec", "vinegar", "water", "white wine"
+			"BBQ sauce", "adobo sauce", "beer", "bourbon", "buttermilk", "emeril\'s essence", "fish sauce", "gold tequila",
+			"honey", "joghurt", "ketchup", "lemon juice", "mayonnaise", "milk", "olive oil", "orange juice", "oyster sauce",
+			"peanut sauce", "plain vinegar", "red wine", "rice vinegar", "rum", "salsa verde", "soy sauce", "tabasco",
+			"triple sec", "vinegar", "water", "white wine", "peppermint tea", "worcestershire sauce", "cream",
 		};
 
 		return pickRandomString(words);
@@ -127,7 +140,7 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"cover", "garnish", "mix", "season"
+			"cover", "garnish", "mix", "season", "stir in"
 		};
 
 		return pickRandomString(words);
@@ -138,7 +151,19 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"break", "chop", "cook", "crush", "cut", "grill", "heat", "roast", "shred", "slice", "smash"
+			"break", "chop", "cook", "crush", "cut", "drain", "grill", "heat", "roast", "shred", "slice", "smash", "simmer",
+			"warm", "combine"
+		};
+
+		return pickRandomString(words);
+	}
+
+	/**
+	 * @return  Word of group 4:  intransitive verb
+	 */
+	private static String getVerbHeatUp() {
+		String[] words = {
+			"cook", "grill", "heat", "roast", "simmer", "warm", "sauté"
 		};
 
 		return pickRandomString(words);
@@ -151,7 +176,7 @@ public class DictionaryCookery extends Dictionary {
 		String[] words = {
 			"chopped", "cold", "crushed", "delicious", "divided", "dried", "fresh", "heated", "heated", "hot", "juicy",
 			"large", "large", "mild", "minced", "old", "packaged", "ripe", "roasted", "salted", "salty", "sliced", "small",
-			"smashed", "smooth", "sour", "springy", "squeezed", "sun-dried", "sweet", "tasty", "warm"
+			"smashed", "smooth", "sour", "springy", "squeezed", "sun-dried", "sweet", "tasty", "warm", "nutty", "shredded"
 		};
 
 		return pickRandomString(words);
@@ -162,7 +187,7 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getAdverb() {
 		String[] words = {
-			"carefully", "fast", "freshly", "smoothly"
+			"carefully", "fast", "freshly", "smoothly", "regularly 5", "carefully 5", "drizzled with 2"
 		};
 
 		return pickRandomString(words);
@@ -173,9 +198,9 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getSeasonings() {
 		String[] words ={
-			"flower", "sugar", "black pepper", "cumin", "curry", "cinamon", "basil leafs", "black cardamon",
+			"flower", "sugar", "black pepper", "cumin", "curry", "cinnamon", "basil leafs", "black cardamon",
 			"mustard", "celery", "dill", "garlic", "chocolate", "marmalade", "parsley", "pepper", "vodka", "jasmine", "lime",
-		   "green curry", "rosemary", "szechuan pepper", "wasabi", "woodruff", "za\'atar"
+		   "green curry", "rosemary", "szechuan pepper", "wasabi", "woodruff", "za\'atar", "radish sprouts", "vegemite"
 		};
 
 		return pickRandomString(words);
@@ -186,7 +211,7 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getContainer() {
 		String[] words ={
-			"bowl", "cooker", "grinder", "ice blender", "pan", "saucepan", "wok"
+			"bowl", "cooker", "grinder", "ice blender", "pan", "saucepan", "wok", "soup pot"
 		};
 
 		return pickRandomString(words);
@@ -197,8 +222,20 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getAmount() {
 		String[] words ={
-			"five peaces", "four pounds", "four teaspoons", "half a kilo", "one container", "one cup", "one jar", "one package",
-			"one quarter cup", "one whole", "two oz", "two pounds", "two tablespoons"
+			"RNDNUM peaces", "RNDNUM pounds", "RNDNUM teaspoons", "half a kilo", "one container", "one cup", "one jar",
+			"one package", "one quarter cup", "RNDNUM oz", "RNDNUM pounds", "RNDNUM tablespoons"
+		};
+
+		return pickRandomString(words);
+	}
+
+	/**
+	 * @return  A number word
+	 */
+	private static String getNumber() {
+		String[] words ={
+			"two", "three", "four", "five", "six", "seven", "eight", "nine", "eleven", "twelve", "fifteen", "twenty",
+			"a dozen", "a handfull"
 		};
 
 		return pickRandomString(words);

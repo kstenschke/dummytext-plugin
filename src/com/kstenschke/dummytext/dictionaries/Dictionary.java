@@ -103,4 +103,18 @@ public class Dictionary {
 		return str.substring(0, 1).toUpperCase() + str.substring(1);
 	}
 
+	/**
+	 * @param   sentence
+	 * @param   original
+	 * @param   replacement
+	 * @return  Given sentence with word replaced by replacement, if the sentence did not contain the replacement afore
+	 */
+	protected static String replaceIfNew(String sentence, String original, String replacement) {
+		if( !sentence.contains(replacement) ) {
+			sentence = sentence.replaceFirst(original, replacement);
+		}
+
+		return sentence;
+	}
+
 }
