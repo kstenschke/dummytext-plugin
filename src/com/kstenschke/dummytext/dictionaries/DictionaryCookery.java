@@ -56,14 +56,18 @@ public class DictionaryCookery extends Dictionary {
 		sentence = sentence.replaceAll("beefs",         "beef");
 		sentence = sentence.replaceAll("berriess",      "berries");
 		sentence = sentence.replaceAll("breatss",       "breasts");
+		sentence = sentence.replaceAll("breaked",       "broken");
 		sentence = sentence.replaceAll("choped",        "chopped");
 		sentence = sentence.replaceAll("choping",       "chopping");
+		sentence = sentence.replaceAll("crumpss",       "crumps");
 		sentence = sentence.replaceAll("eggss",         "eggs");
 		sentence = sentence.replaceAll("meatballss",    "meatballs");
 		sentence = sentence.replaceAll("nachoss",       "nachos");
+		sentence = sentence.replaceAll("noodless",      "nooldes");
 		sentence = sentence.replaceAll("oysterss",       "oysters");
 		sentence = sentence.replaceAll("peanutss",      "peanuts");
 		sentence = sentence.replaceAll("peass ",        "peas");
+		sentence = sentence.replaceAll("pickless",      "pickles");
 		sentence = sentence.replaceAll("rices ",        "rice");
 		sentence = sentence.replaceAll("s tastes ",      "s taste ");
 		sentence = sentence.replaceAll("sautéed",       "seared");
@@ -72,7 +76,7 @@ public class DictionaryCookery extends Dictionary {
 		sentence = sentence.replaceAll("shrimpss",      "shrimps");
 		sentence = sentence.replaceAll("sliceing",      "slicing");
 		sentence = sentence.replaceAll("spinachs",      "spinach");
-		sentence = sentence.replaceAll("pickless",      "pickles");
+		sentence = sentence.replaceAll("trufless",      "truffles");
 
 
 		return ucfirst(sentence);
@@ -90,7 +94,7 @@ public class DictionaryCookery extends Dictionary {
 
 		String[] structures  = {
 			"4 RNDNUM 1s, 1, and 7 in a large 8 over medium heat, HEATUP for RNDNUM minutes and 3 some 1.",
-			"High-tech 1s.  Mysterious 2.  Super1.  Are we supposed to eat this stuff?  Or is it going to eat us?",
+			"High-tech 1s. Mysterious 2. Super1. Are we supposed to eat this stuff? Or is it going to eat us?",
 			"per guest prepare 9 of 2 with 4ed 1 for dessert.",
 			"4 1 6, then mix with 2 and serve 6 in 8.",
 			"when 4ing 1s, 3 1, 1 and 2 with it in a 8.",
@@ -111,11 +115,11 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getIngredient() {
 		String[] words ={
-			"blueberries", "butter", "carrots", "celery", "chicken", "chicken breasts", "chili", "chocolate", "cracker crumps",
+			"avocado", "blueberries", "butter", "carrots", "celery", "chicken", "chicken breasts", "chili", "chocolate", "cracker crumps",
 			"eggs", "garlic", "ginger", "ground beef", "herring", "leek", "lettuce", "meatballs", "meatloaf", "nachos", "noodles", "onion", "peanut butter", "peanuts",
 			"pork butt", "pork shoulder", "pumpkin seeds", "ramen", "raspberries", "rhubarb", "rice", "shrimps", "spinach",
 			"steak", "strawberries", "tofu", "turkey", "white bread", "chickpeas", "bagel", "doughnut", "marshmellow",
-			"chicken lard", "pickles", "squid", "sauerkraut", "tuna", "oysters", "popcorn"
+			"chicken lard", "pickles", "squid", "sauerkraut", "truffels", "tuna", "oysters", "popcorn"
 		};
 
 		return pickRandomString(words);
@@ -198,9 +202,10 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getSeasonings() {
 		String[] words ={
-			"flower", "sugar", "black pepper", "cumin", "curry", "cinnamon", "basil leafs", "black cardamon",
-			"mustard", "celery", "dill", "garlic", "chocolate", "marmalade", "parsley", "pepper", "vodka", "jasmine", "lime",
-		   "green curry", "rosemary", "szechuan pepper", "wasabi", "woodruff", "za\'atar", "radish sprouts", "vegemite"
+			"anise", "basil leafs", "basil", "black cardamon", "black cardamon", "black pepper", "cayenne pepper", "celery",
+			"chocolate", "cinnamon", "cumin", "curry", "dill", "dill", "flower", "garlic", "green curry", "jasmine", "lime",
+			"marmalade", "mustard", "nutmeg", "oregano", "parsley", "pepper", "radish sprouts", "rosemary", "sugar",
+			"szechuan pepper", "thyme", "vegemite", "vodka", "wasabi", "wasabi", "woodruff", "za\'atar"
 		};
 
 		return pickRandomString(words);
@@ -211,7 +216,8 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getContainer() {
 		String[] words ={
-			"bowl", "cooker", "grinder", "ice blender", "pan", "saucepan", "wok", "soup pot"
+			"bowl", "casserole", "cooker", "frying pan", "grinder", "ice blender", "pan", "saucepan", "sauté pan",
+			"soup pot", "wok"
 		};
 
 		return pickRandomString(words);

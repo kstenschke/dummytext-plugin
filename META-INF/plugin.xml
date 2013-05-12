@@ -98,7 +98,7 @@
               description="Generates random esoteric wisdom">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
-      <action id="generateCookeryAction" icon="resources/images/cookery.png" class="com.kstenschke.dummytext.generateCookeryAction" text="Generate culinary inspirations"
+      <action id="generateCookeryAction" icon="resources/images/cookery.png" class="com.kstenschke.dummytext.generateCookeryAction" text="Generate Culinary Inspirations"
               description="Generates random culinary inspirations">
           <add-to-group anchor="last" group-id="Dummytext.MyGenerateGroup"/>
       </action>

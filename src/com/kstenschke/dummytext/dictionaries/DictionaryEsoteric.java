@@ -136,10 +136,9 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"absorb", "acquire", "avoid", "believe", "capture", "desire", "discover",
-			"experience", "emerge", "feel", "forget", "gain", "handle", "hear", "illuminate",
-			"know", "love", "meet", "praise", "realize", "receive", "remember", "synthesise", "understand", "view",
-			"visualize", "yearn"
+			"absorb", "acquire", "avoid", "believe", "capture", "desire", "discover", "emerge", "experience", "feel",
+			"forget", "gain", "handle", "hear", "illuminate", "know", "love", "meet", "praise", "realize", "receive",
+			"remember", "respect", "study", "synthesise", "understand", "view", "visualize", "witness", "yearn"
 		};
 
 		return pickRandomString(words);
@@ -162,11 +161,12 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"alchemistic", "ancient", "atomic", "brilliant", "bright", "calm", "celestine", "closest", "crystal", "enlightened", "further", "great",
-			"hermetic", "holographic", "important", "inward", "magical", "mysterious", "new", "parallel", "pictorial",
-			"powerful", "psychic", "remarkable", "secret", "separate", "small", "strange", "special", "superior", "true",
-			"ultimate", "united", "unveiled", "wonderful", "beloved", "sincere", "private", "secret", "simple", "abstruse",
-			"inner", "outer", "spiritual", "synthetic", "occult", "imminent", "new", "popular", "one"
+			"abstruse", "alchemistic", "ancient", "apostolic", "atomic", "beloved", "bright", "brilliant", "calm",
+			"celestine", "closest", "crystal", "enlightened", "fraternal", "further", "great", "hermetic", "holographic",
+			"holy", "imminent", "important", "inner", "inward", "magical", "mediocre", "mysterious", "new", "new", "occult",
+			"one", "outer", "parallel", "pictorial", "popular", "powerful", "private", "psychic", "remarkable", "secret",
+			"secret", "separate", "shining", "simple", "sincere", "small", "special", "spiritual", "strange", "superior",
+			"synthetic", "true", "ultimate", "united", "unveiled", "wonderful"
 		};
 
 		return pickRandomString(words);

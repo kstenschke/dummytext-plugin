@@ -122,12 +122,12 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getNounAbstract() {
 		String[] words = {
-			"advice", "aggressive euthanasia", "akathisia", "anaphylactic shock", "anemia", "attitude",
-			"attraction", "beauty", "blood plasma", "blood", "botanophobia", "bronchitis", "cancer",
-			"cat scratch disease", "code zero", "collywobble", "coryza", "courage", "death", "desease",
-			"desinfection", "diabetes", "diagnosis", "disorder", "ebola", "faith", "fatigue", "fever",
-			"heart attack", "hope", "illness", "infection", "life", "love", "malaise", "operation", "oxygen", "parrot fever",
-			"plague", "pneumonia", "prodrome", "q fever", "reaction", "treatment", "ultrasound", "wound", "x-ray"
+			"advice", "aggressive euthanasia", "akathisia", "anaphylactic shock", "anemia", "attitude", "attraction",
+			"beauty", "blood plasma", "blood", "botanophobia", "bronchitis", "cancer", "cat scratch disease", "code zero",
+			"collywobble", "coryza", "courage", "death", "desease", "desinfection", "diabetes", "diagnosis", "disorder",
+			"ebola", "faith", "fatigue", "fever", "heart attack", "hope", "illness", "infection", "life", "love",
+			"malaise", "nutrition", "operation", "oxygen", "parrot fever", "plague", "pneumonia", "prodrome", "q fever",
+			"reaction", "treatment", "ultrasound", "wound", "x-ray"
 		};
 
 		return pickRandomString(words);
@@ -139,8 +139,8 @@ public class DictionaryHospital extends Dictionary {
 	private static String getVerbTransitive() {
 		String[] words = {
 			"admire", "assimilate", "attest", "avoid", "bathe", "breathe", "capture", "consume", "contact", "control", "convert",
-			"cost", "cut", "damage", "depend", "deserve", "desire", "discover", "educate", "examine", "experience", "experiment",
-			"fail", "foster", "grant", "hammer", "handle", "infect", "influence", "inject", "inquire", "kill", "leave", "love",
+			"clamp", "cost", "cut", "damage", "depend", "deserve", "desire", "discover", "educate", "examine", "experience", "experiment",
+			"fail", "foster", "grant", "hammer", "handle", "help", "infect", "influence", "inject", "inquire", "kill", "leave", "love",
 			"manifest", "observe", "open", "press", "promise", "question", "receive", "spread", "spread", "steal", "swell",
 			"take", "talk", "transplant", "treat", "trip", "undergo", "undress", "view"
 		};
@@ -153,7 +153,7 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"collapse", "die", "fall", "go", "itch", "meet", "suffer", "shiver", "stand", "wait"
+			"collapse", "cry", "die", "fall", "go", "itch", "meet", "suffer", "shiver", "stand", "wait"
 		};
 
 		return pickRandomString(words);
