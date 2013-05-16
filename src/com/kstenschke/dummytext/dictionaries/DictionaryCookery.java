@@ -16,6 +16,8 @@
 
 package com.kstenschke.dummytext.dictionaries;
 
+import com.kstenschke.dummytext.TextualHelper;
+
 public class DictionaryCookery extends Dictionary {
 
 	/**
@@ -53,31 +55,21 @@ public class DictionaryCookery extends Dictionary {
 
 		sentence = fixIndefiniteArticles(sentence);
 
-		sentence = sentence.replaceAll("beefs",         "beef");
-		sentence = sentence.replaceAll("berriess",      "berries");
-		sentence = sentence.replaceAll("breatss",       "breasts");
 		sentence = sentence.replaceAll("breaked",       "broken");
 		sentence = sentence.replaceAll("choped",        "chopped");
 		sentence = sentence.replaceAll("choping",       "chopping");
-		sentence = sentence.replaceAll("crumpss",       "crumps");
-		sentence = sentence.replaceAll("eggss",         "eggs");
-		sentence = sentence.replaceAll("meatballss",    "meatballs");
-		sentence = sentence.replaceAll("nachoss",       "nachos");
-		sentence = sentence.replaceAll("noodless",      "nooldes");
-		sentence = sentence.replaceAll("oysterss",       "oysters");
-		sentence = sentence.replaceAll("peanutss",      "peanuts");
-		sentence = sentence.replaceAll("peass ",        "peas");
-		sentence = sentence.replaceAll("pickless",      "pickles");
-		sentence = sentence.replaceAll("rices ",        "rice");
-		sentence = sentence.replaceAll("s tastes ",      "s taste ");
+		sentence = sentence.replaceAll("chickens",      "chicken");
 		sentence = sentence.replaceAll("sautéed",       "seared");
-		sentence = sentence.replaceAll("seedss",        "seeds");
 		sentence = sentence.replaceAll("shreding",      "shredding");
-		sentence = sentence.replaceAll("shrimpss",      "shrimps");
 		sentence = sentence.replaceAll("sliceing",      "slicing");
 		sentence = sentence.replaceAll("spinachs",      "spinach");
-		sentence = sentence.replaceAll("trufless",      "truffles");
 
+		String[] unincreasables   = {
+			"beefs", "berries", "breasts", "carrots", "chicken", "chicken", "crumps", "eggs", "meatballs", "nachos", "noodles",
+			"oysters", "oysters", "peanuts", "peas", "pickles", "pickles", "rice", "s taste", "sauerkraut", "seeds", "seeds",
+			"shrimps", "spinach", "truffles", "turkey"
+		};
+		sentence = TextualHelper.depluralize(sentence, unincreasables);
 
 		return ucfirst(sentence);
 	}
@@ -95,6 +87,7 @@ public class DictionaryCookery extends Dictionary {
 		String[] structures  = {
 			"4 RNDNUM 1s, 1, and 7 in a large 8 over medium heat, HEATUP for RNDNUM minutes and 3 some 1.",
 			"High-tech 1s. Mysterious 2. Super1. Are we supposed to eat this stuff? Or is it going to eat us?",
+			"combine 1, 1 and 1. 3 with 5 7 and serve 4ed with 1. Enjoy!",
 			"per guest prepare 9 of 2 with 4ed 1 for dessert.",
 			"4 1 6, then mix with 2 and serve 6 in 8.",
 			"when 4ing 1s, 3 1, 1 and 2 with it in a 8.",
@@ -115,11 +108,12 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getIngredient() {
 		String[] words ={
-			"avocado", "blueberries", "butter", "carrots", "celery", "chicken", "chicken breasts", "chili", "chocolate", "cracker crumps",
-			"eggs", "garlic", "ginger", "ground beef", "herring", "leek", "lettuce", "meatballs", "meatloaf", "nachos", "noodles", "onion", "peanut butter", "peanuts",
-			"pork butt", "pork shoulder", "pumpkin seeds", "ramen", "raspberries", "rhubarb", "rice", "shrimps", "spinach",
-			"steak", "strawberries", "tofu", "turkey", "white bread", "chickpeas", "bagel", "doughnut", "marshmellow",
-			"chicken lard", "pickles", "squid", "sauerkraut", "truffels", "tuna", "oysters", "popcorn"
+			"avocado", "bagel", "blueberries", "butter", "carrots", "caviar", "celery", "chicken breasts", "chicken lard", "chicken",
+			"chickpeas", "chili", "chocolate", "cracker crumps", "doughnut", "eggs", "escargot", "garlic", "ginger", "ground beef",
+			"herring", "leek", "lettuce", "lobster", "marshmellow", "meatballs", "meatloaf", "melon", "nachos", "noodles", "onion", "oysters",
+			"peanut butter", "peanuts", "pickles", "popcorn", "pork butt", "pork shoulder", "pumpkin seeds", "ramen",
+			"raspberries", "rhubarb", "rice", "sauerkraut", "shrimps", "spinach", "squid", "steak", "strawberries", "tofu",
+			"truffels", "tuna", "turkey", "watermelon", "white bread"
 		};
 
 		return pickRandomString(words);
@@ -130,9 +124,10 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getFluid() {
 		String[] words ={
-			"BBQ sauce", "adobo sauce", "beer", "bourbon", "buttermilk", "emeril\'s essence", "fish sauce", "gold tequila",
-			"honey", "joghurt", "ketchup", "lemon juice", "mayonnaise", "milk", "olive oil", "orange juice", "oyster sauce",
-			"peanut sauce", "plain vinegar", "red wine", "rice vinegar", "rum", "salsa verde", "soy sauce", "tabasco",
+			"BBQ sauce", "adobo sauce", "beer", "bourbon", "buttermilk", "champaign", "condensed milk", "crême fraîche",
+			"emeril\'s essence", "fish sauce", "gold tequila", "honey", "joghurt", "kefir", "ketchup", "lemon juice",
+			"mayonnaise", "milk", "olive oil", "orange juice", "oyster sauce", "peanut sauce", "plain vinegar",
+			"red wine", "ricotta", "rice vinegar", "rum", "salsa verde", "sour milk", "soy sauce", "tabasco",
 			"triple sec", "vinegar", "water", "white wine", "peppermint tea", "worcestershire sauce", "cream",
 		};
 
@@ -163,7 +158,7 @@ public class DictionaryCookery extends Dictionary {
 	}
 
 	/**
-	 * @return  Word of group 4:  intransitive verb
+	 * @return  Word of group "HEATUP"
 	 */
 	private static String getVerbHeatUp() {
 		String[] words = {
@@ -178,9 +173,11 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"chopped", "cold", "crushed", "delicious", "divided", "dried", "fresh", "heated", "heated", "hot", "juicy",
-			"large", "large", "mild", "minced", "old", "packaged", "ripe", "roasted", "salted", "salty", "sliced", "small",
-			"smashed", "smooth", "sour", "springy", "squeezed", "sun-dried", "sweet", "tasty", "warm", "nutty", "shredded"
+			"aged", "aromatic", "chopped", "clammy", "cold", "crushed", "delicious", "divided", "dried", "fresh", "gooey",
+			"grey", "hardened", "heated", "heated", "hot", "juicy", "large", "large", "mild", "minced", "muddy", "niffy",
+			"nutty", "old", "packaged", "ripe", "roasted", "salted", "salty", "shredded", "sliced", "slobbery", "small",
+			"smashed", "smooth", "soaked", "sour", "springy", "squeezed", "sticky", "sun-dried", "sweet", "synthetic",
+			"tangy", "tasty", "tender", "warm", "yellow"
 		};
 
 		return pickRandomString(words);
@@ -202,10 +199,11 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getSeasonings() {
 		String[] words ={
-			"anise", "basil leafs", "basil", "black cardamon", "black cardamon", "black pepper", "cayenne pepper", "celery",
-			"chocolate", "cinnamon", "cumin", "curry", "dill", "dill", "flower", "garlic", "green curry", "jasmine", "lime",
-			"marmalade", "mustard", "nutmeg", "oregano", "parsley", "pepper", "radish sprouts", "rosemary", "sugar",
-			"szechuan pepper", "thyme", "vegemite", "vodka", "wasabi", "wasabi", "woodruff", "za\'atar"
+			"anise", "basil leafs", "basil", "black cardamon", "black cardamon", "black pepper", "brown sugar", "cayenne pepper",
+			"celery", "chocolate", "cinnamon", "cumin", "curry", "dill", "dill", "flower", "garlic", "green curry",
+			"jasmine", "lime", "marmalade", "mustard", "nutmeg", "onion powder", "oregano", "parsley", "pepper",
+			"radish sprouts", "rosemary", "sugar", "szechuan pepper", "thyme", "vegemite", "vodka", "wasabi", "wasabi",
+			"woodruff", "za\'atar"
 		};
 
 		return pickRandomString(words);

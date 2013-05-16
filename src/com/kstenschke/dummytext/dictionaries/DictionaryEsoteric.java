@@ -16,6 +16,8 @@
 
 package com.kstenschke.dummytext.dictionaries;
 
+import com.kstenschke.dummytext.TextualHelper;
+
 public class DictionaryEsoteric extends Dictionary {
 
 	/**
@@ -56,14 +58,13 @@ public class DictionaryEsoteric extends Dictionary {
 		sentence = sentence.replaceAll("es each other", "e each other");
 		sentence = sentence.replaceAll("forgeting ",    "forgetting ");
 		sentence = sentence.replaceAll("illuminate ",   "illuminating ");
-		sentence = sentence.replaceAll("loves",         "love");
-		sentence = sentence.replaceAll("manys",         "many");
-		sentence = sentence.replaceAll("peaces",        "peace");
 		sentence = sentence.replaceAll("riseing ",      "rising ");
 		sentence = sentence.replaceAll("s meets",       "s meet");
-		sentence = sentence.replaceAll("sexs",          "sex");
 		sentence = sentence.replaceAll("siting ",       "sitting ");
 		sentence = sentence.replaceAll("the peace",     "peace");
+
+		String[] unincreasables   = { "love", "many", "peace", "sex" };
+		sentence = TextualHelper.depluralize(sentence, unincreasables);
 
 		return ucfirst(sentence);
 	}

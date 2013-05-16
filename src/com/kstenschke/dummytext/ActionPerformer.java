@@ -75,6 +75,7 @@ class ActionPerformer {
 			Boolean isLowerCase  = false;
 			Boolean isUcFirst    = false;
 
+			String leadingWhiteSpace = "";
 			String trailingPunctuation = TextualHelper.getTrailingPunctuationMark(selectedText);
 
 			Integer dummyLength  = 100; // minimum overall string length
@@ -93,6 +94,9 @@ class ActionPerformer {
 				if( ! isLowerCase ) {
 					isUcFirst   = TextualHelper.isUcFirst(selectedText);
 				}
+
+				leadingWhiteSpace = TextualHelper.getLeadingWhiteSpace(selectedText);
+				selectedText      = selectedText.trim();
 
 				Integer selectionLength = selectedText.length();
 
@@ -117,6 +121,8 @@ class ActionPerformer {
 				} else if( isUcFirst ) {
 					dummyText   = TextualHelper.ucFirst(dummyText);
 				}
+
+				dummyText   = leadingWhiteSpace + dummyText;
 
 				CaretModel caretModel   = editor.getCaretModel();
 				Integer dummyTextLength = dummyText.length();

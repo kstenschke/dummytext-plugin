@@ -16,6 +16,8 @@
 
 package com.kstenschke.dummytext.dictionaries;
 
+import com.kstenschke.dummytext.TextualHelper;
+
 public class DictionaryHospital extends Dictionary {
 
 	/**
@@ -55,17 +57,15 @@ public class DictionaryHospital extends Dictionary {
 		sentence = sentence.replaceAll(" go at the ",   " go to the ");
 		sentence = sentence.replaceAll(" gos ",         " goes ");
 		sentence = sentence.replaceAll("bodys",         "bodies");
-		sentence = sentence.replaceAll("bronchitiss",   "bronchitis");
-		sentence = sentence.replaceAll("diagnosiss",    "diagnose ");
 		sentence = sentence.replaceAll("familys ",      "families ");
-		sentence = sentence.replaceAll("illnesss",      "illnesses");
 		sentence = sentence.replaceAll("itchs",         "itches");
-		sentence = sentence.replaceAll("kidneyss",      "kidneys");
-		sentence = sentence.replaceAll("lungss",        "lungs");
 		sentence = sentence.replaceAll("peniss",        "penises");
 		sentence = sentence.replaceAll("talk the",      "talk to the");
 		sentence = sentence.replaceAll("undergos",      "undergoes");
 		sentence = sentence.replaceAll("wait from",     "wait for");
+
+		String[] unincreasables   = { "bronchitis", "diagnosis", "illness", "kidneys", "lungs"};
+		sentence = TextualHelper.depluralize(sentence, unincreasables);
 
 		return ucfirst(sentence);
 	}

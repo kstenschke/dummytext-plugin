@@ -16,6 +16,8 @@
 
 package com.kstenschke.dummytext.dictionaries;
 
+import com.kstenschke.dummytext.TextualHelper;
+
 public class DictionaryPirates extends Dictionary {
 
 	/**
@@ -55,12 +57,13 @@ public class DictionaryPirates extends Dictionary {
 		sentence = sentence.replaceAll("beautys ",                "beauties ");
 		sentence = sentence.replaceAll("breaked",                 "broken");
 		sentence = sentence.replaceAll("cockroachs",              "cockroaches");
-		sentence = sentence.replaceAll("lasss ",                  "lass ");
 		sentence = sentence.replaceAll("loveed",                  "loved");
-		sentence = sentence.replaceAll("pantss ",                 "pants ");
 		sentence = sentence.replaceAll("scrapeed",                "scraped");
 		sentence = sentence.replaceAll("to the love",             "to love");
 		sentence = sentence.replaceAll("vandalizeed",             "vandalized");
+
+		String[] unincreasables   = { "lass", "pants" };
+		sentence = TextualHelper.depluralize(sentence, unincreasables);
 
 		return ucfirst(sentence);
 	}

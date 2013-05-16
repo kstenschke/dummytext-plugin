@@ -16,6 +16,8 @@
 
 package com.kstenschke.dummytext.dictionaries;
 
+import com.kstenschke.dummytext.TextualHelper;
+
 public class DictionarySciFi extends Dictionary {
 
 	/**
@@ -54,11 +56,12 @@ public class DictionarySciFi extends Dictionary {
 		sentence = sentence.replaceAll("galaxys ",   "galaxies ");
 		sentence = sentence.replaceAll(" flys ",     " flies ");
 		sentence = sentence.replaceAll(" gos ",      " goes ");
-		sentence = sentence.replaceAll("peoples ",   "people ");
-		sentence = sentence.replaceAll("speciess ",  "species ");
 		sentence = sentence.replaceAll("controled",  "controlled");
 		sentence = sentence.replaceAll("paralysiss", "paralyses");
 		sentence = sentence.replaceAll("kalesss",    "forefathers");
+
+		String[] unincreasables   = { "species", "people"};
+		sentence = TextualHelper.depluralize(sentence, unincreasables);
 
 		return ucfirst(sentence);
 	}
