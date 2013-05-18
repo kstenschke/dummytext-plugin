@@ -32,7 +32,9 @@ public class Action extends AnAction {
 	 * @param	event		Action system event
 	 */
 	public void update( AnActionEvent event ) {
-		event.getPresentation().setEnabled(event.getData(PlatformDataKeys.EDITOR) != null);
+		Boolean isEditorAvailable = event.getData(PlatformDataKeys.EDITOR) != null;
+
+		event.getPresentation().setEnabled(isEditorAvailable);
 	}
 
 	/**

@@ -116,7 +116,9 @@ public class TextualHelper {
 	 */
 	public static String castTrailingPunctuation(String str, String trailingPunctuation)
 	{
-		str   = str.trim();
+		String leadingWhiteSpace   = TextualHelper.getLeadingWhiteSpace(str);
+		str                        = str.trim();
+
 		Boolean endsAlphabetic  = TextualHelper.isAlphabetic(TextualHelper.getLastChar(str));
 
 		if( trailingPunctuation != null ) {
@@ -131,7 +133,7 @@ public class TextualHelper {
 			str   =	str.substring(0, str.length() - 1);
 		}
 
-		return str;
+		return leadingWhiteSpace + str;
 	}
 
 	/**

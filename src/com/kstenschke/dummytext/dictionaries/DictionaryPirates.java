@@ -53,14 +53,22 @@ public class DictionaryPirates extends Dictionary {
 
 		sentence = fixIndefiniteArticles(sentence);
 
+		sentence = sentence.replaceAll(" a sea ",                 " the sea");
 		sentence = sentence.replaceAll("at the old east india",   "in east india");
 		sentence = sentence.replaceAll("beautys ",                "beauties ");
 		sentence = sentence.replaceAll("breaked",                 "broken");
 		sentence = sentence.replaceAll("cockroachs",              "cockroaches");
+		sentence = sentence.replaceAll("hobbleing",               "waving");
 		sentence = sentence.replaceAll("loveed",                  "loved");
+		sentence = sentence.replaceAll("riseing",                 "rising");
 		sentence = sentence.replaceAll("scrapeed",                "scraped");
 		sentence = sentence.replaceAll("to the love",             "to love");
 		sentence = sentence.replaceAll("vandalizeed",             "vandalized");
+		sentence = sentence.replaceAll("waveing",                 "waving");
+		sentence = sentence.replaceAll("whineing",                "whining");
+
+
+		//"hobble", "laugh", "rise", "scream", "sing", "stutter", "travel", "wave", "whine"
 
 		String[] unincreasables   = { "lass", "pants" };
 		sentence = TextualHelper.depluralize(sentence, unincreasables);
@@ -79,25 +87,28 @@ public class DictionaryPirates extends Dictionary {
 		}
 
 		String[] structures  = {
-			"damn yer 1, feed the 1.",
-			"1 of a 5 2, 3 the 2!",  "1s are the 1s of the 5 2.",
-			"the 5 1 6 3s the 1.",
-			"5, 5 1s 6 3 a 5, 5 1.",
-			"5 2s lead to the 2.",
-			"2 is a 5 1.",
-			"7, 7.", "7, 2!", "7, 5 2!", "7, ye 5 1- set sails for 2!",
-			"pieces o\' 2 are forever 5.",
 			"1s 4 with 2!", "1s 4 on 2 at 8!", "1s 4 with 2 at the 5 8!",
+			"7, 7.", "7, 2!", "7, 5 2!", "7, ye 5 1- set sails for 2!",
+			"where is the 5 1?", "all 1s 3 5, 5 1s.", "never 3 a 1.",
+			"1 of a 5 2, 3 the 2!",  "1s are the 1s of the 5 2.",
 			"the 1 4s 2 like a 5 1.", "1s 4 from 2s like 5 1s.",
+			"7, 5 1. go to 8.", "7, 5 1. you won't 3 the 9.",
+			"7 there's nothing like the 5 2 4ing on the 1.",
+			"when the 1 4s for 8, all 1s 3 5, 5 1s.",
+			"the 1 3s with 2, 3 the 9 until it 4s.",
+			"pieces o\' 2 are forever 5.",
+			"damn yer 1, feed the 1.",
+			"how 5. You 3 like a 1.",
+			"5, 5 1s 6 3 a 5, 5 1.",
+			"7, yer not 3ing me without a 2!",
+			"the 5 1 6 3s the 1.",
+			"5 2s lead to the 2.",
+			"ho-ho-ho! 2 of 2.",
+			"2 ho! 3 to be 3ed.",
 			"why does the 1 4?",
 			"4 6 like a 5 1.",
 			"2, 2, and 2.",
-			"where is the 5 1?", "all 1s 3 5, 5 1s.", "never 3 a 1.",
-			"the 1 3s with 2, 3 the 9 until it 4s.",
-			"when the 1 4s for 8, all 1s 3 5, 5 1s.",
-			"ho-ho-ho! 2 of 2.",
-			"2 ho! 3 to be 3ed.",
-			"7, 5 1. go to 8.", "7, 5 1. you won't 3 the 9."
+			"2 is a 5 1.",
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -113,7 +124,7 @@ public class DictionaryPirates extends Dictionary {
 			"gold", "grog", "gull", "hornpipe", "jack", "jolly roger", "kraken", "lad", "lagoon", "lass", "lubber",
 			"mainland", "mast", "mate", "moon", "pants", "parrot", "pegleg", "pin", "pirate", "plank", "plunder", "reef",
 			"sail", "sailor", "scabbard", "scallywag", "sea", "seashell", "shark", "ship", "shipmate", "shore", "skiff",
-			"parrot", "rum", "skull", "son", "sun", "tuna", "wave", "wench", "whale", "wind", "yardarm"
+			"parrot", "rum", "skull", "son", "sun", "tuna", "wave", "wench", "whale", "wind", "woodchuck", "yardarm"
 		};
 
 		return pickRandomString(words);
@@ -124,9 +135,9 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getNounAbstract() {
 		String[] words = {
-			"adventure", "amnesty", "beauty", "booty", "courage", "death", "desolation", "endurance",
-			"faith", "fortune", "grace", "greed", "horror", "hunger", "life", "love", "madness", "malaria",
-			"passion", "pestilence", "power", "punishment", "strength", "treasure", "urchin", "yellow fever",
+			"adventure", "amnesty", "beauty", "booty", "courage", "death", "desolation", "endurance", "faith", "fight",
+			"fortune", "grace", "greed", "halitosis", "horror", "hunger", "life", "love", "madness", "malaria", "passion",
+			"pestilence", "power", "punishment", "riddle", "strength", "treasure", "urchin", "yellow fever"
 		};
 
 		return pickRandomString(words);
@@ -137,7 +148,7 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"blow", "break", "burn", "command", "crush", "desire", "drink", "endure", "fight", "fire", "hail",
+			"blow", "break", "burn", "command", "crush", "desire", "drink", "endure", "fear", "fight", "fire", "hail",
 			"haul", "hoist", "lead", "loot", "love", "mark", "pull", "raid", "ransack", "rob", "sail", "scrape", "trade",
 			"vandalize", "view"
 		};
@@ -161,9 +172,9 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"addled", "big", "black", "clear", "cloudy", "coal-black", "cold", "dark", "dead", "finest", "golden",
-			"gutless", "jolly", "lively", "misty", "old", "proud", "rainy", "real", "rough", "scurvy", "shiny", "small",
-			"stormy", "sunny", "swashbuckling", "warm", "wet"
+			"addled", "big", "black", "clear", "cloudy", "coal-black", "cold", "dark", "dead", "evil", "fine", "golden",
+			"gutless", "jolly", "lively", "mighty", "misty", "old", "proud", "rainy", "real", "rough", "scurvy", "shiny", "small",
+			"stormy", "sunny", "swashbuckling", "undead", "warm", "weird", "wet"
 		};
 
 		return pickRandomString(words);
@@ -188,7 +199,7 @@ public class DictionaryPirates extends Dictionary {
 	private static String getInterjection() {
 		String[] words ={
 			"ah", "ahoy", "arg", "arrr", "avast", "aye", "belay", "c\'mon", "god", "golly gosh", "jolly", "lord",
-			"o", "oh", "ooh", "yo-ho-ho", "wow", "yarr"
+			"o", "oh", "ooh", "yo-ho-ho", "well", "wow", "yarr", "yuck"
 		};
 
 		return pickRandomString(words);

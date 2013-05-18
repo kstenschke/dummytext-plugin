@@ -57,8 +57,6 @@ class ActionPerformer {
 		}
 	}
 
-
-
 	/**
 	 * @param   event    ActionSystem event
 	 */
@@ -75,7 +73,6 @@ class ActionPerformer {
 			Boolean isLowerCase  = false;
 			Boolean isUcFirst    = false;
 
-			String leadingWhiteSpace = "";
 			String trailingPunctuation = TextualHelper.getTrailingPunctuationMark(selectedText);
 
 			Integer dummyLength  = 100; // minimum overall string length
@@ -95,9 +92,6 @@ class ActionPerformer {
 					isUcFirst   = TextualHelper.isUcFirst(selectedText);
 				}
 
-				leadingWhiteSpace = TextualHelper.getLeadingWhiteSpace(selectedText);
-				selectedText      = selectedText.trim();
-
 				Integer selectionLength = selectedText.length();
 
 				if( selectionLength > 0 ) {
@@ -112,7 +106,7 @@ class ActionPerformer {
 
 			if( dummyLength != null ) {
 					// Generate and insert / replace selection with dummy text
-				String dummyText  = generateText(dummyLength, amountLines, amountWords, trailingPunctuation).toString();
+				String dummyText  = generateText(amountLines, amountWords, trailingPunctuation, selectedText).toString();
 
 				if( isLowerCase ) {
 					dummyText   = dummyText.toLowerCase();
@@ -121,8 +115,6 @@ class ActionPerformer {
 				} else if( isUcFirst ) {
 					dummyText   = TextualHelper.ucFirst(dummyText);
 				}
-
-				dummyText   = leadingWhiteSpace + dummyText;
 
 				CaretModel caretModel   = editor.getCaretModel();
 				Integer dummyTextLength = dummyText.length();
@@ -146,13 +138,12 @@ class ActionPerformer {
 	}
 
 	/**
-	 * @param   approxMaxChars       Minimum string length
 	 * @param   amountLines          Amount of lines
 	 * @param   amountWords          Amount of words (per line, only given for single lined selection)
 	 * @param   trailingPunctuation  Trailing punctuation to be cast to the generated string's ending
 	 * @return  Random dummy text of the given amount of lines and at least the given string-length
 	 */
-	private CharSequence generateText(Integer approxMaxChars, Integer amountLines, Integer amountWords, String trailingPunctuation) {
+	private CharSequence generateText(Integer amountLines, Integer amountWords, String trailingPunctuation, String textToBeReplaced) {
 		String dummyText = "";
 
 		if( amountLines > 1 ) {
@@ -161,14 +152,28 @@ class ActionPerformer {
 
 			// Add random sentences until the given text length is reached
 		Integer linesCount = 0;
-		while( dummyText.length() < approxMaxChars && linesCount < amountLines ) {
-			dummyText   = dummyText.concat( genreDictionary.getRandomLine(amountWords) );
+		String[] originalLines = textToBeReplaced != null ? textToBeReplaced.split("\\n") : null;
+		while( linesCount < amountLines ) {
+			String originalLine = null;
+			String leadingWhiteSpace = "";
+
+			if( originalLines != null ) {
+				originalLine      = originalLines[linesCount];
+				amountWords       = TextualHelper.getWordCount(originalLine);
+				leadingWhiteSpace = TextualHelper.getLeadingWhiteSpace(originalLine);
+			}
+
+			dummyText   = dummyText.concat( leadingWhiteSpace + genreDictionary.getRandomLine(amountWords) );
 			dummyText   = dummyText.concat( amountLines > 1 ? "\n" : " ");
 
 			linesCount++;
 		}
 
 		return TextualHelper.castTrailingPunctuation(dummyText, trailingPunctuation);
+	}
+
+	private CharSequence generateText(Integer amountLines, Integer amountWords, String trailingPunctuation) {
+		return generateText(amountLines, amountWords, trailingPunctuation, null);
 	}
 
 }

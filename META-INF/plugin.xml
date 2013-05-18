@@ -45,6 +45,11 @@
   <version>1.0.3</version>
 
   <change-notes><![CDATA[
+    1.0.4<ul>
+        <li>Replaced amount of lines stays same, word count per line varies less</li>
+        <li>Leading white-space per line is maintained</li>
+        <li>Improved vocabulary and grammar</li>
+    </ul>
     1.0.3<ul>
         <li>Added action icons</li>
         <li>New genre: culinary inspirations</li>
