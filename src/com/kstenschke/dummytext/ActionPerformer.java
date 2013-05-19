@@ -121,6 +121,7 @@ class ActionPerformer {
 				Integer offsetStart;
 
 				if( hasSelection ) {
+						// Move caret to end of selection
 					offsetStart = selectionModel.getSelectionStart();
 					Integer offsetEnd = selectionModel.getSelectionEnd();
 
@@ -128,6 +129,7 @@ class ActionPerformer {
 					selectionModel.setSelection(offsetStart, offsetStart + dummyTextLength );
 					caretModel.moveToOffset( offsetStart + dummyTextLength );
 				} else {
+						// Move caret to end of inserted text
 					offsetStart  = caretModel.getOffset();
 
 					document.insertString(offsetStart, dummyText + " ");
@@ -169,7 +171,11 @@ class ActionPerformer {
 			linesCount++;
 		}
 
-		return TextualHelper.castTrailingPunctuation(dummyText, trailingPunctuation);
+		if( textToBeReplaced != null && trailingPunctuation != null && !textToBeReplaced.isEmpty() && !trailingPunctuation.isEmpty() ) {
+			dummyText = TextualHelper.castTrailingPunctuation(dummyText, trailingPunctuation);
+		}
+
+		return dummyText;
 	}
 
 	private CharSequence generateText(Integer amountLines, Integer amountWords, String trailingPunctuation) {

@@ -198,8 +198,8 @@ public class DictionaryPirates extends Dictionary {
 	 */
 	private static String getInterjection() {
 		String[] words ={
-			"ah", "ahoy", "arg", "arrr", "avast", "aye", "belay", "c\'mon", "god", "golly gosh", "jolly", "lord",
-			"o", "oh", "ooh", "yo-ho-ho", "well", "wow", "yarr", "yuck"
+			"ah", "ahoy", "arg", "arrr", "avast", "aw", "aww", "aye", "belay", "c\'mon", "god", "golly gosh", "jolly",
+			"lord", "o", "oh", "ooh", "yo-ho-ho", "well", "wow", "yarr", "yuck"
 		};
 
 		return pickRandomString(words);

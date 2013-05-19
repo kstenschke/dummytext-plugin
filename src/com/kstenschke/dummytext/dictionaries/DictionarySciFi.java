@@ -77,25 +77,25 @@ public class DictionarySciFi extends Dictionary {
 		}
 
 		String[] structures = {
-			"1 of a 5 2, 3 the 2!", "1s are the 1s of the 5 2.",
-			"the 5 1 6 3s the 1.",
-			"5, 5 1s 6 3 a 5, 5 1.",
-			"5 2s lead to the 2.",
-			"the 2 is a 5 1.",
-			"7.", "7, 2!", "7, 5 2!",
 			"1s 4 with 2!", "1s 4 on 2 at 8!", "1s 4 with 2 at the 5 9!",
-			"it is a 5 2, sir.",
-			"the 1 4s 2 like a 5 1.", "1s 4 from 2s like 5 1s.",
-			"why does the 1 4?",
-			"4 6 like a 5 1.",
-			"2, 2, and 2.",
-			"the 1 is 6 5.",
 			"where is the 5 1?", "all 1s 3 5, 5 1s.", "never 3 a 1.",
+			"1 of a 5 2, 3 the 2!", "1s are the 1s of the 5 2.",
+			"the 1 4s 2 like a 5 1.", "1s 4 from 2s like 5 1s.",
 			"when the 1 4s for 8, all 1s 3 5, 5 1s.",
+			"this 2 has only been 3ed by a 5 1.",
 			"2 at the 9 that is when 5 1s 4.",
-			"5 1s, to the 9.",
 			"i 3 this 2, it's called 5 2.",
-		   "this 2 has only been 3ed by a 5 1."
+			"7.", "7, 2!", "7, 5 2!",
+			"5, 5 1s 6 3 a 5, 5 1.",
+			"the 5 1 6 3s the 1.",
+			"5 2s lead to the 2.",
+			"why does the 1 4?",
+			"it is a 5 2, sir.",
+			"the 2 is a 5 1.",
+			"5 1s, to the 9.",
+			"4 6 like a 5 1.",
+			"the 1 is 6 5.",
+			"2, 2, and 2.",
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -126,9 +126,9 @@ public class DictionarySciFi extends Dictionary {
 			"collision course", "coordinates", "core", "courage", "death", "definition", "devastation", "ellipse",
 			"energy", "faith", "flight", "friendship", "future", "galaxy", "history", "honor", "hypnosis",
 			"ionic cannon", "life", "love", "mankind", "metamorphosis", "mind", "mineral", "modification", "moon",
-			"mystery", "nuclear flux", "paralysis", "pattern", "plasma", "powerdrain", "pressure", "procedure",
+			"mystery", "nuclear flux", "paralysis", "pattern", "peace", "plasma", "powerdrain", "pressure", "procedure",
 			"resistance", "rumour", "sensor", "shield", "sonic shower", "space suit", "starlight travel", "stigma",
-			"tragedy", "turbulence", "vision", "voyage", "wind", "x-ray vision"
+			"tragedy", "turbulence", "understanding", "vision", "voyage", "wind", "x-ray vision"
 		};
 
 		return pickRandomString(words);
