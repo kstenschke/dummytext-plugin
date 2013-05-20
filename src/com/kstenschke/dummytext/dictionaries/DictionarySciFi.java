@@ -53,12 +53,13 @@ public class DictionarySciFi extends Dictionary {
 
 		sentence = fixIndefiniteArticles(sentence);
 
-		sentence = sentence.replaceAll("galaxys ",   "galaxies ");
-		sentence = sentence.replaceAll(" flys ",     " flies ");
-		sentence = sentence.replaceAll(" gos ",      " goes ");
-		sentence = sentence.replaceAll("controled",  "controlled");
-		sentence = sentence.replaceAll("paralysiss", "paralyses");
-		sentence = sentence.replaceAll("kalesss",    "forefathers");
+		sentence = sentence.replaceAll(" flys ",        " flies ");
+		sentence = sentence.replaceAll(" gos ",         " goes ");
+		sentence = sentence.replaceAll("captureing",    "capturing");
+		sentence = sentence.replaceAll("controled",     "controlled");
+		sentence = sentence.replaceAll("galaxys ",      "galaxies ");
+		sentence = sentence.replaceAll("kalesss",       "forefathers");
+		sentence = sentence.replaceAll("paralysiss",    "paralyses");
 
 		String[] unincreasables   = { "species", "people"};
 		sentence = TextualHelper.depluralize(sentence, unincreasables);

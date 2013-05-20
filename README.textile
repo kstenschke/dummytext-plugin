@@ -8,21 +8,21 @@ This is a plugin for the various intellij IDEs, working in IDEA, PhpStorm, AppCo
 h2. Description
 
 The plugin adds a random text generator, capable of creating witty texts in different genres.
-Created text can be inserted newly at the caret, or replace a selection.<br/>
+Created text can be inserted newly at the caret, or replace a selection.
 The dummy text generator is added to the main menu, tools menu and into the generate... popup (Alt+Insert)
 
 The plugin allows to choose from several genres:
 
+* Culinary Inspirations
+* Esoteric Wisdom
 * Fake Latin (similar to "Lorem Ipsum" blindtext)
 * Medical Drama
-* Culinary Inspirations
 * Pirate Lingo
 * Science Fiction
-* Esoteric Wisdom
 
-When replacing a multi-lined selection of text, the generated dummy text has roughly the same amount of lines.
+When replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines.
 When replacing a selection of text within a single line, the amount of words is roughly being maintained.
-When the replaced text selection consists fully of lower-cased or capital letters or begins with a captial letter,
+When the replaced text selection consists fully of lower-cased or capital letters or begins with a capital letter,
 that previous casing is maintained. Furthermore, the presence or absence of a trailing punctuation mark of a
 replaced text selection is being maintained.
 

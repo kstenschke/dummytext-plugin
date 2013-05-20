@@ -22,6 +22,7 @@ import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
+import com.intellij.openapi.util.TextRange;
 import com.kstenschke.dummytext.PluginPreferences;
 import com.kstenschke.dummytext.TextualHelper;
 import com.kstenschke.dummytext.dictionaries.*;
@@ -133,7 +134,15 @@ class ActionPerformer {
 					offsetStart  = caretModel.getOffset();
 
 					document.insertString(offsetStart, dummyText + " ");
-					caretModel.moveToOffset( offsetStart + dummyTextLength + 1 );
+					int caretOffset   = offsetStart + dummyTextLength + 1;
+
+					String charAtCaret = document.getText(new TextRange(caretOffset, caretOffset+1));
+					while( caretOffset > 0 && TextualHelper.isWhiteSpace(charAtCaret) ) {
+						caretOffset--;
+						charAtCaret = document.getText(new TextRange(caretOffset, caretOffset+1));
+					}
+
+					caretModel.moveToOffset(caretOffset);
 				}
 			}
 		}

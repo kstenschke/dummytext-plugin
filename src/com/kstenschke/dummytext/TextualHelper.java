@@ -70,11 +70,20 @@ public class TextualHelper {
 
 	/**
 	 * @param   str   String to be parsed
+	 * @return  Is the given string all white-space?
+	 */
+	public static Boolean isWhiteSpace(String str)
+	{
+		return str.trim().length() == 0;
+	}
+
+	/**
+	 * @param   str   String to be parsed
 	 * @return  Is the given string not alphabetic (e.g. a punctuation)?
 	 */
 	public static Boolean isAlphabetic(String str)
 	{
-		return     str.matches("[a-z|A-Z]");
+		return str.matches("[a-z|A-Z]");
 	}
 
 	/**

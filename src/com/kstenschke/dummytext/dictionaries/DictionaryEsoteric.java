@@ -52,6 +52,7 @@ public class DictionaryEsoteric extends Dictionary {
 
 		sentence = sentence.replaceAll("a one ",        "one ");
 		sentence = sentence.replaceAll("becomeing ",    "becoming ");
+		sentence = sentence.replaceAll("captureing",    "capturing");
 		sentence = sentence.replaceAll("desireing ",    "desiring ");
 		sentence = sentence.replaceAll("dos ",          "does ");
 		sentence = sentence.replaceAll("emergeing ",    "emerging ");
@@ -80,23 +81,27 @@ public class DictionaryEsoteric extends Dictionary {
 		}
 
 		String[] structures = {
-			"the 1 3s.",
-			"the 2 is a 5 1.",
-			"all 5 1s 3s each other, only 5 1s have a 2.",
-			"one must 3 the 1 in order to 3 the 1 of 5 2.",
-			"Who can 3 the 2 and 2 of a 1 if he has the 5 2 of the 1.",
-			"Never 3 the 1, for you can’t 3 it.",
-			"Always 6 3 the 5 1.",
-			"the 1 has 2, but not everyone 3s it.",
-			"7.", "confucius says: 7.",
-			"the 9 is full of 2.",
-			"2, 2 and a 5 9.",
-			"8 is not the 6 2 of the 1.",
-			"not 8 or 8, 3 the 2.",
-			"yes, there is 8, it 4s with 2.",
-			"the 1 3s 2 which is not 5.",
-			"the 2 of your 2s will 4 6 when you 3 that 2 is the 1.",
-			"A 5 form of 2 is the 2."
+				  "When the 1 of 2 overcomes the 2 of the 1, the 2 will know 1.",
+				  "Going to the 9 doesn’t 3 2 anymore than 3ing creates 5 2.",
+				  "Who can 3 the 2 and 2 of a 1 if he has the 5 2 of the 1.",
+				  "the 2 of your 2s will 4 6 when you 3 that 2 is the 1.",
+				  "one must 3 the 1 in order to 3 the 1 of 5 2.",
+				  "all 5 1s 3 each other, only 5 1s have a 2.",
+				  "the 1 has 2, but not everyone 3s it.",
+				  "Never 3 the 1, for you can’t 3 it.",
+				  "yes, there is 8, it 4s with 2.",
+				  "8 is not the 6 2 of the 1.",
+				  "To some, a 1 is a 2 for 3ing.",
+				  "the 1 3s 2 which is not 5.",
+				  "7.", "confucius says: 7.",
+				  "A 5 form of 2 is the 2.",
+				  "not 8 or 8, 3 the 2.",
+				  "the 9 is full of 2.",
+				  "Always 6 3 the 5 1.",
+				  "5 2s 3 the most 2.",
+				  "the 2 is a 5 1.",
+				  "2, 2 and a 5 9.",
+				  "the 1 3s.",
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -108,7 +113,7 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getNounConcrete() {
 		String[] words = {
 			"believer", "body", "cow", "creator", "death", "doer", "ego", "explosion of the 2", "follower", "guru", "individual", "karma",
-			"lama", "lord", "love", "lover", "man", "master", "monkey", "moon", "scholar", "self", "seeker", "sinner",
+			"lama", "lord", "love", "lover", "man", "master", "monkey", "moon", "power", "scholar", "self", "seeker", "sinner",
 			"source", "sun", "teacher", "therapist", "thing", "visitor", "wind", "yogi", "aspect"
 		};
 
@@ -121,11 +126,11 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getNounAbstract() {
 		String[] words = {
 			"acceptance", "advice", "afterlife", "anger", "affirmation", "ascension", "attitude", "attraction", "awareness",
-			"beauty", "blessing", "bliss", "booda-hood", "career", "chaos", "control", "core", "courage", "definition",
+			"beauty", "blessing", "bliss", "booda-hood", "career", "chaos", "control", "conclusion", "core", "courage", "definition",
 			"density", "dimension", "emptiness", "energy", "enlightenment", "enlightenment", "everything", "extend", "faith",
 			"fear", "freedom", "grace", "happiness", "heaven", "heaven", "history", "hypnosis", "issue", "life", "light",
 			"living", "manifestation", "meditation", "milk", "mind", "mineral", "money", "moonlight", "pain", "peace",
-			"purpose", "relativity", "samadhi", "satori", "sex", "silence", "solitude", "suffering", "surrender", "tantra",
+			"purpose", "relativity", "result", "samadhi", "satori", "sex", "silence", "solitude", "suffering", "surrender", "tantra",
 			"totality", "trust", "truth", "uniqueness", "vision", "volume", "zen"
 		};
 
@@ -151,7 +156,7 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getVerbIntransitive() {
 		String[] words = {
 			"appear", "balance", "become", "contact", "convert", "die", "disappear", "disturb", "do", "empower", "exist",
-			"experiment", "fly", "grow", "listen", "occur", "remain", "rise", "shine", "sit", "travel"
+			"experiment", "fail", "fly", "grow", "listen", "occur", "remain", "rise", "shine", "sit", "travel", "wrestle"
 		};
 
 		return pickRandomString(words);

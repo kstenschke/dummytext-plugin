@@ -53,10 +53,11 @@ public class DictionaryHospital extends Dictionary {
 
 		sentence = fixIndefiniteArticles(sentence);
 
-		sentence = sentence.replaceAll("anuss",         "anuses");
 		sentence = sentence.replaceAll(" go at the ",   " go to the ");
 		sentence = sentence.replaceAll(" gos ",         " goes ");
+		sentence = sentence.replaceAll("anuss",         "anuses");
 		sentence = sentence.replaceAll("bodys",         "bodies");
+		sentence = sentence.replaceAll("captureing",    "capturing");
 		sentence = sentence.replaceAll("familys ",      "families ");
 		sentence = sentence.replaceAll("itchs",         "itches");
 		sentence = sentence.replaceAll("peniss",        "penises");
@@ -81,22 +82,22 @@ public class DictionaryHospital extends Dictionary {
 		}
 
 		String[] structures = {
-		   "to 3 the 1 of 5 9, 3 the 1.",
-		   "to 3 the 5 1 of 9, 6 3 the 1.",
-			"1s of a 5 2, 3 the 2!", "1s are the 1s of the 5 2.",
-			"the 5 1 6 3s the 1.",
-			"5, 5 1s 6 3 a 5, 5 1.",
-			"5 2s lead to the 2.",
-			"2 is a 5 1.",
-			"7.", "7, 2!", "7, 5 2!",
-			"1s 4 with 2!", "1s 4 on 2 at the 8!", "1s 4 with 2 at the 5 8!",
-			"it is a 5 2, sir.",
-			"the 1 4s by 2 like a 5 1.", "1s 4 from 2s like 5 1s.",
-			"why does the 1 4?",
-			"4 6 like a 5 1.",
-			"2, 2, and 2.",
-			"where is the 5 1?", "all 1s 3 5, 5 1s.", "never 3 a 1.",
-			"when the 1 4s for 8, all 1s 3 5, 5 1s."
+				  "1s 4 with 2!", "1s 4 on 2 at the 8!", "1s 4 with 2 at the 5 8!",
+				  "where is the 5 1?", "all 1s 3 5, 5 1s.", "never 3 a 1.",
+				  "the 1 4s by 2 like a 5 1.", "1s 4 from 2s like 5 1s.",
+				  "1s of a 5 2, 3 the 2!", "1s are the 1s of the 5 2.",
+				  "when the 1 4s for 8, all 1s 3 5, 5 1s.",
+				  "to 3 the 5 1 of 9, 6 3 the 1.",
+				  "to 3 the 1 of 5 9, 3 the 1.",
+				  "7.", "7, 2!", "7, 5 2!",
+				  "5, 5 1s 6 3 a 5, 5 1.",
+				  "the 5 1 6 3s the 1.",
+				  "5 2s lead to the 2.",
+				  "why does the 1 4?",
+				  "it is a 5 2, sir.",
+				  "4 6 like a 5 1.",
+				  "2, 2, and 2.",
+				  "2 is a 5 1.",
 		};
 
 		return pickRandomString(structures, amountWords);

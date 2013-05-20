@@ -24,14 +24,14 @@
     <br/><br/>
     The plugin allows to choose from several genres:<br />
     <ul>
+        <li>Culinary Inspirations</li>
+        <li>Esoteric Wisdom</li>
         <li>Fake Latin  (similar to "Lorem Ipsum" blindtext)</li>
         <li>Medical Drama</li>
-        <li>Culinary Inspirations</li>
         <li>Pirate Lingo</li>
         <li>Science Fiction</li>
-        <li>Esoteric Wisdom</li>
     </ul><br/>
-    When replacing a multi-lined selection of text, the generated dummy text has roughly the same amount of lines.
+    When replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines.
     When replacing a selection of text within a single line, the amount of words is roughly being maintained.<br/>
     When the replaced text selection consists fully of lower-cased or capital letters or begins with a
     captial letter, that previous casing is maintained. Furthermore, the presence or absence of a trailing
@@ -42,12 +42,12 @@
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
 
-  <version>1.0.3</version>
+  <version>1.0.4</version>
 
   <change-notes><![CDATA[
     1.0.4<ul>
-        <li>Replaced amount of lines stays same, word count per line varies less</li>
         <li>Leading white-space per line is maintained</li>
+        <li>Replaced amount of lines stays same, word count per line varies less</li>
         <li>Improved vocabulary and grammar</li>
     </ul>
     1.0.3<ul>
