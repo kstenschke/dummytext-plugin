@@ -53,13 +53,18 @@ public class DictionarySciFi extends Dictionary {
 
 		sentence = fixIndefiniteArticles(sentence);
 
+		sentence = sentence.replaceAll(" eated ",        " eaten ");
 		sentence = sentence.replaceAll(" flys ",        " flies ");
 		sentence = sentence.replaceAll(" gos ",         " goes ");
 		sentence = sentence.replaceAll("captureing",    "capturing");
 		sentence = sentence.replaceAll("controled",     "controlled");
+		sentence = sentence.replaceAll("examineed",     "examined");
 		sentence = sentence.replaceAll("galaxys ",      "galaxies ");
 		sentence = sentence.replaceAll("kalesss",       "forefathers");
 		sentence = sentence.replaceAll("paralysiss",    "paralyses");
+		sentence = sentence.replaceAll("traveled",      "travelled");
+		sentence = sentence.replaceAll("tragedys",      "tragedies");
+		sentence = sentence.replaceAll("mysterys",      "mysteries");
 
 		String[] unincreasables   = { "species", "people"};
 		sentence = TextualHelper.depluralize(sentence, unincreasables);
@@ -78,25 +83,32 @@ public class DictionarySciFi extends Dictionary {
 		}
 
 		String[] structures = {
-			"1s 4 with 2!", "1s 4 on 2 at 8!", "1s 4 with 2 at the 5 9!",
-			"where is the 5 1?", "all 1s 3 5, 5 1s.", "never 3 a 1.",
-			"1 of a 5 2, 3 the 2!", "1s are the 1s of the 5 2.",
-			"the 1 4s 2 like a 5 1.", "1s 4 from 2s like 5 1s.",
-			"when the 1 4s for 8, all 1s 3 5, 5 1s.",
-			"this 2 has only been 3ed by a 5 1.",
-			"2 at the 9 that is when 5 1s 4.",
-			"i 3 this 2, it's called 5 2.",
-			"7.", "7, 2!", "7, 5 2!",
-			"5, 5 1s 6 3 a 5, 5 1.",
-			"the 5 1 6 3s the 1.",
-			"5 2s lead to the 2.",
-			"why does the 1 4?",
-			"it is a 5 2, sir.",
-			"the 2 is a 5 1.",
-			"5 1s, to the 9.",
-			"4 6 like a 5 1.",
-			"the 1 is 6 5.",
-			"2, 2, and 2.",
+				  "All those 2s will be lost in 2… like 2s in 2…",
+				  "when the 1 4s for 8, all 1s 3 5, 5 1s.",
+				  "this 2 has only been 3ed by a 5 1.",
+				  "2 at the 9 that is when 5 1s 4.",
+				  "i 3 this 2, it's called 5 2.",
+				  "1s are the 1s of the 5 2.",
+				  "1s 4 with 2 at the 5 9!",
+				  "1s 4 from 2s like 5 1s.",
+				  "7.", "7, 2!", "7, 5 2!",
+				  "the 1 4s 2 like a 5 1.",
+				  "5, 5 1s 6 3 a 5, 5 1.",
+				  "1 of a 5 2, 3 the 2!",
+				  "5 2s lead to the 2.",
+				  "the 5 1 6 3s the 1.",
+				  "why does the 1 4?",
+				  "where is the 5 1?",
+				  "it is a 5 2, sir.",
+				  "all 1s 3 5, 5 1s.",
+				  "1s 4 on 2 at 8!",
+				  "5 1s, to the 9.",
+				  "the 2 is a 5 1.",
+				  "4 6 like a 5 1.",
+				  "1s 4 with 2!",
+				  "the 1 is 6 5.",
+				  "never 3 a 1.",
+				  "2, 2, and 2.",
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -107,12 +119,12 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getNounConcrete() {
 		String[] words = {
-			"admiral", "alien", "astronaut", "captain", "collective", "cosmonaut", "creature", "crew", "crewmate", "dosi",
-			"emitter", "ferengi", "girl", "green people", "hur\'q", "kahless", "klingon", "lieutenant commander", "machine",
-			"mermaid", "moon", "nanomachine", "parasite", "particle", "particle", "pathway", "planet", "processor", "proton",
-			"queen", "sensor", "ship", "ship", "sonic shower", "space suit", "space", "spacecraft", "species", "star",
-			"star", "starship", "sun", "teleporter", "transformator", "transporter", "planet",
-			"tribble", "vogon", "phenomenan"
+			"AE35 unit", "admiral", "alien", "astronaut", "c-beam", "captain", "collective", "cosmonaut", "creature",
+			"crew", "crewmate", "dosi", "emitter", "ferengi", "girl", "green people", "hur\'q", "kahless", "klingon",
+			"lieutenant commander", "machine", "mermaid", "moon", "nanomachine", "parasite", "particle", "particle",
+			"pathway", "planet", "processor", "proton", "queen", "sensor", "ship", "ship", "sonic shower", "space suit",
+			"space", "spacecraft", "space suit", "species", "star", "starship", "sun", "teleporter", "transformator", "transporter",
+			"planet", "tribble", "vogon", "phenomenan"
 		};
 
 		return pickRandomString(words);
@@ -124,11 +136,11 @@ public class DictionarySciFi extends Dictionary {
 	private static String getNounAbstract() {
 		String[] words = {
 			"adventure", "advice", "alarm", "alignment", "anomaly", "assimilation", "attitude", "beauty",
-			"collision course", "coordinates", "core", "courage", "death", "definition", "devastation", "ellipse",
-			"energy", "faith", "flight", "friendship", "future", "galaxy", "history", "honor", "hypnosis",
+			"collision course", "coordinates", "core", "courage", "death", "definition", "devastation", "disconnection",
+			"ellipse", "energy", "faith", "flight", "friendship", "future", "galaxy", "history", "honor", "hypnosis",
 			"ionic cannon", "life", "love", "mankind", "metamorphosis", "mind", "mineral", "modification", "moon",
 			"mystery", "nuclear flux", "paralysis", "pattern", "peace", "plasma", "powerdrain", "pressure", "procedure",
-			"resistance", "rumour", "sensor", "shield", "sonic shower", "space suit", "starlight travel", "stigma",
+			"resistance", "rumour", "sensor", "shield", "sonic shower", "starlight travel", "stigma",
 			"tragedy", "turbulence", "understanding", "vision", "voyage", "wind", "x-ray vision"
 		};
 
@@ -144,8 +156,8 @@ public class DictionarySciFi extends Dictionary {
 			"consume", "contact", "control", "convert", "deceive", "deserve", "desire", "destroy", "discover",
 			"disrupt", "dissolve", "eat", "empower", "evacuate", "examine", "experience", "feed", "fight", "gather",
 			"grab", "handle", "imitate", "infiltrate", "influence", "invade", "love", "lower", "manifest", "observe",
-			"offer", "open", "place", "promise", "pull", "question", "raise", "teleport", "transfer", "transform",
-			"translate", "travel", "unite", "yearn"
+			"offer", "open", "outweigh", "place", "promise", "pull", "question", "raise", "teleport", "transfer",
+			"transform", "translate", "travel", "unite", "yearn"
 		};
 
 		return pickRandomString(words);
@@ -156,8 +168,8 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"die", "experiment", "fly", "go", "harvest", "meet", "reproduce", "resist", "tremble", "view", "warp",
-			"wobble", "yell"
+			"die", "experiment", "fly", "go", "harvest", "malfunction", "meet", "reproduce", "resist", "tremble", "view",
+			"warp", "wobble", "yell"
 		};
 
 		return pickRandomString(words);
@@ -169,11 +181,11 @@ public class DictionarySciFi extends Dictionary {
 	private static String getAdjective() {
 		String[] words = {
 			"ancient", "apocalyptic", "bare", "biological", "boldly", "brave", "calm", "carnivorous", "chemical",
-			"clear", "cloudy", "cold", "collective", "colorful", "crazy", "dead", "delighted", "devastated",
+			"clear", "cloudy", "cold", "collective", "colorful", "conscious", "crazy", "dead", "delighted", "devastated",
 			"distant", "evasive", "extraterrestrial", "fantastic", "final", "futile", "galactic", "gravimetric",
-			"greatly exaggerated", "harmless", "huge", "human", "intelligent", "interstellar", "modern",
+			"greatly exaggerated", "harmless", "huge", "human", "intelligent", "interstellar", "lunar", "modern",
 			"most unusual", "mysterious", "neutral", "ordinary", "photonic", "post-apocalyptic", "proud", "quirky",
-			"real", "remarkable", "seismic", "senior", "ship-wide", "small", "solid", "spheroid", "strange",
+			"real", "reliable", "remarkable", "seismic", "senior", "ship-wide", "small", "solid", "spheroid", "strange",
 			"sub-light", "terrifying", "ugly", "united", "unrelated", "virtual", "vital"
 		};
 

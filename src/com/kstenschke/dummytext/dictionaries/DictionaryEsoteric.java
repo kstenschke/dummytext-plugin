@@ -51,17 +51,20 @@ public class DictionaryEsoteric extends Dictionary {
 		sentence = fixIndefiniteArticles(sentence);
 
 		sentence = sentence.replaceAll("a one ",        "one ");
+		sentence = sentence.replaceAll("an one ",       "one ");
 		sentence = sentence.replaceAll("becomeing ",    "becoming ");
+		sentence = sentence.replaceAll("beautys",       "beauties");
 		sentence = sentence.replaceAll("captureing",    "capturing");
 		sentence = sentence.replaceAll("desireing ",    "desiring ");
 		sentence = sentence.replaceAll("dos ",          "does ");
 		sentence = sentence.replaceAll("emergeing ",    "emerging ");
 		sentence = sentence.replaceAll("es each other", "e each other");
 		sentence = sentence.replaceAll("forgeting ",    "forgetting ");
-		sentence = sentence.replaceAll("illuminate ",   "illuminating ");
+		sentence = sentence.replaceAll("historys",      "histories");
 		sentence = sentence.replaceAll("riseing ",      "rising ");
 		sentence = sentence.replaceAll("s meets",       "s meet");
 		sentence = sentence.replaceAll("siting ",       "sitting ");
+		sentence = sentence.replaceAll("studys",        "studies");
 		sentence = sentence.replaceAll("the peace",     "peace");
 
 		String[] unincreasables   = { "love", "many", "peace", "sex" };
@@ -81,24 +84,27 @@ public class DictionaryEsoteric extends Dictionary {
 		}
 
 		String[] structures = {
-				  "When the 1 of 2 overcomes the 2 of the 1, the 2 will know 1.",
+				  "When the 1 of 2 3s the 2s of the 1, the 2 will know 1.",
 				  "Going to the 9 doesn’t 3 2 anymore than 3ing creates 5 2.",
 				  "Who can 3 the 2 and 2 of a 1 if he has the 5 2 of the 1.",
 				  "the 2 of your 2s will 4 6 when you 3 that 2 is the 1.",
+				  "As i have 3ed you, so you must 3 one another.",
 				  "one must 3 the 1 in order to 3 the 1 of 5 2.",
 				  "all 5 1s 3 each other, only 5 1s have a 2.",
 				  "the 1 has 2, but not everyone 3s it.",
-				  "Never 3 the 1, for you can’t 3 it.",
+				  "Never 3 the 1, for you cannot 3 it.",
+				  "One 5 2 i give you: 3 each other. ",
 				  "yes, there is 8, it 4s with 2.",
 				  "8 is not the 6 2 of the 1.",
 				  "To some, a 1 is a 2 for 3ing.",
 				  "the 1 3s 2 which is not 5.",
+				  "4 and you will be 3ed 6.",
 				  "7.", "confucius says: 7.",
 				  "A 5 form of 2 is the 2.",
 				  "not 8 or 8, 3 the 2.",
 				  "the 9 is full of 2.",
 				  "Always 6 3 the 5 1.",
-				  "5 2s 3 the most 2.",
+				  "5 2s 3s most 2s.",
 				  "the 2 is a 5 1.",
 				  "2, 2 and a 5 9.",
 				  "the 1 3s.",
@@ -112,9 +118,10 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getNounConcrete() {
 		String[] words = {
-			"believer", "body", "cow", "creator", "death", "doer", "ego", "explosion of the 2", "follower", "guru", "individual", "karma",
-			"lama", "lord", "love", "lover", "man", "master", "monkey", "moon", "power", "scholar", "self", "seeker", "sinner",
-			"source", "sun", "teacher", "therapist", "thing", "visitor", "wind", "yogi", "aspect"
+			"aspect", "believer", "body", "cow", "creator", "death", "doer", "ego", "explosion of the 2", "follower",
+			"guru", "individual", "karma", "lama", "lord", "love", "lover", "man", "master", "monkey", "moon", "power",
+			"scholar", "saint", "seeker", "self", "sinner", "source", "sun", "teacher", "therapist", "thing", "visitor", "wind",
+			"yogi"
 		};
 
 		return pickRandomString(words);
@@ -127,11 +134,11 @@ public class DictionaryEsoteric extends Dictionary {
 		String[] words = {
 			"acceptance", "advice", "afterlife", "anger", "affirmation", "ascension", "attitude", "attraction", "awareness",
 			"beauty", "blessing", "bliss", "booda-hood", "career", "chaos", "control", "conclusion", "core", "courage", "definition",
-			"density", "dimension", "emptiness", "energy", "enlightenment", "enlightenment", "everything", "extend", "faith",
-			"fear", "freedom", "grace", "happiness", "heaven", "heaven", "history", "hypnosis", "issue", "life", "light",
+			"density", "dimension", "dogma", "emptiness", "energy", "enlightenment", "enlightenment", "everything", "extend", "faith",
+			"fear", "freedom", "futility", "grace", "happiness", "heaven", "heaven", "history", "hypnosis", "issue", "life", "light",
 			"living", "manifestation", "meditation", "milk", "mind", "mineral", "money", "moonlight", "pain", "peace",
-			"purpose", "relativity", "result", "samadhi", "satori", "sex", "silence", "solitude", "suffering", "surrender", "tantra",
-			"totality", "trust", "truth", "uniqueness", "vision", "volume", "zen"
+			"purpose", "relativity", "result", "samadhi", "satori", "sainthood", "sex", "silence", "solitude", "stigma",
+			"suffering", "surrender", "tantra", "totality", "trust", "truth", "uniqueness", "vision", "volume", "zen"
 		};
 
 		return pickRandomString(words);
@@ -143,8 +150,8 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getVerbTransitive() {
 		String[] words = {
 			"absorb", "acquire", "avoid", "believe", "capture", "desire", "discover", "emerge", "experience", "feel",
-			"forget", "gain", "handle", "hear", "illuminate", "know", "love", "meet", "praise", "realize", "receive",
-			"remember", "respect", "study", "synthesise", "understand", "view", "visualize", "witness", "yearn"
+			"forget", "gain", "handle", "hear", "illuminate", "know", "love", "meet", "need", "praise", "realize", "receive",
+			"reject", "remember", "respect", "study", "synthesise", "understand", "view", "visualize", "witness", "yearn"
 		};
 
 		return pickRandomString(words);
@@ -156,7 +163,8 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getVerbIntransitive() {
 		String[] words = {
 			"appear", "balance", "become", "contact", "convert", "die", "disappear", "disturb", "do", "empower", "exist",
-			"experiment", "fail", "fly", "grow", "listen", "occur", "remain", "rise", "shine", "sit", "travel", "wrestle"
+			"experiment", "fail", "fly", "grow", "listen", "occur", "preach", "remain", "rise", "shine", "sit", "travel",
+			"wrestle"
 		};
 
 		return pickRandomString(words);
