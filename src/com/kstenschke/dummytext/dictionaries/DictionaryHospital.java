@@ -82,22 +82,31 @@ public class DictionaryHospital extends Dictionary {
 		}
 
 		String[] structures = {
-				  "1s 4 with 2!", "1s 4 on 2 at the 8!", "1s 4 with 2 at the 5 8!",
-				  "where is the 5 1?", "all 1s 3 5, 5 1s.", "never 3 a 1.",
-				  "the 1 4s by 2 like a 5 1.", "1s 4 from 2s like 5 1s.",
-				  "1s of a 5 2, 3 the 2!", "1s are the 1s of the 5 2.",
 				  "when the 1 4s for 8, all 1s 3 5, 5 1s.",
+				  "don't 3 the 1 or you might 3 2.",
 				  "to 3 the 5 1 of 9, 6 3 the 1.",
 				  "to 3 the 1 of 5 9, 3 the 1.",
-				  "7.", "7, 2!", "7, 5 2!",
+				  "1s are the 1s of the 5 2.",
+				  "the 1 4s by 2 like a 5 1.",
+				  "1s 4 from 2s like 5 1s.",
+				  "1s 4 with 2 at the 5 8!",
 				  "5, 5 1s 6 3 a 5, 5 1.",
+				  "1s of a 5 2, 3 the 2!",
 				  "the 5 1 6 3s the 1.",
 				  "5 2s lead to the 2.",
+				  "1s 4 on 2 at the 8!",
 				  "why does the 1 4?",
+				  "all 1s 3 5, 5 1s.",
+				  "where is the 5 1?",
 				  "it is a 5 2, sir.",
 				  "4 6 like a 5 1.",
+				  "1s 4 with 2!",
 				  "2, 2, and 2.",
+				  "never 3 a 1.",
 				  "2 is a 5 1.",
+				  "7, 5 2!",
+				  "7, 2!",
+				  "7.",
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -140,10 +149,10 @@ public class DictionaryHospital extends Dictionary {
 	private static String getVerbTransitive() {
 		String[] words = {
 			"admire", "assimilate", "attest", "avoid", "bathe", "breathe", "capture", "consume", "contact", "control", "convert",
-			"clamp", "cost", "cut", "damage", "depend", "deserve", "desire", "discover", "educate", "examine", "experience", "experiment",
-			"fail", "foster", "grant", "hammer", "handle", "help", "infect", "influence", "inject", "inquire", "kill", "leave", "love",
+			"clamp", "cut", "damage", "depend", "desire", "discover", "educate", "examine", "experience",
+			"foster", "grant", "hammer", "handle", "help", "infect", "influence", "inject", "inquire", "kill", "leave", "love",
 			"manifest", "observe", "open", "press", "promise", "question", "receive", "spread", "spread", "steal", "swell",
-			"take", "talk", "transplant", "treat", "trip", "undergo", "undress", "view"
+			"take", "transplant", "treat", "trip", "undergo", "undress", "view"
 		};
 
 		return pickRandomString(words);

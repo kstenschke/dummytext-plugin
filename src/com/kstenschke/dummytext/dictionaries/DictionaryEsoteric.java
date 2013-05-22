@@ -61,6 +61,7 @@ public class DictionaryEsoteric extends Dictionary {
 		sentence = sentence.replaceAll("es each other", "e each other");
 		sentence = sentence.replaceAll("forgeting ",    "forgetting ");
 		sentence = sentence.replaceAll("historys",      "histories");
+		sentence = sentence.replaceAll("prayseing ",    "praising ");
 		sentence = sentence.replaceAll("riseing ",      "rising ");
 		sentence = sentence.replaceAll("s meets",       "s meet");
 		sentence = sentence.replaceAll("siting ",       "sitting ");
@@ -136,7 +137,7 @@ public class DictionaryEsoteric extends Dictionary {
 			"beauty", "blessing", "bliss", "booda-hood", "career", "chaos", "control", "conclusion", "core", "courage", "definition",
 			"density", "dimension", "dogma", "emptiness", "energy", "enlightenment", "enlightenment", "everything", "extend", "faith",
 			"fear", "freedom", "futility", "grace", "happiness", "heaven", "heaven", "history", "hypnosis", "issue", "life", "light",
-			"living", "manifestation", "meditation", "milk", "mind", "mineral", "money", "moonlight", "pain", "peace",
+			"living", "manifestation", "meditation", "milk", "mind", "mineral", "moonlight", "pain", "peace",
 			"purpose", "relativity", "result", "samadhi", "satori", "sainthood", "sex", "silence", "solitude", "stigma",
 			"suffering", "surrender", "tantra", "totality", "trust", "truth", "uniqueness", "vision", "volume", "zen"
 		};
