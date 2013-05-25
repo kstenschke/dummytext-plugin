@@ -44,6 +44,8 @@ public class DictionaryPirates extends Dictionary {
 			while(sentence.contains("2")) sentence = replaceIfNew(sentence, "2", getNounAbstract() );
 			while(sentence.contains("3")) sentence = replaceIfNew(sentence, "3", getVerbTransitive() );
 			while(sentence.contains("4")) sentence = replaceIfNew(sentence, "4", getVerbIntransitive() );
+			while(sentence.contains("GERUND3")) sentence = replaceIfNew(sentence, "3", TextualHelper.gerund(getVerbTransitive()) );
+			while(sentence.contains("GERUND4")) sentence = replaceIfNew(sentence, "4", TextualHelper.gerund(getVerbIntransitive()) );
 			while(sentence.contains("5")) sentence = replaceIfNew(sentence, "5", getAdjective() );
 			while(sentence.contains("6")) sentence = replaceIfNew(sentence, "6", getAdverb() );
 			while(sentence.contains("7")) sentence = replaceIfNew(sentence, "7", getInterjection() );
@@ -58,17 +60,10 @@ public class DictionaryPirates extends Dictionary {
 		sentence = sentence.replaceAll("beautys ",                "beauties ");
 		sentence = sentence.replaceAll("breaked",                 "broken");
 		sentence = sentence.replaceAll("cockroachs",              "cockroaches");
-		sentence = sentence.replaceAll("hobbleing",               "waving");
 		sentence = sentence.replaceAll("loveed",                  "loved");
-		sentence = sentence.replaceAll("riseing",                 "rising");
 		sentence = sentence.replaceAll("scrapeed",                "scraped");
 		sentence = sentence.replaceAll("to the love",             "to love");
 		sentence = sentence.replaceAll("vandalizeed",             "vandalized");
-		sentence = sentence.replaceAll("waveing",                 "waving");
-		sentence = sentence.replaceAll("whineing",                "whining");
-
-
-		//"hobble", "laugh", "rise", "scream", "sing", "stutter", "travel", "wave", "whine"
 
 		String[] unincreasables   = { "lass", "pants" };
 		sentence = TextualHelper.depluralize(sentence, unincreasables);
@@ -93,14 +88,14 @@ public class DictionaryPirates extends Dictionary {
 			"1 of a 5 2, 3 the 2!",  "1s are the 1s of the 5 2.",
 			"the 1 4s 2 like a 5 1.", "1s 4 from 2s like 5 1s.",
 			"7, 5 1. go to 8.", "7, 5 1. you won't 3 the 9.",
-			"7 there's nothing like the 5 2 4ing on the 1.",
+			"7 there's nothing like the 5 2 GERUND4 on the 1.",
 			"when the 1 4s for 8, all 1s 3 5, 5 1s.",
 			"the 1 3s with 2, 3 the 9 until it 4s.",
 			"pieces o\' 2 are forever 5.",
 			"damn yer 1, feed the 1.",
 			"how 5. You 3 like a 1.",
 			"5, 5 1s 6 3 a 5, 5 1.",
-			"7, yer not 3ing me without a 2!",
+			"7, yer not GERUND3 me without a 2!",
 			"the 5 1 6 3s the 1.",
 			"5 2s lead to the 2.",
 			"ho-ho-ho! 2 of 2.",

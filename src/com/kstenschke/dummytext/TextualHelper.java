@@ -232,4 +232,25 @@ public class TextualHelper {
 		return sentence;
 	}
 
+	/**
+	 * Get gerund form of given verb
+	 * ex; hear       => hearing
+	 *     trade      => trading     (trailing e is detected + removed)
+	 *     trade up   => mashing up  (trailing 2nd word is detected and the gerund is made on the first word)
+	 *
+	 * @param   verb
+	 * @return
+	 */
+	public static String gerund(String verb) {
+		verb = verb.trim();
+		if(verb.contains(" ")) {
+			String[] words = verb.split(" ");
+			return gerund(words[0]) + " " + words[2];
+		}
+
+      verb = verb.endsWith("e") ? verb.substring(0, verb.length()-1) : verb;
+
+		return verb + "ing";
+	}
+
 }

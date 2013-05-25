@@ -44,6 +44,8 @@ public class DictionarySciFi extends Dictionary {
 			while(sentence.contains("2")) sentence = replaceIfNew(sentence, "2", getNounAbstract() );
 			while(sentence.contains("3")) sentence = replaceIfNew(sentence, "3", getVerbTransitive() );
 			while(sentence.contains("4")) sentence = replaceIfNew(sentence, "4", getVerbIntransitive() );
+			while(sentence.contains("GERUND3")) sentence = replaceIfNew(sentence, "3", TextualHelper.gerund(getVerbTransitive()) );
+			while(sentence.contains("GERUND4")) sentence = replaceIfNew(sentence, "4", TextualHelper.gerund(getVerbIntransitive()) );
 			while(sentence.contains("5")) sentence = replaceIfNew(sentence, "5", getAdjective() );
 			while(sentence.contains("6")) sentence = replaceIfNew(sentence, "6", getAdverb() );
 			while(sentence.contains("7")) sentence = replaceIfNew(sentence, "7", getInterjection() );
@@ -56,7 +58,6 @@ public class DictionarySciFi extends Dictionary {
 		sentence = sentence.replaceAll(" eated ",        " eaten ");
 		sentence = sentence.replaceAll(" flys ",        " flies ");
 		sentence = sentence.replaceAll(" gos ",         " goes ");
-		sentence = sentence.replaceAll("captureing",    "capturing");
 		sentence = sentence.replaceAll("controled",     "controlled");
 		sentence = sentence.replaceAll("examineed",     "examined");
 		sentence = sentence.replaceAll("galaxys ",      "galaxies ");

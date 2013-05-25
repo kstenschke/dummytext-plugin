@@ -45,6 +45,8 @@ public class DictionaryCookery extends Dictionary {
 			while(sentence.contains("2")) sentence = replaceIfNew(sentence, "2", getFluid() );
 			while(sentence.contains("3")) sentence = replaceIfNew(sentence, "3", getVerbTransitive() );
 			while(sentence.contains("4")) sentence = replaceIfNew(sentence, "4", getVerbIntransitive() );
+			while(sentence.contains("GERUND3")) sentence = replaceIfNew(sentence, "3", TextualHelper.gerund(getVerbTransitive()) );
+			while(sentence.contains("GERUND4")) sentence = replaceIfNew(sentence, "4", TextualHelper.gerund(getVerbIntransitive()) );
 			while(sentence.contains("5")) sentence = replaceIfNew(sentence, "5", getAdjective() );
 			while(sentence.contains("6")) sentence = replaceIfNew(sentence, "6", getAdverb() );
 			while(sentence.contains("7")) sentence = replaceIfNew(sentence, "7", getSeasonings() );
@@ -58,17 +60,15 @@ public class DictionaryCookery extends Dictionary {
 
 		sentence = sentence.replaceAll("breaked",       "broken");
 		sentence = sentence.replaceAll("choped",        "chopped");
-		sentence = sentence.replaceAll("choping",       "chopping");
 		sentence = sentence.replaceAll("chickens",      "chicken");
 		sentence = sentence.replaceAll("combineed",     "combined");
-		sentence = sentence.replaceAll("cuting",        "cutting");
-		sentence = sentence.replaceAll("mash uping",    "mashing up");
 		sentence = sentence.replaceAll("sautéed",       "seared");
 		sentence = sentence.replaceAll("shreding",      "shredding");
-		sentence = sentence.replaceAll("sliceing",      "slicing");
 		sentence = sentence.replaceAll("sliceed",       "sliced");
 		sentence = sentence.replaceAll("spinachs",      "spinach");
 		sentence = sentence.replaceAll("sauce soup",    "soup");
+		sentence = sentence.replaceAll("cuting",        "cutting");
+		sentence = sentence.replaceAll("choping",       "chopping");
 
 		String[] unincreasables   = {
 			"beefs", "berries", "breasts", "carrots", "chicken", "chicken", "chickpeas", "crumps", "eggs", "meatballs", "nachos", "noodles",
@@ -93,13 +93,13 @@ public class DictionaryCookery extends Dictionary {
 		String[] structures  = {
 			"4 RNDNUM 1s, 1, and 7 in a large 8 over medium heat, HEATUP for RNDNUM minutes and 3 some 1.",
 			"combine 1, 1 and 1. 3 with 5 7 and serve 4ed with 1. Enjoy!",
-			"Instead of using 5 2, use 9 2 and 9 7 8.",
+			"Instead of GERUND3 5 2 with 1, use 9 2 and 9 7 8.",
 			"3 the 1 with 5 7, 7, 7, and 7 making sure to cover all of it.",
 			"2 soup is just not the same without 7 and 5 5 1s.",
 			"What’s the secret to a 5 and 5 1? Always use 5 7.",
 			"per guest prepare 9 of 2 with 4ed 1 for dessert.",
-			"When 4ing 5 1s, be sure they are room temperature.",
-			"After 4ing the 1s, 3 1, 1 and 2 with it in a 8.",
+			"When GERUND4 5 1s, be sure they are room temperature.",
+			"After GERUND4 the 1s, 3 1, 1 and 2 with it in a 8.",
 			"4 1 6, then mix with 2 and serve 6 in 8.",
 			"all children like 4ed 1s in 2 and 7.",
 			"1 0 has to have a 5, 5 1 component.",
@@ -107,7 +107,7 @@ public class DictionaryCookery extends Dictionary {
 			"5, 5 pudding is best 3ed with 5 2.",
 			"3 each side of the 1 with 9 of 1.",
 			"To the 5 1 add 1, 1, 2 and 5 1.",
-			"5 1 can be made 5 by 3ing with 2.",
+			"5 1 can be made 5 by GERUND3 with 2.",
 			"3 9 of 1 in 9 of 2.",
 			"with 1s drink 2."
 		};

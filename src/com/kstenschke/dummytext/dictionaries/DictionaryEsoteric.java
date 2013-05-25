@@ -41,6 +41,8 @@ public class DictionaryEsoteric extends Dictionary {
 			while(sentence.contains("2")) sentence = replaceIfNew(sentence, "2", getNounAbstract() );
 			while(sentence.contains("3")) sentence = replaceIfNew(sentence, "3", getVerbTransitive() );
 			while(sentence.contains("4")) sentence = replaceIfNew(sentence, "4", getVerbIntransitive() );
+			while(sentence.contains("GERUND3")) sentence = replaceIfNew(sentence, "3", TextualHelper.gerund(getVerbTransitive()) );
+			while(sentence.contains("GERUND4")) sentence = replaceIfNew(sentence, "4", TextualHelper.gerund(getVerbIntransitive()) );
 			while(sentence.contains("5")) sentence = replaceIfNew(sentence, "5", getAdjective() );
 			while(sentence.contains("6")) sentence = replaceIfNew(sentence, "6", getAdverb() );
 			while(sentence.contains("7")) sentence = replaceIfNew(sentence, "7", getInterjection() );
@@ -86,7 +88,7 @@ public class DictionaryEsoteric extends Dictionary {
 
 		String[] structures = {
 				  "When the 1 of 2 3s the 2s of the 1, the 2 will know 1.",
-				  "Going to the 9 doesn’t 3 2 anymore than 3ing creates 5 2.",
+				  "Going to the 9 doesn’t 3 2 anymore than GERUND3 creates 5 2.",
 				  "Who can 3 the 2 and 2 of a 1 if he has the 5 2 of the 1.",
 				  "the 2 of your 2s will 4 6 when you 3 that 2 is the 1.",
 				  "As i have 3ed you, so you must 3 one another.",
@@ -97,7 +99,7 @@ public class DictionaryEsoteric extends Dictionary {
 				  "One 5 2 i give you: 3 each other. ",
 				  "yes, there is 8, it 4s with 2.",
 				  "8 is not the 6 2 of the 1.",
-				  "To some, a 1 is a 2 for 3ing.",
+				  "To some, a 1 is a 2 for GERUND3.",
 				  "the 1 3s 2 which is not 5.",
 				  "4 and you will be 3ed 6.",
 				  "7.", "confucius says: 7.",
