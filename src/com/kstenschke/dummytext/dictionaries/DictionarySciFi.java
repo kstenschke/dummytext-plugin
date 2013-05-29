@@ -61,6 +61,7 @@ public class DictionarySciFi extends Dictionary {
 		sentence = sentence.replaceAll("controled",     "controlled");
 		sentence = sentence.replaceAll("examineed",     "examined");
 		sentence = sentence.replaceAll("galaxys ",      "galaxies ");
+		sentence = sentence.replaceAll("imitateed",	"imitated");
 		sentence = sentence.replaceAll("kalesss",       "forefathers");
 		sentence = sentence.replaceAll("paralysiss",    "paralyses");
 		sentence = sentence.replaceAll("traveled",      "travelled");
