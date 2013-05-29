@@ -16,7 +16,8 @@
 
 package com.kstenschke.dummytext.dictionaries;
 
-import com.kstenschke.dummytext.TextualHelper;
+import com.kstenschke.dummytext.helpers.InflectionHelper;
+import com.kstenschke.dummytext.helpers.TextualHelper;
 
 public class DictionarySciFi extends Dictionary {
 
@@ -40,36 +41,32 @@ public class DictionarySciFi extends Dictionary {
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
-			while(sentence.contains("1")) sentence = replaceIfNew(sentence, "1", getNounConcrete() );
-			while(sentence.contains("2")) sentence = replaceIfNew(sentence, "2", getNounAbstract() );
-			while(sentence.contains("3")) sentence = replaceIfNew(sentence, "3", getVerbTransitive() );
-			while(sentence.contains("4")) sentence = replaceIfNew(sentence, "4", getVerbIntransitive() );
-			while(sentence.contains("GERUND3")) sentence = replaceIfNew(sentence, "3", TextualHelper.gerund(getVerbTransitive()) );
-			while(sentence.contains("GERUND4")) sentence = replaceIfNew(sentence, "4", TextualHelper.gerund(getVerbIntransitive()) );
-			while(sentence.contains("5")) sentence = replaceIfNew(sentence, "5", getAdjective() );
-			while(sentence.contains("6")) sentence = replaceIfNew(sentence, "6", getAdverb() );
-			while(sentence.contains("7")) sentence = replaceIfNew(sentence, "7", getInterjection() );
-			while(sentence.contains("8")) sentence = replaceIfNew(sentence, "8", getPlaceAbstract() );
-			while(sentence.contains("9")) sentence = replaceIfNew(sentence, "9", getPlaceConcrete() );
+			while(sentence.contains("PLURAL1")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL1", InflectionHelper.plural(getNounConcrete()) );
+			while(sentence.contains("PLURAL2")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL2", InflectionHelper.plural(getNounAbstract()) );
+			while(sentence.contains("GERUND3")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND3", InflectionHelper.gerund(getVerbTransitive()) );
+			while(sentence.contains("GERUND4")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND4", InflectionHelper.gerund(getVerbIntransitive()) );
+			while(sentence.contains("PASTTENSE3")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()) );
+			while(sentence.contains("PASTTENSE4")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()) );
+
+			while(sentence.contains("1")) sentence = TextualHelper.replaceIfNew(sentence, "1", getNounConcrete());
+			while(sentence.contains("2")) sentence = TextualHelper.replaceIfNew(sentence, "2", getNounAbstract() );
+			while(sentence.contains("3")) sentence = TextualHelper.replaceIfNew(sentence, "3", getVerbTransitive() );
+			while(sentence.contains("4")) sentence = TextualHelper.replaceIfNew(sentence, "4", getVerbIntransitive() );
+			while(sentence.contains("5")) sentence = TextualHelper.replaceIfNew(sentence, "5", getAdjective() );
+			while(sentence.contains("6")) sentence = TextualHelper.replaceIfNew(sentence, "6", getAdverb() );
+			while(sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getInterjection() );
+			while(sentence.contains("8")) sentence = TextualHelper.replaceIfNew(sentence, "8", getPlaceAbstract() );
+			while(sentence.contains("9")) sentence = TextualHelper.replaceIfNew(sentence, "9", getPlaceConcrete() );
 		}
 
 		sentence = fixIndefiniteArticles(sentence);
 
-		sentence = sentence.replaceAll(" eated ",        " eaten ");
 		sentence = sentence.replaceAll(" flys ",        " flies ");
 		sentence = sentence.replaceAll(" gos ",         " goes ");
-		sentence = sentence.replaceAll("controled",     "controlled");
-		sentence = sentence.replaceAll("examineed",     "examined");
-		sentence = sentence.replaceAll("galaxys ",      "galaxies ");
 		sentence = sentence.replaceAll("imitateed",	"imitated");
-		sentence = sentence.replaceAll("kalesss",       "forefathers");
-		sentence = sentence.replaceAll("paralysiss",    "paralyses");
-		sentence = sentence.replaceAll("traveled",      "travelled");
-		sentence = sentence.replaceAll("tragedys",      "tragedies");
-		sentence = sentence.replaceAll("mysterys",      "mysteries");
 
 		String[] unincreasables   = { "species", "people"};
-		sentence = TextualHelper.depluralize(sentence, unincreasables);
+		sentence = InflectionHelper.depluralize(sentence, unincreasables);
 
 		return ucfirst(sentence);
 	}
@@ -85,32 +82,34 @@ public class DictionarySciFi extends Dictionary {
 		}
 
 		String[] structures = {
-				  "All those 2s will be lost in 2… like 2s in 2…",
-				  "when the 1 4s for 8, all 1s 3 5, 5 1s.",
-				  "this 2 has only been 3ed by a 5 1.",
-				  "2 at the 9 that is when 5 1s 4.",
+				  "All those PLURAL2 will be lost in PLURAL2 like PLURAL2 in PLURAL2",
+				  "when the 1 4s for 8, all PLURAL1 3 5, 5 PLURAL1.",
+				  "this 2 has only been PASTTENSE3 by a 5 1.",
+				  "PLURAL1 4 from PLURAL2 like 5 PLURAL1.",
+				  "2 at the 9 that is when 5 PLURAL1 4.",
+				  "PLURAL1 are the PLURAL1 of the 5 2.",
 				  "i 3 this 2, it's called 5 2.",
-				  "1s are the 1s of the 5 2.",
-				  "1s 4 with 2 at the 5 9!",
-				  "1s 4 from 2s like 5 1s.",
-				  "7.", "7, 2!", "7, 5 2!",
+				  "PLURAL1 4 with 2 at the 5 9!",
+				  "all PLURAL1 3 5, 5 PLURAL1.",
+				  "5, 5 PLURAL1 6 3 a 5, 5 1.",
+				  "5 PLURAL2 lead to the 2.",
 				  "the 1 4s 2 like a 5 1.",
-				  "5, 5 1s 6 3 a 5, 5 1.",
+				  "5 PLURAL1, to the 9.",
+				  "PLURAL1 4 on 2 at 8!",
 				  "1 of a 5 2, 3 the 2!",
-				  "5 2s lead to the 2.",
 				  "the 5 1 6 3s the 1.",
 				  "why does the 1 4?",
 				  "where is the 5 1?",
 				  "it is a 5 2, sir.",
-				  "all 1s 3 5, 5 1s.",
-				  "1s 4 on 2 at 8!",
-				  "5 1s, to the 9.",
+				  "PLURAL1 4 with 2!",
 				  "the 2 is a 5 1.",
 				  "4 6 like a 5 1.",
-				  "1s 4 with 2!",
 				  "the 1 is 6 5.",
 				  "never 3 a 1.",
 				  "2, 2, and 2.",
+				  "7, 5 2!",
+				  "7, 2!",
+				  "7.",
 		};
 
 		return pickRandomString(structures, amountWords);

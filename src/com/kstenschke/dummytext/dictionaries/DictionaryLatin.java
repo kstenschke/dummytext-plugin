@@ -16,7 +16,7 @@
 
 package com.kstenschke.dummytext.dictionaries;
 
-import com.kstenschke.dummytext.TextualHelper;
+import com.kstenschke.dummytext.helpers.TextualHelper;
 
 public class DictionaryLatin extends Dictionary {
 
@@ -40,16 +40,14 @@ public class DictionaryLatin extends Dictionary {
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
-			while(sentence.contains("1")) sentence = replaceIfNew(sentence, "1", getNoun() );
-			while(sentence.contains("2")) sentence = replaceIfNew(sentence, "2", getNoun() );
-			while(sentence.contains("3")) sentence = replaceIfNew(sentence, "3", getVerbTransitive() );
-			while(sentence.contains("4")) sentence = replaceIfNew(sentence, "4", getVerbIntransitive() );
-//			while(sentence.contains("GERUND3")) sentence = replaceIfNew(sentence, "3", TextualHelper.gerund(getVerbTransitive()) );
-//			while(sentence.contains("GERUND4")) sentence = replaceIfNew(sentence, "4", TextualHelper.gerund(getVerbIntransitive()) );
-			while(sentence.contains("5")) sentence = replaceIfNew(sentence, "5", getAdjective() );
-			while(sentence.contains("6")) sentence = replaceIfNew(sentence, "6", getAdverb() );
-			while(sentence.contains("7")) sentence = replaceIfNew(sentence, "7", getInterjection() );
-			while(sentence.contains("8")) sentence = replaceIfNew(sentence, "8", getPlace() );
+			while(sentence.contains("1")) sentence = TextualHelper.replaceIfNew(sentence, "1", getNoun());
+			while(sentence.contains("2")) sentence = TextualHelper.replaceIfNew(sentence, "2", getNoun() );
+			while(sentence.contains("3")) sentence = TextualHelper.replaceIfNew(sentence, "3", getVerbTransitive() );
+			while(sentence.contains("4")) sentence = TextualHelper.replaceIfNew(sentence, "4", getVerbIntransitive() );
+			while(sentence.contains("5")) sentence = TextualHelper.replaceIfNew(sentence, "5", getAdjective() );
+			while(sentence.contains("6")) sentence = TextualHelper.replaceIfNew(sentence, "6", getAdverb() );
+			while(sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getInterjection() );
+			while(sentence.contains("8")) sentence = TextualHelper.replaceIfNew(sentence, "8", getPlace() );
 		}
 
 		return ucfirst(sentence);

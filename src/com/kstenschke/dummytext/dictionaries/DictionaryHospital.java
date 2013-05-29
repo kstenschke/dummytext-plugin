@@ -16,7 +16,8 @@
 
 package com.kstenschke.dummytext.dictionaries;
 
-import com.kstenschke.dummytext.TextualHelper;
+import com.kstenschke.dummytext.helpers.InflectionHelper;
+import com.kstenschke.dummytext.helpers.TextualHelper;
 
 public class DictionaryHospital extends Dictionary {
 
@@ -40,17 +41,22 @@ public class DictionaryHospital extends Dictionary {
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
-			while(sentence.contains("1")) sentence = replaceIfNew(sentence, "1", getNounConcrete() );
-			while(sentence.contains("2")) sentence = replaceIfNew(sentence, "2", getNounAbstract() );
-			while(sentence.contains("3")) sentence = replaceIfNew(sentence, "3", getVerbTransitive() );
-			while(sentence.contains("4")) sentence = replaceIfNew(sentence, "4", getVerbIntransitive() );
-			while(sentence.contains("GERUND3")) sentence = replaceIfNew(sentence, "3", TextualHelper.gerund(getVerbTransitive()) );
-			while(sentence.contains("GERUND4")) sentence = replaceIfNew(sentence, "4", TextualHelper.gerund(getVerbIntransitive()) );
-			while(sentence.contains("5")) sentence = replaceIfNew(sentence, "5", getAdjective() );
-			while(sentence.contains("6")) sentence = replaceIfNew(sentence, "6", getAdverb() );
-			while(sentence.contains("7")) sentence = replaceIfNew(sentence, "7", getInterjection() );
-			while(sentence.contains("8")) sentence = replaceIfNew(sentence, "8", getPlace() );
-			while(sentence.contains("9")) sentence = replaceIfNew(sentence, "9", getBodypart() );
+			while(sentence.contains("PLURAL1")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL1", InflectionHelper.plural(getNounConcrete()) );
+			while(sentence.contains("PLURAL2")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL2", InflectionHelper.plural(getNounAbstract()) );
+			while(sentence.contains("GERUND3")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND3", InflectionHelper.gerund(getVerbTransitive()) );
+			while(sentence.contains("GERUND4")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND4", InflectionHelper.gerund(getVerbIntransitive()) );
+			while(sentence.contains("PASTTENSE3")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()) );
+			while(sentence.contains("PASTTENSE4")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()) );
+
+			while(sentence.contains("1")) sentence = TextualHelper.replaceIfNew(sentence, "1", getNounConcrete());
+			while(sentence.contains("2")) sentence = TextualHelper.replaceIfNew(sentence, "2", getNounAbstract() );
+			while(sentence.contains("3")) sentence = TextualHelper.replaceIfNew(sentence, "3", getVerbTransitive() );
+			while(sentence.contains("4")) sentence = TextualHelper.replaceIfNew(sentence, "4", getVerbIntransitive() );
+			while(sentence.contains("5")) sentence = TextualHelper.replaceIfNew(sentence, "5", getAdjective() );
+			while(sentence.contains("6")) sentence = TextualHelper.replaceIfNew(sentence, "6", getAdverb() );
+			while(sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getInterjection() );
+			while(sentence.contains("8")) sentence = TextualHelper.replaceIfNew(sentence, "8", getPlace() );
+			while(sentence.contains("9")) sentence = TextualHelper.replaceIfNew(sentence, "9", getBodypart() );
 		}
 
 		sentence = fixIndefiniteArticles(sentence);
@@ -67,7 +73,7 @@ public class DictionaryHospital extends Dictionary {
 		sentence = sentence.replaceAll("wait from",     "wait for");
 
 		String[] unincreasables   = { "bronchitis", "diagnosis", "illness", "kidneys", "lungs"};
-		sentence = TextualHelper.depluralize(sentence, unincreasables);
+		sentence = InflectionHelper.depluralize(sentence, unincreasables);
 
 		return ucfirst(sentence);
 	}
@@ -83,25 +89,25 @@ public class DictionaryHospital extends Dictionary {
 		}
 
 		String[] structures = {
-				  "when the 1 4s for 8, all 1s 3 5, 5 1s.",
+				  "when the 1 4s for 8, all PLURAL1 3 5, 5 PLURAL1.",
 				  "don't 3 the 1 or you might 3 2.",
 				  "to 3 the 5 1 of 9, 6 3 the 1.",
 				  "to 3 the 1 of 5 9, 3 the 1.",
-				  "1s are the 1s of the 5 2.",
+				  "PLURAL1 are the PLURAL1 of the 5 2.",
 				  "the 1 4s by 2 like a 5 1.",
-				  "1s 4 from 2s like 5 1s.",
-				  "1s 4 with 2 at the 5 8!",
-				  "5, 5 1s 6 3 a 5, 5 1.",
-				  "1s of a 5 2, 3 the 2!",
-				  "the 5 1 6 3s the 1.",
-				  "5 2s lead to the 2.",
-				  "1s 4 on 2 at the 8!",
+				  "PLURAL1 4 from PLURAL2 like 5 PLURAL1.",
+				  "PLURAL1 4 with 2 at the 5 8!",
+				  "5, 5 PLURAL1 6 3 a 5, 5 1.",
+				  "PLURAL1 of a 5 2, 3 the 2!",
+				  "the 5 1 6 PLURAL3 the 1.",
+				  "5 PLURAL2 lead to the 2.",
+				  "PLURAL1 4 on 2 at the 8!",
 				  "why does the 1 4?",
-				  "all 1s 3 5, 5 1s.",
+				  "all PLURAL1 3 5, 5 PLURAL1.",
 				  "where is the 5 1?",
 				  "it is a 5 2, sir.",
 				  "4 6 like a 5 1.",
-				  "1s 4 with 2!",
+				  "PLURAL1 4 with 2!",
 				  "2, 2, and 2.",
 				  "never 3 a 1.",
 				  "2 is a 5 1.",

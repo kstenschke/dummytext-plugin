@@ -16,7 +16,8 @@
 
 package com.kstenschke.dummytext.dictionaries;
 
-import com.kstenschke.dummytext.TextualHelper;
+import com.kstenschke.dummytext.helpers.InflectionHelper;
+import com.kstenschke.dummytext.helpers.TextualHelper;
 
 public class DictionaryPirates extends Dictionary {
 
@@ -40,17 +41,22 @@ public class DictionaryPirates extends Dictionary {
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
-			while(sentence.contains("1")) sentence = replaceIfNew(sentence, "1", getNounConcrete() );
-			while(sentence.contains("2")) sentence = replaceIfNew(sentence, "2", getNounAbstract() );
-			while(sentence.contains("3")) sentence = replaceIfNew(sentence, "3", getVerbTransitive() );
-			while(sentence.contains("4")) sentence = replaceIfNew(sentence, "4", getVerbIntransitive() );
-			while(sentence.contains("GERUND3")) sentence = replaceIfNew(sentence, "3", TextualHelper.gerund(getVerbTransitive()) );
-			while(sentence.contains("GERUND4")) sentence = replaceIfNew(sentence, "4", TextualHelper.gerund(getVerbIntransitive()) );
-			while(sentence.contains("5")) sentence = replaceIfNew(sentence, "5", getAdjective() );
-			while(sentence.contains("6")) sentence = replaceIfNew(sentence, "6", getAdverb() );
-			while(sentence.contains("7")) sentence = replaceIfNew(sentence, "7", getInterjection() );
-			while(sentence.contains("8")) sentence = replaceIfNew(sentence, "8", getPlaceAbstract() );
-			while(sentence.contains("9")) sentence = replaceIfNew(sentence, "9", getPlaceConcrete() );
+			while(sentence.contains("PLURAL1")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL1", InflectionHelper.plural(getNounConcrete()) );
+			while(sentence.contains("PLURAL2")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL2", InflectionHelper.plural(getNounAbstract()) );
+			while(sentence.contains("GERUND3")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND3", InflectionHelper.gerund(getVerbTransitive()) );
+			while(sentence.contains("GERUND4")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND4", InflectionHelper.gerund(getVerbIntransitive()) );
+			while(sentence.contains("PASTTENSE3")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()) );
+			while(sentence.contains("PASTTENSE4")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()));
+
+			while(sentence.contains("1")) sentence = TextualHelper.replaceIfNew(sentence, "1", getNounConcrete() );
+			while(sentence.contains("2")) sentence = TextualHelper.replaceIfNew(sentence, "2", getNounAbstract() );
+			while(sentence.contains("3")) sentence = TextualHelper.replaceIfNew(sentence, "3", getVerbTransitive() );
+			while(sentence.contains("4")) sentence = TextualHelper.replaceIfNew(sentence, "4", getVerbIntransitive() );
+			while(sentence.contains("5")) sentence = TextualHelper.replaceIfNew(sentence, "5", getAdjective() );
+			while(sentence.contains("6")) sentence = TextualHelper.replaceIfNew(sentence, "6", getAdverb() );
+			while(sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getInterjection() );
+			while(sentence.contains("8")) sentence = TextualHelper.replaceIfNew(sentence, "8", getPlaceAbstract() );
+			while(sentence.contains("9")) sentence = TextualHelper.replaceIfNew(sentence, "9", getPlaceConcrete() );
 		}
 
 		sentence = fixIndefiniteArticles(sentence);
@@ -58,15 +64,11 @@ public class DictionaryPirates extends Dictionary {
 		sentence = sentence.replaceAll(" a sea ",                 " the sea");
 		sentence = sentence.replaceAll("at the old east india",   "in east india");
 		sentence = sentence.replaceAll("beautys ",                "beauties ");
-		sentence = sentence.replaceAll("breaked",                 "broken");
 		sentence = sentence.replaceAll("cockroachs",              "cockroaches");
-		sentence = sentence.replaceAll("loveed",                  "loved");
-		sentence = sentence.replaceAll("scrapeed",                "scraped");
 		sentence = sentence.replaceAll("to the love",             "to love");
-		sentence = sentence.replaceAll("vandalizeed",             "vandalized");
 
-		String[] unincreasables   = { "lass", "pants" };
-		sentence = TextualHelper.depluralize(sentence, unincreasables);
+		String[] unincreasables   = { "doubloons", "lass", "pants" };
+		sentence = InflectionHelper.depluralize(sentence, unincreasables);
 
 		return ucfirst(sentence);
 	}
@@ -82,28 +84,37 @@ public class DictionaryPirates extends Dictionary {
 		}
 
 		String[] structures  = {
-			"1s 4 with 2!", "1s 4 on 2 at 8!", "1s 4 with 2 at the 5 8!",
-			"7, 7.", "7, 2!", "7, 5 2!", "7, ye 5 1- set sails for 2!",
-			"where is the 5 1?", "all 1s 3 5, 5 1s.", "never 3 a 1.",
-			"1 of a 5 2, 3 the 2!",  "1s are the 1s of the 5 2.",
-			"the 1 4s 2 like a 5 1.", "1s 4 from 2s like 5 1s.",
-			"7, 5 1. go to 8.", "7, 5 1. you won't 3 the 9.",
-			"7 there's nothing like the 5 2 GERUND4 on the 1.",
-			"when the 1 4s for 8, all 1s 3 5, 5 1s.",
-			"the 1 3s with 2, 3 the 9 until it 4s.",
-			"pieces o\' 2 are forever 5.",
-			"damn yer 1, feed the 1.",
-			"how 5. You 3 like a 1.",
-			"5, 5 1s 6 3 a 5, 5 1.",
-			"7, yer not GERUND3 me without a 2!",
-			"the 5 1 6 3s the 1.",
-			"5 2s lead to the 2.",
-			"ho-ho-ho! 2 of 2.",
-			"2 ho! 3 to be 3ed.",
-			"why does the 1 4?",
-			"4 6 like a 5 1.",
-			"2, 2, and 2.",
-			"2 is a 5 1.",
+				  "when the 1 4s for 8, all PLURAL1 3 5, 5 PLURAL1.",
+				  "7 there's nothing like the 5 2 GERUND4 on the 1.",
+				  "7, 5 1. go to 8.", "7, 5 1. you won't 3 the 9.",
+				  "the 1 3s with 2, 3 the 9 until it 4s.",
+				  "PLURAL1 are the PLURAL1 of the 5 2.",
+				  "7, yer not GERUND3 me without a 2!",
+				  "PLURAL1 4 from PLURAL2 like 5 PLURAL1.",
+				  "PLURAL1 4 with 2 at the 5 8!",
+				  "pieces o\' 2 are forever 5.",
+				  "all PLURAL1 3 5, 5 PLURAL1.",
+				  "5, 5 PLURAL1 6 3 a 5, 5 1.",
+				  "7, ye 5 1- set sails for 2!",
+				  "2 ho! 3 to be PASTTENSE3.",
+				  "damn yer 1, feed the 1.",
+				  "how 5. You 3 like a 1.",
+				  "the 1 4s 2 like a 5 1.",
+				  "1 of a 5 2, 3 the 2!",
+				  "PLURAL1 4 on 2 at 8!",
+				  "5 PLURAL2 lead to the 2.",
+				  "the 5 1 6 3s the 1.",
+				  "PLURAL1 4 with 2!",
+				  "ho-ho-ho! 2 of 2.",
+				  "why does the 1 4?",
+				  "where is the 5 1?",
+				  "4 6 like a 5 1.",
+				  "2, 2, and 2.",
+				  "never 3 a 1.",
+				  "2 is a 5 1.",
+				  "7, 7.",
+				  "7, 2!",
+				  "7, 5 2!",
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -119,7 +130,8 @@ public class DictionaryPirates extends Dictionary {
 			"gold", "grog", "gull", "hornpipe", "jack", "jolly roger", "kraken", "lad", "lagoon", "lass", "lubber",
 			"mainland", "mast", "mate", "moon", "pants", "parrot", "pegleg", "pin", "pirate", "plank", "plunder", "reef",
 			"sail", "sailor", "scabbard", "scallywag", "sea", "seashell", "shark", "ship", "shipmate", "shore", "skiff",
-			"parrot", "rum", "skull", "son", "sun", "tuna", "wave", "wench", "whale", "wind", "woodchuck", "yardarm"
+			"parrot", "rum", "skull", "son", "sun", "tuna", "wave", "wench", "whale", "wind", "woodchuck", "yardarm",
+			"gibbet", "tobacco", "ale", "doubloons"
 		};
 
 		return pickRandomString(words);
@@ -206,7 +218,7 @@ public class DictionaryPirates extends Dictionary {
 	private static String getPlaceAbstract() {
 		String[] words ={
 			"cabo rojo", "east india", "fort charles", "french polynesia", "haiti", "isla de muerta", "isla de sangria",
-			"jamaica", "la marsa beach", "madagascar", "pantano river", "port degas", "port royal", "prison",
+			"jamaica", "la marsa beach", "madagascar", "madagascar", "pantano river", "port degas", "port royal", "prison",
 			"puerto rico", "rummage island", "singapore", "tortuga", "tubbataha reef"
 		};
 
@@ -219,7 +231,7 @@ public class DictionaryPirates extends Dictionary {
 	private static String getPlaceConcrete() {
 		String[] words ={
 			"captain\'s quarters", "bikini atoll", "reef", "freighter", "lighthouse", "pacific ocean", "fortress",
-			"cook islands", "seychelles"
+			"cook islands", "seychelles", "bahamas", ""
 		};
 
 		return pickRandomString(words);

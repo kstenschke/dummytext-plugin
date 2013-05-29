@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.kstenschke.dummytext;
+package com.kstenschke.dummytext.helpers;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -218,39 +218,16 @@ public class TextualHelper {
 	}
 
 	/**
-	 * Remove additional trailing "s" from given words
-	 *
 	 * @param   sentence
-	 * @param   unincreasables
-	 * @return
+	 * @param   original
+	 * @param   replacement
+	 * @return  Given sentence with word replaced by replacement, if the sentence did not contain the replacement afore
 	 */
-	public static String depluralize(String sentence, String[] unincreasables) {
-	   for(String unincreasable: unincreasables) {
-		   sentence = sentence.replaceAll(unincreasable + "s", unincreasable);
-	   }
+	public static String replaceIfNew(String sentence, String original, String replacement) {
+		if( !sentence.contains(replacement) ) {
+			sentence = sentence.replaceFirst(original, replacement);
+		}
 
 		return sentence;
 	}
-
-	/**
-	 * Get gerund form of given verb
-	 * ex; hear       => hearing
-	 *     trade      => trading     (trailing e is detected + removed)
-	 *     trade up   => mashing up  (trailing 2nd word is detected and the gerund is made on the first word)
-	 *
-	 * @param   verb
-	 * @return
-	 */
-	public static String gerund(String verb) {
-		verb = verb.trim();
-		if(verb.contains(" ")) {
-			String[] words = verb.split(" ");
-			return gerund(words[0]) + " " + words[2];
-		}
-
-      verb = verb.endsWith("e") ? verb.substring(0, verb.length()-1) : verb;
-
-		return verb + "ing";
-	}
-
 }
