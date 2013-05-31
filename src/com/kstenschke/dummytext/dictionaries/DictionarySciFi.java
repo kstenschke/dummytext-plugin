@@ -41,10 +41,14 @@ public class DictionarySciFi extends Dictionary {
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
+			while(sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getInterjection() );
+
 			while(sentence.contains("PLURAL1")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL1", InflectionHelper.plural(getNounConcrete()) );
 			while(sentence.contains("PLURAL2")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL2", InflectionHelper.plural(getNounAbstract()) );
 			while(sentence.contains("GERUND3")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND3", InflectionHelper.gerund(getVerbTransitive()) );
 			while(sentence.contains("GERUND4")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND4", InflectionHelper.gerund(getVerbIntransitive()) );
+			while(sentence.contains("PSIMPLE3")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE3", InflectionHelper.presentSimple(getVerbTransitive()) );
+			while(sentence.contains("PSIMPLE4")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE4", InflectionHelper.presentSimple(getVerbIntransitive()) );
 			while(sentence.contains("PASTTENSE3")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()) );
 			while(sentence.contains("PASTTENSE4")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()) );
 
@@ -54,7 +58,6 @@ public class DictionarySciFi extends Dictionary {
 			while(sentence.contains("4")) sentence = TextualHelper.replaceIfNew(sentence, "4", getVerbIntransitive() );
 			while(sentence.contains("5")) sentence = TextualHelper.replaceIfNew(sentence, "5", getAdjective() );
 			while(sentence.contains("6")) sentence = TextualHelper.replaceIfNew(sentence, "6", getAdverb() );
-			while(sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getInterjection() );
 			while(sentence.contains("8")) sentence = TextualHelper.replaceIfNew(sentence, "8", getPlaceAbstract() );
 			while(sentence.contains("9")) sentence = TextualHelper.replaceIfNew(sentence, "9", getPlaceConcrete() );
 		}
@@ -83,21 +86,24 @@ public class DictionarySciFi extends Dictionary {
 
 		String[] structures = {
 				  "All those PLURAL2 will be lost in PLURAL2 like PLURAL2 in PLURAL2",
-				  "when the 1 4s for 8, all PLURAL1 3 5, 5 PLURAL1.",
+				  "when the 1 PSIMPLE4 for 8, all PLURAL1 3 5, 5 PLURAL1.",
+				  "2 at the 9 was the 2 of 2, PASTTENSE3 to a 5 1.",
 				  "this 2 has only been PASTTENSE3 by a 5 1.",
 				  "PLURAL1 4 from PLURAL2 like 5 PLURAL1.",
+				  "The 1 is more 1 now than 1. 5 and 6 5.",
 				  "2 at the 9 that is when 5 PLURAL1 4.",
 				  "PLURAL1 are the PLURAL1 of the 5 2.",
+				  "4 wihtout 2, and we won’t 3 a 1.",
 				  "i 3 this 2, it's called 5 2.",
+				  "the 1 PSIMPLE4 2 like a 5 1.",
 				  "PLURAL1 4 with 2 at the 5 9!",
 				  "all PLURAL1 3 5, 5 PLURAL1.",
 				  "5, 5 PLURAL1 6 3 a 5, 5 1.",
+				  "the 5 1 6 PSIMPLE3 the 1.",
 				  "5 PLURAL2 lead to the 2.",
-				  "the 1 4s 2 like a 5 1.",
 				  "5 PLURAL1, to the 9.",
 				  "PLURAL1 4 on 2 at 8!",
 				  "1 of a 5 2, 3 the 2!",
-				  "the 5 1 6 3s the 1.",
 				  "why does the 1 4?",
 				  "where is the 5 1?",
 				  "it is a 5 2, sir.",
@@ -170,7 +176,7 @@ public class DictionarySciFi extends Dictionary {
 	private static String getVerbIntransitive() {
 		String[] words = {
 			"die", "experiment", "fly", "go", "harvest", "malfunction", "meet", "reproduce", "resist", "tremble", "view",
-			"warp", "wobble", "yell"
+			"walk", "warp", "wobble", "yell"
 		};
 
 		return pickRandomString(words);
@@ -183,11 +189,11 @@ public class DictionarySciFi extends Dictionary {
 		String[] words = {
 			"ancient", "apocalyptic", "bare", "biological", "boldly", "brave", "calm", "carnivorous", "chemical",
 			"clear", "cloudy", "cold", "collective", "colorful", "conscious", "crazy", "dead", "delighted", "devastated",
-			"distant", "evasive", "extraterrestrial", "fantastic", "final", "futile", "galactic", "gravimetric",
+			"distant", "evasive", "evil", "extraterrestrial", "fantastic", "final", "futile", "galactic", "gravimetric",
 			"greatly exaggerated", "harmless", "huge", "human", "intelligent", "interstellar", "lunar", "modern",
 			"most unusual", "mysterious", "neutral", "ordinary", "photonic", "post-apocalyptic", "proud", "quirky",
 			"real", "reliable", "remarkable", "seismic", "senior", "ship-wide", "small", "solid", "spheroid", "strange",
-			"sub-light", "terrifying", "ugly", "united", "unrelated", "virtual", "vital"
+			"sub-light", "terrifying", "twisted", "ugly", "united", "unrelated", "virtual", "vital"
 		};
 
 		return pickRandomString(words);
@@ -235,8 +241,8 @@ public class DictionarySciFi extends Dictionary {
 	private static String getPlaceConcrete() {
 		String[] words ={
 			"alpha quadrant", "bridge", "cabin", "center", "colony", "cosmos", "galaxy", "holodeck", "homeworld",
-			"parallel universe", "planet", "ready room", "saucer section", "solar sphere", "space station", "universe",
-			"wormhole"
+			"parallel universe", "planet", "port", "ready room", "saucer section", "solar sphere", "space station",
+			"universe", "wormhole"
 		};
 
 		return pickRandomString(words);

@@ -41,10 +41,14 @@ public class DictionaryHospital extends Dictionary {
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
+			while(sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getInterjection() );
+
 			while(sentence.contains("PLURAL1")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL1", InflectionHelper.plural(getNounConcrete()) );
 			while(sentence.contains("PLURAL2")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL2", InflectionHelper.plural(getNounAbstract()) );
 			while(sentence.contains("GERUND3")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND3", InflectionHelper.gerund(getVerbTransitive()) );
 			while(sentence.contains("GERUND4")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND4", InflectionHelper.gerund(getVerbIntransitive()) );
+			while(sentence.contains("PSIMPLE3")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE3", InflectionHelper.presentSimple(getVerbTransitive()) );
+			while(sentence.contains("PSIMPLE4")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE4", InflectionHelper.presentSimple(getVerbIntransitive()) );
 			while(sentence.contains("PASTTENSE3")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()) );
 			while(sentence.contains("PASTTENSE4")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()) );
 
@@ -54,7 +58,6 @@ public class DictionaryHospital extends Dictionary {
 			while(sentence.contains("4")) sentence = TextualHelper.replaceIfNew(sentence, "4", getVerbIntransitive() );
 			while(sentence.contains("5")) sentence = TextualHelper.replaceIfNew(sentence, "5", getAdjective() );
 			while(sentence.contains("6")) sentence = TextualHelper.replaceIfNew(sentence, "6", getAdverb() );
-			while(sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getInterjection() );
 			while(sentence.contains("8")) sentence = TextualHelper.replaceIfNew(sentence, "8", getPlace() );
 			while(sentence.contains("9")) sentence = TextualHelper.replaceIfNew(sentence, "9", getBodypart() );
 		}
@@ -89,12 +92,12 @@ public class DictionaryHospital extends Dictionary {
 		}
 
 		String[] structures = {
-				  "when the 1 4s for 8, all PLURAL1 3 5, 5 PLURAL1.",
+				  "when the 1 PSIMPLE4 for 8, all PLURAL1 3 5, 5 PLURAL1.",
 				  "don't 3 the 1 or you might 3 2.",
 				  "to 3 the 5 1 of 9, 6 3 the 1.",
 				  "to 3 the 1 of 5 9, 3 the 1.",
 				  "PLURAL1 are the PLURAL1 of the 5 2.",
-				  "the 1 4s by 2 like a 5 1.",
+				  "the 1 PSIMPLE4 by 2 like a 5 1.",
 				  "PLURAL1 4 from PLURAL2 like 5 PLURAL1.",
 				  "PLURAL1 4 with 2 at the 5 8!",
 				  "5, 5 PLURAL1 6 3 a 5, 5 1.",
@@ -181,7 +184,7 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"abdominal", "amorous", "anemic", "attracted", "bacterial", "bad", "beautiful", "brave", "caring", "chemical",
+			"abdominal", "amorous", "anemic", "attracted", "bacterial", "bad", "beautiful", "bloody", "brave", "caring", "chemical",
 			"clear", "dead", "disastrous", "distant", "ectopic", "erotic", "fat", "fatal", "final", "frightened",
 			"gastric", "genetic", "genital", "happy", "human", "iatrogenic", "ill", "infected", "loving", "medical",
 			"neutral", "paranoid", "remarkable", "romantic", "seductive", "sick", "skilled", "smitten", "strange",
@@ -196,9 +199,9 @@ public class DictionaryHospital extends Dictionary {
 	 */
 	private static String getAdverb() {
 		String[] words = {
-			"badly", "bloody", "dizzy", "ethically", "finally", "fondly", "gingerly", "girlyshly", "hysterically",
-			"impressively", "mechanically", "methodically", "nervously", "patiently", "physically", "quickly",
-			"routinely", "rudely", "shyly", "surprisingly", "wisely", "sickly", "tenderly", "mentally", "critically", "seriosly"
+			"badly", "dizzily", "ethically", "finally", "fondly", "gingerly", "girlyshly", "hysterically", "impressively",
+			"mechanically", "methodically", "nervously", "patiently", "physically", "quickly", "routinely", "rudely",
+			"shyly", "surprisingly", "wisely", "sickly", "tenderly", "mentally", "critically", "seriously"
 		};
 
 		return pickRandomString(words);

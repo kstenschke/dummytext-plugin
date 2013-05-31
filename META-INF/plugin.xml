@@ -42,9 +42,14 @@
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
 
-  <version>1.0.4</version>
+  <version>1.0.5</version>
 
   <change-notes><![CDATA[
+    1.0.5<ul>
+        <li>Fixed caret offset</li>
+        <li>Implemented generic inflection for gerund, past tense, present simple and plural</li>
+        <li>Improved vocabulary and grammar</li>
+    </ul>
     1.0.4<ul>
         <li>Leading white-space per line is maintained</li>
         <li>Replaced amount of lines stays same, word count per line varies less</li>

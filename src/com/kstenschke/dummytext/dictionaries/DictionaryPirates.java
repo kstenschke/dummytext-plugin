@@ -41,10 +41,14 @@ public class DictionaryPirates extends Dictionary {
 		}
 
 		while( sentence.matches(".*[0-9].*") ) {
+			while(sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getInterjection() );
+
 			while(sentence.contains("PLURAL1")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL1", InflectionHelper.plural(getNounConcrete()) );
 			while(sentence.contains("PLURAL2")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL2", InflectionHelper.plural(getNounAbstract()) );
 			while(sentence.contains("GERUND3")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND3", InflectionHelper.gerund(getVerbTransitive()) );
 			while(sentence.contains("GERUND4")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND4", InflectionHelper.gerund(getVerbIntransitive()) );
+			while(sentence.contains("PSIMPLE3")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE3", InflectionHelper.presentSimple(getVerbTransitive()) );
+			while(sentence.contains("PSIMPLE4")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE4", InflectionHelper.presentSimple(getVerbIntransitive()) );
 			while(sentence.contains("PASTTENSE3")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()) );
 			while(sentence.contains("PASTTENSE4")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()));
 
@@ -54,7 +58,6 @@ public class DictionaryPirates extends Dictionary {
 			while(sentence.contains("4")) sentence = TextualHelper.replaceIfNew(sentence, "4", getVerbIntransitive() );
 			while(sentence.contains("5")) sentence = TextualHelper.replaceIfNew(sentence, "5", getAdjective() );
 			while(sentence.contains("6")) sentence = TextualHelper.replaceIfNew(sentence, "6", getAdverb() );
-			while(sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getInterjection() );
 			while(sentence.contains("8")) sentence = TextualHelper.replaceIfNew(sentence, "8", getPlaceAbstract() );
 			while(sentence.contains("9")) sentence = TextualHelper.replaceIfNew(sentence, "9", getPlaceConcrete() );
 		}
@@ -63,8 +66,6 @@ public class DictionaryPirates extends Dictionary {
 
 		sentence = sentence.replaceAll(" a sea ",                 " the sea");
 		sentence = sentence.replaceAll("at the old east india",   "in east india");
-		sentence = sentence.replaceAll("beautys ",                "beauties ");
-		sentence = sentence.replaceAll("cockroachs",              "cockroaches");
 		sentence = sentence.replaceAll("to the love",             "to love");
 
 		String[] unincreasables   = { "doubloons", "lass", "pants" };
@@ -84,26 +85,26 @@ public class DictionaryPirates extends Dictionary {
 		}
 
 		String[] structures  = {
-				  "when the 1 4s for 8, all PLURAL1 3 5, 5 PLURAL1.",
+				  "when the 1 PSIMPLE4 for 8, all PLURAL1 3 5, 5 PLURAL1.",
+				  "the 1 PSIMPLE3 with 2, 3 the 9 until it PSIMPLE4.",
 				  "7 there's nothing like the 5 2 GERUND4 on the 1.",
 				  "7, 5 1. go to 8.", "7, 5 1. you won't 3 the 9.",
-				  "the 1 3s with 2, 3 the 9 until it 4s.",
+				  "PLURAL1 4 from PLURAL2 like 5 PLURAL1.",
 				  "PLURAL1 are the PLURAL1 of the 5 2.",
 				  "7, yer not GERUND3 me without a 2!",
-				  "PLURAL1 4 from PLURAL2 like 5 PLURAL1.",
+				  "the 1 PSIMPLE4 2 like a 5 1.",
 				  "PLURAL1 4 with 2 at the 5 8!",
 				  "pieces o\' 2 are forever 5.",
 				  "all PLURAL1 3 5, 5 PLURAL1.",
-				  "5, 5 PLURAL1 6 3 a 5, 5 1.",
 				  "7, ye 5 1- set sails for 2!",
+				  "5, 5 PLURAL1 6 3 a 5, 5 1.",
 				  "2 ho! 3 to be PASTTENSE3.",
+				  "the 5 1 6 PSIMPLE3 the 1.",
+				  "5 PLURAL2 lead to the 2.",
 				  "damn yer 1, feed the 1.",
 				  "how 5. You 3 like a 1.",
-				  "the 1 4s 2 like a 5 1.",
 				  "1 of a 5 2, 3 the 2!",
 				  "PLURAL1 4 on 2 at 8!",
-				  "5 PLURAL2 lead to the 2.",
-				  "the 5 1 6 3s the 1.",
 				  "PLURAL1 4 with 2!",
 				  "ho-ho-ho! 2 of 2.",
 				  "why does the 1 4?",

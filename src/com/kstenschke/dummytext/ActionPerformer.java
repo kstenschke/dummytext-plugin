@@ -131,17 +131,9 @@ class ActionPerformer {
 				} else {
 						// Move caret to end of inserted text
 					offsetStart  = caretModel.getOffset();
-
-					document.insertString(offsetStart, dummyText + " ");
-					int caretOffset   = offsetStart + dummyTextLength + 1;
-
-					String charAtCaret = document.getText(new TextRange(caretOffset, caretOffset+1));
-					while( caretOffset > 0 && TextualHelper.isWhiteSpace(charAtCaret) ) {
-						caretOffset--;
-						charAtCaret = document.getText(new TextRange(caretOffset, caretOffset+1));
-					}
-
-					caretModel.moveToOffset(caretOffset);
+					dummyText   = dummyText.trim();
+					document.insertString(offsetStart, dummyText);
+					caretModel.moveToOffset(offsetStart + dummyText.length() );
 				}
 			}
 		}

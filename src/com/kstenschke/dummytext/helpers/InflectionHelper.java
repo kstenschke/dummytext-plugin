@@ -18,7 +18,7 @@ public class InflectionHelper {
 		verb = verb.trim();
 		if(verb.contains(" ")) {
 			String[] words = verb.split(" ");
-			return gerund(words[0]) + " " + words[2];
+			return gerund(words[0]) + " " + words[1];
 		}
 
 		if(  verb.endsWith("at")
@@ -85,7 +85,6 @@ public class InflectionHelper {
 	 * @return  plural of given word
 	 */
 	public static String plural(String word) {
-
 		if(word.endsWith("y")) {
 			word = word.subSequence(0, word.length()-1 ).toString() + "ies";
 		} else if(word.endsWith("ss")) {
@@ -95,6 +94,22 @@ public class InflectionHelper {
 		}
 
 		return word;
+	}
+
+	/**
+	 * @param   verb
+	 * @return  present simple form of given verb
+	 */
+	public static String presentSimple(String verb) {
+		if(verb.endsWith("ch")) {
+			verb = verb + "es";
+		} else if(verb.endsWith("y")) {
+			verb = verb.subSequence(0, verb.length()-1 ).toString() + "ies";
+		} else if(! verb.endsWith("s")) {
+			verb = verb + "s";
+		}
+
+		return verb;
 	}
 
 	/**
