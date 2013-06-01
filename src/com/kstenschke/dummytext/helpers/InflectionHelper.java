@@ -73,6 +73,12 @@ public class InflectionHelper {
 			verb = verb + "ped";
 		} else if (verb.endsWith("ic")) {
 			verb = verb + "ked";
+		} else if (verb.endsWith("y")
+				  && !verb.endsWith("ay")
+				  && !verb.endsWith("ey")
+				  && !verb.endsWith("oy")
+				  && !verb.endsWith("uy")) {
+			verb = verb.substring(0, verb.length()-1) + "ied";
 		} else {
 			verb = verb + "ed";
 		}

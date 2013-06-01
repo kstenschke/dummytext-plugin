@@ -72,7 +72,7 @@ public class DictionaryEsoteric extends Dictionary {
 		sentence = sentence.replaceAll("the peace",     "peace");
 		sentence = sentence.replaceAll("understanded",  "understood");
 
-		String[] unincreasables   = { "everything", "love", "many", "peace", "sex" };
+		String[] unincreasables   = { "everything", "many", "peace", "sex" };
 		sentence = InflectionHelper.depluralize(sentence, unincreasables);
 
 		return ucfirst(sentence);
