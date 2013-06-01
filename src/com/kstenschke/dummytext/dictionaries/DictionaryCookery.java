@@ -65,7 +65,7 @@ public class DictionaryCookery extends Dictionary {
 			while(sentence.contains("HEATUP")) sentence = sentence.replaceFirst("HEATUP", getVerbHeatUp() );
 		}
 
-		sentence = fixIndefiniteArticles(sentence);
+		sentence = InflectionHelper.fixIndefiniteArticles(sentence);
 
 		sentence = sentence.replaceAll("chickens",      "chicken");
 		sentence = sentence.replaceAll("shreding",      "shredding");

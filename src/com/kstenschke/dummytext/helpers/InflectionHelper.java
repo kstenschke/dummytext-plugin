@@ -85,7 +85,11 @@ public class InflectionHelper {
 	 * @return  plural of given word
 	 */
 	public static String plural(String word) {
-		if(word.endsWith("y")) {
+		if(word.endsWith("y")
+			&& !word.endsWith("ay")
+			&& !word.endsWith("ey")
+			&& !word.endsWith("oy")
+		   && !word.endsWith("uy")) {
 			word = word.subSequence(0, word.length()-1 ).toString() + "ies";
 		} else if(word.endsWith("ss")) {
 			word = word + "es";
@@ -109,6 +113,10 @@ public class InflectionHelper {
 			verb = verb + "s";
 		}
 
+		if( verb.equals("dos")) {
+			verb = "does";
+		}
+
 		return verb;
 	}
 
@@ -129,6 +137,28 @@ public class InflectionHelper {
 
 	private static String depluralize(String sentence, String unincreasable) {
 		return sentence.replaceAll(unincreasable + "s", unincreasable);
+	}
+
+	/**
+	 * @param   sentence
+	 * @return  The sentence with the indefinite article "a" changed into "an", when preceding words starting with a vowel
+	 */
+	public static String fixIndefiniteArticles(String sentence) {
+		sentence = sentence.replaceAll(" a a",    " an a");
+		sentence = sentence.replaceAll(" a e",    " an e");
+		sentence = sentence.replaceAll(" a i",    " an i");
+		sentence = sentence.replaceAll(" a o",    " an o");
+		sentence = sentence.replaceAll(" a ul",   " an ul");
+
+		if(   sentence.startsWith("a a")
+			|| sentence.startsWith("a e")
+			|| sentence.startsWith("a o")
+			|| sentence.startsWith("a i")
+		) {
+			sentence = "An " + sentence.substring(3);
+		}
+
+		return sentence;
 	}
 
 }

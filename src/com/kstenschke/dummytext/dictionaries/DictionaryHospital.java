@@ -62,7 +62,7 @@ public class DictionaryHospital extends Dictionary {
 			while(sentence.contains("9")) sentence = TextualHelper.replaceIfNew(sentence, "9", getBodypart() );
 		}
 
-		sentence = fixIndefiniteArticles(sentence);
+		sentence = InflectionHelper.fixIndefiniteArticles(sentence);
 
 		sentence = sentence.replaceAll(" go at the ",   " go to the ");
 		sentence = sentence.replaceAll(" gos ",         " goes ");

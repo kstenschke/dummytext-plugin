@@ -59,11 +59,10 @@ public class DictionaryEsoteric extends Dictionary {
 			while(sentence.contains("9")) sentence = TextualHelper.replaceIfNew(sentence, "9", getPlaceConcrete() );
 		}
 
-		sentence = fixIndefiniteArticles(sentence);
+		sentence = InflectionHelper.fixIndefiniteArticles(sentence);
 
 		sentence = sentence.replaceAll("a one ",        "one ");
 		sentence = sentence.replaceAll("an one ",       "one ");
-		sentence = sentence.replaceAll("dos ",          "does ");
 		sentence = sentence.replaceAll("es each other", "e each other");
 		sentence = sentence.replaceAll("feelled ",      "felt ");
 		sentence = sentence.replaceAll("forgeted ",     "forgotten ");
@@ -94,9 +93,9 @@ public class DictionaryEsoteric extends Dictionary {
 				  "Be 5 for whoever PSIMPLE4, because each has been PASTTENSE3 from 2.",
 				  "When the 1 of 2 PSIMPLE3 the PLURAL2 of the 1, the 2 will know 1.",
 				  "Going to the 9 doesn’t 3 2 anymore than GERUND3 creates 5 2.",
-				  "Who can 3 the 2 and 2 of a 1 if he has the 5 2 of the 1.",
 				  "the 2 of your PLURAL2 will 4 6 when you 3 that 2 is the 1.",
 				  "PLURAL1, PLURAL1, and 5 PLURAL1 will always protect them.",
+				  "Who can 3 the 2 and 2 of a 1 if he has the 5 2 of the 1?",
 				  "all 5 PLURAL1 3 each other, only 5 PLURAL1 have a 2.",
 				  "As i have PASTTENSE3 you, so you must 3 one another.",
 				  "Everything we do is connected with 2: 2, 2, 2, 2.",
@@ -110,12 +109,15 @@ public class DictionaryEsoteric extends Dictionary {
 				  "Never 3 the 1, for you cannot 3 it.",
 				  "One 5 2 i give you: 3 each other. ",
 				  "To some, a 1 is a 2 for GERUND3.",
-				  "4 and you will be PASTTENSE3 6.",
-				  "The 2 of GERUND3 1 5 is 5.",
 				  "5 PLURAL2 PSIMPLE3 most PLURAL2.",
+				  "the 1 PSIMPLE3 2 which is not 5.",
+				  "2 PSIMPLE3 when you 2 3 with 2.",
+				  "4 and you will be PASTTENSE3 6.",
+				  "Our 5 2 for 2 is to 3 others 6.",
+				  "The 5 2 of 2 is to 3 with 2.",
+				  "The 2 of GERUND3 1 5 is 5.",
 				  "8 is not the 5 2 of the 1.",
 				  "8 of 2 will 6 3 a 5 1.",
-				  "the 1 PSIMPLE3 2 which is not 5.",
 				  "7.", "confucius says: 7.",
 				  "A 5 form of 2 is the 2.",
 				  "not 8 or 8, 3 the 2.",
@@ -167,7 +169,7 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"absorb", "acquire", "avoid", "believe", "capture", "desire", "discover", "emerge", "experience", "fear",
+			"absorb", "acquire", "avoid", "believe", "capture", "desire", "discover", "emerge", "experience", "facilitate", "fear",
 			"feel", "forget", "gain", "handle", "hear", "hurt", "illuminate", "invent", "know", "love", "meet", "need",
 			"praise", "realize", "receive", "reject", "remember", "respect", "study", "synthesise", "trap", "understand",
 			"view", "visualize", "witness", "yearn"
@@ -198,7 +200,7 @@ public class DictionaryEsoteric extends Dictionary {
 			"calm", "celestine", "closest", "crystal", "embittered", "enlightened", "fraternal", "further", "great",
 			"hermetic", "holographic", "holy", "honorable", "imminent", "important", "inner", "inward", "magical",
 			"meaningless", "mediocre", "mysterious", "new", "occult", "one", "outer", "parallel", "pictorial", "playful",
-			"popular", "powerful", "private", "psychic", "remarkable", "searious", "secret", "separate", "shining", "simple",
+			"popular", "powerful", "private", "prime", "psychic", "remarkable", "searious", "secret", "separate", "shining", "simple",
 			"sincere", "small", "soft", "special", "spiritual", "strange", "superior", "synthetic", "true", "ultimate",
 			"united", "unprepared", "unveiled", "wonderful"
 		};

@@ -62,7 +62,7 @@ public class DictionaryPirates extends Dictionary {
 			while(sentence.contains("9")) sentence = TextualHelper.replaceIfNew(sentence, "9", getPlaceConcrete() );
 		}
 
-		sentence = fixIndefiniteArticles(sentence);
+		sentence = InflectionHelper.fixIndefiniteArticles(sentence);
 
 		sentence = sentence.replaceAll(" a sea ",                 " the sea");
 		sentence = sentence.replaceAll("at the old east india",   "in east india");
