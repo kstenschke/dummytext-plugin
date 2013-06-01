@@ -21,7 +21,7 @@ public class generateLatinAction extends AnAction {
 					}
 				});
 			}
-		}, "Insert Esoteric Wisdom", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+		}, "Insert Fake Latin", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 	}
 
 }

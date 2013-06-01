@@ -156,12 +156,14 @@ public class InflectionHelper {
 		sentence = sentence.replaceAll(" a o",    " an o");
 		sentence = sentence.replaceAll(" a ul",   " an ul");
 
-		if(   sentence.startsWith("a a")
-			|| sentence.startsWith("a e")
-			|| sentence.startsWith("a o")
-			|| sentence.startsWith("a i")
+		String sentenceLower = sentence.toLowerCase();
+		if(   sentenceLower.startsWith("a a")
+			|| sentenceLower.startsWith("a e")
+			|| sentenceLower.startsWith("a o")
+			|| sentenceLower.startsWith("a i")
+			|| sentenceLower.startsWith("a u")
 		) {
-			sentence = "An " + sentence.substring(3);
+			sentence = "An " + sentence.substring(2);
 		}
 
 		return sentence;

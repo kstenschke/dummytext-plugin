@@ -22,7 +22,6 @@ import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
-import com.intellij.openapi.util.TextRange;
 import com.kstenschke.dummytext.helpers.TextualHelper;
 import com.kstenschke.dummytext.dictionaries.*;
 
@@ -69,10 +68,6 @@ class ActionPerformer {
 			boolean hasSelection = selectionModel.hasSelection();
 			String selectedText  = selectionModel.getSelectedText();
 
-			Boolean isUpperCase  = false;
-			Boolean isLowerCase  = false;
-			Boolean isUcFirst    = false;
-
 			String trailingPunctuation = TextualHelper.getTrailingPunctuationMark(selectedText);
 
 			Integer dummyLength  = 100; // minimum overall string length
@@ -81,17 +76,6 @@ class ActionPerformer {
 
 				// Generated dummy text will replace the current selected text
 			if (hasSelection && selectedText != null ) {
-				if( TextualHelper.isAllUppercase(selectedText) ) {
-					isUpperCase = true;
-					isLowerCase = false;
-					isUcFirst   = false;
-				} else {
-					isLowerCase = TextualHelper.isAllLowercase(selectedText);
-				}
-				if( ! isLowerCase ) {
-					isUcFirst   = TextualHelper.isUcFirst(selectedText);
-				}
-
 				Integer selectionLength = selectedText.length();
 
 				if( selectionLength > 0 ) {
@@ -107,14 +91,6 @@ class ActionPerformer {
 			if( dummyLength != null ) {
 					// Generate and insert / replace selection with dummy text
 				String dummyText  = generateText(amountLines, amountWords, trailingPunctuation, selectedText).toString();
-
-				if( isLowerCase ) {
-					dummyText   = dummyText.toLowerCase();
-				} else if( isUpperCase ) {
-					dummyText   = dummyText.toUpperCase();
-				} else if( isUcFirst ) {
-					dummyText   = TextualHelper.ucFirst(dummyText);
-				}
 
 				CaretModel caretModel   = editor.getCaretModel();
 				Integer dummyTextLength = dummyText.length();
@@ -155,18 +131,26 @@ class ActionPerformer {
 			// Add random sentences until the given text length is reached
 		Integer linesCount = 0;
 		String[] originalLines = textToBeReplaced != null ? textToBeReplaced.split("\\n") : null;
+		String dummyLine;
+
 		while( linesCount < amountLines ) {
 			String originalLine = null;
 			String leadingWhiteSpace = "";
+			int casing = 0;
 
 			if( originalLines != null ) {
 				originalLine      = originalLines[linesCount];
+
 				amountWords       = TextualHelper.getWordCount(originalLine);
 				leadingWhiteSpace = TextualHelper.getLeadingWhiteSpace(originalLine);
+				casing            = TextualHelper.getCasing(originalLine);
 			}
 
-			dummyText   = dummyText.concat( leadingWhiteSpace + genreDictionary.getRandomLine(amountWords) );
-			dummyText   = dummyText.concat( amountLines > 1 ? "\n" : " ");
+			dummyLine   = leadingWhiteSpace + genreDictionary.getRandomLine(amountWords);
+			dummyLine   = TextualHelper.setCasing(dummyLine, casing);
+
+			dummyText   = dummyText.concat(dummyLine);
+			dummyText   = dummyText.concat(amountLines > 1 ? "\n" : " ");
 
 			linesCount++;
 		}

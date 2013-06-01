@@ -21,6 +21,44 @@ import java.util.List;
 
 public class TextualHelper {
 
+	public static final int STYLE_NONE        = 0;
+	public static final int STYLE_UPPERCASE   = 1;
+	public static final int STYLE_LOWERCASE   = 2;
+	public static final int STYLE_UCFIRST     = 3;
+
+	/**
+	 * @param   str
+	 * @return
+	 */
+	public static int getCasing(String str) {
+		if( isAllUppercase(str) ) {
+			return STYLE_UPPERCASE;
+		} else if(isAllLowercase(str)) {
+			return STYLE_LOWERCASE;
+		} else if(isUcFirst(str)) {
+			return STYLE_UCFIRST;
+		}
+
+		return STYLE_NONE;
+	}
+
+	/**
+	 * @param   str
+	 * @param   casing
+	 * @return  Given string updated to given casing (upper, lower, upper-first, none)
+	 */
+	public static String setCasing(String str, int casing) {
+		if( casing == TextualHelper.STYLE_LOWERCASE) {
+			str   = str.toLowerCase();
+		} else if( casing == TextualHelper.STYLE_UPPERCASE) {
+			str   = str.toUpperCase();
+		} else if( casing == TextualHelper.STYLE_UCFIRST) {
+			str   = TextualHelper.ucFirst(str);
+		}
+
+		return str;
+	}
+
 	/**
 	 * @param   str  String to be analyzed
 	 * @return  Integer  Amount of lines in given string
@@ -55,7 +93,10 @@ public class TextualHelper {
 	 */
 	public static String ucFirst(String str)
 	{
-//		return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+		if(str.length() < 1) {
+			return str;
+		}
+
 		return str.substring(0, 1).toUpperCase() + str.substring(1);
 	}
 

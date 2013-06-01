@@ -21,7 +21,7 @@ public class generateSciFiAction extends AnAction {
 					}
 				});
 			}
-		}, "Insert Pirate Lingo", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+		}, "Insert Science Fiction", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 	}
 
 }

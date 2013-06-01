@@ -21,7 +21,7 @@ public class generateCookeryAction extends AnAction {
 					}
 				});
 			}
-		}, "Insert Esoteric Wisdom", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+		}, "Insert Culinary Inspirations", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 	}
 
 }

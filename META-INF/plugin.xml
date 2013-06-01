@@ -42,9 +42,14 @@
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
 
-  <version>1.0.5</version>
+  <version>1.0.6</version>
 
   <change-notes><![CDATA[
+    1.0.6<ul>
+        <li>Added maintaining of casing per individual line in selections</li>
+        <li>Improved generic inflections</li>
+        <li>Improved undo action labels</li>
+    </ul>
     1.0.5<ul>
         <li>Fixed caret offset</li>
         <li>Implemented generic inflection for gerund, past tense, present simple and plural</li>
