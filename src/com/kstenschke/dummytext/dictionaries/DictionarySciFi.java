@@ -240,9 +240,9 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getPlaceConcrete() {
 		String[] words ={
-			"alpha quadrant", "bridge", "cabin", "center", "colony", "cosmos", "galaxy", "holodeck", "homeworld",
-			"parallel universe", "planet", "port", "ready room", "saucer section", "solar sphere", "space station",
-			"universe", "wormhole"
+			"alpha quadrant", "bridge", "cabin", "center", "colony", "cosmos", "galaxy", "holodeck", "homeworld", "moon",
+			"parallel universe", "planet", "port", "ready room", "saucer section", "solar sphere", "solar system",
+			"space station", "universe", "wormhole"
 		};
 
 		return pickRandomString(words);

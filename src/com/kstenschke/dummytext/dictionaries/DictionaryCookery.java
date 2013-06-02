@@ -49,6 +49,7 @@ public class DictionaryCookery extends Dictionary {
 			while(sentence.contains("PSIMPLE4")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE4", InflectionHelper.presentSimple(getVerbIntransitive()) );
 			while(sentence.contains("PASTTENSE3")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()) );
 			while(sentence.contains("PASTTENSE4")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()) );
+			while(sentence.contains("PASTTENSEHEATUP")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSEHEATUP", InflectionHelper.pastTense(getVerbHeatUp()) );
 
 			while(sentence.contains("0")) sentence = TextualHelper.replaceIfNew(sentence, "0", getDish());
 			while(sentence.contains("1")) sentence = TextualHelper.replaceIfNew(sentence, "1", getIngredient() );
@@ -68,6 +69,7 @@ public class DictionaryCookery extends Dictionary {
 		sentence = InflectionHelper.fixIndefiniteArticles(sentence);
 
 		sentence = sentence.replaceAll("chickens",      "chicken");
+		sentence = sentence.replaceAll(" cuted ",       " cut ");
 		sentence = sentence.replaceAll("shreding",      "shredding");
 		sentence = sentence.replaceAll("spinachs",      "spinach");
 		sentence = sentence.replaceAll("sauce soup",    "soup");
@@ -93,25 +95,27 @@ public class DictionaryCookery extends Dictionary {
 		}
 
 		String[] structures  = {
-			"4 RNDNUM PLURAL1, 1, and 7 in a large 8 over medium heat, HEATUP for RNDNUM minutes and 3 some 1.",
-			"combine 1, 1 and 1. 3 with 5 7 and serve PASTTENSE4 with 1. Enjoy!",
-			"Instead of GERUND3 5 2 with 1, use 9 2 and 9 7 8.",
-			"3 the 1 with 5 7, 7, 7, and 7 making sure to cover all of it.",
-			"2 soup is just not the same without 7 and 5 5 PLURAL1.",
-			"What’s the secret to a 5 and 5 1? Always use 5 7.",
-			"per guest prepare 9 of 2 with PASTTENSE4 1 for dessert.",
-			"When GERUND4 5 PLURAL1, be sure they are room temperature.",
-			"After GERUND4 the PLURAL1, 3 1, 1 and 2 with it in a 8.",
-			"4 1 6, then mix with 2 and serve 6 in 8.",
-			"all children like PASTTENSE4 PLURAL1 in 2 and 7.",
-			"1 0 has to have a 5, 5 1 component.",
-			"1 tastes best with 2 and lots of 7.",
-			"5, 5 pudding is best PASTTENSE3 with 5 2.",
-			"3 each side of the 1 with 9 of 1.",
-			"To the 5 1 add 1, 1, 2 and 5 1.",
-			"5 1 can be made 5 by GERUND3 with 2.",
-			"3 9 of 1 in 9 of 2.",
-			"with PLURAL1 drink 2."
+				  "4 RNDNUM PLURAL1, 1, and 7 in a large 8 over medium heat, HEATUP for RNDNUM minutes and 3 some 1.",
+				  "combine 1, 1 and 1. 3 with 5 7 and serve PASTTENSE4 with 1. Enjoy!",
+				  "3 the 1 with 5 7, 7, 7, and 7 making sure to cover all of it.",
+				  "When GERUND4 5 PLURAL1, be sure they are room temperature.",
+				  "After GERUND4 the PLURAL1, 3 1, 1 and 2 with it in a 8.",
+				  "per guest prepare 9 of 2 with PASTTENSE4 1 for dessert.",
+				  "2 soup is just not the same without 7 and 5 5 PLURAL1.",
+				  "Try GERUND3 the 2 1s with 5 2 and 2, PASTTENSEHEATUP.",
+				  "What’s the secret to a 5 and 5 1? Always use 5 7.",
+				  "Instead of GERUND3 5 2 with 1, use 9 2 and 9 7 8.",
+				  "all children like PASTTENSE4 PLURAL1 in 2 and 7.",
+				  "5, 5 pudding is best PASTTENSE3 with 5 2.",
+				  "4 1 6, then mix with 2 and serve 6 in 8.",
+				  "Place the 1 in a 8, and 3 6 with 5 2.",
+				  "5 1 can be made 5 by GERUND3 with 2.",
+				  "1 0 has to have a 5, 5 1 component.",
+				  "1 tastes best with 2 and lots of 7.",
+				  "3 each side of the 1 with 9 of 1.",
+				  "To the 5 1 add 1, 1, 2 and 5 1.",
+				  "with PLURAL1 drink 2.",
+				  "3 9 of 1 in 9 of 2.",
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -122,8 +126,8 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getDish() {
 		String[] words ={
-				  "cake", "pudding", "stew", "soup", "smoothie", "mousse", "pie", "casserole", "punch", "cheesecake",
-				  "sauce", "salad", "paste", "platter", "tart", "ricotta"
+			"cake", "casserole", "cheesecake", "frittata", "kebab", "mousse", "paste", "pie", "pudding", "punch", "salad",
+			"sauce", "smoothie", "soup", "stew", "pilaf", "platter", "porridge", "tart", "ricotta"
 		};
 
 		return pickRandomString(words);
@@ -139,7 +143,7 @@ public class DictionaryCookery extends Dictionary {
 			"chocolate", "cracker crumps", "cucumber", "doughnut", "eggs", "escargot", "garlic", "ginger", "ground beef",
 			"herring", "leek", "lettuce", "lobster", "marshmellow", "meatballs", "meatloaf", "melon", "nachos", "noodles",
 			"okra", "onion", "oysters", "peanut butter", "peanuts", "pickles", "popcorn", "pork butt", "pork shoulder",
-			"pumpkin seeds", "ramen", "raspberries", "rhubarb", "rice", "sausages", "sauerkraut", "shrimps", "spinach",
+			"pumpkin seeds", "quinoa", "ramen", "raspberries", "rhubarb", "rice", "sausages", "sauerkraut", "shrimps", "spinach",
 			"squid", "steak", "strawberries", "tofu", "truffels", "tuna", "turkey", "watermelon", "white bread", "zucchini"
 		};
 
@@ -168,8 +172,8 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"blend", "brush", "cover", "enamel", "flavor", "garnish", "jumble", "mash up", "marinate", "mix", "rub",
-			"soak", "season", "varnish"
+			"blend", "brush", "cover", "enamel", "flavor", "garnish", "jumble", "mash up", "marinate", "mix", "rinse",
+			"rub", "soak", "season", "varnish", "whisk"
 		};
 
 		return pickRandomString(words);
@@ -180,8 +184,8 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"break", "chop", "cook", "crush", "cut", "drain", "flatten", "grill", "heat", "press", "roast", "shred",
-			"simmer", "slice", "smash", "squeeze", "warm"
+			"boil", "break", "chop", "cook", "crush", "cut", "drain", "dry", "flatten", "fluff", "grill", "heat", "press",
+			"roast", "scrape", "shred", "simmer", "slice", "smash", "squeeze", "toast", "warm"
 		};
 
 		return pickRandomString(words);
@@ -203,11 +207,11 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getAdjective() {
 		String[] words = {
-			"aged", "aromatic", "bloody", "canned", "chilled", "chopped", "clammy", "cold", "cored", "crushed", "dark",
-			"delicious", "diced", "divided", "dried", "fresh", "gooey", "grey", "ground", "hardened", "heated", "hot",
-			"iced", "instant", "juicy", "large", "large", "melted", "mild", "minced", "muddy", "niffy", "nutty", "old",
-			"packaged", "puréed", "quartered", "raw", "rich", "ripe", "roasted", "salted", "salty", "shredded", "sliced",
-			"slobbery", "small", "smashed", "smooth", "soaked", "sour", "sour", "springy", "squeezed", "sticky",
+			"aged", "al dente", "aromatic", "bloody", "canned", "chilled", "chopped", "clammy", "cold", "cored", "crushed",
+			"dark", "delicious", "diced", "divided", "dried", "fresh", "gooey", "grey", "ground", "hardened", "heated",
+			"hot", "iced", "instant", "juicy", "large", "large", "melted", "mild", "minced", "muddy", "niffy", "nutty",
+			"old", "packaged", "puréed", "quartered", "raw", "rich", "ripe", "roasted", "salted", "salty", "shredded",
+			"sliced", "slobbery", "small", "smashed", "smooth", "soaked", "sour", "sour", "springy", "squeezed", "sticky",
 			"sun-dried", "sweet", "synthetic", "tangy", "tasty", "tender", "thin", "warm", "whole", "yellow"
 		};
 
@@ -219,7 +223,8 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getAdverb() {
 		String[] words = {
-			"carefully", "fast", "freshly", "smoothly", "regularly 5", "carefully 5", "drizzled with 2"
+			"carefully 5", "carefully", "equally", "exactly", "fairly", "fast", "freshly", "fully", "immediately",
+			"patiently", "quickly", "regularly 5", "smoothly", "tenderly", "thoroughly", "ultimately"
 		};
 
 		return pickRandomString(words);
@@ -245,8 +250,8 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getContainer() {
 		String[] words ={
-			"bowl", "casserole", "cooker", "frying pan", "grinder", "ice blender", "pan", "saucepan", "sauté pan",
-			"soup pot", "wok"
+			"bowl", "casserole", "cooker", "frying pan", "fine-mesh strainer", "grinder", "ice blender", "pan", "saucepan",
+			"sauté pan", "soup pot", "wok"
 		};
 
 		return pickRandomString(words);
