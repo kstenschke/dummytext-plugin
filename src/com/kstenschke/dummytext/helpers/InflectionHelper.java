@@ -50,7 +50,7 @@ public class InflectionHelper {
 
 		if(verb.contains(" ")) {
 			String[] words = verb.split(" ");
-			return pastTense(words[0]) + " " + words[2];
+			return pastTense(words[0]) + " " + words[1];
 		}
 
 		if (verb.equals("eaked")) {
