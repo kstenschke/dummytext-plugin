@@ -74,11 +74,11 @@ public class DictionaryLatin extends Dictionary {
 			"1s 4!", "1s 4 in 8!", "1s 4 in 5 8!",
 			"est 5 2, cesaris.",
 			"1 4s, tanquam 5 1.", "1s 4, tanquam 5 1.",
-			"cur 1 4?",
+			"Cur 1 4?",
 			"4 6 ducunt ad 5 1.",
 			"2, 2, et 2.",
-			"ubi est 5 1?", "sunt 1es 3 5, 5 1es.", "nunquam 3 1.",
-			"cum 1 4, omnes 1es 3 5, 5 1es."
+			"Ubi est 5 1?", "sunt 1es 3 5, 5 1es.", "nunquam 3 1.",
+			"Cum 1 4, omnes 1es 3 5, 5 1es."
 		};
 
 		return pickRandomString(structures, amountWords);

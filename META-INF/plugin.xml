@@ -27,7 +27,6 @@
         <li>Culinary Inspirations</li>
         <li>Esoteric Wisdom</li>
         <li>Fake Latin  (similar to "Lorem Ipsum" blindtext)</li>
-        <li>Medical Drama</li>
         <li>Pirate Lingo</li>
         <li>Science Fiction</li>
     </ul><br/>
@@ -42,9 +41,13 @@
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
 
-  <version>1.0.6</version>
+  <version>1.0.7</version>
 
   <change-notes><![CDATA[
+    1.0.7<ul>
+        <li>Added preservation of empty lines</li>
+        <li>Removed medical drama genre</li>
+    </ul>
     1.0.6<ul>
         <li>Added maintaining of casing per individual line in selections</li>
         <li>Improved generic inflections</li>
@@ -116,10 +119,6 @@
       <action id="generateCookeryAction" icon="resources/images/cookery.png" class="com.kstenschke.dummytext.generateCookeryAction" text="Generate Culinary Inspirations"
               description="Generates random culinary inspirations">
           <add-to-group anchor="last" group-id="Dummytext.MyGenerateGroup"/>
-      </action>
-      <action id="generateMedicalAction" icon="resources/images/medical.png" class="com.kstenschke.dummytext.generateMedicalAction" text="Generate Medical Drama"
-              description="Generates random medical drama">
-          <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
       <action id="generatePiratesAction" icon="resources/images/pirates.png" class="com.kstenschke.dummytext.generatePiratesAction" text="Generate Pirate Lingo"
               description="Generates random pirate lingo">

@@ -44,8 +44,6 @@ class ActionPerformer {
 			genreDictionary   = new DictionaryPirates();
 		} else if( genreCode.equals("scifi") ) {
 			genreDictionary   = new DictionarySciFi();
-		} else if( genreCode.equals("hospital") ) {
-			genreDictionary   = new DictionaryHospital();
 		} else if( genreCode.equals("esoteric") ) {
 			genreDictionary   = new DictionaryEsoteric();
 		} else if( genreCode.equals("cookery") ) {
@@ -138,16 +136,22 @@ class ActionPerformer {
 			String leadingWhiteSpace = "";
 			int casing = 0;
 
+			Boolean isEmpty   = false;
 			if( originalLines != null ) {
 				originalLine      = originalLines[linesCount];
 
 				amountWords       = TextualHelper.getWordCount(originalLine);
+				isEmpty           = amountWords == null || amountWords == 0;
 				leadingWhiteSpace = TextualHelper.getLeadingWhiteSpace(originalLine);
 				casing            = TextualHelper.getCasing(originalLine);
 			}
 
-			dummyLine   = leadingWhiteSpace + genreDictionary.getRandomLine(amountWords);
-			dummyLine   = TextualHelper.setCasing(dummyLine, casing);
+			if(!isEmpty) {
+				dummyLine   = leadingWhiteSpace + genreDictionary.getRandomLine(amountWords);
+				dummyLine   = TextualHelper.setCasing(dummyLine, casing);
+			} else {
+				dummyLine   = "";
+			}
 
 			dummyText   = dummyText.concat(dummyLine);
 			dummyText   = dummyText.concat(amountLines > 1 ? "\n" : " ");

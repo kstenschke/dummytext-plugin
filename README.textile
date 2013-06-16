@@ -16,7 +16,6 @@ The plugin allows to choose from several genres:
 * Culinary Inspirations
 * Esoteric Wisdom
 * Fake Latin (similar to "Lorem Ipsum" blindtext)
-* Medical Drama
 * Pirate Lingo
 * Science Fiction
 

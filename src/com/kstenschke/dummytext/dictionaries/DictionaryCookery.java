@@ -105,7 +105,7 @@ public class DictionaryCookery extends Dictionary {
 				  "Try GERUND3 the 2 1s with 5 2 and 2, PASTTENSEHEATUP.",
 				  "What’s the secret to a 5 and 5 1? Always use 5 7.",
 				  "Instead of GERUND3 5 2 with 1, use 9 2 and 9 7 8.",
-				  "all children like PASTTENSE4 PLURAL1 in 2 and 7.",
+				  "All children like PASTTENSE4 PLURAL1 in 2 and 7.",
 				  "5, 5 pudding is best PASTTENSE3 with 5 2.",
 				  "4 1 6, then mix with 2 and serve 6 in 8.",
 				  "Place the 1 in a 8, and 3 6 with 5 2.",
@@ -114,7 +114,7 @@ public class DictionaryCookery extends Dictionary {
 				  "1 tastes best with 2 and lots of 7.",
 				  "3 each side of the 1 with 9 of 1.",
 				  "To the 5 1 add 1, 1, 2 and 5 1.",
-				  "with PLURAL1 drink 2.",
+				  "With PLURAL1 drink 2.",
 				  "3 9 of 1 in 9 of 2.",
 		};
 

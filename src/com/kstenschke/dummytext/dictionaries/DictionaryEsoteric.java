@@ -100,17 +100,19 @@ public class DictionaryEsoteric extends Dictionary {
 				  "As i have PASTTENSE3 you, so you must 3 one another.",
 				  "Everything we do is connected with 2: 2, 2, 2, 2.",
 				  "2 doesn’t 6 3 any 1 — but the 1 is what PSIMPLE4.",
+				  "When one PSIMPLE3 2 and 2, one is able to 3 2.",
 				  "2 is not 5 in 8, the 9, or 8, but everywhere.",
 				  "One must 3 the 1 in order to 3 the 1 of 5 2.",
 				  "2 is the only 2, the only guarantee of 2.",
-				  "the 1 has 2, but not everyone PSIMPLE3 it.",
+				  "The 1 has 2, but not everyone PSIMPLE3 it.",
+				  "If you 4 or 4 with a 5 2, 2 PSIMPLE3 you.",
 				  "You have to 4, and 3 2 by your GERUND4.",
-				  "yes, there is 8, it PSIMPLE4 with 2.",
+				  "Yes, there is 8, it PSIMPLE4 with 2.",
 				  "Never 3 the 1, for you cannot 3 it.",
 				  "One 5 2 i give you: 3 each other. ",
 				  "To some, a 1 is a 2 for GERUND3.",
 				  "5 PLURAL2 PSIMPLE3 most PLURAL2.",
-				  "the 1 PSIMPLE3 2 which is not 5.",
+				  "The 1 PSIMPLE3 2 which is not 5.",
 				  "4 and you will be PASTTENSE3 6.",
 				  "Our 5 2 for 2 is to 3 others 6.",
 				  "2 PSIMPLE3 when you 3 with 2.",
@@ -120,12 +122,13 @@ public class DictionaryEsoteric extends Dictionary {
 				  "8 of 2 will 6 3 a 5 1.",
 				  "7.", "confucius says: 7.",
 				  "A 5 form of 2 is the 2.",
-				  "not 8 or 8, 3 the 2.",
-				  "the 9 is full of 2.",
+				  "Not 8 or 8, 3 the 2.",
+				  "The 9 is full of 2.",
 				  "Always 6 3 the 5 1.",
-				  "the 2 is a 5 1.",
+				  "The 2 is a 5 1.",
 				  "2, 2 and a 5 9.",
-				  "the 1 PSIMPLE3.",
+				  "The 1 PSIMPLE3.",
+				  "Be 5.",
 		};
 
 		return pickRandomString(structures, amountWords);
@@ -154,11 +157,11 @@ public class DictionaryEsoteric extends Dictionary {
 			"awareness", "beauty", "blessing", "bliss", "booda-hood", "career", "chaos", "conclusion", "control", "core",
 			"courage", "death", "definition", "density", "dimension", "dogma", "emptiness", "energy", "enlightenment",
 			"enlightenment", "everything", "extend", "faith", "fear", "freedom", "futility", "grace", "happiness",
-			"heaven", "heaven", "history", "hypnosis", "intuition", "issue", "justice", "joy", "life", "light", "living", "love", "man",
+			"harmony", "heaven", "heaven", "history", "hypnosis", "intuition", "issue", "justice", "joy", "life", "light", "living", "love", "man",
 			"manifestation", "meditation", "milk", "mind", "mineral", "moonlight", "music", "pain", "paradox", "peace",
 			"politics", "purpose", "reincarnation", "relativity", "result", "resurrection", "sainthood", "samadhi",
-			"satori", "sex", "shame", "silence", "solitude", "stigma", "suffering", "surrender", "tantra", "totality",
-			"trust", "truth", "uniqueness", "vision", "volume", "zen"
+			"satori", "sex", "shame", "silence", "solitude", "sorrow", "stigma", "suffering", "surrender", "tantra", "totality",
+			"thought", "trust", "truth", "uniqueness", "vision", "volume", "zen"
 		};
 
 		return pickRandomString(words);
@@ -169,9 +172,9 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"absorb", "acquire", "avoid", "believe", "capture", "desire", "discover", "emerge", "experience", "facilitate", "fear",
-			"feel", "forget", "gain", "handle", "hear", "hurt", "illuminate", "invent", "know", "love", "meet", "need",
-			"praise", "realize", "receive", "reject", "remember", "respect", "study", "synthesise", "trap", "understand",
+			"absorb", "acquire", "avoid", "believe", "capture", "desire", "develop", "discover", "emerge", "experience", "facilitate", "fear",
+			"feel", "forget", "follow", "gain", "grasp", "handle", "hear", "hurt", "illuminate", "invent", "know", "love", "meet", "need",
+			"praise", "realize", "receive", "reject", "remember", "respect", "shape", "study", "synthesise", "trap", "understand",
 			"view", "visualize", "witness", "yearn"
 		};
 
@@ -183,8 +186,8 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"appear", "balance", "become", "contact", "convert", "die", "disappear", "disturb", "do", "empower", "exist",
-			"experiment", "fail", "fly", "grow", "listen", "occur", "preach", "remain", "rise", "shine", "sit", "travel",
+			"appear", "balance", "become", "ease", "contact", "convert", "die", "disappear", "disturb", "do", "empower", "exist",
+			"experiment", "fail", "fly", "grow", "listen", "lure", "occur", "preach", "remain", "rise", "shine", "sit", "travel",
 			"wrestle"
 		};
 
@@ -197,12 +200,12 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getAdjective() {
 		String[] words = {
 			"abstruse", "alchemistic", "ancient", "apostolic", "atomic", "beloved", "boundless", "bright", "brilliant",
-			"calm", "celestine", "closest", "crystal", "embittered", "enlightened", "fraternal", "further", "great",
+			"calm", "celestine", "closest", "crystal", "embittered", "enlightened", "evil", "eternal", "fraternal", "further", "great",
 			"hermetic", "holographic", "holy", "honorable", "imminent", "important", "inner", "inward", "magical",
 			"meaningless", "mediocre", "mysterious", "new", "occult", "one", "outer", "parallel", "pictorial", "playful",
-			"popular", "powerful", "private", "prime", "psychic", "remarkable", "searious", "secret", "separate", "shining", "simple",
+			"popular", "powerful", "private", "prime", "psychic", "pure", "remarkable", "searious", "secret", "separate", "shining", "simple",
 			"sincere", "small", "soft", "special", "spiritual", "strange", "superior", "synthetic", "true", "ultimate",
-			"united", "unprepared", "unveiled", "wonderful"
+			"unbiased", "unconditional", "united", "unprepared", "unveiled", "wonderful"
 		};
 
 		return pickRandomString(words);
@@ -214,7 +217,7 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getAdverb() {
 		String[] words = {
 			"agreeable", "authoratively", "balanced", "cosmically", "daily", "earthly", "oddly", "sincerely", "gently",
-			"qabalistic", "harmoniously", "silently", "solitary", "theosophically", "truly", "wisely", "wonderfully",
+			"qabalistic", "harmoniously", "purely", "safely", "silently", "solitary", "theosophically", "truly", "wisely", "wonderfully",
 			"spiritually", "confidently", "esoterically", "essentially"
 		};
 
