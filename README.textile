@@ -26,10 +26,15 @@ that previous casing is maintained. Furthermore, the presence or absence of a tr
 replaced text selection is being maintained.
 
 
+h2. Third Party Resources
+
+The icons used in this plugin are based on the Fugue iconset (http://p.yusukekamiyamane.com/)
+
+
 
 h2. License
 
-Copyright 2013 Kay Stenschke
+Copyright 2014 Kay Stenschke
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

@@ -17,11 +17,11 @@ public class generateEsotericAction extends AnAction {
 			public void run() {
 				ApplicationManager.getApplication().runWriteAction(new Runnable() {
 					public void run() {
-						new ActionPerformer("esoteric").write(event);
+						new ActionPerformer(StaticTexts.GENRE_CODE_ESCOTERIC).write(event);
 					}
 				});
 			}
-		}, "Insert Esoteric Wisdom", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+		}, StaticTexts.HISTORY_INSERT_ESOTERIC, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 	}
 
 }

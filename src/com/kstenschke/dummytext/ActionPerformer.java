@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Kay Stenschke
+ * Copyright 2014 Kay Stenschke
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,17 +40,22 @@ class ActionPerformer {
 	public ActionPerformer(String genreCode) {
 		PluginPreferences.saveGenre(genreCode);
 
-		if( genreCode.equals("pirates") ) {
+		if( genreCode.equals(StaticTexts.GENRE_CODE_PIRATES) ) {
 			genreDictionary   = new DictionaryPirates();
-		} else if( genreCode.equals("scifi") ) {
+
+		} else if( genreCode.equals(StaticTexts.GENRE_CODE_SCIFI) ) {
 			genreDictionary   = new DictionarySciFi();
-		} else if( genreCode.equals("esoteric") ) {
+
+		} else if( genreCode.equals(StaticTexts.GENRE_CODE_ESCOTERIC) ) {
 			genreDictionary   = new DictionaryEsoteric();
-		} else if( genreCode.equals("cookery") ) {
+
+		} else if( genreCode.equals(StaticTexts.GENRE_CODE_COOKERY) ) {
 			genreDictionary   = new DictionaryCookery();
+
 		} else {
-			PluginPreferences.saveGenre("latin");
+			PluginPreferences.saveGenre(StaticTexts.GENRE_CODE_LATIN);
 			genreDictionary   = new DictionaryLatin();
+
 		}
 	}
 
@@ -66,18 +71,15 @@ class ActionPerformer {
 			boolean hasSelection = selectionModel.hasSelection();
 			String selectedText  = selectionModel.getSelectedText();
 
-			String trailingPunctuation = TextualHelper.getTrailingPunctuationMark(selectedText);
-
-			Integer dummyLength  = 100; // minimum overall string length
-			Integer amountLines  = 1;
-			Integer amountWords  = null;  // applies only when replacing a single-lined selection, can be rounded up
+			String trailingPunctuation  = TextualHelper.getTrailingPunctuationMark(selectedText);
+			Integer amountLines         = 1;
+			Integer amountWords         = null;  // applies only when replacing a single-lined selection, can be rounded up
 
 				// Generated dummy text will replace the current selected text
 			if (hasSelection && selectedText != null ) {
 				Integer selectionLength = selectedText.length();
 
 				if( selectionLength > 0 ) {
-					dummyLength = selectedText.length();
 					amountLines = TextualHelper.countLines(selectedText);
 
 					if( amountLines == 1) {
@@ -86,30 +88,28 @@ class ActionPerformer {
 				}
 			}
 
-			if( dummyLength != null ) {
-					// Generate and insert / replace selection with dummy text
-				String dummyText  = generateText(amountLines, amountWords, trailingPunctuation, selectedText).toString();
+                // Generate and insert / replace selection with dummy text
+            String dummyText  = generateText(amountLines, amountWords, trailingPunctuation, selectedText).toString();
 
-				CaretModel caretModel   = editor.getCaretModel();
-				Integer dummyTextLength = dummyText.length();
-				Integer offsetStart;
+            CaretModel caretModel   = editor.getCaretModel();
+            Integer dummyTextLength = dummyText.length();
+            Integer offsetStart;
 
-				if( hasSelection ) {
-						// Move caret to end of selection
-					offsetStart = selectionModel.getSelectionStart();
-					Integer offsetEnd = selectionModel.getSelectionEnd();
+            if( hasSelection ) {
+                    // Move caret to end of selection
+                offsetStart = selectionModel.getSelectionStart();
+                Integer offsetEnd = selectionModel.getSelectionEnd();
 
-					document.replaceString(offsetStart, offsetEnd, dummyText);
-					selectionModel.setSelection(offsetStart, offsetStart + dummyTextLength );
-					caretModel.moveToOffset( offsetStart + dummyTextLength );
-				} else {
-						// Move caret to end of inserted text
-					offsetStart  = caretModel.getOffset();
-					dummyText   = dummyText.trim();
-					document.insertString(offsetStart, dummyText);
-					caretModel.moveToOffset(offsetStart + dummyText.length() );
-				}
-			}
+                document.replaceString(offsetStart, offsetEnd, dummyText);
+                selectionModel.setSelection(offsetStart, offsetStart + dummyTextLength );
+                caretModel.moveToOffset( offsetStart + dummyTextLength );
+            } else {
+                    // Move caret to end of inserted text
+                offsetStart  = caretModel.getOffset();
+                dummyText   = dummyText.trim();
+                document.insertString(offsetStart, dummyText);
+                caretModel.moveToOffset(offsetStart + dummyText.length() );
+            }
 		}
 	}
 
@@ -132,11 +132,11 @@ class ActionPerformer {
 		String dummyLine;
 
 		while( linesCount < amountLines ) {
-			String originalLine = null;
-			String leadingWhiteSpace = "";
-			int casing = 0;
+			String originalLine;
+			String leadingWhiteSpace    = "";
+			int casing                  = 0;
+			Boolean isEmpty             = false;
 
-			Boolean isEmpty   = false;
 			if( originalLines != null ) {
 				originalLine      = originalLines[linesCount];
 
@@ -146,8 +146,17 @@ class ActionPerformer {
 				casing            = TextualHelper.getCasing(originalLine);
 			}
 
+            Integer amountWordsLacking;
 			if(!isEmpty) {
 				dummyLine   = leadingWhiteSpace + genreDictionary.getRandomLine(amountWords);
+                while( amountWords != null && TextualHelper.getWordCount(dummyLine) < amountWords - 2 ) {
+                    amountWordsLacking  = amountWords - TextualHelper.getWordCount(dummyLine);
+                    if( amountWordsLacking < 4 ) {
+                        amountWordsLacking = 4;
+                    }
+                    dummyLine   += " " + genreDictionary.getRandomLine( amountWordsLacking  );
+                }
+
 				dummyLine   = TextualHelper.setCasing(dummyLine, casing);
 			} else {
 				dummyLine   = "";
@@ -164,10 +173,6 @@ class ActionPerformer {
 		}
 
 		return dummyText;
-	}
-
-	private CharSequence generateText(Integer amountLines, Integer amountWords, String trailingPunctuation) {
-		return generateText(amountLines, amountWords, trailingPunctuation, null);
 	}
 
 }

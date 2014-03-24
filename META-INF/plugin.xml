@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright 2013 Kay Stenschke
+  ~ Copyright 2014 Kay Stenschke
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@
     When replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines.
     When replacing a selection of text within a single line, the amount of words is roughly being maintained.<br/>
     When the replaced text selection consists fully of lower-cased or capital letters or begins with a
-    captial letter, that previous casing is maintained. Furthermore, the presence or absence of a trailing
+    capital letter, that previous casing is maintained. Furthermore, the presence or absence of a trailing
     punctuation mark of a replaced text selection is being maintained.<br/>
     <br/>Please note: This plugin is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     <br/>
@@ -41,9 +41,12 @@
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
 
-  <version>1.0.7</version>
+  <version>1.0.8</version>
 
   <change-notes><![CDATA[
+    1.0.8<ul>
+        <li>Improved text length maintainance</li>
+    </ul>
     1.0.7<ul>
         <li>Added preservation of empty lines</li>
         <li>Removed medical drama genre</li>
@@ -135,7 +138,6 @@
           <add-to-group anchor="last" group-id="ToolsMenu"/>
           <add-to-group anchor="last" group-id="GenerateGroup"/>
       </group>
-
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">

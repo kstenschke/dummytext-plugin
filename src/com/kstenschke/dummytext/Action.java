@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Kay Stenschke
+ * Copyright 2014 Kay Stenschke
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ public class Action extends AnAction {
 					}
 				});
 			}
-		}, "Insert Dummy Text", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+		}, StaticTexts.HISTORY_INSERT_DUMMY_TEXT, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 	}
 
 }

@@ -17,11 +17,11 @@ public class generateCookeryAction extends AnAction {
 			public void run() {
 				ApplicationManager.getApplication().runWriteAction(new Runnable() {
 					public void run() {
-						new ActionPerformer("cookery").write(event);
+						new ActionPerformer(StaticTexts.GENRE_CODE_COOKERY).write(event);
 					}
 				});
 			}
-		}, "Insert Culinary Inspirations", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+		}, StaticTexts.HISTORY_INSERT_COOKERY, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 	}
 
 }

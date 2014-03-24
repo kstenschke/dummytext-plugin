@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Kay Stenschke
+ * Copyright 2014 Kay Stenschke
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,27 +34,17 @@ public class Dictionary {
 	 * @return  One random line of text, consisting from roughly the given amount of words
 	 */
 	public String getRandomLine(Integer amountWords) {
-//		Integer amountSentences  = getRandomNumber(4) > 3 ? 2 : 1;
 		Integer amountSentences  = 1;
 
 		return getRandomLine(amountWords, amountSentences).trim();
 	}
 
 	/**
-	 * @param   min   Minimum
-	 * @param   max   Maximum
-	 * @return  Random number within min to max
-	 */
-	protected static Integer getRandomNumber(Integer min, Integer max) {
-		return min + (int)(Math.random() * ((max - min) + 1));
-	}
-
-	/**
-	 * @param   max
-	 * @return  Random number between 0 and max
+	 * @param   max     Maximum
+	 * @return  Random  number within min to max
 	 */
 	protected static Integer getRandomNumber(Integer max) {
-		return getRandomNumber(0, max);
+		return (int)(Math.random() * ((max) + 1));
 	}
 
 	/**
@@ -64,7 +54,7 @@ public class Dictionary {
 	protected static String pickRandomString(String[] words, Integer amountWords)  {
 		if( amountWords != null && amountWords > 0 ) {
 				// Reduce sentences to items with the closest to the given amount of words
-			words = TextualHelper.filterByWordCount(words, amountWords, 5);
+			words = TextualHelper.filterByWordCount(words, amountWords, 2);
 		}
 
 		return words[ getRandomNumber( words.length -1 ) ];
@@ -82,7 +72,7 @@ public class Dictionary {
 	 * @param   str
 	 * @return  Given string with first character made uppercase
 	 */
-	protected static String ucfirst(String str){
+	protected static String ucFirst(String str){
 		return str.substring(0, 1).toUpperCase() + str.substring(1);
 	}
 

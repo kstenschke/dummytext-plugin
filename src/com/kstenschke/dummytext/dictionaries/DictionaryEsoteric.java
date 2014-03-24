@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Kay Stenschke
+ * Copyright 2014 Kay Stenschke
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,7 @@ public class DictionaryEsoteric extends Dictionary {
 		String[] unincreasables   = { "everything", "many", "peace", "sex" };
 		sentence = InflectionHelper.depluralize(sentence, unincreasables);
 
-		return ucfirst(sentence);
+		return ucFirst(sentence);
 	}
 
 	/**
@@ -154,14 +154,15 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getNounAbstract() {
 		String[] words = {
 			"acceptance", "advice", "affirmation", "afterlife", "anger", "art", "ascension", "attitude", "attraction",
-			"awareness", "beauty", "blessing", "bliss", "booda-hood", "career", "chaos", "conclusion", "control", "core",
-			"courage", "death", "definition", "density", "dimension", "dogma", "emptiness", "energy", "enlightenment",
-			"enlightenment", "everything", "extend", "faith", "fear", "freedom", "futility", "grace", "happiness",
-			"harmony", "heaven", "heaven", "history", "hypnosis", "intuition", "issue", "justice", "joy", "life", "light", "living", "love", "man",
-			"manifestation", "meditation", "milk", "mind", "mineral", "moonlight", "music", "pain", "paradox", "peace",
-			"politics", "purpose", "reincarnation", "relativity", "result", "resurrection", "sainthood", "samadhi",
-			"satori", "sex", "shame", "silence", "solitude", "sorrow", "stigma", "suffering", "surrender", "tantra", "totality",
-			"thought", "trust", "truth", "uniqueness", "vision", "volume", "zen"
+            "awareness", "beauty", "blessing", "bliss", "booda-hood", "career", "chaos", "conclusion", "control",
+            "core", "courage", "death", "definition", "density", "dimension", "dogma", "emptiness", "energy",
+            "enlightenment", "enlightenment", "everything", "extend", "faith", "fear", "freedom", "futility",
+            "grace", "happiness", "harmony", "heaven", "heaven", "history", "hypnosis", "intuition", "issue", "joy",
+            "justice", "life", "light", "living", "love", "man", "manifestation", "meditation", "milk", "mind",
+            "mineral", "moonlight", "music", "pain", "paradox", "peace", "politics", "purpose", "reincarnation",
+            "relativity", "result", "resurrection", "sainthood", "samadhi", "satori", "sex", "shame", "silence",
+            "solitude", "sorrow", "stigma", "suffering", "surrender", "tantra", "thought", "totality", "trust", "truth",
+            "uniqueness", "vision", "volume", "zen"
 		};
 
 		return pickRandomString(words);
@@ -172,10 +173,10 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getVerbTransitive() {
 		String[] words = {
-			"absorb", "acquire", "avoid", "believe", "capture", "desire", "develop", "discover", "emerge", "experience", "facilitate", "fear",
-			"feel", "forget", "follow", "gain", "grasp", "handle", "hear", "hurt", "illuminate", "invent", "know", "love", "meet", "need",
-			"praise", "realize", "receive", "reject", "remember", "respect", "shape", "study", "synthesise", "trap", "understand",
-			"view", "visualize", "witness", "yearn"
+			"absorb", "acquire", "avoid", "believe", "capture", "desire", "develop", "discover", "emerge", "experience",
+            "facilitate", "fear", "feel", "follow", "forget", "gain", "grasp", "handle", "hear", "hurt", "illuminate",
+            "invent", "know", "love", "meet", "need", "praise", "realize", "receive", "reject", "remember", "respect",
+            "shape", "study", "synthesise", "trap", "understand", "view", "visualize", "witness", "yearn"
 		};
 
 		return pickRandomString(words);
@@ -186,9 +187,9 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getVerbIntransitive() {
 		String[] words = {
-			"appear", "balance", "become", "ease", "contact", "convert", "die", "disappear", "disturb", "do", "empower", "exist",
-			"experiment", "fail", "fly", "grow", "listen", "lure", "occur", "preach", "remain", "rise", "shine", "sit", "travel",
-			"wrestle"
+			"appear", "balance", "become", "contact", "convert", "die", "disappear", "disturb", "do", "ease", "empower",
+            "exist", "experiment", "fail", "fly", "grow", "listen", "lure", "occur", "preach", "remain", "rise",
+            "shine", "sit", "travel", "wrestle"
 		};
 
 		return pickRandomString(words);
@@ -200,12 +201,13 @@ public class DictionaryEsoteric extends Dictionary {
 	private static String getAdjective() {
 		String[] words = {
 			"abstruse", "alchemistic", "ancient", "apostolic", "atomic", "beloved", "boundless", "bright", "brilliant",
-			"calm", "celestine", "closest", "crystal", "embittered", "enlightened", "evil", "eternal", "fraternal", "further", "great",
-			"hermetic", "holographic", "holy", "honorable", "imminent", "important", "inner", "inward", "magical",
-			"meaningless", "mediocre", "mysterious", "new", "occult", "one", "outer", "parallel", "pictorial", "playful",
-			"popular", "powerful", "private", "prime", "psychic", "pure", "remarkable", "searious", "secret", "separate", "shining", "simple",
-			"sincere", "small", "soft", "special", "spiritual", "strange", "superior", "synthetic", "true", "ultimate",
-			"unbiased", "unconditional", "united", "unprepared", "unveiled", "wonderful"
+            "calm", "celestine", "closest", "crystal", "embittered", "enlightened", "eternal", "evil", "fraternal",
+            "further", "great", "hermetic", "holographic", "holy", "honorable", "imminent", "important", "inner",
+            "inward", "magical", "meaningless", "mediocre", "mysterious", "new", "occult", "one", "outer", "parallel",
+            "pictorial", "playful", "popular", "powerful", "prime", "private", "psychic", "pure", "remarkable",
+            "searious", "secret", "separate", "shining", "simple", "sincere", "small", "soft", "special", "spiritual",
+            "strange", "superior", "synthetic", "true", "ultimate", "unbiased", "unconditional", "united", "unprepared",
+            "unveiled", "wonderful"
 		};
 
 		return pickRandomString(words);
@@ -216,9 +218,10 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getAdverb() {
 		String[] words = {
-			"agreeable", "authoratively", "balanced", "cosmically", "daily", "earthly", "oddly", "sincerely", "gently",
-			"qabalistic", "harmoniously", "purely", "safely", "silently", "solitary", "theosophically", "truly", "wisely", "wonderfully",
-			"spiritually", "confidently", "esoterically", "essentially"
+			"agreeable", "authoratively", "balanced", "beautifully", "cheerfully", "compassionately", "confidently",
+            "cosmically", "daily", "earthly", "esoterically", "essentially", "extraordinarilly", "gently",
+            "harmoniously", "oddly", "purely", "qabalistic", "safely", "silently", "sincerely", "solitary",
+            "spiritually", "substantially", "theosophically", "truly", "wisely", "wonderfully"
 		};
 
 		return pickRandomString(words);

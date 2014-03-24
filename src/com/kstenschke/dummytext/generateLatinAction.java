@@ -17,11 +17,11 @@ public class generateLatinAction extends AnAction {
 			public void run() {
 				ApplicationManager.getApplication().runWriteAction(new Runnable() {
 					public void run() {
-						new ActionPerformer("latin").write(event);
+						new ActionPerformer(StaticTexts.GENRE_CODE_LATIN).write(event);
 					}
 				});
 			}
-		}, "Insert Fake Latin", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+		}, StaticTexts.HISTORY_INSERT_LATIN, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 	}
 
 }

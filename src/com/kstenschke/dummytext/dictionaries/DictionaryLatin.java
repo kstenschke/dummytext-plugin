@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Kay Stenschke
+ * Copyright 2014 Kay Stenschke
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public class DictionaryLatin extends Dictionary {
 	public String getRandomLine(Integer amountWords, Integer amountSentences) {
 		String sentence   = "";
 
-		for(Integer i =0; i< amountSentences; i++) {
+		for(Integer i = 0; i < amountSentences; i++) {
 			sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure(amountWords) );
 		}
 
@@ -50,7 +50,7 @@ public class DictionaryLatin extends Dictionary {
 			while(sentence.contains("8")) sentence = TextualHelper.replaceIfNew(sentence, "8", getPlace() );
 		}
 
-		return ucfirst(sentence);
+		return ucFirst(sentence);
 	}
 
 	/**
@@ -60,6 +60,7 @@ public class DictionaryLatin extends Dictionary {
 	private static String getSentenceStructure(Integer amountWords) {
 		if( amountWords != null && amountWords == 1 ) {
 			String[] structures  = {"1", "2", "8"};
+
 			return pickRandomString(structures);
 		}
 

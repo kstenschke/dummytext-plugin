@@ -17,11 +17,11 @@ public class generatePiratesAction extends AnAction {
 			public void run() {
 				ApplicationManager.getApplication().runWriteAction(new Runnable() {
 					public void run() {
-						new ActionPerformer("pirates").write(event);
+						new ActionPerformer(StaticTexts.GENRE_CODE_PIRATES).write(event);
 					}
 				});
 			}
-		}, "Insert Pirate Lingo", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+		}, StaticTexts.HISTORY_INSERT_PIRATES, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 	}
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Kay Stenschke
+ * Copyright 2014 Kay Stenschke
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,11 +67,12 @@ public class DictionaryPirates extends Dictionary {
 		sentence = sentence.replaceAll(" a sea ",                 " the sea");
 		sentence = sentence.replaceAll("at the old east india",   "in east india");
 		sentence = sentence.replaceAll("to the love",             "to love");
+		sentence = sentence.replaceAll(" crushs ",                " crushes ");
 
 		String[] unincreasables   = { "doubloons", "lass", "pants" };
 		sentence = InflectionHelper.depluralize(sentence, unincreasables);
 
-		return ucfirst(sentence);
+		return ucFirst(sentence);
 	}
 
 	/**
@@ -181,8 +182,8 @@ public class DictionaryPirates extends Dictionary {
 	private static String getAdjective() {
 		String[] words = {
 			"addled", "big", "black", "clear", "cloudy", "coal-black", "cold", "dark", "dead", "evil", "fine", "golden",
-			"gutless", "jolly", "lively", "mighty", "misty", "old", "proud", "rainy", "real", "rough", "scurvy", "shiny", "small",
-			"stormy", "sunny", "swashbuckling", "undead", "warm", "weird", "wet"
+			"gutless", "jolly", "lively", "mighty", "misty", "old", "proud", "rainy", "real", "rough", "scurvy", "shiny",
+            "small", "stormy", "sunny", "swashbuckling", "undead", "warm", "weird", "wet"
 		};
 
 		return pickRandomString(words);
@@ -219,8 +220,8 @@ public class DictionaryPirates extends Dictionary {
 	private static String getPlaceAbstract() {
 		String[] words ={
 			"cabo rojo", "east india", "fort charles", "french polynesia", "haiti", "isla de muerta", "isla de sangria",
-			"jamaica", "la marsa beach", "madagascar", "madagascar", "pantano river", "port degas", "port royal", "prison",
-			"puerto rico", "rummage island", "singapore", "tortuga", "tubbataha reef"
+			"jamaica", "la marsa beach", "madagascar", "madagascar", "pantano river", "port degas", "port royal",
+            "prison", "puerto rico", "rummage island", "singapore", "tortuga", "tubbataha reef"
 		};
 
 		return pickRandomString(words);

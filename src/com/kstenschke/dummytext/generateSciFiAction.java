@@ -17,11 +17,11 @@ public class generateSciFiAction extends AnAction {
 			public void run() {
 				ApplicationManager.getApplication().runWriteAction(new Runnable() {
 					public void run() {
-						new ActionPerformer("scifi").write(event);
+						new ActionPerformer(StaticTexts.GENRE_CODE_SCIFI).write(event);
 					}
 				});
 			}
-		}, "Insert Science Fiction", UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+		}, StaticTexts.HISTORY_INSERT_SCIFI, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 	}
 
 }

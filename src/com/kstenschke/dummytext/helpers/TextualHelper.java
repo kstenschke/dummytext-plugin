@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Kay Stenschke
+ * Copyright 2014 Kay Stenschke
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,8 +63,7 @@ public class TextualHelper {
 	 * @param   str  String to be analyzed
 	 * @return  Integer  Amount of lines in given string
 	 */
-	public static int countLines(String str)
-	{
+	public static int countLines(String str) {
 		String[] lines = str.split("\r\n|\r|\n");
 		return  lines.length;
 	}
@@ -73,8 +72,7 @@ public class TextualHelper {
 	 * @param   str      String to be checked
 	 * @return  Boolean  Are all characters in the given string lower case?
 	 */
-	public static boolean isAllUppercase(String str)
-	{
+	public static boolean isAllUppercase(String str) {
 		return str.equals(str.toUpperCase());
 	}
 
@@ -82,8 +80,7 @@ public class TextualHelper {
 	 * @param   str      String to be checked
 	 * @return  Boolean  Are all characters in the given string lower case?
 	 */
-	public static boolean isAllLowercase(String str)
-	{
+	public static boolean isAllLowercase(String str) {
 		return str.equals(str.toLowerCase());
 	}
 
@@ -91,8 +88,7 @@ public class TextualHelper {
 	 * @param   str   A string
 	 * @return  The given string with a capital fist letter
 	 */
-	public static String ucFirst(String str)
-	{
+	public static String ucFirst(String str) {
 		if(str.length() < 1) {
 			return str;
 		}
@@ -113,8 +109,7 @@ public class TextualHelper {
 	 * @param   str   String to be parsed
 	 * @return  Is the given string all white-space?
 	 */
-	public static Boolean isWhiteSpace(String str)
-	{
+	public static Boolean isWhiteSpace(String str) {
 		return str.trim().length() == 0;
 	}
 
@@ -122,8 +117,7 @@ public class TextualHelper {
 	 * @param   str   String to be parsed
 	 * @return  Is the given string not alphabetic (e.g. a punctuation)?
 	 */
-	public static Boolean isAlphabetic(String str)
-	{
+	public static Boolean isAlphabetic(String str) {
 		return str.matches("[a-z|A-Z]");
 	}
 
@@ -131,8 +125,7 @@ public class TextualHelper {
 	 * @param   str   String to be parsed
 	 * @return  Last character out of given string
 	 */
-	public static String getLastChar(String str)
-	{
+	public static String getLastChar(String str) {
 		return str == null || str.isEmpty() ? "" : str.substring(str.length() - 1);
 	}
 
@@ -140,9 +133,9 @@ public class TextualHelper {
 	 * @param   str   String to be parsed
 	 * @return  The trailing punctuation mark character, or null if the string does not end with a punctuation
 	 */
-	public static String getTrailingPunctuationMark(String str)
-	{
-		str   = getLastChar(str);
+	public static String getTrailingPunctuationMark(String str) {
+        str = str.trim();
+		str = getLastChar(str);
 
 		return isAlphabetic(str) ? null : str;
 	}
@@ -151,8 +144,7 @@ public class TextualHelper {
 	 * @param   str   String to be analyzed
 	 * @return  Amount of (space-separated) words in given string
 	 */
-	public static Integer getWordCount(String str)
-	{
+	public static Integer getWordCount(String str) {
 		str = str.trim();
 
 		return str.isEmpty() ? null : str.split("\\s+").length;
@@ -164,8 +156,7 @@ public class TextualHelper {
 	 * @return  String with original trailing punctuation replace by- or extended with- given punctuation.
 	 *          If 'trailingPunctuation' is null: the string's trailing punctuation is removed as well
 	 */
-	public static String castTrailingPunctuation(String str, String trailingPunctuation)
-	{
+	public static String castTrailingPunctuation(String str, String trailingPunctuation) {
 		String leadingWhiteSpace   = TextualHelper.getLeadingWhiteSpace(str);
 		str                        = str.trim();
 
@@ -179,7 +170,7 @@ public class TextualHelper {
 				str   = str.substring(0, str.length() - 1) + trailingPunctuation;
 			}
 		} else if( !endsAlphabetic) {
-			// Remove trailing non-alphabetic character if selection didn't have any either
+			    // Remove trailing non-alphabetic character if selection didn't have any either
 			str   =	str.substring(0, str.length() - 1);
 		}
 
@@ -194,8 +185,7 @@ public class TextualHelper {
 	 * @param   amountWords
 	 * @return  Filtered items
 	 */
-	public static String[] filterByWordCount(String[] sentences, Integer amountWords, Integer tolerance)
-	{
+	public static String[] filterByWordCount(String[] sentences, Integer amountWords, Integer tolerance) {
 		Integer curDiff;
 		Integer leastDiff    = tolerance + 1;
 		String ignorePattern = ".*[7|8].*";   // ignore interjection and place sentences
@@ -233,15 +223,13 @@ public class TextualHelper {
 	 *
 	 * @param   str   The string
 	 */
-	public static String getLeadingWhiteSpace(String str)
-	{
+	public static String getLeadingWhiteSpace(String str) {
 		String whitespace = "";
 
 		int strLen  = str.length();
 		int i       =0;
 
-		loop:   for(;i < strLen;)
-		{
+		loop:   for(;i < strLen;) {
 			char curChar = str.charAt(i);
 			switch(curChar)
 			{
