@@ -134,6 +134,10 @@ public class TextualHelper {
 	 * @return  The trailing punctuation mark character, or null if the string does not end with a punctuation
 	 */
 	public static String getTrailingPunctuationMark(String str) {
+        if( str == null ) {
+            return null;
+        }
+
         str = str.trim();
 		str = getLastChar(str);
 

@@ -41,9 +41,12 @@
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
 
-  <version>1.0.8</version>
+  <version>1.0.9</version>
 
   <change-notes><![CDATA[
+    1.0.9<ul>
+        <li>Bugfix: Generating dummytext w/o selection caused null pointer exception.</li>
+    </ul>
     1.0.8<ul>
         <li>Improved text length maintainance</li>
     </ul>
