@@ -73,11 +73,12 @@ public class DictionaryCookery extends Dictionary {
 		sentence = sentence.replaceAll("shreding",      "shredding");
 		sentence = sentence.replaceAll("spinachs",      "spinach");
 		sentence = sentence.replaceAll("sauce soup",    "soup");
+		sentence = sentence.replaceAll(" choping ",     " chopping ");
 
 		String[] unincreasables   = {
-			"beefs", "berries", "breasts", "carrots", "chicken", "chicken", "chickpeas", "crumps", "eggs", "meatballs", "nachos", "noodles",
-			"oysters", "oysters", "peanuts", "peas", "pickles", "pickles", "rice", "s taste", "saucages", "sauerkraut", "seeds", "seeds",
-			"shrimps", "spinach", "truffles", "turkey"
+			"beefs", "berries", "breasts", "carrots", "chicken", "chicken", "chickpeas", "crumps", "eggs", "lentils",
+            "meatballs", "nachos", "noodles", "oysters", "oysters", "peanuts", "peas", "pickles", "pickles", "rice",
+            "s taste", "saucages", "sauerkraut", "seeds", "seeds", "shrimps", "spinach", "truffles", "turkey"
 		};
 		sentence = InflectionHelper.depluralize(sentence, unincreasables);
 
@@ -126,8 +127,9 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getDish() {
 		String[] words ={
-			"cake", "casserole", "cheesecake", "frittata", "kebab", "mousse", "paste", "pie", "pudding", "punch",
-            "salad", "sauce", "smoothie", "soup", "stew", "pilaf", "platter", "porridge", "tart", "ricotta"
+			"cake", "casserole", "cheesecake", "chili", "curry", "frittata", "kebab", "mousse", "paste", "pie",
+            "pudding", "punch", "salad", "sauce", "smoothie", "soup", "stew", "stir-fry", "pie", "pilaf", "platter",
+            "porridge", "ricotta", "tart"
 		};
 
 		return pickRandomString(words);
@@ -137,16 +139,16 @@ public class DictionaryCookery extends Dictionary {
 	 * @return  Word of group 1: ingredients
 	 */
 	private static String getIngredient() {
-		String[] words ={
+		String[] words = {
 			"asparagus", "avocado", "bagel", "blood oranges", "blueberries", "bok choy", "broccoli", "butter",
             "cabbage", "carrots", "cauliflower", "caviar", "celery", "chicken breasts", "chicken lard", "chicken",
             "chickpeas", "chickpeas", "chicory", "chili", "chocolate", "cracker crumps", "cucumber", "doughnut", "eggs",
-            "escargot", "garlic", "ginger", "ground beef", "herring", "leek", "lettuce", "lobster", "marshmellow",
-            "meatballs", "meatloaf", "melon", "nachos", "noodles", "okra", "onion", "oysters", "peanut butter",
-            "peanuts", "pickles", "popcorn", "pork butt", "pork shoulder", "pumpkin seeds", "quinoa", "ramen",
-            "raspberries", "rhubarb", "rice", "sauerkraut", "sausages", "seaweed", "shrimps", "spinach", "squid",
-            "steak", "strawberries", "strudel", "tofu", "truffels", "tuna", "turkey", "watermelon", "white bread",
-            "zucchini"
+            "escargot", "garlic", "ginger", "ground beef", "herring", "leek", "lentils", "lettuce", "lobster",
+            "marshmellow", "meatballs", "meatloaf", "melon", "nachos", "noodles", "okra", "onion", "oysters",
+            "peanut butter", "peanuts", "pickles", "popcorn", "pork butt", "pork shoulder", "pumpkin seeds", "quinoa",
+            "ramen", "raspberries", "rhubarb", "rice", "sauerkraut", "sausages", "seaweed", "shrimps", "spinach",
+            "squid", "steak", "strawberries", "strudel", "tofu", "truffels", "tuna", "turkey", "watermelon",
+            "white bread", "zucchini"
 		};
 
 		return pickRandomString(words);
@@ -188,7 +190,7 @@ public class DictionaryCookery extends Dictionary {
 	private static String getVerbIntransitive() {
 		String[] words = {
 			"boil", "break", "chop", "cook", "crush", "cut", "drain", "dry", "flatten", "fluff", "grill", "heat",
-            "press", "roast", "scrape", "shred", "simmer", "slice", "smash", "squeeze", "toast", "warm"
+            "mash", "press", "roast", "scrape", "shake", "shred", "simmer", "slice", "smash", "squeeze", "toast", "warm"
 		};
 
 		return pickRandomString(words);
@@ -211,12 +213,12 @@ public class DictionaryCookery extends Dictionary {
 	private static String getAdjective() {
 		String[] words = {
 			"aged", "al dente", "aromatic", "bloody", "canned", "chilled", "chopped", "clammy", "cold", "cored",
-            "crushed", "dark", "delicious", "diced", "divided", "dried", "fresh", "gooey", "grey", "ground", "hardened",
-            "heated", "hot", "iced", "instant", "juicy", "large", "large", "melted", "mild", "minced", "muddy", "niffy",
-            "nutty", "old", "packaged", "puréed", "quartered", "raw", "rich", "ripe", "roasted", "salted", "salty",
-            "shredded", "sliced", "slobbery", "small", "smashed", "smooth", "soaked", "sour", "sour", "springy",
-            "squeezed", "sticky", "sun-dried", "sweet", "synthetic", "tangy", "tasty", "tender", "thin", "warm",
-            "whole", "yellow"
+            "crushed", "crusted", "dark", "delicious", "diced", "divided", "dried", "fresh", "gooey", "grey",
+            "ground", "hardened", "heated", "hot", "iced", "instant", "juicy", "large", "large", "melted", "mild",
+            "minced", "muddy", "niffy", "nutty", "old", "packaged", "puréed", "quartered", "raw", "rich", "ripe",
+            "roasted", "salted", "salty", "shredded", "sichuan-style", "sliced", "slobbery", "small", "smashed",
+            "smooth", "soaked", "sour", "sour", "springy", "squeezed", "sticky", "sun-dried", "sweet", "synthetic",
+            "tangy", "tasty", "tender", "thin", "warm", "whole", "yellow"
 		};
 
 		return pickRandomString(words);
@@ -240,11 +242,11 @@ public class DictionaryCookery extends Dictionary {
 	private static String getSeasonings() {
 		String[] words ={
 			"anise", "baking powder", "basil leafs", "basil", "black cardamon", "black cardamon", "black pepper",
-            "brine", "brown sugar", "butter", "butterscotch", "cayenne pepper", "celery", "chocolate", "cinnamon",
-            "corn syrup", "cumin", "curry", "dill", "dill", "flower", "garlic", "green curry", "jasmine", "lime",
-            "marmalade", "mustard", "nutmeg", "onion powder", "oregano", "parsley", "pepper", "radish sprouts",
-            "rosemary", "rum", "sugar", "szechuan pepper", "thyme", "vegemite", "vodka", "wasabi", "woodruff",
-            "za\'atar"
+            "brine", "brown sugar", "butter", "butterscotch", "cayenne pepper", "celery", "chipotle chile powder",
+            "chocolate", "cinnamon", "corn syrup", "cumin", "curry", "dill", "dill", "flower", "garlic", "green curry",
+            "jasmine", "lime", "marmalade", "mustard", "nutmeg", "onion powder", "oregano", "parsley", "pepper",
+            "radish sprouts", "rosemary", "rum", "sugar", "szechuan pepper", "thyme", "vegemite", "vodka", "wasabi",
+            "woodruff", "za\'atar"
 		};
 
 		return pickRandomString(words);
@@ -256,7 +258,7 @@ public class DictionaryCookery extends Dictionary {
 	private static String getContainer() {
 		String[] words ={
 			"basin", "bottle", "bowl", "bucket", "casserole", "cooker", "fine-mesh strainer", "frying pan", "grinder",
-            "ice blender", "jar", "pan", "saucepan", "sauté pan", "soup pot", "wok"
+            "ice blender", "jar", "pan", "saucepan", "sauté pan", "soup pot", "wok", "plastic bag"
 		};
 
 		return pickRandomString(words);
@@ -268,7 +270,7 @@ public class DictionaryCookery extends Dictionary {
 	private static String getAmount() {
 		String[] words ={
 			"RNDNUM peaces", "RNDNUM pounds", "RNDNUM teaspoons", "half a kilo", "one container", "one cup", "one jar",
-			"one package", "one quarter cup", "RNDNUM oz", "RNDNUM pounds", "RNDNUM tablespoons"
+			"one package", "one quarter cup", "RNDNUM oz", "RNDNUM pounds", "RNDNUM tablespoons", "RNDNUM and a half teaspoons"
 		};
 
 		return pickRandomString(words);

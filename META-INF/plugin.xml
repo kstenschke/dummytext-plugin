@@ -44,49 +44,45 @@
   <version>1.0.9</version>
 
   <change-notes><![CDATA[
-    1.0.9<ul>
-        <li>Bugfix: Generating dummytext w/o selection caused null pointer exception.</li>
-    </ul>
-    1.0.8<ul>
-        <li>Improved text length maintainance</li>
-    </ul>
-    1.0.7<ul>
+  <ul>
+    <li>1.0.9 Bugfix: Generating dummytext w/o selection caused null pointer exception.</li>
+    <li>1.0.8 Improved text length maintainance</li>
+    <li>1.0.7<ul>
         <li>Added preservation of empty lines</li>
         <li>Removed medical drama genre</li>
-    </ul>
-    1.0.6<ul>
+    </ul></li>
+    <li>1.0.6<ul>
         <li>Added maintaining of casing per individual line in selections</li>
         <li>Improved generic inflections</li>
         <li>Improved undo action labels</li>
-    </ul>
-    1.0.5<ul>
+    </ul></li>
+    <li>1.0.5<ul>
         <li>Fixed caret offset</li>
         <li>Implemented generic inflection for gerund, past tense, present simple and plural</li>
         <li>Improved vocabulary and grammar</li>
-    </ul>
-    1.0.4<ul>
+    </ul></li>
+    <li>1.0.4<ul>
         <li>Leading white-space per line is maintained</li>
         <li>Replaced amount of lines stays same, word count per line varies less</li>
         <li>Improved vocabulary and grammar</li>
-    </ul>
-    1.0.3<ul>
+    </ul></li>
+    <li>1.0.3<ul>
         <li>Added action icons</li>
         <li>New genre: culinary inspirations</li>
         <li>Removed Plugin Configuration and added actions group into tools and generate... menu (Alt+Insert)</li>
         <li>Improved vocabulary and grammar</li>
-    </ul>
+    </ul></li>
     1.0.2<ul>
         <li>Improved transformation of indefinite article ("a" to "an")</li>
         <li>Improved vocabulary and grammar</li>
     </ul>
-    1.0.1<ul>
+    <li>1.0.1<ul>
         <li>Added maintaining of approximate word amount in single lined selections</li>
         <li>Added maintaining of casing</li>
         <li>Added maintaining of present/absent trailing punctuation mark</li>
-    </ul>
-    1.0.0<ul>
-        <li>Initial release</li>
-    </ul>
+    </ul></li>
+    <li>1.0.0 Initial release</li>
+  </ul>
   ]]></change-notes>
 
   <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->

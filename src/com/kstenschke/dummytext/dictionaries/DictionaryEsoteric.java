@@ -139,7 +139,7 @@ public class DictionaryEsoteric extends Dictionary {
 	 */
 	private static String getNounConcrete() {
 		String[] words = {
-			"aspect", "believer", "body", "cow", "creator", "dragon", "doer", "ego", "explosion of the 2", "follower",
+			"aspect", "believer", "body", "cow", "creator", "doer", "ego", "explosion of the 2", "follower",
 			"guru", "individual", "karma", "lama", "lord", "lotus", "lover", "master", "monkey", "moon", "power",
 			"scholar", "saint", "seeker", "self", "sinner", "source", "spirit", "sun", "teacher", "therapist", "thing",
 			"visitor", "wind", "yogi"
@@ -270,7 +270,5 @@ public class DictionaryEsoteric extends Dictionary {
 
 		return pickRandomString(words);
 	}
-
-
 
 }

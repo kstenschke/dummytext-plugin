@@ -51,6 +51,7 @@ public class DictionarySciFi extends Dictionary {
 			while(sentence.contains("PSIMPLE4")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE4", InflectionHelper.presentSimple(getVerbIntransitive()) );
 			while(sentence.contains("PASTTENSE3")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()) );
 			while(sentence.contains("PASTTENSE4")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()) );
+			while(sentence.contains("AMOUNT_PHRASE_PLURAL")) sentence = TextualHelper.replaceIfNew(sentence, "AMOUNT_PHRASE_PLURAL", getAmountPluralConcretePhrase() );
 
 			while(sentence.contains("1")) sentence = TextualHelper.replaceIfNew(sentence, "1", getNounConcrete());
 			while(sentence.contains("2")) sentence = TextualHelper.replaceIfNew(sentence, "2", getNounAbstract() );
@@ -85,7 +86,7 @@ public class DictionarySciFi extends Dictionary {
 		}
 
 		String[] structures = {
-				  "All those PLURAL2 will be lost in PLURAL2 like PLURAL2 in PLURAL2",
+				  "AMOUNT_PHRASE_PLURAL PLURAL2 will be lost in PLURAL2 like PLURAL2 in PLURAL2",
 				  "When the 1 PSIMPLE4 for 8, all PLURAL1 3 5, 5 PLURAL1.",
 				  "2 at the 9 was the 2 of 2, PASTTENSE3 to a 5 1.",
 				  "This 2 has only been PASTTENSE3 by a 5 1.",
@@ -97,7 +98,7 @@ public class DictionarySciFi extends Dictionary {
 				  "I 3 this 2, it's called 5 2.",
 				  "The 1 PSIMPLE4 2 like a 5 1.",
 				  "PLURAL1 4 with 2 at the 5 9!",
-				  "All PLURAL1 3 5, 5 PLURAL1.",
+				  "AMOUNT_PHRASE_PLURAL PLURAL1 3 5, 5 PLURAL1.",
 				  "5, 5 PLURAL1 6 3 a 5, 5 1.",
 				  "The 5 1 6 PSIMPLE3 the 1.",
 				  "5 PLURAL2 lead to the 2.",
@@ -111,7 +112,7 @@ public class DictionarySciFi extends Dictionary {
 				  "The 2 is a 5 1.",
 				  "4 6 like a 5 1.",
 				  "The 1 is 6 5.",
-				  "Never 3 a 1.",
+				  "6 3 a 1.",
 				  "2, 2, and 2.",
 				  "7, 5 2!",
 				  "7, 2!",
@@ -126,7 +127,7 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getNounConcrete() {
 		String[] words = {
-			"AE35 unit", "admiral", "alien", "astronaut", "c-beam", "captain", "collective", "cosmonaut", "creature",
+			"admiral", "alien", "astronaut", "c-beam", "captain", "collective", "cosmonaut", "creature",
 			"crew", "crewmate", "dosi", "emitter", "ferengi", "girl", "green people", "hur\'q", "kahless", "klingon",
 			"lieutenant commander", "machine", "mermaid", "moon", "nanomachine", "parasite", "particle", "particle",
 			"pathway", "planet", "processor", "proton", "queen", "sensor", "ship", "ship", "sonic shower", "space suit",
@@ -136,6 +137,17 @@ public class DictionarySciFi extends Dictionary {
 
 		return pickRandomString(words);
 	}
+
+    /**
+     * @return  Phrase: concrete plural amount
+     */
+    public static String getAmountPluralConcretePhrase() {
+        String[] words = {
+                "all of those", "all those", "all the", "none of these", "countless", "dozens of"
+        };
+
+        return pickRandomString(words);
+    }
 
 	/**
 	 * @return  Word of group 2:  abstract noun
@@ -206,8 +218,8 @@ public class DictionarySciFi extends Dictionary {
 		String[] words = {
 			"accelerative", "bravely", "cunningly", "finally", "impressively", "mechanically", "nosily", "oddly", "patiently",
 			"pedantically", "proudly", "quickly", "revolutionary", "rudely", "surprisingly", "technically", "tightly",
-			"unearthly", "virtually", "wildly", "wisely"
-		};
+			"unearthly", "virtually", "wildly", "wisely", "never", "always"
+        };
 
 		return pickRandomString(words);
 	}
@@ -240,9 +252,9 @@ public class DictionarySciFi extends Dictionary {
 	 */
 	private static String getPlaceConcrete() {
 		String[] words ={
-			"alpha quadrant", "bridge", "cabin", "center", "colony", "cosmos", "galaxy", "holodeck", "homeworld", "moon",
-			"parallel universe", "planet", "port", "ready room", "saucer section", "solar sphere", "solar system",
-			"space station", "universe", "wormhole"
+			"alpha quadrant", "bridge", "cabin", "center", "colony", "cosmos", "galaxy", "habitat 67", "holodeck",
+            "homeworld", "infinity room", "moon", "parallel universe", "planet", "port", "radiation dome",
+            "ready room", "saucer section", "solar sphere", "solar system", "space station", "universe", "wormhole"
 		};
 
 		return pickRandomString(words);
