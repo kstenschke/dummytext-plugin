@@ -41,10 +41,11 @@
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
 
-  <version>1.0.9</version>
+  <version>1.0.10</version>
 
   <change-notes><![CDATA[
   <ul>
+    <li>1.0.10 Improved declensions, extended vocabulary and sentence vicissitude</li>
     <li>1.0.9 Bugfix: Generating dummytext w/o selection caused null pointer exception.</li>
     <li>1.0.8 Improved text length maintainance</li>
     <li>1.0.7<ul>
