@@ -9,7 +9,7 @@ h2. Description
 
 The plugin adds a random text generator, capable of creating witty texts in different genres.
 Created text can be inserted newly at the caret, or replace a selection.
-The dummy text generator is added to the main menu, tools menu and into the generate... popup (Alt+Insert)
+The dummy text generator is added to the main menu, tools menu and into the generate... popup menu (Alt+Insert)
 
 The plugin allows to choose from several genres:
 
