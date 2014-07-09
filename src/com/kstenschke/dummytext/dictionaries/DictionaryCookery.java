@@ -218,7 +218,7 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getVerbHeatUp() {
 		String[] words = {
-			"cook", "grill", "heat", "ice", "refrigerate", "roast", "sauté", "simmer", "warm"
+			"boil", "cook", "grill", "heat", "ice", "refrigerate", "roast", "sauté", "simmer", "steam", "warm"
 		};
 
 		return pickRandomString(words);
