@@ -21,10 +21,9 @@ import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
-import com.kstenschke.dummytext.PluginPreferences;
-import com.kstenschke.dummytext.resources.StaticTexts;
 import com.kstenschke.dummytext.helpers.TextualHelper;
 import com.kstenschke.dummytext.dictionaries.*;
+import com.kstenschke.dummytext.resources.StaticTexts;
 
 class ActionPerformer {
 

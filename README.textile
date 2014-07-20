@@ -37,6 +37,11 @@ Miu by LinhPham.me - Pizza
 WPZOOM - http://www.wpzoom.com - skull
 
 
+h2. Changelog
+
+Read full changelog:  https://github.com/kstenschke/dummytext-plugin/blob/master/CHANGELOG.textile
+
+
 h2. License
 
 Copyright 2013-2014 Kay Stenschke
