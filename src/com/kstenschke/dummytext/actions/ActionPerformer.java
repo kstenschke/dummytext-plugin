@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.kstenschke.dummytext;
+package com.kstenschke.dummytext.actions;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -22,6 +22,8 @@ import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
+import com.kstenschke.dummytext.PluginPreferences;
+import com.kstenschke.dummytext.resources.StaticTexts;
 import com.kstenschke.dummytext.helpers.TextualHelper;
 import com.kstenschke.dummytext.dictionaries.*;
 

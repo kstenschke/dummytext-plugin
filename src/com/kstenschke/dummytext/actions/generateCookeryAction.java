@@ -1,4 +1,4 @@
-package com.kstenschke.dummytext;
+package com.kstenschke.dummytext.actions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -7,6 +7,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.project.Project;
+import com.kstenschke.dummytext.resources.StaticTexts;
 
 public class generateCookeryAction extends AnAction {
 

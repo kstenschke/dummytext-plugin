@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.kstenschke.dummytext;
+package com.kstenschke.dummytext.resources;
 
 import org.jetbrains.annotations.NonNls;
 
