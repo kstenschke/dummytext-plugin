@@ -28,8 +28,13 @@ replaced text selection is being maintained.
 
 h2. Third Party Resources
 
-The icons used in this plugin are based on the Fugue iconset (http://p.yusukekamiyamane.com/)
+The icons used in this plugin have been altered in colors, they originate from the following iconsets:
 
+Freecns Cumulus by Yannick Lung - bubble, library
+Icomoon - http://keyamoon.com/ - rocket
+iconsimple (freebies) by pixan - yingyang
+Miu by LinhPham.me - Pizza
+WPZOOM - http://www.wpzoom.com - skull
 
 
 h2. License

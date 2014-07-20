@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.kstenschke.dummytext;
 
 import com.intellij.openapi.project.Project;
@@ -31,8 +30,6 @@ public class PluginPreferences {
 	@NonNls
 	private static final String PROPERTY_GENRE = "PluginDummyText.Genre";
 
-
-
 	/**
 	 * @return	The currently opened project
 	 */
@@ -42,8 +39,6 @@ public class PluginPreferences {
 		return (projects.length > 0) ? projects[0] : null;
 	}
 
-
-
 	/**
 	 * @return	PropertiesComponent (project level)
 	 */
@@ -52,8 +47,6 @@ public class PluginPreferences {
 
 		return project != null ? PropertiesComponent.getInstance(project) : null;
 	}
-
-
 
 	/**
 	 * Store preference: genre
@@ -67,8 +60,6 @@ public class PluginPreferences {
 			propertiesComponent.setValue(PROPERTY_GENRE, genre);
 		}
 	}
-
-
 
 	/**
 	 * Get preference: genre

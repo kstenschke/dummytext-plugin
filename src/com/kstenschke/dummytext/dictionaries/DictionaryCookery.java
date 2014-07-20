@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.kstenschke.dummytext.dictionaries;
 
 import com.kstenschke.dummytext.helpers.InflectionHelper;
@@ -111,11 +110,13 @@ public class DictionaryCookery extends Dictionary {
                 "combine 1, 1 and 1. 3 with 5 7 and serve PASTTENSE4 with 1. Enjoy!",
                 "3 the 1 with 5 7, 7, 7, and 7 making sure to cover all of it.",
                 "When GERUND4 5 PLURAL1, be sure they are room temperature.",
+                "Everyone just loves the CHARACTERISTIC of 1 0 3d with 7.",
                 "Remember: 4ed 1 tastes best when 4ed in a 8 3ed with 7.",
                 "After GERUND4 the PLURAL1, 3 1, 1 and 2 with it in a 8.",
                 "per guest prepare 9 of 2 with PASTTENSE4 1 for dessert.",
                 "2 soup is just not the same without 7 and 5 5 PLURAL1.",
-                "1 can be replaced by 5 1, than try 3ing the 0 with 2.",
+                "1 can be 3ed with 5 1, also try 3ing the 0 with 2.",
+                "Everyone loves the CHARACTERISTIC of 1 0 3d with 5 7.",
                 "Try GERUND3 the 2 1s with 5 2 and 2, PASTTENSEHEATUP.",
                 "What’s the secret to 5 and 5 1? Always use 5 7.",
                 "Instead of GERUND3 5 2 with 1, use 9 2 and 9 7 8.",
@@ -130,6 +131,7 @@ public class DictionaryCookery extends Dictionary {
                 "3 each side of the 1 with 9 of 1.",
                 "To the 5 1 add 1, 1, 2 and 5 1.",
                 "For a 5 5 0, add some 2 and 7.",
+                "1 combines greatly with 5 1.",
                 "Try 4ing 1 0 3ed with 2.",
                 "With PLURAL1 drink 2.",
                 "3 9 of 1 in 9 of 2.",
@@ -143,9 +145,9 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getDish() {
 		String[] words ={
-			"cake", "casserole", "cheesecake", "chili", "curry", "frittata", "kebab", "mousse", "paste", "pie",
-            "pudding", "punch", "salad", "sauce", "smoothie", "soup", "stew", "stir-fry", "pie", "pilaf", "platter",
-            "porridge", "ricotta", "tart"
+			"cake", "casserole", "cheesecake", "chili", "curry", "frittata", "fritters", "kebab", "loaf", "mousse",
+            "paste", "pie", "pudding", "punch", "salad", "sauce", "smoothie", "soup", "stew", "stir-fry", "pie", "pilaf",
+            "platter", "porridge", "ricotta", "tart"
 		};
 
 		return pickRandomString(words);
@@ -156,15 +158,15 @@ public class DictionaryCookery extends Dictionary {
 	 */
 	private static String getIngredient() {
 		String[] words = {
-			"asparagus", "avocado", "bagel", "blood oranges", "blueberries", "bok choy", "broccoli", "butter",
+			"apple", "asparagus", "avocado", "bagel", "blood oranges", "blueberries", "bok choy", "broccoli", "butter",
             "cabbage", "carrots", "cauliflower", "caviar", "celery", "chicken breasts", "chicken lard", "chicken",
             "chickpeas", "chickpeas", "chicory", "chili", "chocolate", "cracker crumps", "cucumber", "doughnut",
-            "eggs", "escargot", "garlic", "ginger", "ground beef", "herring", "leek", "lentils", "lettuce", "lobster",
-            "marshmellow", "meatballs", "meatloaf", "melon", "nachos", "noodles", "okra", "onion", "oysters",
-            "peanut butter", "peanuts", "pickles", "popcorn", "pork butt", "pork shoulder", "pumpkin seeds", "quinoa",
-            "ramen", "raspberries", "rhubarb", "rice", "sauerkraut", "sausages", "seaweed", "shrimps", "spinach",
-            "squid", "steak", "strawberries", "strudel", "tofu", "truffels", "tuna", "turkey", "watermelon",
-            "white bread", "zucchini"
+            "eggs", "escargot", "garlic", "ginger", "ghee", "ground beef", "herring", "leek", "lentils", "lettuce",
+            "lobster", "mackerel", "margerine", "marshmellow", "meatballs", "meatloaf", "melon", "nachos", "noodles",
+            "okra", "onion", "oysters", "peanut butter", "peanuts", "pickles", "popcorn", "pork butt", "pork shoulder",
+            "pumpkin seeds", "quinoa", "ramen", "raspberries", "rhubarb", "rice", "sauerkraut", "sausages", "seaweed",
+            "shrimps", "spinach", "squid", "steak", "strawberries", "strudel", "tofu", "truffels", "tuna", "turkey",
+            "walnut", "watermelon", "white bread", "zucchini"
 		};
 
 		return pickRandomString(words);
@@ -178,11 +180,11 @@ public class DictionaryCookery extends Dictionary {
 			"adobo sauce", "anchovy essence", "BBQ sauce", "beer", "bourbon", "buttermilk", "champaign",
             "cocktail sauce", "coconut milk", "coffee", "condensed milk", "cream", "crême fraîche", "emeril\'s essence",
             "fish sauce", "gold tequila", "gravy", "hollandaise sauce", "honey", "iced tea", "ice water", "joghurt",
-            "kefir", "ketchup", "lemon juice", "lime", "maple syrup", "mayonnaise", "milk", "mint sauce", "olive oil",
-            "orange juice", "oyster sauce", "peanut sauce", "peppermint tea", "plain vinegar", "red wine", "remoulade",
-            "rice vinegar", "ricotta", "rum", "salad cream", "salsa verde", "sour milk", "soy sauce", "sweet chili sauce",
-            "tabasco", "tea", "teriyaki", "triple sec", "vinaigrette", "vinegar", "water", "whipped cream", "whiskey",
-            "white wine", "worcestershire sauce"
+            "1 juice", "kefir", "ketchup", "lemon juice", "1 lassi", "lime", "maple syrup", "mayonnaise", "milk",
+            "1 sauce", "mint sauce", "olive oil", "orange juice", "oyster sauce", "peanut sauce", "peppermint tea",
+            "plain vinegar", "red wine", "remoulade", "rice vinegar", "ricotta", "rum", "salad cream", "salsa verde",
+            "sour milk", "soy sauce", "sweet chili sauce", "tabasco", "tea", "teriyaki", "triple sec", "vinaigrette",
+            "vinegar", "water", "whipped cream", "whiskey", "white wine", "worcestershire sauce"
 		};
 
 		return pickRandomString(words);

@@ -36,15 +36,17 @@
     capital letter, that previous casing is maintained. Furthermore, the presence or absence of a trailing
     punctuation mark of a replaced text selection is being maintained.<br/>
     <br/>Please note: This plugin is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    <br/>
-    <br/>The icons used in this plugin are based on the Fugue iconset (http://p.yusukekamiyamane.com/)
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
 
-  <version>1.0.10</version>
+  <version>1.0.11</version>
 
   <change-notes><![CDATA[
   <ul>
+    <li>1.0.11<ul>
+        <li>Changed icons, added retina icons</li>
+        <li>Extended cookery vocabulary</li>
+    </ul></li>
     <li>1.0.10 Improved declensions, extended vocabulary and sentence vicissitude</li>
     <li>1.0.9 Bugfix: Generating dummytext w/o selection caused null pointer exception.</li>
     <li>1.0.8 Improved text length maintainance</li>
@@ -102,7 +104,7 @@
   <actions>
       <group id="Dummytext">
           <separator/>
-          <action id="DummyText" class="com.kstenschke.dummytext.actions.Action" text="Insert Dummy Text" description="Insert Dummy Text" icon="resources/images/action.png">
+          <action id="DummyText" class="com.kstenschke.dummytext.actions.Action" text="Insert Dummy Text" description="Insert Dummy Text" icon="resources/icons/action.png">
           </action>
           <separator/>
 
@@ -111,23 +113,23 @@
 
       <group id="Dummytext.MyGenerateGroup" description="Generate Dummy Text" text="Generate Dummy Text" popup="true"/>
 
-      <action id="generateLatinAction" icon="resources/images/latin.png" class="com.kstenschke.dummytext.actions.generateLatinAction" text="Generate Fake Latin"
+      <action id="generateLatinAction" icon="resources/icons/latin.png" class="com.kstenschke.dummytext.actions.generateLatinAction" text="Generate Fake Latin"
               description="Generates random fake latin">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
-      <action id="generateEsotericAction" icon="resources/images/esoteric.png" class="com.kstenschke.dummytext.actions.generateEsotericAction" text="Generate Esoteric Wisdom"
+      <action id="generateEsotericAction" icon="resources/icons/esoteric.png" class="com.kstenschke.dummytext.actions.generateEsotericAction" text="Generate Esoteric Wisdom"
               description="Generates random esoteric wisdom">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
-      <action id="generateCookeryAction" icon="resources/images/cookery.png" class="com.kstenschke.dummytext.actions.generateCookeryAction" text="Generate Culinary Inspirations"
+      <action id="generateCookeryAction" icon="resources/icons/cookery.png" class="com.kstenschke.dummytext.actions.generateCookeryAction" text="Generate Culinary Inspirations"
               description="Generates random culinary inspirations">
           <add-to-group anchor="last" group-id="Dummytext.MyGenerateGroup"/>
       </action>
-      <action id="generatePiratesAction" icon="resources/images/pirates.png" class="com.kstenschke.dummytext.actions.generatePiratesAction" text="Generate Pirate Lingo"
+      <action id="generatePiratesAction" icon="resources/icons/pirates.png" class="com.kstenschke.dummytext.actions.generatePiratesAction" text="Generate Pirate Lingo"
               description="Generates random pirate lingo">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
-      <action id="generateSciFiAction" icon="resources/images/scifi.png" class="com.kstenschke.dummytext.actions.generateSciFiAction" text="Generate Science Fiction"
+      <action id="generateSciFiAction" icon="resources/icons/scifi.png" class="com.kstenschke.dummytext.actions.generateSciFiAction" text="Generate Science Fiction"
               description="Generates random science fiction">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
