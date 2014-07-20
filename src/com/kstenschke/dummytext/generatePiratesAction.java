@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.kstenschke.dummytext.actions;
+package com.kstenschke.dummytext;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -24,7 +24,7 @@ import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.project.Project;
 import com.kstenschke.dummytext.resources.StaticTexts;
 
-public class generateSciFiAction extends AnAction {
+public class generatePiratesAction extends AnAction {
 
 	public void actionPerformed(final AnActionEvent event) {
 		Project currentProject = event.getData(PlatformDataKeys.PROJECT);
@@ -33,11 +33,11 @@ public class generateSciFiAction extends AnAction {
 			public void run() {
 				ApplicationManager.getApplication().runWriteAction(new Runnable() {
 					public void run() {
-						new ActionPerformer(StaticTexts.GENRE_CODE_SCIFI).write(event);
+						new ActionPerformer(StaticTexts.GENRE_CODE_PIRATES).write(event);
 					}
 				});
 			}
-		}, StaticTexts.HISTORY_INSERT_SCIFI, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+		}, StaticTexts.HISTORY_INSERT_PIRATES, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 	}
 
 }
