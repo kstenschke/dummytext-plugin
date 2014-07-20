@@ -7,8 +7,8 @@ h1. Dummytext Plugin - Changelog
 * 1.0.9 Bugfix: Generating dummytext w/o selection caused null pointer exception.
 * 1.0.8 Improved text length maintenance
 * 1.0.7
-**Added preservation of empty lines
-**Removed medical drama genre
+** Added preservation of empty lines
+** Removed medical drama genre
 * 1.0.6
 ** Added maintaining of casing per individual line in selections
 ** Improved generic inflections
