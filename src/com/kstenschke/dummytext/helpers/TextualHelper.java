@@ -138,7 +138,7 @@ public class TextualHelper {
 
     /**
      * @param   {String}  str
-     * @return  Is a punctuation letter? (one of: ./ ,/ ;/ :/ ?/ !)
+     * @return  Is a quotation letter? (one of: ‘/ “/ '/ ")
      */
     public static boolean isQuotationLetter(String str) {
         return "‘“'\"".contains(str);
