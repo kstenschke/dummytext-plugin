@@ -71,7 +71,9 @@ class ActionPerformer {
 			boolean hasSelection = selectionModel.hasSelection();
 			String selectedText  = selectionModel.getSelectedText();
 
-			String trailingPunctuation  = TextualHelper.getTrailingPunctuationMark(selectedText);
+			String trailingCharacter    = TextualHelper.getTrailingPunctuationMark(selectedText);
+            String leadingCharacters    = TextualHelper.getLeadingPreservation(selectedText);
+
 			Integer amountLines         = 1;
 			Integer amountWords         = null;  // applies only when replacing a single-lined selection, can be rounded up
 
@@ -89,7 +91,7 @@ class ActionPerformer {
 			}
 
                 // Generate and insert / replace selection with dummy text
-            String dummyText  = generateText(amountLines, amountWords, trailingPunctuation, selectedText).toString();
+            String dummyText  = generateText(amountLines, amountWords, leadingCharacters, trailingCharacter, selectedText).toString();
 
             CaretModel caretModel   = editor.getCaretModel();
             Integer dummyTextLength = dummyText.length();
@@ -116,10 +118,12 @@ class ActionPerformer {
 	/**
 	 * @param   amountLines          Amount of lines
 	 * @param   amountWords          Amount of words (per line, only given for single lined selection)
+     * @param   leadingCharacters    Leading whitespace and e.g. quotation to be preserved
 	 * @param   trailingPunctuation  Trailing punctuation to be cast to the generated string's ending
 	 * @return  Random dummy text of the given amount of lines and at least the given string-length
 	 */
-	private CharSequence generateText(Integer amountLines, Integer amountWords, String trailingPunctuation, String textToBeReplaced) {
+	private CharSequence generateText(Integer amountLines, Integer amountWords,
+                                      String leadingCharacters, String trailingPunctuation, String textToBeReplaced) {
 		String dummyText = "";
 
 		if( amountLines > 1 ) {
@@ -135,7 +139,7 @@ class ActionPerformer {
 			String originalLine;
 			String leadingWhiteSpace    = "";
 			int casing                  = 0;
-			Boolean isEmpty             = false;
+			boolean isEmpty             = false;
 
 			if( originalLines != null ) {
 				originalLine      = originalLines[linesCount];
@@ -168,6 +172,9 @@ class ActionPerformer {
 			linesCount++;
 		}
 
+        if( textToBeReplaced != null && leadingCharacters != null && !textToBeReplaced.isEmpty() && !leadingCharacters.isEmpty() ) {
+            dummyText = leadingCharacters + dummyText;
+        }
 		if( textToBeReplaced != null && trailingPunctuation != null && !textToBeReplaced.isEmpty() && !trailingPunctuation.isEmpty() ) {
 			dummyText = TextualHelper.castTrailingPunctuation(dummyText, trailingPunctuation);
 		}

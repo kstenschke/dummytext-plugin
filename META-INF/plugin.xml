@@ -38,11 +38,13 @@
     <br/>Please note: This plugin is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
-
-  <version>1.0.11</version>
-
+  <version>1.0.12</version>
   <change-notes><![CDATA[
   <ul>
+    <li>1.0.12<ul>
+        <li>Added preservation of leading and trailing quotation letters (‘, “, ', ")</li>
+        <li>Improved preservation of trailing punctuation (., ,, :, ;, ?, !, ¡, ¿)</li>
+    </ul></li>
     <li>1.0.11<ul>
         <li>Exchanged icons with retina / darcula theme compatible ones</li>
         <li>Extended cookery vocabulary</li>
@@ -50,10 +52,6 @@
     <li>1.0.10 Improved declensions, extended vocabulary and sentence vicissitude</li>
     <li>1.0.9 Bugfix: Generating dummytext w/o selection caused null pointer exception.</li>
     <li>1.0.8 Improved text length maintenance</li>
-    <li>1.0.7<ul>
-        <li>Added preservation of empty lines</li>
-        <li>Removed medical drama genre</li>
-    </ul></li>
   </ul>
   <a href="https://github.com/kstenschke/dummytext-plugin/blob/master/CHANGELOG.textile" target="_blank">...Read full changelog on github</a>
   ]]></change-notes>

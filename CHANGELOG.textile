@@ -1,5 +1,8 @@
 h1. Dummytext Plugin - Changelog
 
+* 1.0.12
+** Added preservation of leading and trailing quotation letters (‘, “, ', ")
+** Improved preservation of trailing punctuation (., ,, :, ;, ?, !, ¡, ¿)
 * 1.0.11
 ** Exchanged icons with retina / darcula theme compatible ones
 ** Extended cookery vocabulary
