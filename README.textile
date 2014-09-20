@@ -2,7 +2,7 @@ h1. Dummy Text Generator Plugin
 
 Source code of the intellij IDEA "Dummy Text Generator" plugin: http://plugins.jetbrains.com/plugin?pr=&pluginId=7216
 This is a plugin for the various intellij IDEs, working in IntelliJ IDEA Ultimate and Community Edition, 
-RubyMine, WebStorm, PhpStorm, PyCharm, PyCharm CE, AppCode and Android Studio.
+RubyMine, WebStorm, PhpStorm, PyCharm, PyCharm CE, AppCode, Android Studio and 0xDBE.
 
 
 h2. Description
