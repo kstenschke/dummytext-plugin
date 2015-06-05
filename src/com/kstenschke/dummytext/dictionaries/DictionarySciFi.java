@@ -93,7 +93,7 @@ public class DictionarySciFi extends Dictionary {
 				  "The 1 is more 1 now than 1. 5 and 6 5.",
 				  "2 at the 9 that is when 5 PLURAL1 4.",
 				  "PLURAL1 are the PLURAL1 of the 5 2.",
-				  "4 wihtout 2, and we won’t 3 a 1.",
+				  "4 without 2, and we won’t 3 a 1.",
 				  "I 3 this 2, it's called 5 2.",
 				  "The 1 PSIMPLE4 2 like a 5 1.",
 				  "PLURAL1 4 with 2 at the 5 9!",
