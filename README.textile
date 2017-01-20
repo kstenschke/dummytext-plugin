@@ -1,5 +1,3 @@
-"!http://api.flattr.com/button/flattr-badge-large.png!":https://flattr.com/submit/auto?user_id=kstenschke&url=https://github.com/kstenschke/dummytext-plugin/&title=dummytext-plugin&language=java&tags=github&category=software
-
 h1. Dummy Text Generator Plugin
 
 Source code of the intellij IDEA "Dummy Text Generator" plugin: http://plugins.jetbrains.com/plugin?pr=&pluginId=7216
