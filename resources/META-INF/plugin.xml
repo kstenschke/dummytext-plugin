@@ -35,7 +35,7 @@
     punctuation mark of a replaced text selection is being maintained.<br/>
     <br/>Please note: This plugin is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ]]></description>
-  <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
+  <vendor url="https://github.com/kstenschke/dummytext-plugin" email="info@stenschke.com">Kay Stenschke</vendor>
   <version>1.1.0</version>
   <change-notes><![CDATA[
   <ul>
@@ -59,40 +59,35 @@
   ]]></change-notes>
   <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
   <idea-version since-build="107.105"/>
-  <application-components>
-      <!-- ... -->
-  </application-components>
-      <!-- ... -->
-  <project-components>
-  </project-components>
+  <application-components/>
+  <project-components/>
   <depends>com.intellij.modules.lang</depends>
   <actions>
       <group id="Dummytext">
           <separator/>
-          <action id="DummyText" class="com.kstenschke.dummytext.Action" text="Insert Dummy Text" description="Insert Dummy Text"
-                  icon="resources/icons/action.png">
+          <action id="DummyText" class="com.kstenschke.dummytext.Action" text="Insert Dummy Text" description="Insert Dummy Text" icon="resources/icons/action.png">
           </action>
           <separator/>
           <add-to-group group-id="MainToolBar" anchor="before" relative-to-action="ToolbarRunGroup"/>
       </group>
       <group id="Dummytext.MyGenerateGroup" description="Generate Dummy Text" text="Generate Dummy Text" popup="true"/>
-      <action id="generateLatinAction" icon="resources/icons/latin.png" class="com.kstenschke.dummytext.generateLatinAction" text="Generate Fake Latin"
+      <action id="generateLatinAction" icon="resources/icons/latin.png" class="com.kstenschke.dummytext.generateLatinAction" text="Fake Latin"
               description="Generates random fake latin">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
-      <action id="generateEsotericAction" icon="resources/icons/esoteric.png" class="com.kstenschke.dummytext.generateEsotericAction" text="Generate Esoteric Wisdom"
+      <action id="generateEsotericAction" icon="resources/icons/esoteric.png" class="com.kstenschke.dummytext.generateEsotericAction" text="Esoteric Wisdom"
               description="Generates random esoteric wisdom">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
-      <action id="generateCookeryAction" icon="resources/icons/cookery.png" class="com.kstenschke.dummytext.generateCookeryAction" text="Generate Culinary Inspirations"
+      <action id="generateCookeryAction" icon="resources/icons/cookery.png" class="com.kstenschke.dummytext.generateCookeryAction" text="Culinary Inspirations"
               description="Generates random culinary inspirations">
           <add-to-group anchor="last" group-id="Dummytext.MyGenerateGroup"/>
       </action>
-      <action id="generatePiratesAction" icon="resources/icons/pirates.png" class="com.kstenschke.dummytext.generatePiratesAction" text="Generate Pirate Lingo"
+      <action id="generatePiratesAction" icon="resources/icons/pirates.png" class="com.kstenschke.dummytext.generatePiratesAction" text="Pirate Lingo"
               description="Generates random pirate lingo">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
-      <action id="generateSciFiAction" icon="resources/icons/scifi.png" class="com.kstenschke.dummytext.generateSciFiAction" text="Generate Science Fiction"
+      <action id="generateSciFiAction" icon="resources/icons/scifi.png" class="com.kstenschke.dummytext.generateSciFiAction" text="Science Fiction"
               description="Generates random science fiction">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
@@ -104,7 +99,5 @@
           <separator/>
       </group>
   </actions>
-  <extensions defaultExtensionNs="com.intellij">
-      <!-- ... -->
-  </extensions>
+  <extensions defaultExtensionNs="com.intellij"/>
 </idea-plugin>
