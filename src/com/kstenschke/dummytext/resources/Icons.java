@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2014 Kay Stenschke
+ * Copyright 2013-2018 Kay Stenschke
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ import com.intellij.openapi.util.IconLoader;
 
 import javax.swing.*;
 
-public class Icons {
+class Icons {
 
     public static final Icon ICON_ACTION    = IconLoader.getIcon("/com/kstenschke/dummytext/resources/icons/action.png");
     public static final Icon ICON_COOKERY   = IconLoader.getIcon("/com/kstenschke/dummytext/resources/icons/cookery.png");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2014 Kay Stenschke
+ * Copyright 2013-2018 Kay Stenschke
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,18 +26,10 @@ import com.kstenschke.dummytext.resources.StaticTexts;
 
 public class generateLatinAction extends AnAction {
 
-	public void actionPerformed(final AnActionEvent event) {
-		Project currentProject = event.getData(PlatformDataKeys.PROJECT);
+    public void actionPerformed(final AnActionEvent event) {
+        Project currentProject = event.getData(PlatformDataKeys.PROJECT);
 
-		CommandProcessor.getInstance().executeCommand(currentProject, new Runnable() {
-			public void run() {
-				ApplicationManager.getApplication().runWriteAction(new Runnable() {
-					public void run() {
-						new ActionPerformer(StaticTexts.GENRE_CODE_LATIN).write(event);
-					}
-				});
-			}
-		}, StaticTexts.HISTORY_INSERT_LATIN, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-	}
+        CommandProcessor.getInstance().executeCommand(currentProject, () -> ApplicationManager.getApplication().runWriteAction(() -> new ActionPerformer(StaticTexts.GENRE_CODE_LATIN).write(event)), StaticTexts.HISTORY_INSERT_LATIN, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    }
 
 }

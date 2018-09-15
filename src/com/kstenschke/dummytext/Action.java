@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2014 Kay Stenschke
+ * Copyright 2013-2018 Kay Stenschke
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,35 +26,28 @@ import com.kstenschke.dummytext.resources.StaticTexts;
 
 public class Action extends AnAction {
 
-	/**
-	 * Disable when no editor available
-	 *
-	 * @param	event		Action system event
-	 */
-	public void update( AnActionEvent event ) {
-		boolean isEditorAvailable = event.getData(PlatformDataKeys.EDITOR) != null;
-
-		event.getPresentation().setEnabled(isEditorAvailable);
-	}
-
-	/**
-	 * Insert or replace selection with random dummy text
-	 *
-	 * @param   event    ActionSystem event
-	 */
-	public void actionPerformed(final AnActionEvent event) {
-		Project currentProject = event.getData(PlatformDataKeys.PROJECT);
-
-		CommandProcessor.getInstance().executeCommand(currentProject, new Runnable() {
-			public void run() {
-				ApplicationManager.getApplication().runWriteAction(new Runnable() {
-					public void run() {
-						String genreCode  = PluginPreferences.getGenreCode();
-						new ActionPerformer(genreCode).write(event);
-					}
-				});
-			}
-		}, StaticTexts.HISTORY_INSERT_DUMMY_TEXT, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-	}
-
+    /**
+     * Disable when no editor available
+     *
+     * @param event Action system event
+     */
+    public void update( AnActionEvent event ) {
+        boolean isEditorAvailable = event.getData(PlatformDataKeys.EDITOR) != null;
+    
+        event.getPresentation().setEnabled(isEditorAvailable);
+    }
+    
+    /**
+     * Insert or replace selection with random dummy text
+     *
+     * @param event ActionSystem event
+     */
+    public void actionPerformed(final AnActionEvent event) {
+        Project currentProject = event.getData(PlatformDataKeys.PROJECT);
+    
+        CommandProcessor.getInstance().executeCommand(currentProject, () -> ApplicationManager.getApplication().runWriteAction(() -> {
+            String genreCode  = PluginPreferences.getGenreCode();
+            new ActionPerformer(genreCode).write(event);
+        }), StaticTexts.HISTORY_INSERT_DUMMY_TEXT, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    }
 }

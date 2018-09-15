@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright 2013-2014 Kay Stenschke
+  ~ Copyright 2013-2018 Kay Stenschke
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -13,9 +13,7 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<idea-plugin version="2">
-  <!--<id>com.kstenschke.dummytext</id> -->
-
+<idea-plugin url="https://github.com/kstenschke/dummytext-plugin">
   <name>Dummy Text Generator</name>
     <description><![CDATA[
     The plugin adds a random text generator, capable of creating witty texts in different genres.
@@ -38,9 +36,16 @@
     <br/>Please note: This plugin is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ]]></description>
   <vendor url="" email="info@stenschke.com">Kay Stenschke</vendor>
-  <version>1.0.12</version>
+  <version>1.1.0</version>
   <change-notes><![CDATA[
   <ul>
+    <li>1.1.0
+        <ul>
+            <li>Adapted icons to latest IDE theme</li>
+            <li>Added dummy text sub-menu into generate menu</li>
+            <li>Code cleanup and modernization</li>
+        </ul>
+    </li>
     <li>1.0.12<ul>
         <li>Added preservation of leading and trailing quotation letters (‘, “, ', ")</li>
         <li>Improved preservation of trailing punctuation (., ,, :, ;, ?, !, ¡, ¿)</li>
@@ -49,26 +54,18 @@
         <li>Exchanged icons with retina / darcula theme compatible ones</li>
         <li>Extended cookery vocabulary</li>
     </ul></li>
-    <li>1.0.10 Improved declensions, extended vocabulary and sentence vicissitude</li>
-    <li>1.0.9 Bugfix: Generating dummytext w/o selection caused null pointer exception.</li>
-    <li>1.0.8 Improved text length maintenance</li>
   </ul>
   <a href="https://github.com/kstenschke/dummytext-plugin/blob/master/CHANGELOG.textile" target="_blank">...Read full changelog on github</a>
   ]]></change-notes>
-
   <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
   <idea-version since-build="107.105"/>
-
   <application-components>
       <!-- ... -->
   </application-components>
       <!-- ... -->
   <project-components>
-
   </project-components>
-
   <depends>com.intellij.modules.lang</depends>
-
   <actions>
       <group id="Dummytext">
           <separator/>
@@ -78,9 +75,7 @@
           <separator/>
           <add-to-group group-id="MainToolBar" anchor="before" relative-to-action="ToolbarRunGroup"/>
       </group>
-
       <group id="Dummytext.MyGenerateGroup" description="Generate Dummy Text" text="Generate Dummy Text" popup="true"/>
-
       <action id="generateLatinAction" icon="resources/icons/latin.png" class="com.kstenschke.dummytext.generateLatinAction" text="Generate Fake Latin"
               description="Generates random fake latin">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
@@ -101,7 +96,6 @@
               description="Generates random science fiction">
           <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
       </action>
-
       <group id="Dummytext.Actions" description="Generate Dummy Text" text="Generate Dummy Text" popup="false">
           <separator/>
           <reference id="Dummytext.MyGenerateGroup"/>
@@ -110,9 +104,7 @@
           <separator/>
       </group>
   </actions>
-
   <extensions defaultExtensionNs="com.intellij">
       <!-- ... -->
   </extensions>
-
 </idea-plugin>

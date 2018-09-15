@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2014 Kay Stenschke
+ * Copyright 2013-2018 Kay Stenschke
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,91 +20,91 @@ import com.kstenschke.dummytext.helpers.TextualHelper;
 
 public class DictionaryCookery extends Dictionary {
 
-	/**
-	 * Constructor
-	 */
-	public DictionaryCookery() {
+    /**
+     * Constructor
+     */
+    public DictionaryCookery() {
 
-	}
+    }
 
-	/**
-	 * @param   amountWords
-	 * @param   amountSentences
-	 * @return  One line of random text, consisting from the given amount of words and sentences
-	 */
-	public String getRandomLine(Integer amountWords, Integer amountSentences) {
-		String sentence   = "";
+    /**
+     * @param   amountWords
+     * @param   amountSentences
+     * @return  One line of random text, consisting from the given amount of words and sentences
+     */
+    public String getRandomLine(Integer amountWords, Integer amountSentences) {
+        String sentence   = "";
 
-		for(Integer i =0; i< amountSentences; i++) {
-			sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure(amountWords) );
-		}
+        for (Integer i =0; i< amountSentences; i++) {
+            sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure(amountWords) );
+        }
 
-		while( sentence.matches(".*[0-9].*") ) {
-			while(sentence.contains("PLURAL1")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL1", InflectionHelper.plural(getIngredient()) );
-			while(sentence.contains("PLURAL2")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL2", InflectionHelper.plural(getFluid()) );
-			while(sentence.contains("GERUND3")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND3", InflectionHelper.gerund(getVerbTransitive()) );
-			while(sentence.contains("GERUND4")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND4", InflectionHelper.gerund(getVerbIntransitive()) );
-			while(sentence.contains("PSIMPLE3")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE3", InflectionHelper.presentSimple(getVerbTransitive()) );
-			while(sentence.contains("PSIMPLE4")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE4", InflectionHelper.presentSimple(getVerbIntransitive()) );
-			while(sentence.contains("PASTTENSE3")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()) );
-			while(sentence.contains("PASTTENSE4")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()) );
-			while(sentence.contains("PASTTENSEHEATUP")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSEHEATUP", InflectionHelper.pastTense(getVerbHeatUp()) );
+        while (sentence.matches(".*[0-9].*")) {
+            while (sentence.contains("PLURAL1")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL1", InflectionHelper.plural(getIngredient()));
+            while (sentence.contains("PLURAL2")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL2", InflectionHelper.plural(getFluid()));
+            while (sentence.contains("GERUND3")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND3", InflectionHelper.gerund(getVerbTransitive()));
+            while (sentence.contains("GERUND4")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND4", InflectionHelper.gerund(getVerbIntransitive()));
+            while (sentence.contains("PSIMPLE3")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE3", InflectionHelper.presentSimple(getVerbTransitive()));
+            while (sentence.contains("PSIMPLE4")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE4", InflectionHelper.presentSimple(getVerbIntransitive()));
+            while (sentence.contains("PASTTENSE3")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()));
+            while (sentence.contains("PASTTENSE4")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()));
+            while (sentence.contains("PASTTENSEHEATUP")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSEHEATUP", InflectionHelper.pastTense(getVerbHeatUp()));
 
-			while(sentence.contains("0")) sentence = TextualHelper.replaceIfNew(sentence, "0", getDish());
-			while(sentence.contains("1")) sentence = TextualHelper.replaceIfNew(sentence, "1", getIngredient() );
-			while(sentence.contains("2")) sentence = TextualHelper.replaceIfNew(sentence, "2", getFluid() );
-			while(sentence.contains("3")) sentence = TextualHelper.replaceIfNew(sentence, "3", getVerbTransitive() );
-			while(sentence.contains("4")) sentence = TextualHelper.replaceIfNew(sentence, "4", getVerbIntransitive() );
-			while(sentence.contains("5")) sentence = TextualHelper.replaceIfNew(sentence, "5", getAdjective() );
-			while(sentence.contains("6")) sentence = TextualHelper.replaceIfNew(sentence, "6", getAdverb() );
-			while(sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getSeasonings() );
-			while(sentence.contains("8")) sentence = TextualHelper.replaceIfNew(sentence, "8", getContainer() );
-			while(sentence.contains("9")) sentence = TextualHelper.replaceIfNew(sentence, "9", getAmount() );
+            while (sentence.contains("0")) sentence = TextualHelper.replaceIfNew(sentence, "0", getDish());
+            while (sentence.contains("1")) sentence = TextualHelper.replaceIfNew(sentence, "1", getIngredient());
+            while (sentence.contains("2")) sentence = TextualHelper.replaceIfNew(sentence, "2", getFluid());
+            while (sentence.contains("3")) sentence = TextualHelper.replaceIfNew(sentence, "3", getVerbTransitive());
+            while (sentence.contains("4")) sentence = TextualHelper.replaceIfNew(sentence, "4", getVerbIntransitive());
+            while (sentence.contains("5")) sentence = TextualHelper.replaceIfNew(sentence, "5", getAdjective());
+            while (sentence.contains("6")) sentence = TextualHelper.replaceIfNew(sentence, "6", getAdverb());
+            while (sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getSeasonings());
+            while (sentence.contains("8")) sentence = TextualHelper.replaceIfNew(sentence, "8", getContainer());
+            while (sentence.contains("9")) sentence = TextualHelper.replaceIfNew(sentence, "9", getAmount());
 
-			while(sentence.contains("RNDNUM")) sentence = sentence.replaceFirst("RNDNUM", getNumber() );
-			while(sentence.contains("HEATUP")) sentence = sentence.replaceFirst("HEATUP", getVerbHeatUp() );
-			while(sentence.contains("MANIPULATE")) sentence = sentence.replaceFirst("MANIPULATE", getVerbManipulate() );
-			while(sentence.contains("CHARACTERISTIC")) sentence = sentence.replaceFirst("CHARACTERISTIC", getNounCharacteristic() );
-		}
+            while(sentence.contains("RNDNUM")) sentence = sentence.replaceFirst("RNDNUM", getNumber() );
+            while(sentence.contains("HEATUP")) sentence = sentence.replaceFirst("HEATUP", getVerbHeatUp() );
+            while(sentence.contains("MANIPULATE")) sentence = sentence.replaceFirst("MANIPULATE", getVerbManipulate() );
+            while(sentence.contains("CHARACTERISTIC")) sentence = sentence.replaceFirst("CHARACTERISTIC", getNounCharacteristic() );
+        }
 
-		sentence = InflectionHelper.fixIndefiniteArticles(sentence);
+        sentence = InflectionHelper.fixIndefiniteArticles(sentence);
 
-		sentence = sentence.replaceAll(" beefs",        " beef ");
-		sentence = sentence.replaceAll(" butters ",     " butter ");
-		sentence = sentence.replaceAll(" caviars ",     " caviar ");
-		sentence = sentence.replaceAll(" chickens ",    " chicken ");
-		sentence = sentence.replaceAll(" choping ",     " chopping ");
-		sentence = sentence.replaceAll(" cuted ",       " cut ");
-		sentence = sentence.replaceAll(" jumbleed ",    " jumbled ");
-		sentence = sentence.replaceAll(" mash uped ",   " mashed up ");
-		sentence = sentence.replaceAll(" rubing ",      " rubbing ");
-		sentence = sentence.replaceAll(" sauce soup ",  " soup ");
-		sentence = sentence.replaceAll(" scrapeed ",    " scraped ");
-		sentence = sentence.replaceAll(" shakeed ",     " shaken ");
-		sentence = sentence.replaceAll(" shreding ",    " shredding ");
-		sentence = sentence.replaceAll(" spinachs ",    " spinach ");
+        sentence = sentence.replaceAll(" beefs",        " beef ");
+        sentence = sentence.replaceAll(" butters ",     " butter ");
+        sentence = sentence.replaceAll(" caviars ",     " caviar ");
+        sentence = sentence.replaceAll(" chickens ",    " chicken ");
+        sentence = sentence.replaceAll(" choping ",     " chopping ");
+        sentence = sentence.replaceAll(" cuted ",       " cut ");
+        sentence = sentence.replaceAll(" jumbleed ",    " jumbled ");
+        sentence = sentence.replaceAll(" mash uped ",   " mashed up ");
+        sentence = sentence.replaceAll(" rubing ",      " rubbing ");
+        sentence = sentence.replaceAll(" sauce soup ",  " soup ");
+        sentence = sentence.replaceAll(" scrapeed ",    " scraped ");
+        sentence = sentence.replaceAll(" shakeed ",     " shaken ");
+        sentence = sentence.replaceAll(" shreding ",    " shredding ");
+        sentence = sentence.replaceAll(" spinachs ",    " spinach ");
 
-		String[] unincreasables   = {
-			"beefs", "berries", "breasts", "carrots", "chicken", "chicken", "chickpeas", "crumps", "eggs", "lentils",
+        String[] unincreasables   = {
+            "beefs", "berries", "breasts", "carrots", "chicken", "chicken", "chickpeas", "crumps", "eggs", "lentils",
             "meatballs", "nachos", "noodles", "oysters", "oysters", "peanuts", "peas", "pickles", "pickles", "rice",
             "s taste", "saucages", "sauerkraut", "seeds", "seeds", "shrimps", "spinach", "truffles", "turkey"
-		};
-		sentence = InflectionHelper.depluralize(sentence, unincreasables);
+        };
+        sentence = InflectionHelper.depluralize(sentence, unincreasables);
 
-		return ucFirst(sentence);
-	}
+        return ucFirst(sentence);
+    }
 
-	/**
-	 * @param   amountWords
-	 * @return  Random sentence structure with numbers as word type placeholders
-	 */
-	private static String getSentenceStructure(Integer amountWords) {
-		if( amountWords != null && amountWords == 1 ) {
-			String[] structures  = {"1", "2", "8"};
-			return pickRandomString(structures);
-		}
+    /**
+     * @param   amountWords
+     * @return  Random sentence structure with numbers as word type placeholders
+     */
+    private static String getSentenceStructure(Integer amountWords) {
+        if (null != amountWords && amountWords == 1) {
+            String[] structures  = {"1", "2", "8"};
+            return pickRandomString(structures);
+        }
 
-		String[] structures  = {
+        String[] structures  = {
                 "4 RNDNUM PLURAL1, 1, and 7 in a large 8 over medium heat, HEATUP for RNDNUM minutes and 3 with some 1.",
                 "HEATUP 5 1s in a 8 with 2 for about an hour to MANIPULATE their CHARACTERISTIC.",
                 "combine 1, 1 and 1. 3 with 5 7 and serve PASTTENSE4 with 1. Enjoy!",
@@ -135,30 +135,30 @@ public class DictionaryCookery extends Dictionary {
                 "Try 4ing 1 0 3ed with 2.",
                 "With PLURAL1 drink 2.",
                 "3 9 of 1 in 9 of 2.",
-		};
+        };
 
-		return pickRandomString(structures, amountWords);
-	}
+        return pickRandomString(structures, amountWords);
+    }
 
-	/**
-	 * @return  Word of group 0: dishes
-	 */
-	private static String getDish() {
-		String[] words ={
-			"cake", "casserole", "cheesecake", "chili", "curry", "frittata", "fritters", "kebab", "loaf", "mousse",
+    /**
+     * @return  Word of group 0: dishes
+     */
+    private static String getDish() {
+        String[] words ={
+            "cake", "casserole", "cheesecake", "chili", "curry", "frittata", "fritters", "kebab", "loaf", "mousse",
             "paste", "pie", "pudding", "punch", "salad", "sauce", "smoothie", "soup", "stew", "stir-fry", "pie", "pilaf",
             "platter", "porridge", "ricotta", "tart"
-		};
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
-	/**
-	 * @return  Word of group 1: ingredients
-	 */
-	private static String getIngredient() {
-		String[] words = {
-			"apple", "asparagus", "avocado", "bagel", "blood oranges", "blueberries", "bok choy", "broccoli", "butter",
+    /**
+     * @return  Word of group 1: ingredients
+     */
+    private static String getIngredient() {
+        String[] words = {
+            "apple", "asparagus", "avocado", "bagel", "blood oranges", "blueberries", "bok choy", "broccoli", "butter",
             "cabbage", "carrots", "cauliflower", "caviar", "celery", "chicken breasts", "chicken lard", "chicken",
             "chickpeas", "chickpeas", "chicory", "chili", "chocolate", "cracker crumps", "cucumber", "doughnut",
             "eggs", "escargot", "garlic", "ginger", "ghee", "ground beef", "herring", "leek", "lentils", "lettuce",
@@ -167,17 +167,17 @@ public class DictionaryCookery extends Dictionary {
             "pumpkin seeds", "quinoa", "ramen", "raspberries", "rhubarb", "rice", "sauerkraut", "sausages", "seaweed",
             "shrimps", "spinach", "squid", "steak", "strawberries", "strudel", "tofu", "truffels", "tuna", "turkey",
             "walnut", "watermelon", "white bread", "zucchini"
-		};
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
-	/**
-	 * @return  Word of group 2:  fluid
-	 */
-	private static String getFluid() {
-		String[] words ={
-			"adobo sauce", "anchovy essence", "BBQ sauce", "beer", "bourbon", "buttermilk", "champaign",
+    /**
+     * @return  Word of group 2:  fluid
+     */
+    private static String getFluid() {
+        String[] words ={
+            "adobo sauce", "anchovy essence", "BBQ sauce", "beer", "bourbon", "buttermilk", "champaign",
             "cocktail sauce", "coconut milk", "coffee", "condensed milk", "cream", "crême fraîche", "emeril\'s essence",
             "fish sauce", "gold tequila", "gravy", "hollandaise sauce", "honey", "iced tea", "ice water", "joghurt",
             "1 juice", "kefir", "ketchup", "lemon juice", "1 lassi", "lime", "maple syrup", "mayonnaise", "milk",
@@ -185,46 +185,46 @@ public class DictionaryCookery extends Dictionary {
             "plain vinegar", "red wine", "remoulade", "rice vinegar", "ricotta", "rum", "salad cream", "salsa verde",
             "sour milk", "soy sauce", "sweet chili sauce", "tabasco", "tea", "teriyaki", "triple sec", "vinaigrette",
             "vinegar", "water", "whipped cream", "whiskey", "white wine", "worcestershire sauce"
-		};
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
-	/**
-	 * @return  Word of group 3:  transitive verb
-	 */
-	private static String getVerbTransitive() {
-		String[] words = {
-			"blend", "brush", "cover", "enamel", "flavor", "garnish", "jumble", "mash up", "marinate", "mix", "rinse",
-			"rub", "soak", "season", "varnish", "whisk", "toss", "decorate"
-		};
+    /**
+     * @return  Word of group 3:  transitive verb
+     */
+    private static String getVerbTransitive() {
+        String[] words = {
+            "blend", "brush", "cover", "enamel", "flavor", "garnish", "jumble", "mash up", "marinate", "mix", "rinse",
+            "rub", "soak", "season", "varnish", "whisk", "toss", "decorate"
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
-	/**
-	 * @return  Word of group 4:  intransitive verb
-	 */
-	private static String getVerbIntransitive() {
-		String[] words = {
-			"boil", "break", "chop", "cook", "crush", "cut", "drain", "dry", "flatten", "fluff", "grill", "heat",
+    /**
+     * @return  Word of group 4:  intransitive verb
+     */
+    private static String getVerbIntransitive() {
+        String[] words = {
+            "boil", "break", "chop", "cook", "crush", "cut", "drain", "dry", "flatten", "fluff", "grill", "heat",
             "mash", "peel", "press", "roast", "scrape", "shake", "shred", "simmer", "slice", "smash", "squeeze",
             "toast", "warm"
-		};
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
-	/**
-	 * @return  Word of group "HEATUP"
-	 */
-	private static String getVerbHeatUp() {
-		String[] words = {
-			"boil", "cook", "grill", "heat", "ice", "refrigerate", "roast", "sauté", "simmer", "steam", "warm"
-		};
+    /**
+     * @return  Word of group "HEATUP"
+     */
+    private static String getVerbHeatUp() {
+        String[] words = {
+            "boil", "cook", "grill", "heat", "ice", "refrigerate", "roast", "sauté", "simmer", "steam", "warm"
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
     /**
      * @return  Word of group MANIPULATE - manipulation word (e.g. "to cut the bitterness")
@@ -237,97 +237,96 @@ public class DictionaryCookery extends Dictionary {
         return pickRandomString(words);
     }
 
-	/**
-	 * @return  Word of group 5:  adjective
-	 */
-	private static String getAdjective() {
-		String[] words = {
-			"aged", "al dente", "aromatic", "bitter", "bloody", "canned", "chilled", "chopped", "clammy", "cold",
+    /**
+     * @return  Word of group 5:  adjective
+     */
+    private static String getAdjective() {
+        String[] words = {
+            "aged", "al dente", "aromatic", "bitter", "bloody", "canned", "chilled", "chopped", "clammy", "cold",
             "cored", "crushed", "crusted", "dark", "delicious", "diced", "divided", "dried", "fluffy", "fresh", "gooey",
             "grey", "ground", "hardened", "heated", "hot", "iced", "instant", "juicy", "large", "large", "melted",
             "mild", "minced", "muddy", "niffy", "nutty", "old", "packaged", "puréed", "quartered", "raw", "rich", "ripe",
             "roasted", "salted", "salty", "shredded", "sichuan-style", "sliced", "slobbery", "small", "smashed",
             "smooth", "soaked", "sour", "sour", "springy", "squeezed", "sticky", "sun-dried", "sweet", "tangy", "tasty",
             "tender", "thin", "warm", "whole", "yellow"
-		};
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
-	/**
-	 * @return  Word of group 6:  adverb
-	 */
-	private static String getAdverb() {
-		String[] words = {
-			"carefully 5", "carefully", "equally", "exactly", "fairly", "fast", "freshly", "fully", "immediately",
-			"patiently", "quickly", "regularly 5", "roughly", "smoothly", "tenderly", "thoroughly", "ultimately"
-		};
+    /**
+     * @return  Word of group 6:  adverb
+     */
+    private static String getAdverb() {
+        String[] words = {
+            "carefully 5", "carefully", "equally", "exactly", "fairly", "fast", "freshly", "fully", "immediately",
+            "patiently", "quickly", "regularly 5", "roughly", "smoothly", "tenderly", "thoroughly", "ultimately"
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
-	/**
-	 * @return  Word of group 7:  seasonings
-	 */
-	private static String getSeasonings() {
-		String[] words ={
-			"anise", "baking powder", "basil leafs", "basil", "black cardamon", "black cardamon", "black pepper",
+    /**
+     * @return  Word of group 7:  seasonings
+     */
+    private static String getSeasonings() {
+        String[] words ={
+            "anise", "baking powder", "basil leafs", "basil", "black cardamon", "black cardamon", "black pepper",
             "brine", "brown sugar", "butter", "butterscotch", "cayenne pepper", "celery", "chipotle chile powder",
             "chocolate", "cinnamon", "corn syrup", "cumin", "curry", "dill", "dill", "flower", "garlic", "green curry",
             "jasmine", "lime", "marmalade", "mustard", "nutmeg", "onion powder", "oregano", "parsley", "pepper",
             "radish sprouts", "rosemary", "rum", "sugar", "szechuan pepper", "thyme", "vegemite", "vodka", "wasabi",
             "woodruff", "za\'atar"
-		};
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
-	/**
-	 * @return  Word of group 8: abstract place (usable w/o article: "going to 8")
-	 */
-	private static String getContainer() {
-		String[] words ={
-			"basin", "bottle", "bowl", "bucket", "casserole", "cooker", "fine-mesh strainer", "frying pan", "grinder",
+    /**
+     * @return  Word of group 8: abstract place (usable w/o article: "going to 8")
+     */
+    private static String getContainer() {
+        String[] words ={
+            "basin", "bottle", "bowl", "bucket", "casserole", "cooker", "fine-mesh strainer", "frying pan", "grinder",
             "ice blender", "jar", "pan", "saucepan", "sauté pan", "soup pot", "wok", "plastic bag"
-		};
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
-	/**
-	 * @return  Word of group 9: amounts
-	 */
-	private static String getAmount() {
-		String[] words ={
-			"RNDNUM peaces", "RNDNUM pounds", "RNDNUM teaspoons", "half a kilo", "one container", "one cup", "one jar",
-			"one package", "one quarter cup", "RNDNUM oz", "RNDNUM pounds", "RNDNUM tablespoons", "RNDNUM and a half teaspoons"
-		};
+    /**
+     * @return  Word of group 9: amounts
+     */
+    private static String getAmount() {
+        String[] words ={
+            "RNDNUM peaces", "RNDNUM pounds", "RNDNUM teaspoons", "half a kilo", "one container", "one cup", "one jar",
+            "one package", "one quarter cup", "RNDNUM oz", "RNDNUM pounds", "RNDNUM tablespoons", "RNDNUM and a half teaspoons"
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
-	/**
-	 * @return  A number word
-	 */
-	private static String getNumber() {
-		String[] words ={
-			"two", "three", "four", "five", "six", "seven", "eight", "nine", "eleven", "twelve", "fifteen", "twenty",
-			"a dozen", "a handfull"
-		};
+    /**
+     * @return  A number word
+     */
+    private static String getNumber() {
+        String[] words ={
+            "two", "three", "four", "five", "six", "seven", "eight", "nine", "eleven", "twelve", "fifteen", "twenty",
+            "a dozen", "a handfull"
+        };
 
-		return pickRandomString(words);
-	}
+        return pickRandomString(words);
+    }
 
-	/**
-	 * @return  Characteristic nouns ("how" a food is)
-	 */
-	private static String getNounCharacteristic() {
-		String[] words ={
-			"aroma", "asperity", "bitterness", "consistency", "creaminess", "fierceness", "flavor", "keenness",
+    /**
+     * @return  Characteristic nouns ("how" a food is)
+     */
+    private static String getNounCharacteristic() {
+        String[] words ={
+            "aroma", "asperity", "bitterness", "consistency", "creaminess", "fierceness", "flavor", "keenness",
             "mossiness", "pepperiness", "saltyness", "sourness", "sweetness", "tartness", "thickness", "viscosity"
-		};
+        };
 
-		return pickRandomString(words);
-	}
-
+        return pickRandomString(words);
+    }
 }
