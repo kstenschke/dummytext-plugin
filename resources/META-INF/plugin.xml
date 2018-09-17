@@ -20,7 +20,9 @@
     Created text can be inserted newly at the caret, or replace a selection.<br/>
     The dummy text generator is added to the main menu, tools menu and into the generate... popup (Alt+Insert).
     <br/><br/>
-    The plugin allows to choose from several genres:<br />
+    Used from the main menu, text is generated in the previously selected genre.
+    <br/>
+    Used from the Tools menu or Generate popup, the plugin allows to choose from several genres::<br />
     <ul>
         <li>Culinary Inspirations</li>
         <li>Esoteric Wisdom</li>
