@@ -65,7 +65,7 @@
       <group id="Dummytext.MaintoolbarGroup">
           <separator/>
           <action id="DummyText" class="com.kstenschke.dummytext.Action" text="Insert Dummy Text"
-                  description="Insert dummy text or replace selection by dummy text of similar length" icon="/com/kstenschke/dummytext/resources/icons/action.png"/>
+                  description="Insert dummy text or replace selection by dummy text of similar length (change genre via Tools or Generate menu)." icon="/com/kstenschke/dummytext/resources/icons/action.png"/>
           <separator/>
           <add-to-group group-id="MainToolBar" anchor="before" relative-to-action="ToolbarRunGroup"/>
       </group>
