@@ -24,7 +24,7 @@ import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.project.Project;
 import com.kstenschke.dummytext.resources.StaticTexts;
 
-public class generateCookeryAction extends AnAction {
+public class GenerateCookeryAction extends AnAction {
 
     public void actionPerformed(final AnActionEvent event) {
         Project currentProject = event.getData(PlatformDataKeys.PROJECT);

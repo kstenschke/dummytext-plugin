@@ -56,7 +56,7 @@ public class Dictionary {
             words = TextualHelper.filterByWordCount(words, amountWords, 2);
         }
 
-        return words[ getRandomNumber( words.length -1 ) ];
+        return words[getRandomNumber(words.length -1)];
     }
 
     /**

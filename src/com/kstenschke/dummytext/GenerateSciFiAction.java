@@ -24,7 +24,7 @@ import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.project.Project;
 import com.kstenschke.dummytext.resources.StaticTexts;
 
-public class generateSciFiAction extends AnAction {
+public class GenerateSciFiAction extends AnAction {
 
     public void actionPerformed(final AnActionEvent event) {
         Project currentProject = event.getData(PlatformDataKeys.PROJECT);

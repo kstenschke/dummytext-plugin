@@ -41,8 +41,8 @@
   <ul>
     <li>1.1.0
         <ul>
-            <li>Adapted icons to latest IDE theme</li>
-            <li>Added dummy text sub-menu into generate menu</li>
+            <li>Adapted icons to latest IDE flat theme dark/light colors</li>
+            <li>Added dummy text genre popup into generate menu</li>
             <li>Code cleanup and modernization</li>
         </ul>
     </li>
@@ -57,46 +57,66 @@
   </ul>
   <a href="https://github.com/kstenschke/dummytext-plugin/blob/master/CHANGELOG.textile" target="_blank">...Read full changelog on github</a>
   ]]></change-notes>
-  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
   <idea-version since-build="107.105"/>
   <application-components/>
   <project-components/>
   <depends>com.intellij.modules.lang</depends>
   <actions>
-      <group id="Dummytext">
+      <group id="Dummytext.MaintoolbarGroup">
           <separator/>
-          <action id="DummyText" class="com.kstenschke.dummytext.Action" text="Insert Dummy Text" description="Insert Dummy Text" icon="resources/icons/action.png">
-          </action>
+          <action id="DummyText" class="com.kstenschke.dummytext.Action" text="Insert Dummy Text"
+                  description="Insert dummy text or replace selection by dummy text of similar length" icon="/com/kstenschke/dummytext/resources/icons/action.png"/>
           <separator/>
           <add-to-group group-id="MainToolBar" anchor="before" relative-to-action="ToolbarRunGroup"/>
       </group>
-      <group id="Dummytext.MyGenerateGroup" description="Generate Dummy Text" text="Generate Dummy Text" popup="true"/>
-      <action id="generateLatinAction" icon="resources/icons/latin.png" class="com.kstenschke.dummytext.generateLatinAction" text="Fake Latin"
-              description="Generates random fake latin">
-          <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
+      <action id="GenerateLatinAction" icon="/com/kstenschke/dummytext/resources/icons/latin.png" class="com.kstenschke.dummytext.GenerateLatinAction"
+              text="Fake Latin" description="Generates random fake latin">
       </action>
-      <action id="generateEsotericAction" icon="resources/icons/esoteric.png" class="com.kstenschke.dummytext.generateEsotericAction" text="Esoteric Wisdom"
-              description="Generates random esoteric wisdom">
-          <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
+      <action id="GenerateEsotericAction" icon="/com/kstenschke/dummytext/resources/icons/esoteric.png" class="com.kstenschke.dummytext.GenerateEsotericAction"
+              text="Esoteric Wisdom" description="Generates random esoteric wisdom">
       </action>
-      <action id="generateCookeryAction" icon="resources/icons/cookery.png" class="com.kstenschke.dummytext.generateCookeryAction" text="Culinary Inspirations"
-              description="Generates random culinary inspirations">
-          <add-to-group anchor="last" group-id="Dummytext.MyGenerateGroup"/>
+      <action id="GenerateCookeryAction" icon="/com/kstenschke/dummytext/resources/icons/cookery.png" class="com.kstenschke.dummytext.GenerateCookeryAction"
+              text="Culinary Inspirations" description="Generates random culinary inspirations">
       </action>
-      <action id="generatePiratesAction" icon="resources/icons/pirates.png" class="com.kstenschke.dummytext.generatePiratesAction" text="Pirate Lingo"
-              description="Generates random pirate lingo">
-          <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
+      <action id="GeneratePiratesAction" icon="/com/kstenschke/dummytext/resources/icons/pirates.png" class="com.kstenschke.dummytext.GeneratePiratesAction"
+              text="Pirate Lingo" description="Generates random pirate lingo">
       </action>
-      <action id="generateSciFiAction" icon="resources/icons/scifi.png" class="com.kstenschke.dummytext.generateSciFiAction" text="Science Fiction"
-              description="Generates random science fiction">
-          <add-to-group group-id="Dummytext.MyGenerateGroup" anchor="last" />
+      <action id="GenerateSciFiAction" icon="/com/kstenschke/dummytext/resources/icons/scifi.png" class="com.kstenschke.dummytext.GenerateSciFiAction"
+              text="Science Fiction" description="Generates random science fiction">
       </action>
-      <group id="Dummytext.Actions" description="Generate Dummy Text" text="Generate Dummy Text" popup="false">
+      <group id="Dummytext.ToolsmenuGroup" description="Insert dummy text or replace selection by dummy text of similar length" text="Generate Dummy Text"
+             icon="/com/kstenschke/dummytext/resources/icons/action.png" popup="true">
           <separator/>
-          <reference id="Dummytext.MyGenerateGroup"/>
-          <add-to-group anchor="last" group-id="ToolsMenu"/>
-          <add-to-group anchor="last" group-id="GenerateGroup"/>
+          <reference ref="GenerateLatinAction"/>
+          <reference ref="GenerateEsotericAction"/>
+          <reference ref="GenerateCookeryAction"/>
+          <reference ref="GeneratePiratesAction"/>
+          <reference ref="GenerateSciFiAction"/>
           <separator/>
+          <add-to-group group-id="ToolsMenu" anchor="last"/>
+      </group>
+      <!-- Sub menu in generate menu is not supported just via popup="true" attribute. -->
+      <!-- Solution: PopupChoiceAction opens Dummytext.GeneratePopupGroup -->
+      <group id="Dummytext.GeneratePopupActionGroup" description="Insert/Replace by dummy text" text="Insert/Replace by dummy text"
+             icon="/com/kstenschke/dummytext/resources/icons/action.png" popup="true">
+          <separator/>
+          <group id="Dummytext.GeneratePopupActionInnerGroup">
+              <!-- Inner group is necessary for separators to be displayed -->
+              <action id="DummyText.PopupChoiceAction"
+                      class="com.kstenschke.dummytext.PopupChoiceAction"
+                      text="Generate Dummy Text..."
+                      icon="/com/kstenschke/dummytext/resources/icons/action.png"/>
+          </group>
+          <separator/>
+          <add-to-group group-id="GenerateGroup" anchor="last"/>
+      </group>
+      <group id="Dummytext.GeneratePopupGroup" description="Generate Dummy Text" text="Generate Dummy Text"
+             icon="/com/kstenschke/dummytext/resources/icons/action.png" popup="true">
+          <reference ref="GenerateLatinAction"/>
+          <reference ref="GenerateEsotericAction"/>
+          <reference ref="GenerateCookeryAction"/>
+          <reference ref="GeneratePiratesAction"/>
+          <reference ref="GenerateSciFiAction"/>
       </group>
   </actions>
   <extensions defaultExtensionNs="com.intellij"/>

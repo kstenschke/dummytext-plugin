@@ -36,7 +36,7 @@ public class DictionaryCookery extends Dictionary {
         String sentence   = "";
 
         for (Integer i =0; i< amountSentences; i++) {
-            sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure(amountWords) );
+            sentence = sentence.concat((i > 0 ? " " : "") + getSentenceStructure(amountWords));
         }
 
         while (sentence.matches(".*[0-9].*")) {

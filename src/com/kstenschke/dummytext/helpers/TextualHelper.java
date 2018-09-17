@@ -120,7 +120,7 @@ public class TextualHelper {
     }
 
     private static boolean isAlphabeticLetter(char c) {
-        return isAlphabeticLetter( String.valueOf(c) );
+        return isAlphabeticLetter(String.valueOf(c));
     }
 
     /**
@@ -163,7 +163,7 @@ public class TextualHelper {
         int offset      = 0;
         char curLetter  = str.charAt(offset);
         boolean done    = false;
-        while (offset < str.length() && !done
+        while (!done
                 && (isWhiteSpace(curLetter) || isQuotationLetter(curLetter) )
                 && !isAlphabeticLetter(curLetter)
         ) {

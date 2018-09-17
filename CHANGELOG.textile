@@ -1,8 +1,8 @@
 h1. Dummytext Plugin - Changelog
 
 * 1.1.0
-    ** Adapted icons to latest IDE theme
-    ** Added dummy text sub-menu into generate menu
+    ** Adapted icons to latest IDE flat theme dark/light colors
+    ** Added dummy text genre popup into generate menu
     ** Code cleanup and modernization
 * 1.0.12
     ** Added preservation of leading and trailing quotation letters (‘, “, ', ")

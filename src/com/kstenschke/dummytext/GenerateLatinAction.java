@@ -24,11 +24,12 @@ import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.project.Project;
 import com.kstenschke.dummytext.resources.StaticTexts;
 
-public class generateEsotericAction extends AnAction {
+public class GenerateLatinAction extends AnAction {
 
     public void actionPerformed(final AnActionEvent event) {
         Project currentProject = event.getData(PlatformDataKeys.PROJECT);
 
-        CommandProcessor.getInstance().executeCommand(currentProject, () -> ApplicationManager.getApplication().runWriteAction(() -> new ActionPerformer(StaticTexts.GENRE_CODE_ESCOTERIC).write(event)), StaticTexts.HISTORY_INSERT_ESOTERIC, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+        CommandProcessor.getInstance().executeCommand(currentProject, () -> ApplicationManager.getApplication().runWriteAction(() -> new ActionPerformer(StaticTexts.GENRE_CODE_LATIN).write(event)), StaticTexts.HISTORY_INSERT_LATIN, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
     }
+
 }

@@ -35,7 +35,7 @@ public class DictionaryPirates extends Dictionary {
     public String getRandomLine(Integer amountWords, Integer amountSentences) {
         String sentence = "";
         for (Integer i =0; i< amountSentences; i++) {
-            sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure(amountWords));
+            sentence = sentence.concat((i > 0 ? " " : "") + getSentenceStructure(amountWords));
         }
 
         while (sentence.matches(".*[0-9].*") ) {

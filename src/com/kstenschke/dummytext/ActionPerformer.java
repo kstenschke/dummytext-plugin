@@ -101,8 +101,8 @@ class ActionPerformer {
                 int offsetEnd = selectionModel.getSelectionEnd();
 
                 document.replaceString(offsetStart, offsetEnd, dummyText);
-                selectionModel.setSelection(offsetStart, offsetStart + dummyTextLength );
-                caretModel.moveToOffset( offsetStart + dummyTextLength );
+                selectionModel.setSelection(offsetStart, offsetStart + dummyTextLength);
+                caretModel.moveToOffset(offsetStart + dummyTextLength);
             } else {
                 // Move caret to end of inserted text
                 offsetStart  = caretModel.getOffset();
@@ -155,7 +155,7 @@ class ActionPerformer {
                     if (amountWordsLacking < 4) {
                         amountWordsLacking = 4;
                     }
-                    dummyLine += " " + genreDictionary.getRandomLine( amountWordsLacking  );
+                    dummyLine += " " + genreDictionary.getRandomLine(amountWordsLacking);
                 }
 
                 dummyLine = TextualHelper.setCasing(dummyLine, casing);

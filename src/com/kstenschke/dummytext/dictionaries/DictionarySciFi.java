@@ -36,7 +36,7 @@ public class DictionarySciFi extends Dictionary {
         String sentence   = "";
 
         for (Integer i =0; i< amountSentences; i++) {
-            sentence = sentence.concat( (i > 0 ? " " : "") + getSentenceStructure(amountWords));
+            sentence = sentence.concat((i > 0 ? " " : "") + getSentenceStructure(amountWords));
         }
 
         while (sentence.matches(".*[0-9].*")) {
@@ -64,6 +64,7 @@ public class DictionarySciFi extends Dictionary {
 
         sentence = InflectionHelper.fixIndefiniteArticles(sentence);
 
+        sentence = sentence.replaceAll("developped",    "developed");
         sentence = sentence.replaceAll(" flys ",        " flies ");
         sentence = sentence.replaceAll(" gos ",         " goes ");
         sentence = sentence.replaceAll("imitateed",    "imitated");
