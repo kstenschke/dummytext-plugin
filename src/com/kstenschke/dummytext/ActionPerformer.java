@@ -17,13 +17,14 @@ package com.kstenschke.dummytext;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.editor.Caret;
 import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.editor.SelectionModel;
 import com.kstenschke.dummytext.helpers.TextualHelper;
 import com.kstenschke.dummytext.dictionaries.*;
 import com.kstenschke.dummytext.resources.StaticTexts;
+
 
 class ActionPerformer {
 
@@ -66,50 +67,52 @@ class ActionPerformer {
 
         if (editor != null) {
             final Document document = editor.getDocument();
-            SelectionModel selectionModel = editor.getSelectionModel();
-            boolean hasSelection = selectionModel.hasSelection();
-            String selectedText  = selectionModel.getSelectedText();
-
-            String trailingCharacter    = TextualHelper.getTrailingPunctuationMark(selectedText);
-            String leadingCharacters    = TextualHelper.getLeadingPreservation(selectedText);
-
-            int amountLines     = 1;
-            // applies only when replacing a single-lined selection, can be rounded up
-            Integer amountWords = null;
-
-            // Generated dummy text will replace the current selected text
-            if (hasSelection && selectedText != null ) {
-                int selectionLength = selectedText.length();
-                if (selectionLength > 0) {
-                    amountLines = TextualHelper.countLines(selectedText);
-                    if (amountLines == 1) {
-                        amountWords = TextualHelper.getWordCount(selectedText);
+    
+            CaretModel caretModel = editor.getCaretModel();
+    
+            for (Caret caret : caretModel.getAllCarets()) {
+                boolean hasSelection = caret.hasSelection();
+                String selectedText  = caret.getSelectedText();
+    
+                String trailingCharacter    = TextualHelper.getTrailingPunctuationMark(selectedText);
+                String leadingCharacters    = TextualHelper.getLeadingPreservation(selectedText);
+    
+                int amountLines     = 1;
+                // applies only when replacing a single-lined selection, can be rounded up
+                Integer amountWords = null;
+    
+                // Generated dummy text will replace the current selected text
+                if (hasSelection && selectedText != null ) {
+                    int selectionLength = selectedText.length();
+                    if (selectionLength > 0) {
+                        amountLines = TextualHelper.countLines(selectedText);
+                        if (amountLines == 1) {
+                            amountWords = TextualHelper.getWordCount(selectedText);
+                        }
                     }
                 }
+    
+                // Generate and insert / replace selection with dummy text
+                String dummyText  = generateText(amountLines, amountWords, leadingCharacters, trailingCharacter, selectedText).toString();
+    
+                Integer dummyTextLength = dummyText.length();
+                Integer offsetStart;
+    
+                if (hasSelection) {
+                    // Move caret to end of selection
+                    offsetStart = caret.getSelectionStart();
+                    int offsetEnd = caret.getSelectionEnd();
+    
+                    document.replaceString(offsetStart, offsetEnd, dummyText);
+                    caret.setSelection(offsetStart, offsetStart + dummyTextLength);
+                } else {
+                    // Move caret to end of inserted text
+                    offsetStart  = caretModel.getOffset();
+                    dummyText   = dummyText.trim();
+                    document.insertString(offsetStart, dummyText);
+                }
             }
-
-            // Generate and insert / replace selection with dummy text
-            String dummyText  = generateText(amountLines, amountWords, leadingCharacters, trailingCharacter, selectedText).toString();
-
-            CaretModel caretModel   = editor.getCaretModel();
-            Integer dummyTextLength = dummyText.length();
-            Integer offsetStart;
-
-            if (hasSelection) {
-                // Move caret to end of selection
-                offsetStart = selectionModel.getSelectionStart();
-                int offsetEnd = selectionModel.getSelectionEnd();
-
-                document.replaceString(offsetStart, offsetEnd, dummyText);
-                selectionModel.setSelection(offsetStart, offsetStart + dummyTextLength);
-                caretModel.moveToOffset(offsetStart + dummyTextLength);
-            } else {
-                // Move caret to end of inserted text
-                offsetStart  = caretModel.getOffset();
-                dummyText   = dummyText.trim();
-                document.insertString(offsetStart, dummyText);
-                caretModel.moveToOffset(offsetStart + dummyText.length() );
-            }
+    
         }
     }
 
