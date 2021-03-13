@@ -29,12 +29,12 @@ public class TextualHelper {
         if (isAllUppercase(str) ) {
             return STYLE_UPPERCASE;
         }
+
         if (isAllLowercase(str)) {
             return STYLE_LOWERCASE;
         }
-        return isUcFirst(str)
-                ? STYLE_UCFIRST
-                : STYLE_NONE;
+
+        return isUcFirst(str) ? STYLE_UCFIRST : STYLE_NONE;
     }
 
     /**
@@ -46,14 +46,12 @@ public class TextualHelper {
         if (casing == TextualHelper.STYLE_LOWERCASE) {
             return str.toLowerCase();
         }
+
         if (casing == TextualHelper.STYLE_UPPERCASE) {
             return str.toUpperCase();
         }
-        if (casing == TextualHelper.STYLE_UCFIRST) {
-            return TextualHelper.ucFirst(str);
-        }
 
-        return str;
+        return casing == TextualHelper.STYLE_UCFIRST ? TextualHelper.ucFirst(str) : str;
     }
 
     /**
@@ -91,7 +89,6 @@ public class TextualHelper {
     }
 
     /**
-     *
      * @param   str   String to be analyzed
      * @return  Check whether the given string begins with a capital letter
      */
@@ -159,7 +156,7 @@ public class TextualHelper {
             return null;
         }
 
-        String leadChars = "";
+        StringBuilder leadChars = new StringBuilder();
         int offset      = 0;
         char curLetter  = str.charAt(offset);
         boolean done    = false;
@@ -167,7 +164,7 @@ public class TextualHelper {
                 && (isWhiteSpace(curLetter) || isQuotationLetter(curLetter) )
                 && !isAlphabeticLetter(curLetter)
         ) {
-            leadChars = leadChars + curLetter;
+            leadChars.append(curLetter);
             if (isQuotationLetter(curLetter)) {
                 done = true;    /* Preserve no more after first quotation letter */
             }
@@ -175,7 +172,7 @@ public class TextualHelper {
             curLetter  = str.charAt(offset);
         }
 
-        return leadChars.isEmpty() ? null : leadChars.trim();
+        return (leadChars.length() == 0) ? null : leadChars.toString().trim();
     }
 
     /**

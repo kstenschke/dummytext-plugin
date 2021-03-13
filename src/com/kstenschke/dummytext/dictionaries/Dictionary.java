@@ -33,9 +33,7 @@ public class Dictionary {
      * @return  One random line of text, consisting from roughly the given amount of words
      */
     public String getRandomLine(Integer amountWords) {
-        Integer amountSentences  = 1;
-
-        return getRandomLine(amountWords, amountSentences).trim();
+        return getRandomLine(amountWords, 1).trim();
     }
 
     /**

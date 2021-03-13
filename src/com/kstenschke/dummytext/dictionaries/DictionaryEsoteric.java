@@ -20,9 +20,6 @@ import com.kstenschke.dummytext.helpers.TextualHelper;
 
 public class DictionaryEsoteric extends Dictionary {
 
-    /**
-     * Constructor
-     */
     public DictionaryEsoteric() {
     }
 

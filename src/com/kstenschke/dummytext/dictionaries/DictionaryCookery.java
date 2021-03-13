@@ -20,9 +20,6 @@ import com.kstenschke.dummytext.helpers.TextualHelper;
 
 public class DictionaryCookery extends Dictionary {
 
-    /**
-     * Constructor
-     */
     public DictionaryCookery() {
     }
 
@@ -34,7 +31,7 @@ public class DictionaryCookery extends Dictionary {
     public String getRandomLine(Integer amountWords, Integer amountSentences) {
         String sentence   = "";
 
-        for (Integer i =0; i< amountSentences; i++) {
+        for (int i = 0; i< amountSentences; i++) {
             sentence = sentence.concat((i > 0 ? " " : "") + getSentenceStructure(amountWords));
         }
 

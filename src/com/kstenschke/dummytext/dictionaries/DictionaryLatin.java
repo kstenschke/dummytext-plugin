@@ -19,9 +19,6 @@ import com.kstenschke.dummytext.helpers.TextualHelper;
 
 public class DictionaryLatin extends Dictionary {
 
-    /**
-     * Constructor
-     */
     public DictionaryLatin() {
     }
 
@@ -33,7 +30,7 @@ public class DictionaryLatin extends Dictionary {
     public String getRandomLine(Integer amountWords, Integer amountSentences) {
         String sentence   = "";
 
-        for (Integer i = 0; i < amountSentences; i++) {
+        for (int i = 0; i < amountSentences; i++) {
             sentence = sentence.concat((i > 0 ? " " : "") + getSentenceStructure(amountWords));
         }
 
@@ -174,9 +171,7 @@ public class DictionaryLatin extends Dictionary {
      * @return  Word of group 7:  interjection
      */
     private static String getInterjection() {
-        String[] words ={
-            "ecce", "eheu", "hercle, 2 5!", "heu", "pol", "vae", "pol, a bene 1"
-        };
+        String[] words ={ "ecce", "eheu", "hercle, 2 5!", "heu", "pol", "vae", "pol, a bene 1" };
 
         return pickRandomString(words);
     }

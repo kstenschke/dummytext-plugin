@@ -27,14 +27,9 @@ import com.kstenschke.dummytext.resources.StaticTexts;
 
 class ActionPerformer {
 
-    /**
-     * Dictionary of preferred genre vocabulary
-     */
+    /** Dictionary of preferred genre vocabulary */
     final private Dictionary genreDictionary;
 
-    /**
-     * Constructor
-     */
     ActionPerformer(String genreCode) {
         PluginPreferences.saveGenre(genreCode);
 

@@ -1,4 +1,4 @@
-#Dummy Text Generator Plugin
+# Dummy Text Generator Plugin
 
 Source code of the intellij IDEA "Dummy Text Generator" plugin: http://plugins.jetbrains.com/plugin?pr=&pluginId=7216
 This is a plugin for the various intellij IDEs, working in IntelliJ IDEA Ultimate and Community Edition, 
