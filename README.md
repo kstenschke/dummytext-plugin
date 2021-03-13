@@ -10,6 +10,7 @@ RubyMine, WebStorm, PhpStorm, PyCharm, PyCharm CE, AppCode, Android Studio and 0
 * [What does it do?](#what-does-it-do)
 * [Third Party Resources](#third-party-resources)
 * [Changelog](#changelog)
+* [Contributors](#contributors)  
 * [Author and License](#author-and-license)
 
 
@@ -49,6 +50,11 @@ WPZOOM - http://www.wpzoom.com - skull
 ## Changelog
 
 See https://github.com/kstenschke/dummytext-plugin/blob/master/CHANGELOG.md
+
+
+## Contributors
+
+Thanks to Charlie Hayes for contributing multi selections support! 
 
 
 ## Author and License
