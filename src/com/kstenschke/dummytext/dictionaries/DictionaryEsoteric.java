@@ -246,7 +246,7 @@ public class DictionaryEsoteric extends Dictionary {
             "stop to 3 and 4", "confused by PLURAL2, the 1 is",
             "the 2 of 2 leads to 2", "2, 2, 2", "2, 2 and 4",
             "never 3 for others what you would not 3 for the 2 of it",
-            "6 2 is to 3 the 2 of the 1\'s ignorance",
+            "6 2 is to 3 the 2 of the 1's ignorance",
             "i 4 and i 4. i 4 and i 4. i 4 and i 4",
             "the 5 1 is GERUND4, the 5 1 is GERUND4",
             "in 8 all PLURAL1 3 2", "in the 9 all PLURAL1 3 2",

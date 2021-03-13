@@ -106,7 +106,7 @@ public class DictionaryPirates extends Dictionary {
                 "The 1 PSIMPLE3 with 2, 3 the 9.",
                 "The 1 PSIMPLE4 2 like a 5 1.",
                 "PLURAL1 4 with 2 at the 5 8!",
-                "7! Pieces o\' 2 are forever 5.",
+                "7! Pieces o' 2 are forever 5.",
                 "All PLURAL1 3 5, 5 PLURAL1.",
                 "7, ye 5 1- set sails for 2!",
                 "5, 5 PLURAL1 6 3 a 5, 5 1.",
@@ -221,7 +221,7 @@ public class DictionaryPirates extends Dictionary {
      */
     private static String getInterjection() {
         String[] words ={
-            "ah", "ahoy", "arg", "arrr", "avast", "aw", "aww", "aye", "belay", "c\'mon", "gar", "god", "golly gosh",
+            "ah", "ahoy", "arg", "arrr", "avast", "aw", "aww", "aye", "belay", "c'mon", "gar", "god", "golly gosh",
             "jolly", "jolly roger", "lord", "o", "oh", "ooh", "yo-ho-ho", "well", "wow", "yarr", "yuck"
         };
 
@@ -246,7 +246,7 @@ public class DictionaryPirates extends Dictionary {
      */
     private static String getPlaceConcrete() {
         String[] words ={
-            "bahamas", "bikini atoll", "brig", "captain\'s quarters", "cook islands", "fortress", "freighter", "galley",
+            "bahamas", "bikini atoll", "brig", "captain's quarters", "cook islands", "fortress", "freighter", "galley",
             "lighthouse", "pacific ocean", "quarter-deck", "reef", "seychelles"
         };
 

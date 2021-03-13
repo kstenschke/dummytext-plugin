@@ -141,7 +141,7 @@ public class DictionarySciFi extends Dictionary {
     private static String getNounConcrete() {
         String[] words = {
             "admiral", "alien", "astronaut", "c-beam", "captain", "collective", "cosmonaut", "creature",
-            "crew", "crewmate", "dosi", "emitter", "ferengi", "girl", "green people", "hur\'q", "kahless", "klingon",
+            "crew", "crewmate", "dosi", "emitter", "ferengi", "girl", "green people", "hur'q", "kahless", "klingon",
             "lieutenant commander", "machine", "mermaid", "moon", "nanomachine", "parasite", "particle", "particle",
             "pathway", "planet", "processor", "proton", "queen", "sensor", "ship", "ship", "sonic shower", "space suit",
             "space", "spacecraft", "space suit", "species", "star", "starship", "sun", "teleporter", "transformator", "transporter",
@@ -251,7 +251,7 @@ public class DictionarySciFi extends Dictionary {
      */
     private static String getPlaceAbstract() {
         String[] words ={
-            "astral city", "atlantis tower", "captain\'s quarters", "deep space", "earth", "hyperspace", "nowhere",
+            "astral city", "atlantis tower", "captain's quarters", "deep space", "earth", "hyperspace", "nowhere",
             "subspace", "starfleet headquarters"
         };
 

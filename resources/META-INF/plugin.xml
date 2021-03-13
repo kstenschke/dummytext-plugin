@@ -42,14 +42,16 @@
   <vendor url="https://github.com/kstenschke/dummytext-plugin" email="info@stenschke.com">Kay Stenschke</vendor>
   <version>1.2.0</version>
   <change-notes><![CDATA[
-  <strong>1.2.0 - Not tagged yet</strong>
+  <strong>1.2.0 - 2021-03-13</strong>
     <ul>
+        <li>Adapt icons to IDE flat theme dark/light colors</li>
+        <li>Add dummy text genre popup into generate menu</li>
+        <li>Add multiple selections handling</li>
+        <li>Add plugin icon</li>
         <li>Change README and CHANGELOG format from textile to markdown</li>
         <li>Add release dates to changelog</li>
         <li>Add TOC to README</li>
-        <li>Adapt icons to IDE flat theme dark/light colors</li>
-        <li>Add dummy text genre popup into generate menu</li>
-        <li>Code cleanup and modernization</li>
+        <li>Some code cleanup and modernization</li>
     </ul><br/>
     <strong>1.0.12 - 2014-09-03</strong>
     <ul>
@@ -119,7 +121,7 @@
       <!-- Sub menu in generate menu is not supported just via popup="true" attribute. -->
       <!-- Solution: PopupChoiceAction opens Dummytext.GeneratePopupGroup -->
       <group id="Dummytext.GeneratePopupActionGroup" description="Insert/Replace by dummy text"
-             text="Insert/Replace by dummy text"
+             text="Insert/Replace by Dummy Text"
              icon="/com/kstenschke/dummytext/resources/icons/action.png" popup="true">
           <separator/>
           <group id="Dummytext.GeneratePopupActionInnerGroup">
@@ -132,7 +134,7 @@
           <separator/>
           <add-to-group group-id="GenerateGroup" anchor="last"/>
       </group>
-      <group id="Dummytext.GeneratePopupGroup" description="Generate Dummy Text" text="Generate Dummy Text"
+      <group id="Dummytext.GeneratePopupGroup" description="Generate dummy text" text="Generate Dummy Text"
              icon="/com/kstenschke/dummytext/resources/icons/action.png" popup="true">
           <reference ref="GenerateLatinAction"/>
           <reference ref="GenerateEsotericAction"/>

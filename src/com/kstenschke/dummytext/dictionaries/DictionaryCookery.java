@@ -84,20 +84,21 @@ public class DictionaryCookery extends Dictionary {
 
         sentence = InflectionHelper.fixIndefiniteArticles(sentence);
 
-        sentence = sentence.replaceAll(" beefs",        " beef ");
-        sentence = sentence.replaceAll(" butters ",     " butter ");
-        sentence = sentence.replaceAll(" caviars ",     " caviar ");
-        sentence = sentence.replaceAll(" chickens ",    " chicken ");
-        sentence = sentence.replaceAll(" choping ",     " chopping ");
-        sentence = sentence.replaceAll(" cuted ",       " cut ");
-        sentence = sentence.replaceAll(" jumbleed ",    " jumbled ");
-        sentence = sentence.replaceAll(" mash uped ",   " mashed up ");
-        sentence = sentence.replaceAll(" rubing ",      " rubbing ");
-        sentence = sentence.replaceAll(" sauce soup ",  " soup ");
-        sentence = sentence.replaceAll(" scrapeed ",    " scraped ");
-        sentence = sentence.replaceAll(" shakeed ",     " shaken ");
-        sentence = sentence.replaceAll(" shreding ",    " shredding ");
-        sentence = sentence.replaceAll(" spinachs ",    " spinach ");
+        sentence = sentence.replaceAll(" beefs", " beef ");
+        sentence = sentence.replaceAll(" butters ", " butter ");
+        sentence = sentence.replaceAll(" caviars ", " caviar ");
+        sentence = sentence.replaceAll(" chickens ", " chicken ");
+        sentence = sentence.replaceAll(" choping ", " chopping ");
+        sentence = sentence.replaceAll(" cuted ", " cut ");
+        sentence = sentence.replaceAll(" jumbleed ", " jumbled ");
+        sentence = sentence.replaceAll(" mash uped ", " mashed up ");
+        sentence = sentence.replaceAll(" noodles lassi ", " noodle lassi ");
+        sentence = sentence.replaceAll(" rubing ", " rubbing ");
+        sentence = sentence.replaceAll(" sauce soup ", " soup ");
+        sentence = sentence.replaceAll(" scrapeed ", " scraped ");
+        sentence = sentence.replaceAll(" shakeed ", " shaken ");
+        sentence = sentence.replaceAll(" shreding ", " shredding ");
+        sentence = sentence.replaceAll(" spinachs ", " spinach ");
 
         String[] unincreasables   = {
             "beefs", "berries", "breasts", "carrots", "chicken", "chicken", "chickpeas", "crumps", "eggs", "lentils",
@@ -193,7 +194,7 @@ public class DictionaryCookery extends Dictionary {
     private static String getFluid() {
         String[] words ={
             "adobo sauce", "anchovy essence", "BBQ sauce", "beer", "bourbon", "buttermilk", "champaign",
-            "cocktail sauce", "coconut milk", "coffee", "condensed milk", "cream", "crême fraîche", "emeril\'s essence",
+            "cocktail sauce", "coconut milk", "coffee", "condensed milk", "cream", "crême fraîche", "emeril's essence",
             "fish sauce", "gold tequila", "gravy", "hollandaise sauce", "honey", "iced tea", "ice water", "joghurt",
             "1 juice", "kefir", "ketchup", "lemon juice", "1 lassi", "lime", "maple syrup", "mayonnaise", "milk",
             "1 sauce", "mint sauce", "olive oil", "orange juice", "oyster sauce", "peanut sauce", "peppermint tea",
@@ -291,7 +292,7 @@ public class DictionaryCookery extends Dictionary {
             "chocolate", "cinnamon", "corn syrup", "cumin", "curry", "dill", "dill", "flower", "garlic", "green curry",
             "jasmine", "lime", "marmalade", "mustard", "nutmeg", "onion powder", "oregano", "parsley", "pepper",
             "radish sprouts", "rosemary", "rum", "sugar", "szechuan pepper", "thyme", "vegemite", "vodka", "wasabi",
-            "woodruff", "za\'atar"
+            "woodruff", "za'atar"
         };
 
         return pickRandomString(words);

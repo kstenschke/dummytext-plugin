@@ -1,13 +1,14 @@
 # Dummytext Plugin - Changelog
 
-**1.2.0 - Not tagged yet**
+**1.2.0 - 2021-03-13**
 * Add multiple selections support
 * Adapt icons to IDE flat theme dark/light colors
 * Add dummy text genre popup into generate menu
-* Code cleanup and modernization
+* Add plugin icon
 * Change README and CHANGELOG format from textile to markdown
 * Add release dates to changelog
 * Add TOC to README
+* Some code cleanup and modernization
 
 **1.0.12 - 2014-09-03**
 * Added preservation of leading and trailing quotation letters (‘, “, ', ")

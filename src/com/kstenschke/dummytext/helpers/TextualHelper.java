@@ -276,10 +276,10 @@ public class TextualHelper {
         int strLen  = str.length();
         int i       =0;
 
-        loop:   for (;i < strLen;) {
+        loop:
+        while (i < strLen) {
             char curChar = str.charAt(i);
-            switch(curChar)
-            {
+            switch(curChar) {
                 case ' ':
                 case '\t':
                     whitespace = whitespace + curChar;

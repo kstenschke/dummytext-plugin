@@ -52,7 +52,7 @@ public class MyApplicationComponent {
         ActionManagerEx instanceEx = ActionManagerEx.getInstanceEx();
         PluginId pluginId = PluginId.getId("String Manipulation");
 
-        HashMap<Class, AnAction> classToActionMap = new HashMap<Class, AnAction>();
+        HashMap<Class, AnAction> classToActionMap = new HashMap<>();
         for (String string_manipulation : instanceEx.getPluginActions(pluginId)) {
             AnAction action = instanceEx.getAction(string_manipulation);
             classToActionMap.put(action.getClass(), action);
