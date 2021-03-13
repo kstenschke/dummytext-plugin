@@ -33,7 +33,8 @@ public abstract class MyEditorWriteActionHandler<T> extends EditorActionHandler 
     }
 
     @Override
-    protected final void doExecute(@NotNull final Editor editor, @Nullable final Caret caret, final DataContext dataContext) {
+    protected final void doExecute(@NotNull final Editor editor, @Nullable final Caret caret,
+                                   final DataContext dataContext) {
         MyApplicationComponent.setAction(actionClass);
 
         final Pair<Boolean, T> additionalParameter = beforeWriteAction(editor, dataContext);
@@ -50,7 +51,8 @@ public abstract class MyEditorWriteActionHandler<T> extends EditorActionHandler 
         }.doExecute(editor, caret, dataContext);
     }
 
-    protected abstract void executeWriteAction(Editor editor, @Nullable Caret caret, DataContext dataContext, @Nullable T additionalParameter);
+    protected abstract void executeWriteAction(Editor editor, @Nullable Caret caret, DataContext dataContext,
+                                               @Nullable T additionalParameter);
 
     @NotNull
     protected Pair<Boolean, T> beforeWriteAction(Editor editor, DataContext dataContext) {

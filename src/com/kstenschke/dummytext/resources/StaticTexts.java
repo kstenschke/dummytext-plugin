@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NonNls;
 
 public class StaticTexts {
 
-        // Genres
+    /* Genres */
     @NonNls
     public static final String GENRE_CODE_PIRATES = "pirates";
     @NonNls
@@ -31,7 +31,7 @@ public class StaticTexts {
     @NonNls
     public static final String GENRE_CODE_LATIN = "latin";
 
-        // Undo/Redo History
+    /* Undo/Redo History */
     @NonNls
     public static final String HISTORY_INSERT_DUMMY_TEXT = "Insert Dummy Text";
     @NonNls
@@ -44,7 +44,4 @@ public class StaticTexts {
     public static final String HISTORY_INSERT_PIRATES = "Insert Pirate Lingo";
     @NonNls
     public static final String HISTORY_INSERT_SCIFI = "Insert Science Fiction";
-
-
-
 }

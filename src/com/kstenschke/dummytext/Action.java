@@ -44,10 +44,11 @@ public class Action extends AnAction {
      */
     public void actionPerformed(final AnActionEvent event) {
         Project currentProject = event.getData(PlatformDataKeys.PROJECT);
-    
-        CommandProcessor.getInstance().executeCommand(currentProject, () -> ApplicationManager.getApplication().runWriteAction(() -> {
-            String genreCode  = PluginPreferences.getGenreCode();
-            new ActionPerformer(genreCode).write(event);
-        }), StaticTexts.HISTORY_INSERT_DUMMY_TEXT, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+
+        CommandProcessor.getInstance().executeCommand(currentProject, () ->
+                ApplicationManager.getApplication().runWriteAction(() -> {
+                    String genreCode = PluginPreferences.getGenreCode();
+                    new ActionPerformer(genreCode).write(event);
+                }), StaticTexts.HISTORY_INSERT_DUMMY_TEXT, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
     }
 }

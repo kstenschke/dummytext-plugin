@@ -52,7 +52,7 @@ public class Dictionary {
      */
     static String pickRandomString(String[] words, Integer amountWords)  {
         if (null != amountWords && amountWords > 0) {
-                // Reduce sentences to items with the closest to the given amount of words
+            /* Reduce sentences to items with the closest to the given amount of words */
             words = TextualHelper.filterByWordCount(words, amountWords, 2);
         }
 

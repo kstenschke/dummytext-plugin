@@ -29,7 +29,10 @@ public class GenerateLatinAction extends AnAction {
     public void actionPerformed(final AnActionEvent event) {
         Project currentProject = event.getData(PlatformDataKeys.PROJECT);
 
-        CommandProcessor.getInstance().executeCommand(currentProject, () -> ApplicationManager.getApplication().runWriteAction(() -> new ActionPerformer(StaticTexts.GENRE_CODE_LATIN).write(event)), StaticTexts.HISTORY_INSERT_LATIN, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+        CommandProcessor.getInstance().executeCommand(currentProject,
+                () -> ApplicationManager.getApplication().runWriteAction(()
+                        -> new ActionPerformer(StaticTexts.GENRE_CODE_LATIN).write(event)),
+                StaticTexts.HISTORY_INSERT_LATIN, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION
+        );
     }
-
 }

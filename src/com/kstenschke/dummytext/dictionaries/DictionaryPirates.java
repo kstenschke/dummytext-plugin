@@ -24,7 +24,6 @@ public class DictionaryPirates extends Dictionary {
      * Constructor
      */
     public DictionaryPirates() {
-
     }
 
     /**

@@ -25,6 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MyApplicationComponent {
+
     private Class lastAction;
     private Map<Class, AnAction> classToActionMap;
 

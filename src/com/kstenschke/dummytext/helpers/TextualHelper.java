@@ -169,8 +169,7 @@ public class TextualHelper {
         ) {
             leadChars = leadChars + curLetter;
             if (isQuotationLetter(curLetter)) {
-                // Preserve no more after first quotation letter
-                done = true;
+                done = true;    /* Preserve no more after first quotation letter */
             }
             offset++;
             curLetter  = str.charAt(offset);
@@ -216,11 +215,11 @@ public class TextualHelper {
         boolean endsAlphabetic  = TextualHelper.isAlphabeticLetter(TextualHelper.getLastChar(str));
 
         if (null == trailingPunctuation) {
-            // Remove trailing non-alphabetic character if selection didn't have any either
+            /* Remove trailing non-alphabetic character if selection didn't have any either */
             return leadingWhiteSpace + str.substring(0, str.length() - 1);
         }
 
-        // Replace or add given trailing punctuation
+        /* Replace or add given trailing punctuation */
         str = endsAlphabetic
                 ? str.concat(trailingPunctuation)
                 : str.substring(0, str.length() - 1) + trailingPunctuation;
@@ -239,9 +238,9 @@ public class TextualHelper {
     public static String[] filterByWordCount(String[] sentences, Integer amountWords, Integer tolerance) {
         Integer curDiff;
         Integer leastDiff    = tolerance + 1;
-        String ignorePattern = ".*[7|8].*";   // ignore interjection and place sentences
+        String ignorePattern = ".*[7|8].*";   /* ignore interjection and place sentences */
 
-        // Find items with closest amount of words
+        /* Find items with closest amount of words */
         for (String sentence : sentences) {
             if (!sentence.matches(ignorePattern)) {
                 curDiff     = Math.abs(amountWords - getWordCount(sentence));
@@ -255,7 +254,7 @@ public class TextualHelper {
             return sentences;
         }
 
-        // Filter to items with closest word count, if within tolerance
+        /* Filter to items with closest word count, if within tolerance */
         List<String> filtered  = new LinkedList<>();
         for (String sentence : sentences) {
             if (!sentence.matches(ignorePattern)) {

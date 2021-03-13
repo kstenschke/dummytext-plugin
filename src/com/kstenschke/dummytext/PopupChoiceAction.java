@@ -33,16 +33,19 @@ public class PopupChoiceAction extends EditorAction {
 
             @Override
             protected Pair beforeWriteAction(Editor editor, DataContext dataContext) {
-                ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup(null, (ActionGroup) ActionManager.getInstance().getAction("Dummytext.GeneratePopupGroup"),
-                        dataContext, JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, true);
+                ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup(
+                    null,
+                    (ActionGroup) ActionManager.getInstance().getAction("Dummytext.GeneratePopupGroup"),
+                    dataContext, JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, true
+                );
 
                 popup.showInBestPositionFor(dataContext);
                 return stopExecution();
             }
 
             @Override
-            protected void executeWriteAction(Editor editor, @Nullable Caret caret, DataContext dataContext, @Nullable Object additionalParameter) {
-
+            protected void executeWriteAction(Editor editor, @Nullable Caret caret, DataContext dataContext,
+                                              @Nullable Object additionalParameter) {
             }
         });
     }

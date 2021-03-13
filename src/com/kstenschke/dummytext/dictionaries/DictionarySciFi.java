@@ -24,7 +24,6 @@ public class DictionarySciFi extends Dictionary {
      * Constructor
      */
     public DictionarySciFi() {
-
     }
 
     /**
@@ -42,15 +41,32 @@ public class DictionarySciFi extends Dictionary {
         while (sentence.matches(".*[0-9].*")) {
             while (sentence.contains("7")) sentence = TextualHelper.replaceIfNew(sentence, "7", getInterjection());
 
-            while (sentence.contains("PLURAL1")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL1", InflectionHelper.plural(getNounConcrete()));
-            while (sentence.contains("PLURAL2")) sentence = TextualHelper.replaceIfNew(sentence, "PLURAL2", InflectionHelper.plural(getNounAbstract()));
-            while (sentence.contains("GERUND3")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND3", InflectionHelper.gerund(getVerbTransitive()));
-            while (sentence.contains("GERUND4")) sentence = TextualHelper.replaceIfNew(sentence, "GERUND4", InflectionHelper.gerund(getVerbIntransitive()));
-            while (sentence.contains("PSIMPLE3")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE3", InflectionHelper.presentSimple(getVerbTransitive()));
-            while (sentence.contains("PSIMPLE4")) sentence = TextualHelper.replaceIfNew(sentence, "PSIMPLE4", InflectionHelper.presentSimple(getVerbIntransitive()));
-            while (sentence.contains("PASTTENSE3")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()));
-            while (sentence.contains("PASTTENSE4")) sentence = TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()));
-            while (sentence.contains("AMOUNT_PHRASE_PLURAL")) sentence = TextualHelper.replaceIfNew(sentence, "AMOUNT_PHRASE_PLURAL", getAmountPluralConcretePhrase());
+            while (sentence.contains("PLURAL1")) sentence =
+                    TextualHelper.replaceIfNew(sentence, "PLURAL1", InflectionHelper.plural(getNounConcrete()));
+
+            while (sentence.contains("PLURAL2")) sentence =
+                    TextualHelper.replaceIfNew(sentence, "PLURAL2", InflectionHelper.plural(getNounAbstract()));
+
+            while (sentence.contains("GERUND3")) sentence =
+                    TextualHelper.replaceIfNew(sentence, "GERUND3", InflectionHelper.gerund(getVerbTransitive()));
+
+            while (sentence.contains("GERUND4")) sentence =
+                    TextualHelper.replaceIfNew(sentence, "GERUND4", InflectionHelper.gerund(getVerbIntransitive()));
+
+            while (sentence.contains("PSIMPLE3")) sentence =
+                    TextualHelper.replaceIfNew(sentence, "PSIMPLE3", InflectionHelper.presentSimple(getVerbTransitive()));
+
+            while (sentence.contains("PSIMPLE4")) sentence =
+                    TextualHelper.replaceIfNew(sentence, "PSIMPLE4", InflectionHelper.presentSimple(getVerbIntransitive()));
+
+            while (sentence.contains("PASTTENSE3")) sentence =
+                    TextualHelper.replaceIfNew(sentence, "PASTTENSE3", InflectionHelper.pastTense(getVerbTransitive()));
+
+            while (sentence.contains("PASTTENSE4")) sentence =
+                    TextualHelper.replaceIfNew(sentence, "PASTTENSE4", InflectionHelper.pastTense(getVerbIntransitive()));
+
+            while (sentence.contains("AMOUNT_PHRASE_PLURAL"))
+                sentence = TextualHelper.replaceIfNew(sentence, "AMOUNT_PHRASE_PLURAL", getAmountPluralConcretePhrase());
 
             while (sentence.contains("1")) sentence = TextualHelper.replaceIfNew(sentence, "1", getNounConcrete());
             while (sentence.contains("2")) sentence = TextualHelper.replaceIfNew(sentence, "2", getNounAbstract());

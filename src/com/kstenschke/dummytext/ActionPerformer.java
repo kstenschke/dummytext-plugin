@@ -25,7 +25,6 @@ import com.kstenschke.dummytext.helpers.TextualHelper;
 import com.kstenschke.dummytext.dictionaries.*;
 import com.kstenschke.dummytext.resources.StaticTexts;
 
-
 class ActionPerformer {
 
     /**
@@ -78,10 +77,10 @@ class ActionPerformer {
                 String leadingCharacters    = TextualHelper.getLeadingPreservation(selectedText);
     
                 int amountLines     = 1;
-                // applies only when replacing a single-lined selection, can be rounded up
+                /* applies only when replacing a single-lined selection, can be rounded up */
                 Integer amountWords = null;
     
-                // Generated dummy text will replace the current selected text
+                /* Generated dummy text will replace the current selected text */
                 if (hasSelection && selectedText != null ) {
                     int selectionLength = selectedText.length();
                     if (selectionLength > 0) {
@@ -92,21 +91,20 @@ class ActionPerformer {
                     }
                 }
     
-                // Generate and insert / replace selection with dummy text
-                String dummyText  = generateText(amountLines, amountWords, leadingCharacters, trailingCharacter, selectedText).toString();
+                /* Generate and insert / replace selection with dummy text */
+                String dummyText = generateText(amountLines, amountWords, leadingCharacters, trailingCharacter,
+                        selectedText).toString();
     
                 Integer dummyTextLength = dummyText.length();
                 Integer offsetStart;
     
-                if (hasSelection) {
-                    // Move caret to end of selection
+                if (hasSelection) {     /* Move caret to end of selection */
                     offsetStart = caret.getSelectionStart();
                     int offsetEnd = caret.getSelectionEnd();
     
                     document.replaceString(offsetStart, offsetEnd, dummyText);
                     caret.setSelection(offsetStart, offsetStart + dummyTextLength);
-                } else {
-                    // Move caret to end of inserted text
+                } else {                /* Move caret to end of inserted text */
                     offsetStart  = caretModel.getOffset();
                     dummyText   = dummyText.trim();
                     document.insertString(offsetStart, dummyText);
@@ -131,7 +129,7 @@ class ActionPerformer {
             amountWords = null;
         }
 
-        // Add random sentences until the given text length is reached
+        /* Add random sentences until the given text length is reached */
         Integer linesCount = 0;
         String[] originalLines = textToBeReplaced != null ? textToBeReplaced.split("\\n") : null;
         String dummyLine;
@@ -172,10 +170,20 @@ class ActionPerformer {
             linesCount++;
         }
 
-        if (textToBeReplaced != null && leadingCharacters != null && !textToBeReplaced.isEmpty() && !leadingCharacters.isEmpty()) {
+        if (
+               textToBeReplaced != null
+            && leadingCharacters != null
+            && !textToBeReplaced.isEmpty()
+            && !leadingCharacters.isEmpty()
+        ) {
             dummyText = leadingCharacters + dummyText;
         }
-        if (textToBeReplaced != null && trailingPunctuation != null && !textToBeReplaced.isEmpty() && !trailingPunctuation.isEmpty()) {
+        if (
+               textToBeReplaced != null
+            && trailingPunctuation != null
+            && !textToBeReplaced.isEmpty()
+            && !trailingPunctuation.isEmpty()
+        ) {
             dummyText = TextualHelper.castTrailingPunctuation(dummyText, trailingPunctuation);
         }
 

@@ -23,7 +23,6 @@ public class DictionaryLatin extends Dictionary {
      * Constructor
      */
     public DictionaryLatin() {
-
     }
 
     /**

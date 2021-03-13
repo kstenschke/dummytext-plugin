@@ -26,7 +26,7 @@ import com.intellij.ide.util.PropertiesComponent;
 */
 class PluginPreferences {
 
-    // @NonNls = element is not a string requiring internationalization and it does not contain such strings.
+    /* @NonNls = element is not a string requiring internationalization and it does not contain such strings */
     @NonNls
     private static final String PROPERTY_GENRE = "PluginDummyText.Genre";
 
@@ -64,7 +64,7 @@ class PluginPreferences {
     /**
      * Get preference: genre
      *
-     * @return String	Genre code, e.g. "scifi", "pirates", "latin" (default)
+     * @return String   Genre code, e.g. "scifi", "pirates", "latin" (default)
      */
     static String getGenreCode() {
         PropertiesComponent propertiesComponent = getPropertiesComponent();
