@@ -1,11 +1,19 @@
-h1. Dummy Text Generator Plugin
+#Dummy Text Generator Plugin
 
 Source code of the intellij IDEA "Dummy Text Generator" plugin: http://plugins.jetbrains.com/plugin?pr=&pluginId=7216
 This is a plugin for the various intellij IDEs, working in IntelliJ IDEA Ultimate and Community Edition, 
 RubyMine, WebStorm, PhpStorm, PyCharm, PyCharm CE, AppCode, Android Studio and 0xDBE.
 
 
-h2. Description
+## Table of Contents
+
+* [What does it do?](#what-does-it-do)
+* [Third Party Resources](#third-party-resources)
+* [Changelog](#changelog)
+* [Author and License](#author-and-license)
+
+
+## What does it do?
 
 The plugin adds a random text generator, capable of creating witty texts in different genres.
 Created text can be inserted newly at the caret, or replace a selection.
@@ -27,7 +35,7 @@ that previous casing is maintained. Furthermore, the presence or absence of a tr
 replaced text selection is being maintained.
 
 
-h2. Third Party Resources
+## Third Party Resources
 
 The icons used in this plugin have been altered in colors, they originate from the following iconsets:
 
@@ -38,14 +46,14 @@ Miu by LinhPham.me - Pizza
 WPZOOM - http://www.wpzoom.com - skull
 
 
-h2. Changelog
+## Changelog
 
-Read full changelog:  https://github.com/kstenschke/dummytext-plugin/blob/master/CHANGELOG.textile
+See https://github.com/kstenschke/dummytext-plugin/blob/master/CHANGELOG.md
 
 
-h2. License
+## Author and License
 
-Copyright 2013-2018 Kay Stenschke
+Copyright Kay Stenschke
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

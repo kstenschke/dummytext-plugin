@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright 2013-2018 Kay Stenschke
+  ~ Copyright Kay Stenschke
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -35,29 +35,40 @@
     When the replaced text selection consists fully of lower-cased or capital letters or begins with a
     capital letter, that previous casing is maintained. Furthermore, the presence or absence of a trailing
     punctuation mark of a replaced text selection is being maintained.<br/>
-    <br/>Please note: This plugin is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    <br/>
+    Please note: This plugin is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+    either express or implied.
   ]]></description>
   <vendor url="https://github.com/kstenschke/dummytext-plugin" email="info@stenschke.com">Kay Stenschke</vendor>
-  <version>1.1.0</version>
+  <version>1.2.0</version>
   <change-notes><![CDATA[
-  <ul>
-    <li>1.1.0
-        <ul>
-            <li>Adapted icons to latest IDE flat theme dark/light colors</li>
-            <li>Added dummy text genre popup into generate menu</li>
-            <li>Code cleanup and modernization</li>
-        </ul>
-    </li>
-    <li>1.0.12<ul>
+  <strong>1.2.0 - Not tagged yet</strong>
+    <ul>
+        <li>Change README and CHANGELOG format from textile to markdown</li>
+        <li>Add release dates to changelog</li>
+        <li>Add TOC to README</li>
+        <li>Adapt icons to IDE flat theme dark/light colors</li>
+        <li>Add dummy text genre popup into generate menu</li>
+        <li>Code cleanup and modernization</li>
+    </ul><br/>
+    <strong>1.0.12 - 2014-09-03</strong>
+    <ul>
         <li>Added preservation of leading and trailing quotation letters (‘, “, ', ")</li>
         <li>Improved preservation of trailing punctuation (., ,, :, ;, ?, !, ¡, ¿)</li>
-    </ul></li>
-    <li>1.0.11<ul>
+    </ul><br/>
+    <strong>1.0.11 - 2014-06-20</strong>
+    <ul>
         <li>Exchanged icons with retina / darcula theme compatible ones</li>
         <li>Extended cookery vocabulary</li>
-    </ul></li>
-  </ul>
-  <a href="https://github.com/kstenschke/dummytext-plugin/blob/master/CHANGELOG.textile" target="_blank">...Read full changelog on github</a>
+    </ul><br/>
+    <strong>1.0.10 - 2014-05-19</strong>
+    <ul>
+        <li>Exchanged icons with retina / darcula theme compatible ones</li>
+        <li>Extended cookery vocabulary</li>
+    </ul><br/>
+  <a href="https://github.com/kstenschke/dummytext-plugin/blob/master/CHANGELOG.textile" target="_blank">
+    ...Read full changelog on github
+  </a>
   ]]></change-notes>
   <idea-version since-build="107.105"/>
   <application-components/>
@@ -67,26 +78,34 @@
       <group id="Dummytext.MaintoolbarGroup">
           <separator/>
           <action id="DummyText" class="com.kstenschke.dummytext.Action" text="Insert Dummy Text"
-                  description="Insert dummy text or replace selection by dummy text of similar length (change genre via Tools or Generate menu)." icon="/com/kstenschke/dummytext/resources/icons/action.png"/>
+                  description="Insert dummy text or replace selection by dummy text of similar length (change genre via Tools or Generate menu)."
+                  icon="/com/kstenschke/dummytext/resources/icons/action.png"/>
           <separator/>
           <add-to-group group-id="MainToolBar" anchor="before" relative-to-action="ToolbarRunGroup"/>
       </group>
-      <action id="GenerateLatinAction" icon="/com/kstenschke/dummytext/resources/icons/latin.png" class="com.kstenschke.dummytext.GenerateLatinAction"
+      <action id="GenerateLatinAction" icon="/com/kstenschke/dummytext/resources/icons/latin.png"
+              class="com.kstenschke.dummytext.GenerateLatinAction"
               text="Fake Latin" description="Generates random fake latin">
       </action>
-      <action id="GenerateEsotericAction" icon="/com/kstenschke/dummytext/resources/icons/esoteric.png" class="com.kstenschke.dummytext.GenerateEsotericAction"
+      <action id="GenerateEsotericAction" icon="/com/kstenschke/dummytext/resources/icons/esoteric.png"
+              class="com.kstenschke.dummytext.GenerateEsotericAction"
               text="Esoteric Wisdom" description="Generates random esoteric wisdom">
       </action>
-      <action id="GenerateCookeryAction" icon="/com/kstenschke/dummytext/resources/icons/cookery.png" class="com.kstenschke.dummytext.GenerateCookeryAction"
+      <action id="GenerateCookeryAction" icon="/com/kstenschke/dummytext/resources/icons/cookery.png"
+              class="com.kstenschke.dummytext.GenerateCookeryAction"
               text="Culinary Inspirations" description="Generates random culinary inspirations">
       </action>
-      <action id="GeneratePiratesAction" icon="/com/kstenschke/dummytext/resources/icons/pirates.png" class="com.kstenschke.dummytext.GeneratePiratesAction"
+      <action id="GeneratePiratesAction" icon="/com/kstenschke/dummytext/resources/icons/pirates.png"
+              class="com.kstenschke.dummytext.GeneratePiratesAction"
               text="Pirate Lingo" description="Generates random pirate lingo">
       </action>
-      <action id="GenerateSciFiAction" icon="/com/kstenschke/dummytext/resources/icons/scifi.png" class="com.kstenschke.dummytext.GenerateSciFiAction"
+      <action id="GenerateSciFiAction" icon="/com/kstenschke/dummytext/resources/icons/scifi.png"
+              class="com.kstenschke.dummytext.GenerateSciFiAction"
               text="Science Fiction" description="Generates random science fiction">
       </action>
-      <group id="Dummytext.ToolsmenuGroup" description="Insert dummy text or replace selection by dummy text of similar length" text="Generate Dummy Text"
+      <group id="Dummytext.ToolsmenuGroup"
+             description="Insert dummy text or replace selection by dummy text of similar length"
+             text="Generate Dummy Text"
              icon="/com/kstenschke/dummytext/resources/icons/action.png" popup="true">
           <separator/>
           <reference ref="GenerateLatinAction"/>
@@ -99,7 +118,8 @@
       </group>
       <!-- Sub menu in generate menu is not supported just via popup="true" attribute. -->
       <!-- Solution: PopupChoiceAction opens Dummytext.GeneratePopupGroup -->
-      <group id="Dummytext.GeneratePopupActionGroup" description="Insert/Replace by dummy text" text="Insert/Replace by dummy text"
+      <group id="Dummytext.GeneratePopupActionGroup" description="Insert/Replace by dummy text"
+             text="Insert/Replace by dummy text"
              icon="/com/kstenschke/dummytext/resources/icons/action.png" popup="true">
           <separator/>
           <group id="Dummytext.GeneratePopupActionInnerGroup">
